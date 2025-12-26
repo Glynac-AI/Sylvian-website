@@ -1,11 +1,6 @@
-import OffsetHero from '@/components/offerings/OffsetHero'
-import OffsetDetails from '@/components/offerings/OffsetDetails'
+import { redirect } from 'next/navigation'
 
 export default function OffsetIncomePage() {
-    return (
-        <>
-            <OffsetHero />
-            <OffsetDetails />
-        </>
-    )
+    // Redirects to the main Offerings page, scrolled to the Offset Income section
+    redirect('/offerings#offset-income')
 }

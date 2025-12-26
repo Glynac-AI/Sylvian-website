@@ -1,11 +1,6 @@
-import CoreHero from '@/components/offerings/CoreHero'
-import CoreDetails from '@/components/offerings/CoreDetails'
+import { redirect } from 'next/navigation'
 
 export default function CoreIncomePage() {
-    return (
-        <>
-            <CoreHero />
-            <CoreDetails />
-        </>
-    )
+    // Redirects to the main Offerings page, scrolled to the Core Income section
+    redirect('/offerings#core-income')
 }

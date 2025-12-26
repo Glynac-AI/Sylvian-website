@@ -1,11 +1,6 @@
-import DSTAccessHero from '@/components/offerings/DSTAccessHero'
-import DSTAccessDetails from '@/components/offerings/DSTAccessDetails'
+import { redirect } from 'next/navigation'
 
 export default function DSTAccessPage() {
-    return (
-        <>
-            <DSTAccessHero />
-            <DSTAccessDetails />
-        </>
-    )
+    // Redirects to the main Offerings page, scrolled to the DST Access section
+    redirect('/offerings#dst-access')
 }

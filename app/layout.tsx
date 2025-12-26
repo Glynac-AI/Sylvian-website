@@ -23,9 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={dmSans.variable}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased flex min-h-screen flex-col">
         <Navigation />
-        <main>{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>
