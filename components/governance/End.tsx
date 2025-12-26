@@ -82,7 +82,7 @@ There is no discretion to change leverage, priority, or rules after closing.” 
             </p>
 
             <div className="mx-auto flex max-w-xl flex-col rounded-2xl border border-blue-200 bg-blue-50 p-8">
-                <ul className="space-y-4">
+                <ul className="space-y-4 text-center">
                 {prevents.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-blue-700 mt-1 shrink-0" />

@@ -62,7 +62,7 @@ const CIOFramework = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-40 max-w-5xl mx-auto'>
                 <div className='flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-blue-200 hover:shadow-lg'>
                     <h4 className='font-semibold text-black mb-4'>One-Time Structure Approval (Firm Level) </h4>
-                    <ul className='text-left list-disc list-inside marker:text-blue-500 text-slate-600'>
+                    <ul className='space-y-3 text-left list-disc list-inside marker:text-blue-500 text-slate-600'>
                         {firmlevel.map((firm,index)=>(
                             <li key={index}>{firm.point}</li>
                         ))}
@@ -82,7 +82,7 @@ const CIOFramework = () => {
 
                 <div className='flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-blue-200 hover:shadow-lg'>
                     <h4 className='font-semibold text-black mb-4'>Per-Issuance Review (Asset Level)  </h4>
-                    <ul className='text-left list-disc list-inside marker:text-blue-500 text-slate-600'>
+                    <ul className='space-y-3 text-left list-disc list-inside marker:text-blue-500 text-slate-600'>
                         {assets.map((asset,index)=>(
                             <li key={index}>{asset.point}</li>
                         ))}
