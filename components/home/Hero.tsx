@@ -2,7 +2,7 @@ import Reveal from '@/components/layout/Reveal'
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 px-6 py-32 lg:py-40">
+        <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 px-6 py-32 lg:py-40">
             {/* Decorative elements */}
             <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-100/40 blur-3xl" />
             <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-slate-100/60 blur-3xl" />
@@ -42,6 +42,13 @@ export default function Hero() {
                         </div>
                     </Reveal>
                 </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-12 animate-bounce">
+                <svg className="h-6 w-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" />
+                </svg>
             </div>
         </section>
     )

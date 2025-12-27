@@ -1,6 +1,9 @@
-import { redirect } from 'next/navigation'
+import CoreSection from '@/components/offerings/CoreSection'
 
 export default function CoreIncomePage() {
-    // Redirects to the main Offerings page, scrolled to the Core Income section
-    redirect('/offerings#core-income')
+    return (
+        <div className="pt-24 lg:pt-32"> {/* Add padding for fixed navbar if needed */}
+            <CoreSection />
+        </div>
+    )
 }

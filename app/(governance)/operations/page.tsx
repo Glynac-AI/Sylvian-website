@@ -1,7 +1,7 @@
 import OperationsHero from '@/components/operations/OperationsHero'
 import StepsSection from '@/components/operations/StepsSection'
 import ReportingSection from '@/components/operations/ReportingSection'
-import Prohibitions from '@/components/operations/Prohibitions'
+import DetailedProhibitions from '@/components/operations/DetailedProhibitions'
 
 export default function OperationsPage() {
     return (
@@ -9,7 +9,7 @@ export default function OperationsPage() {
             <OperationsHero />
             <StepsSection />
             <ReportingSection />
-            <Prohibitions />
+            <DetailedProhibitions />
         </>
     )
 }

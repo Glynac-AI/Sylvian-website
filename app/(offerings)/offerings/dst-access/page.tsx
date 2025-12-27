@@ -1,6 +1,9 @@
-import { redirect } from 'next/navigation'
+import DSTSection from '@/components/offerings/DSTSection'
 
 export default function DSTAccessPage() {
-    // Redirects to the main Offerings page, scrolled to the DST Access section
-    redirect('/offerings#dst-access')
+    return (
+        <div className="pt-24 lg:pt-32">
+            <DSTSection />
+        </div>
+    )
 }

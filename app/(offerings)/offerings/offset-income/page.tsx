@@ -1,6 +1,9 @@
-import { redirect } from 'next/navigation'
+import OffsetSection from '@/components/offerings/OffsetSection'
 
 export default function OffsetIncomePage() {
-    // Redirects to the main Offerings page, scrolled to the Offset Income section
-    redirect('/offerings#offset-income')
+    return (
+        <div className="pt-24 lg:pt-32">
+            <OffsetSection />
+        </div>
+    )
 }
