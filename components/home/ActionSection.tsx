@@ -35,7 +35,7 @@ export default function ActionSection() {
                             </h2>
                             <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm">
                                 <blockquote className="text-center text-lg italic leading-relaxed text-slate-700">
-                                    "We're investing in income-producing real estate through a consistent structure. Each investment is backed by specific properties, but the rules, leverage, and income mechanics stay the same. That makes the income easier to manage over time."
+                                    &quot;We&apos;re investing in income-producing real estate through a consistent structure. Each investment is backed by specific properties, but the rules, leverage, and income mechanics stay the same. That makes the income easier to manage over time.&quot;
                                 </blockquote>
                             </div>
                         </div>

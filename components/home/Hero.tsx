@@ -2,7 +2,7 @@ import Reveal from '@/components/layout/Reveal'
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 px-6 py-32 lg:py-40">
+        <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 px-6 py-32 lg:py-40">
             {/* Decorative elements */}
             <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-100/40 blur-3xl" />
             <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-slate-100/60 blur-3xl" />
@@ -10,7 +10,6 @@ export default function Hero() {
             <div className="relative mx-auto max-w-[1280px]">
                 <div className="mx-auto max-w-4xl text-center">
                     
-
                     <Reveal delay={80}>
                         <h1 className="mb-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-4xl font-bold leading-[1.1] tracking-tight text-transparent lg:text-6xl">
                             A Standardized Structured Real Estate Income Platform
@@ -29,7 +28,7 @@ export default function Hero() {
                                 { label: 'One-time', value: 'Structure Approval' },
                                 { label: 'Per-issuance', value: 'Asset Review' },
                                 { label: 'Repeatable', value: 'Governance' },
-                            ].map((stat, index) => (
+                            ].map((stat) => (
                                 <div key={stat.label} className="group relative">
                                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-100/50 to-slate-100/50 opacity-0 blur transition-opacity group-hover:opacity-100" />
                                     <div className="relative rounded-2xl border border-slate-200/60 bg-white/60 p-6 backdrop-blur-sm transition-all group-hover:border-blue-200">
@@ -43,6 +42,13 @@ export default function Hero() {
                         </div>
                     </Reveal>
                 </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-12 animate-bounce">
+                <svg className="h-6 w-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" />
+                </svg>
             </div>
         </section>
     )
