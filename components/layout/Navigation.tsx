@@ -25,14 +25,6 @@ const navItems: NavItem[] = [
         label: 'Offerings',
         children: [
             { label: 'Offerings Overview', href: '/offerings' },
-            {
-                label: 'Sample Offerings',
-                children: [
-                    { label: 'Core Income', href: '/offerings/core-income' },
-                    { label: 'Offset Income', href: '/offerings/offset-income' },
-                    { label: 'DST Access', href: '/offerings/dst-access' },
-                ],
-            },
             { label: 'DST Access Explained', href: '/dst-explained' },
         ],
     },
