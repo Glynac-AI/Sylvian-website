@@ -6,10 +6,10 @@ export default function HowItWorksHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        How It Works
+                        A Fixed Structure, Applied Repeatedly
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        A Fixed Structure, Applied Repeatedly.
+                        Sylvan is built on a deliberately segmented architecture that separates structural risk, timing of income, and asset selection.
                     </p>
                 </Reveal>
             </div>

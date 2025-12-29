@@ -6,15 +6,15 @@ export default function OfferingsHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-5xl font-bold text-slate-900 lg:text-7xl">
-                        Offerings
+                        One Framework. <br /> Three Access Paths.
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600 lg:text-2xl">
-                        One Framework. Three Access Paths.
+                        The rules, leverage limits, governance, and downside behavior are identical across all offerings.
                     </p>
                 </Reveal>
             </div>
             
-            {/* Scroll Indicator (Optional Polish) */}
+            {/* Scroll Indicator */}
             <div className="absolute bottom-12 animate-bounce">
                 <svg className="h-6 w-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" />

@@ -6,10 +6,10 @@ export default function IncomeHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Income & Downside Behavior
+                        Designed for Income. <br /> Governed for Downside.
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Designed for Income. Governed for Downside.
+                        Income is a function of actual operating performance, governed by rules defined at issuance.
                     </p>
                 </Reveal>
             </div>

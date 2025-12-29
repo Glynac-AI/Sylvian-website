@@ -6,10 +6,10 @@ export default function LibraryHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Resource Library
+                        Centralized References. <br /> Controlled Use.
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Centralized References. Controlled Use.
+                        All materials are version-controlled and intended for professional use.
                     </p>
                 </Reveal>
             </div>

@@ -6,10 +6,10 @@ export default function FAQHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        FAQ
+                        Frequently Asked Questions
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Clear Answers to the Questions Advisors and CIOs Actually Ask.
+                        Clear answers to the questions Advisors and CIOs actually ask.
                     </p>
                 </Reveal>
             </div>

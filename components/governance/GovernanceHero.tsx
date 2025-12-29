@@ -6,10 +6,10 @@ export default function GovernanceHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Governance & Exam Narrative
+                        Built for Investment Committees. Defensible in Examinations.
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Built for Investment Committees. Defensible in Examinations.
+                        Standardized structure, controlled workflows, and audit-ready records.
                     </p>
                 </Reveal>
             </div>

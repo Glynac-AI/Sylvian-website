@@ -6,10 +6,10 @@ export default function DSTExplainedHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-                        DST Access Explained
+                        A Legal Wrapper, <br /> Not a Different Investment
                     </h1>
                     <p className="mx-auto max-w-2xl text-lg text-slate-600">
-                        A Legal Wrapper, Not a Different Investment.
+                        Distinguishing between the legal wrapper (DST) and the investment structure (Sylvan).
                     </p>
                 </Reveal>
             </div>

@@ -6,7 +6,7 @@ export default function OperationsHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Operations Walkthrough
+                        How a Sylvan Issuance Operates, End to End
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
                         The goal is transparency and predictability — not discretion.

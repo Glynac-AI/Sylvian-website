@@ -6,10 +6,10 @@ export default function LearningHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Sylvan Learning
+                        Shared Language. <br /> Consistent Understanding.
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Shared Language. Consistent Understanding.
+                        Structured education to help teams use the same concepts, language, and expectations.
                     </p>
                 </Reveal>
             </div>

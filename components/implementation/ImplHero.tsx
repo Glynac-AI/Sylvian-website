@@ -6,10 +6,10 @@ export default function ImplHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Implementation Resources
+                        Tools to Support Consistent Adoption
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        Tools to Support Consistent Adoption.
+                        Resources designed to reduce variation and support exam readiness.
                     </p>
                 </Reveal>
             </div>

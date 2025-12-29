@@ -6,10 +6,10 @@ export default function PortfolioHero() {
             <div className="mx-auto max-w-[1280px] text-center">
                 <Reveal>
                     <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        Portfolio Role
+                        A Private Income Allocation with Defined Behavior
                     </h1>
                     <p className="mx-auto max-w-2xl text-xl text-slate-600">
-                        A Private Income Allocation with Defined Behavior.
+                        Intended to provide repeatable, explainable income exposure governed by fixed rules.
                     </p>
                 </Reveal>
             </div>
