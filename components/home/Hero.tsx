@@ -1,55 +1,161 @@
-import Reveal from '@/components/layout/Reveal'
+// components/home/Hero.tsx
+'use client'
+
+import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { useEffect } from 'react'
 
 export default function Hero() {
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseX.set(e.clientX)
+            mouseY.set(e.clientY)
+        }
+
+        window.addEventListener('mousemove', handleMouseMove)
+        return () => window.removeEventListener('mousemove', handleMouseMove)
+    }, [mouseX, mouseY])
+
+    const gradientX = useTransform(mouseX, [0, window.innerWidth], ['0%', '100%'])
+    const gradientY = useTransform(mouseY, [0, window.innerHeight], ['0%', '100%'])
+
     return (
-        <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 px-6 py-32 lg:py-40">
-            {/* Decorative elements */}
-            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-100/40 blur-3xl" />
-            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-slate-100/60 blur-3xl" />
+        <section className="relative h-screen flex items-center overflow-hidden bg-[#F8FAF9] -mt-[88px] pt-[88px]">
 
-            <div className="relative mx-auto max-w-[1280px]">
-                <div className="mx-auto max-w-4xl text-center">
-                    
-                    <Reveal delay={80}>
-                        <h1 className="mb-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-4xl font-bold leading-[1.1] tracking-tight text-transparent lg:text-6xl">
-                            A Standardized Structured Real Estate Income Platform
-                        </h1>
-                    </Reveal>
+            {/* Background Layers */}
+            <div className="absolute inset-0 pointer-events-none">
 
-                    <Reveal delay={140}>
-                        <p className="mx-auto mb-12 max-w-3xl text-lg leading-relaxed text-slate-600 lg:text-xl">
-                            How to allocate to private real estate income repeatedly, without increasing operational burden, client confusion, or long-term trust risk.
+                {/* Mouse-tracking gradient */}
+                <motion.div
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                        background: useTransform(
+                            [gradientX, gradientY],
+                            ([x, y]) => `radial-gradient(circle at ${x} ${y}, rgba(9, 85, 32, 0.03) 0%, transparent 50%)`
+                        )
+                    }}
+                />
+
+                {/* Grid pattern */}
+                <div
+                    className="absolute inset-0 opacity-[0.02]"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.1) 1px, transparent 1px)`,
+                        backgroundSize: '80px 80px'
+                    }}
+                />
+
+                {/* Floating shapes with parallax */}
+                <motion.div
+                    className="absolute top-[10%] right-[15%] w-[600px] h-[600px] rounded-full opacity-20 blur-3xl bg-gradient-radial from-[#095520]/15 to-transparent"
+                    style={{
+                        y: useTransform(mouseY, [0, window.innerHeight], [0, 50])
+                    }}
+                />
+                <motion.div
+                    className="absolute bottom-[20%] left-[10%] w-[500px] h-[500px] rounded-full opacity-15 blur-3xl bg-gradient-radial from-[#008929]/12 to-transparent"
+                    style={{
+                        y: useTransform(mouseY, [0, window.innerHeight], [0, -30])
+                    }}
+                />
+
+                {/* Topographic SVG lines */}
+                <svg className="absolute inset-0 w-full h-full opacity-[0.015]">
+                    <defs>
+                        <pattern id="topo" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                            <path d="M0,100 Q50,80 100,100 T200,100" fill="none" stroke="rgba(9, 85, 32, 0.8)" strokeWidth="1.5" />
+                            <path d="M0,120 Q50,100 100,120 T200,120" fill="none" stroke="rgba(9, 85, 32, 0.6)" strokeWidth="1" />
+                            <path d="M0,80 Q50,60 100,80 T200,80" fill="none" stroke="rgba(9, 85, 32, 0.6)" strokeWidth="1" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#topo)" />
+                </svg>
+
+                {/* Noise texture */}
+                <div
+                    className="absolute inset-0 opacity-[0.015] mix-blend-overlay"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+                    }}
+                />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+                <div className="max-w-6xl space-y-8 md:space-y-10">
+
+                    {/* Headline */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] text-[#095520]">
+                            Structured real estate 
+                        </span>
+                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] mt-3 text-[#8C9196]">
+                            exposure simplified for RIAs
+                        </span>
+                    </motion.h1>
+
+                    {/* Description */}
+                    <motion.div
+                        className="space-y-4 max-w-2xl"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <p className="text-base md:text-lg lg:text-xl leading-[1.65] text-[#095520]/75 font-light">
+                            Sylvan delivers structured real estate exposure through pre-approved, ring-fenced SPVs with lockbox-governed rental cash distributions.
                         </p>
-                    </Reveal>
+                        <p className="text-sm md:text-base lg:text-lg leading-[1.65] text-[#095520]/60 font-light">
+                            All of which provides RIAs a faster and more controlled path to real estate income.
+                        </p>
+                    </motion.div>
 
-                    <Reveal delay={200}>
-                        <div className="grid gap-6 sm:grid-cols-3">
-                            {[
-                                { label: 'One-time', value: 'Structure Approval' },
-                                { label: 'Per-issuance', value: 'Asset Review' },
-                                { label: 'Repeatable', value: 'Governance' },
-                            ].map((stat) => (
-                                <div key={stat.label} className="group relative">
-                                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-100/50 to-slate-100/50 opacity-0 blur transition-opacity group-hover:opacity-100" />
-                                    <div className="relative rounded-2xl border border-slate-200/60 bg-white/60 p-6 backdrop-blur-sm transition-all group-hover:border-blue-200">
-                                        <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">
-                                            {stat.label}
-                                        </div>
-                                        <div className="text-lg font-bold text-slate-900">{stat.value}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </Reveal>
+                    {/* CTA Button */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <motion.button
+                            onClick={() => window.location.href = '/offerings'}
+                            className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-white rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            <span className="relative z-10 flex items-center gap-3">
+                                View Current Listings
+                                <svg
+                                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2.5}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </span>
+
+                            {/* Gradient overlay on hover */}
+                            <motion.div
+                                className="absolute inset-0 bg-gradient-to-r from-[#008929] via-[#095520] to-[#008929]"
+                                initial={{ opacity: 0, x: '-100%' }}
+                                whileHover={{ opacity: 1, x: '100%' }}
+                                transition={{
+                                    opacity: { duration: 0.3 },
+                                    x: { duration: 1.5, repeat: Infinity, ease: "linear" }
+                                }}
+                            />
+                        </motion.button>
+                    </motion.div>
+
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-12 animate-bounce">
-                <svg className="h-6 w-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" />
-                </svg>
-            </div>
         </section>
     )
 }
