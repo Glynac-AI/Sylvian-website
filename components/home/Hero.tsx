@@ -1,12 +1,20 @@
 // components/home/Hero.tsx
 'use client'
 
-import { motion, useMotionValue, useTransform } from 'framer-motion'
-import { useEffect } from 'react'
+import { motion, useMotionValue, useTransform, useScroll } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
+    const sectionRef = useRef(null)
     const mouseX = useMotionValue(0)
     const mouseY = useMotionValue(0)
+
+    // Scroll-based parallax
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end start"]
+    })
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -20,11 +28,40 @@ export default function Hero() {
 
     const gradientX = useTransform(mouseX, [0, 1920], ['0%', '100%'])
     const gradientY = useTransform(mouseY, [0, 1080], ['0%', '100%'])
+
+    // Parallax transforms
+    const logoY = useTransform(scrollYProgress, [0, 1], [0, 200])
+    const logoOpacity = useTransform(scrollYProgress, [0, 0.5], [0.025, 0])
+    const contentY = useTransform(scrollYProgress, [0, 1], [0, -100])
+    const floatingShape1Y = useTransform(scrollYProgress, [0, 1], [0, 150])
+    const floatingShape2Y = useTransform(scrollYProgress, [0, 1], [0, -100])
+    const gridOpacity = useTransform(scrollYProgress, [0, 0.5], [0.03, 0])
+
     return (
-        <section className="relative h-screen flex items-center overflow-hidden bg-[#F3F4F1] -mt-[88px] pt-[88px]">
+        <section ref={sectionRef} className="relative h-screen flex items-center overflow-hidden bg-[#F3F4F1] -mt-[88px] pt-[88px]">
 
             {/* Background Layers */}
             <div className="absolute inset-0 pointer-events-none">
+
+                {/* Large Sylvan Tree Logo - Right Side Background with Scroll Parallax */}
+                <motion.div
+                    className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[850px] md:h-[850px] lg:w-[1000px] lg:h-[1000px]"
+                    style={{
+                        y: useTransform(
+                            [mouseY, logoY],
+                            ([mouse, scroll]) => (mouse as number * 0.03) + (scroll as number)
+                        ),
+                        opacity: logoOpacity
+                    }}
+                >
+                    <Image
+                        src="/logo.png"
+                        alt=""
+                        fill
+                        className="object-contain opacity-100 translate-x-[20%]"
+                        priority
+                    />
+                </motion.div>
 
                 {/* Mouse-tracking gradient */}
                 <motion.div
@@ -37,12 +74,13 @@ export default function Hero() {
                     }}
                 />
 
-                {/* Grid pattern */}
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
+                {/* Grid pattern with scroll fade */}
+                <motion.div
+                    className="absolute inset-0"
                     style={{
                         backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.2) 1px, transparent 1px)`,
-                        backgroundSize: '80px 80px'
+                        backgroundSize: '80px 80px',
+                        opacity: gridOpacity
                     }}
                 />
 
@@ -51,14 +89,20 @@ export default function Hero() {
                     className="absolute top-[10%] right-[15%] w-[650px] h-[650px] rounded-full opacity-25 blur-3xl"
                     style={{
                         background: 'radial-gradient(circle, rgba(9, 85, 32, 0.15) 0%, transparent 70%)',
-                        y: useTransform(mouseY, [0, 1080], [0, 50])
+                        y: useTransform(
+                            [mouseY, floatingShape1Y],
+                            ([mouse, scroll]) => (mouse as number * 0.05) + (scroll as number)
+                        )
                     }}
                 />
                 <motion.div
                     className="absolute bottom-[20%] left-[10%] w-[550px] h-[550px] rounded-full opacity-20 blur-3xl"
                     style={{
                         background: 'radial-gradient(circle, rgba(0, 137, 41, 0.12) 0%, transparent 70%)',
-                        y: useTransform(mouseY, [0, 1080], [0, -30])
+                        y: useTransform(
+                            [mouseY, floatingShape2Y],
+                            ([mouse, scroll]) => (mouse as number * -0.03) + (scroll as number)
+                        )
                     }}
                 />
 
@@ -83,8 +127,11 @@ export default function Hero() {
                 />
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+            {/* Content with Parallax */}
+            <motion.div
+                className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12"
+                style={{ y: contentY }}
+            >
                 <div className="max-w-6xl space-y-8 md:space-y-10">
 
                     {/* Headline */}
@@ -144,7 +191,7 @@ export default function Hero() {
                     </motion.div>
 
                 </div>
-            </div>
+            </motion.div>
 
         </section>
     )

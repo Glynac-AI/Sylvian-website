@@ -3,14 +3,24 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
     return (
         <footer className="bg-[#E8EAE6] py-16 px-6 border-t border-gray-200 relative overflow-hidden">
 
-            {/* Subtle background decoration */}
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#095520]/[0.02] rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#008929]/[0.02] rounded-full blur-3xl" />
+            {/* Subtle Tree Background - Right Side */}
+            <div className="absolute right-0 bottom-0 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] pointer-events-none">
+                <Image
+                    src="/tree.png"
+                    alt=""
+                    fill
+                    className="object-contain object-bottom-right opacity-[0.04] translate-x-[10%]"
+                />
+            </div>
+
+            {/* Subtle gradient orbs - very minimal */}
+            <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#095520]/[0.015] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid md:grid-cols-4 gap-12 mb-12">

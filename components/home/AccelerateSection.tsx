@@ -3,6 +3,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export default function AccelerateSection() {
     const sectionRef = useRef(null)
@@ -11,228 +12,196 @@ export default function AccelerateSection() {
         offset: ["start end", "end start"]
     })
 
-    const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.95])
+    // Subtle parallax effects
+    const contentY = useTransform(scrollYProgress, [0, 1], [50, -50])
+    const visualY = useTransform(scrollYProgress, [0, 1], [80, -80])
+    const logoOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.02, 0])
 
     return (
-        <section ref={sectionRef} className="relative py-32 px-6 bg-white overflow-hidden">
+        <section ref={sectionRef} className="relative py-32 md:py-40 px-6 bg-white overflow-hidden">
 
-            {/* Animated Background Elements */}
+            {/* Subtle Background Elements - Minimal & Elegant */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Large floating orbs */}
+
+                {/* Very Subtle Tree Logo Watermark */}
                 <motion.div
-                    className="absolute top-[10%] right-[5%] w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[700px] md:h-[700px]"
                     style={{
-                        background: 'radial-gradient(circle, rgba(9, 85, 32, 0.3) 0%, transparent 70%)',
-                        y: y
+                        y: visualY,
+                        opacity: logoOpacity
                     }}
-                />
-                <motion.div
-                    className="absolute bottom-[10%] left-[5%] w-[500px] h-[500px] rounded-full blur-3xl opacity-15"
-                    style={{
-                        background: 'radial-gradient(circle, rgba(0, 137, 41, 0.25) 0%, transparent 70%)',
-                        y: useTransform(scrollYProgress, [0, 1], [-80, 80])
-                    }}
+                >
+                    <Image
+                        src="/logo.png"
+                        alt=""
+                        fill
+                        className="object-contain opacity-100 -translate-x-[20%]"
+                    />
+                </motion.div>
+
+                {/* Minimal gradient orb - right side */}
+                <div
+                    className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full opacity-[0.03] blur-3xl"
+                    style={{ background: 'radial-gradient(circle, rgba(9, 85, 32, 1) 0%, transparent 70%)' }}
                 />
 
-                {/* Animated lines */}
-                <svg className="absolute inset-0 w-full h-full opacity-[0.03]">
-                    <motion.path
-                        d="M0,200 Q400,100 800,200 T1600,200"
-                        fill="none"
-                        stroke="rgba(9, 85, 32, 0.5)"
-                        strokeWidth="2"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
-                        viewport={{ once: true }}
-                    />
-                    <motion.path
-                        d="M0,400 Q400,300 800,400 T1600,400"
-                        fill="none"
-                        stroke="rgba(0, 137, 41, 0.5)"
-                        strokeWidth="2"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        transition={{ duration: 2.5, delay: 0.2, ease: "easeInOut" }}
-                        viewport={{ once: true }}
-                    />
-                </svg>
-
-                {/* Geometric shapes */}
-               
-                <motion.div
-                    className="absolute bottom-[30%] right-[15%] w-24 h-24 border-2 border-[#008929]/10"
-                    style={{ borderRadius: '30%' }}
-                    animate={{
-                        rotate: [360, 0],
-                        scale: [1, 1.15, 1]
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "linear"
+                {/* Grid pattern - very subtle */}
+                <div
+                    className="absolute inset-0 opacity-[0.015]"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`,
+                        backgroundSize: '80px 80px'
                     }}
                 />
             </div>
 
-            <motion.div
-                className="max-w-7xl mx-auto relative z-10"
-                style={{ opacity, scale }}
-            >
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* Left: Content */}
                     <motion.div
-                        className="space-y-8"
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        className="space-y-8 lg:space-y-10"
+                        style={{ y: contentY }}
                     >
+                        <motion.h2
+                            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-[1.1] tracking-[-0.02em] text-[#095520]"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            Accelerate capital deployment with a standardized framework
+                        </motion.h2>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-[-0.02em]">
-                            <span className="text-[#095520]">Accelerate capital</span>
-                            <br />
-                            <span className="text-[#095520]">deployment with a</span>
-                            <br />
-                            <span className="text-[#095520]">standardized framework</span>
-                        </h2>
-
-                        <div className="space-y-4 text-lg text-[#095520]/70 font-light leading-relaxed">
-                            <p>
+                        <motion.div
+                            className="space-y-6 text-base md:text-lg font-light leading-relaxed"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            <p className="text-[#095520]/75">
                                 RIAs face long approval cycles for unfamiliar investment products. Sylvan structures every investment around existing income-producing real estate held in ring-fenced SPVs with predefined assets and cash flows.
                             </p>
                             <p className="text-[#095520]/60">
                                 Approve our framework once, then deploy capital into multiple assets without analyzing a new structure every time.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <motion.button
-                            onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, margin: "-100px" }}
                         >
-                            <span className="relative z-10 flex items-center gap-3">
-                                View Current Listings
-                                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#008929] via-[#095520] to-[#008929] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient" style={{ backgroundSize: '200% auto' }} />
-                        </motion.button>
+                            <button
+                                onClick={() => window.location.href = '/offerings'}
+                                className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-white rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            >
+                                <span className="relative z-10 flex items-center gap-3">
+                                    View Current Listings
+                                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#008929] via-[#095520] to-[#008929] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundSize: '200% auto' }} />
+                            </button>
+                        </motion.div>
                     </motion.div>
 
-                    {/* Right: Visual Element */}
+                    {/* Right: Clean Visual Element */}
                     <motion.div
                         className="relative"
-                        initial={{ opacity: 0, x: 60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        style={{ y: visualY }}
                     >
-                        <div className="relative aspect-square max-w-lg mx-auto">
-                            {/* Main card */}
-                            <motion.div
-                                className="relative h-full rounded-3xl bg-[#F3F4F1]/80 backdrop-blur-sm border border-[#095520]/10 shadow-2xl overflow-hidden p-8"
-                                whileHover={{ y: -10 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                {/* Subtle grid background */}
-                                <div className="absolute inset-0 opacity-[0.03]" style={{
-                                    backgroundImage: `radial-gradient(circle at 2px 2px, #095520 1px, transparent 0)`,
-                                    backgroundSize: '32px 32px'
-                                }} />
+                        <motion.div
+                            className="relative aspect-[4/5] max-w-md mx-auto"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            {/* Main elegant card */}
+                            <div className="relative h-full rounded-2xl bg-[#F3F4F1] border border-[#095520]/5 shadow-xl overflow-hidden">
 
-                                {/* Content */}
-                                <div className="relative z-10 h-full flex flex-col justify-between">
+                                {/* Subtle top accent */}
+                                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#095520]/20 to-transparent" />
 
-                                    {/* Top: Stats */}
+                                <div className="relative h-full p-8 md:p-10 flex flex-col justify-between">
+
+                                    {/* Header */}
                                     <div className="space-y-6">
-                                        <div className="flex items-center justify-between">
-                                            <div className="text-xs uppercase tracking-[0.2em] text-[#095520]/40 font-semibold">
-                                                Framework Overview
+                                        <div className="flex items-start justify-between">
+                                            <div>
+                                                <div className="text-[10px] uppercase tracking-[0.2em] text-[#095520]/40 font-semibold mb-2">
+                                                    Framework
+                                                </div>
+                                                <div className="text-2xl font-medium text-[#095520]">
+                                                    Standardized Structure
+                                                </div>
                                             </div>
-                                            <div className="w-10 h-10 rounded-full bg-[#095520]/5 flex items-center justify-center">
-                                                <svg className="w-5 h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            <div className="w-12 h-12 rounded-full bg-[#095520]/5 flex items-center justify-center">
+                                                <svg className="w-6 h-6 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                 </svg>
                                             </div>
                                         </div>
 
-                                        {/* Animated progress bars */}
-                                        {[
-                                            { label: 'Approval Speed', value: 95, delay: 0 },
-                                            { label: 'Structure Consistency', value: 100, delay: 0.2 },
-                                            { label: 'Deployment Efficiency', value: 90, delay: 0.4 }
-                                        ].map((item, i) => (
-                                            <div key={i} className="space-y-2">
-                                                <div className="flex justify-between text-sm">
-                                                    <span className="text-[#095520]/60 font-medium">{item.label}</span>
-                                                    <span className="text-[#095520] font-bold">{item.value}%</span>
-                                                </div>
-                                                <div className="h-2 bg-[#095520]/5 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        className="h-full bg-gradient-to-r from-[#095520] to-[#008929] rounded-full"
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: `${item.value}%` }}
-                                                        transition={{ duration: 1.5, delay: item.delay, ease: "easeOut" }}
-                                                        viewport={{ once: true }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        ))}
+                                        {/* Clean stacked metrics */}
+                                        <div className="space-y-6 pt-4">
+                                            {[
+                                                { label: 'One-Time Approval', value: '1×', color: 'from-[#095520] to-[#008929]' },
+                                                { label: 'Deployment Speed', value: '10×', color: 'from-[#008929] to-[#095520]' },
+                                                { label: 'Assets Available', value: 'Multiple', color: 'from-[#095520] to-[#095520]/70' }
+                                            ].map((metric, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="space-y-2"
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{ duration: 0.6, delay: 0.6 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                                                    viewport={{ once: true }}
+                                                >
+                                                    <div className="flex items-end justify-between">
+                                                        <span className="text-sm text-[#095520]/60">{metric.label}</span>
+                                                        <span className="text-xl font-semibold text-[#095520]">{metric.value}</span>
+                                                    </div>
+                                                    <div className="h-[2px] bg-gradient-to-r opacity-20" style={{
+                                                        backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
+                                                        '--tw-gradient-from': '#095520',
+                                                        '--tw-gradient-to': '#008929'
+                                                    } as any} />
+                                                </motion.div>
+                                            ))}
+                                        </div>
                                     </div>
 
-                                    {/* Bottom: Features */}
-                                    <div className="grid grid-cols-2 gap-4">
-                                        {[
-                                            { icon: '🔒', label: 'Ring-Fenced' },
-                                            { icon: '⚡', label: 'Pre-Approved' },
-                                            { icon: '📊', label: 'Standardized' },
-                                            { icon: '✓', label: 'Repeatable' }
-                                        ].map((feature, i) => (
+                                    {/* Bottom features - minimal pills */}
+                                    <div className="pt-8 space-y-3">
+                                        {['Ring-Fenced SPVs', 'Pre-Approved Structure', 'Repeatable Process'].map((feature, i) => (
                                             <motion.div
                                                 key={i}
-                                                className="flex items-center gap-3 p-4 rounded-xl bg-[#095520]/5 border border-[#095520]/10"
-                                                initial={{ opacity: 0, y: 20 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.5, delay: 0.6 + (i * 0.1) }}
+                                                className="flex items-center gap-2 text-sm"
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.5, delay: 1 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
                                                 viewport={{ once: true }}
-                                                whileHover={{ scale: 1.05, backgroundColor: 'rgba(9, 85, 32, 0.08)' }}
                                             >
-                                                <span className="text-2xl">{feature.icon}</span>
-                                                <span className="text-xs font-semibold text-[#095520]">{feature.label}</span>
+                                                <div className="w-1.5 h-1.5 rounded-full bg-[#095520]" />
+                                                <span className="text-[#095520]/70">{feature}</span>
                                             </motion.div>
                                         ))}
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
 
-                            {/* Floating accent elements */}
-                            <motion.div
-                                className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-gradient-to-br from-[#095520]/20 to-transparent blur-2xl"
-                                animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.5, 0.8, 0.5]
-                                }}
-                                transition={{ duration: 4, repeat: Infinity }}
-                            />
-                            <motion.div
-                                className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-gradient-to-tr from-[#008929]/20 to-transparent blur-2xl"
-                                animate={{
-                                    scale: [1.2, 1, 1.2],
-                                    opacity: [0.8, 0.5, 0.8]
-                                }}
-                                transition={{ duration: 5, repeat: Infinity }}
-                            />
-                        </div>
+                            {/* Subtle shadow accent */}
+                            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-[#095520]/5 -z-10" />
+                        </motion.div>
                     </motion.div>
 
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }
