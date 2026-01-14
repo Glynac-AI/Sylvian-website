@@ -11,7 +11,7 @@ export default function Navigation() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
 
     const navLinks = [
-        { label: 'Why Sylvian', href: '/' },
+        { label: 'Why Sylvan', href: '/' },
         { label: 'Strategy', href: '/how-it-works' },
         { label: 'Resources', href: '/library' },
         { label: 'Contact Us', href: '/faq' }
