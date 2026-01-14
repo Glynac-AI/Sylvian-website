@@ -28,20 +28,14 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
-                            <motion.img
+                            <img
                                 src="/logo.png"
                                 alt="Sylvan Logo"
                                 className="h-10 w-10"
-                                whileHover={{ scale: 1.05, rotate: 5 }}
-                                transition={{ duration: 0.3 }}
                             />
-                            <motion.div
-                                className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none"
-                                whileHover={{ letterSpacing: '0.35em' }}
-                                transition={{ duration: 0.3 }}
-                            >
+                            <div className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none">
                                 S Y L V A N
-                            </motion.div>
+                            </div>
                         </Link>
                         <p className="text-[#013220]/60 max-w-md leading-relaxed font-light mb-6">
                             Structured real estate exposure simplified for RIAs through pre-approved, ring-fenced SPVs with lockbox-governed rental cash distributions.

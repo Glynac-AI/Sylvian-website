@@ -19,14 +19,20 @@ export default function Navigation() {
 
     return (
         <motion.nav 
-            className="w-full py-6 px-4 md:px-12 flex justify-between items-center sticky top-0 bg-[#F3F4F1]/90 backdrop-blur-md z-50 border-b border-gray-200"
+            className="w-full py-6 px-4 md:px-12 flex justify-between items-center sticky top-0 bg-[#F3F4F1]/95 backdrop-blur-lg z-50 border-b border-gray-200 shadow-sm"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-                <img src="/logo.png" alt="Sylvan Logo" className="h-8 w-8 md:h-10 md:w-10" />
+            <Link href="/" className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded-md">
+                <motion.img 
+                    src="/logo.png" 
+                    alt="Sylvan Logo" 
+                    className="h-8 w-8 md:h-10 md:w-10"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                />
                 <motion.div
                     className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none"
                     whileHover={{ opacity: 0.7 }}
@@ -38,29 +44,32 @@ export default function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 text-sm font-normal">
-                {navLinks.map((link) => (
-                    <Link 
-                        key={link.href}
-                        href={link.href}
-                        onMouseEnter={() => setHoveredLink(link.href)}
-                        onMouseLeave={() => setHoveredLink(null)}
-                        className="relative"
-                    >
-                        <motion.span
-                            className="text-[#013220]"
-                            whileHover={{ color: '#095520' }}
-                            transition={{ duration: 0.3 }}
+                {navLinks.map((link) => {
+                    const isActive = pathname === link.href
+                    return (
+                        <Link 
+                            key={link.href}
+                            href={link.href}
+                            onMouseEnter={() => setHoveredLink(link.href)}
+                            onMouseLeave={() => setHoveredLink(null)}
+                            className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded px-2 py-1"
                         >
-                            {link.label}
-                        </motion.span>
-                        <motion.span
-                            className="absolute -bottom-1 left-0 h-[2px] bg-[#095520]"
-                            initial={{ width: 0 }}
-                            animate={{ width: hoveredLink === link.href ? '100%' : 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
-                        />
-                    </Link>
-                ))}
+                            <motion.span
+                                className={isActive ? "text-[#095520] font-medium" : "text-[#013220]"}
+                                whileHover={{ color: '#095520' }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {link.label}
+                            </motion.span>
+                            <motion.span
+                                className="absolute -bottom-1 left-0 h-[2px] bg-[#095520]"
+                                initial={{ width: isActive ? '100%' : 0 }}
+                                animate={{ width: hoveredLink === link.href || isActive ? '100%' : 0 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                            />
+                        </Link>
+                    )
+                })}
             </div>
 
             {/* Right Side Actions */}
@@ -69,7 +78,7 @@ export default function Navigation() {
                     href="/login"
                     onMouseEnter={() => setHoveredLink('login')}
                     onMouseLeave={() => setHoveredLink(null)}
-                    className="relative text-sm"
+                    className="relative text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded px-2 py-1"
                 >
                     <motion.span
                         className="text-[#013220]"
@@ -86,14 +95,15 @@ export default function Navigation() {
                     />
                 </Link>
 
-                <Link href="/offerings">
+                <Link href="/offerings" className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded-full">
                     <motion.div
-                        className="relative border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide bg-transparent text-[#013220] overflow-hidden"
+                        className="relative border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide bg-transparent text-[#013220] overflow-hidden shadow-sm"
                         whileHover={{
                             scale: 1.05,
                             backgroundColor: '#095520',
                             borderColor: '#095520',
-                            color: '#ffffff'
+                            color: '#ffffff',
+                            boxShadow: '0 4px 12px rgba(9, 85, 32, 0.2)'
                         }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.3 }}
@@ -106,8 +116,8 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <motion.button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden text-[#013220]"
-                whileHover={{ color: '#095520' }}
+                className="md:hidden text-[#013220] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded p-1"
+                whileHover={{ color: '#095520', scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
                 aria-label="Toggle menu"
@@ -132,47 +142,53 @@ export default function Navigation() {
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="absolute top-full left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 md:hidden"
+                        className="absolute top-full left-0 right-0 bg-[#F3F4F1]/98 backdrop-blur-lg border-b border-gray-200 md:hidden shadow-lg"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                         <div className="flex flex-col py-4 px-4 space-y-4">
-                            {navLinks.map((link, index) => (
-                                <motion.div
-                                    key={link.href}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1, duration: 0.3 }}
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setMobileOpen(false)}
+                            {navLinks.map((link, index) => {
+                                const isActive = pathname === link.href
+                                return (
+                                    <motion.div
+                                        key={link.href}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.08, duration: 0.3 }}
                                     >
-                                        <motion.div
-                                            className="text-[#013220] py-2"
-                                            whileHover={{ 
-                                                color: '#095520',
-                                                x: 8
-                                            }}
-                                            transition={{ duration: 0.2 }}
+                                        <Link
+                                            href={link.href}
+                                            onClick={() => setMobileOpen(false)}
+                                            className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded px-2"
                                         >
-                                            {link.label}
-                                        </motion.div>
-                                    </Link>
-                                </motion.div>
-                            ))}
+                                            <motion.div
+                                                className={`py-2 ${isActive ? 'text-[#095520] font-medium' : 'text-[#013220]'}`}
+                                                whileHover={{ 
+                                                    color: '#095520',
+                                                    x: 8
+                                                }}
+                                                whileTap={{ scale: 0.98 }}
+                                                transition={{ duration: 0.2 }}
+                                            >
+                                                {link.label}
+                                            </motion.div>
+                                        </Link>
+                                    </motion.div>
+                                )
+                            })}
 
                             <motion.div 
                                 className="border-t border-gray-200 pt-4 space-y-4"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ delay: 0.4, duration: 0.3 }}
+                                transition={{ delay: 0.35, duration: 0.3 }}
                             >
                                 <Link
                                     href="/login"
                                     onClick={() => setMobileOpen(false)}
+                                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded px-2"
                                 >
                                     <motion.div
                                         className="block text-[#013220] py-2"
@@ -180,6 +196,7 @@ export default function Navigation() {
                                             color: '#095520',
                                             x: 8
                                         }}
+                                        whileTap={{ scale: 0.98 }}
                                         transition={{ duration: 0.2 }}
                                     >
                                         Log in
@@ -189,12 +206,15 @@ export default function Navigation() {
                                 <Link
                                     href="/offerings"
                                     onClick={() => setMobileOpen(false)}
+                                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#095520] focus-visible:ring-offset-2 rounded-full"
                                 >
                                     <motion.div
-                                        className="text-center border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide text-[#013220]"
+                                        className="text-center border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide text-[#013220] shadow-sm"
                                         whileHover={{ 
-                                            backgroundColor: '#013220',
-                                            color: '#f0d597'
+                                            backgroundColor: '#095520',
+                                            borderColor: '#095520',
+                                            color: '#ffffff',
+                                            boxShadow: '0 4px 12px rgba(9, 85, 32, 0.2)'
                                         }}
                                         whileTap={{ scale: 0.95 }}
                                         transition={{ duration: 0.3 }}
