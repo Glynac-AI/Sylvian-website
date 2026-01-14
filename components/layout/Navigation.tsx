@@ -11,7 +11,7 @@ export default function Navigation() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
 
     const navLinks = [
-        { label: 'Why Sylvan', href: '/' },
+        { label: 'Why Sylvian', href: '/' },
         { label: 'Strategy', href: '/how-it-works' },
         { label: 'Resources', href: '/library' },
         { label: 'Contact Us', href: '/faq' }
@@ -19,7 +19,7 @@ export default function Navigation() {
 
     return (
         <motion.nav 
-            className="w-full py-6 px-4 md:px-12 flex justify-between items-center sticky top-0 bg-[#F3F4F1]/95 backdrop-blur-lg z-50 border-b border-gray-200 shadow-sm"
+            className="w-full py-6 px-4 md:px-12 flex justify-between items-center sticky top-0 bg-[#F3F4F1]/95 z-50 border-b border-gray-200"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -142,7 +142,7 @@ export default function Navigation() {
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="absolute top-full left-0 right-0 bg-[#F3F4F1]/98 backdrop-blur-lg border-b border-gray-200 md:hidden shadow-lg"
+                        className="absolute top-full left-0 right-0 bg-[#F3F4F1]/98 border-b border-gray-200 md:hidden"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
