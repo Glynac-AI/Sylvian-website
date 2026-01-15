@@ -36,7 +36,7 @@ export default function Footer() {
                                 className="h-10 w-10"
                             />
                             <div className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none">
-                                S Y L V A N
+                                SYLVAN
                             </div>
                         </Link>
                         <p className="text-[#013220]/60 max-w-md leading-relaxed font-light mb-6">
