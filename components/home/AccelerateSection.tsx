@@ -170,7 +170,7 @@ export default function AccelerateSection() {
                                                         backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
                                                         '--tw-gradient-from': '#095520',
                                                         '--tw-gradient-to': '#008929'
-                                                    } as any} />
+                                                    } as React.CSSProperties} />
                                                 </motion.div>
                                             ))}
                                         </div>

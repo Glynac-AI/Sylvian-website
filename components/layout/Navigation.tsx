@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -26,7 +27,7 @@ export default function Navigation() {
         >
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-                <img src="/logo.png" alt="Sylvan Logo" className="h-8 w-8 md:h-10 md:w-10" />
+                <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-8 w-8 md:h-10 md:w-10" />
                 <motion.div
                     className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none"
                     whileHover={{ opacity: 0.7 }}

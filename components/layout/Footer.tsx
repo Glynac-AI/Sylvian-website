@@ -28,9 +28,11 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
-                            <img
+                            <Image
                                 src="/logo.png"
                                 alt="Sylvan Logo"
+                                width={40}
+                                height={40}
                                 className="h-10 w-10"
                             />
                             <div className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none">
