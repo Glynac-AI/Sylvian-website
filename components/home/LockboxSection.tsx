@@ -12,14 +12,12 @@ export default function LockboxSection() {
     return (
         <section ref={ref} className="py-32 px-6 bg-[#F8FAF9] relative overflow-hidden">
 
-            {/* Subtle background decoration */}
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#008929]/[0.03] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
 
-                    {/* Left Column - Visual/Placeholder */}
                     <motion.div
                         className="relative order-2 md:order-1"
                         initial={{ opacity: 0, x: -40 }}
@@ -49,7 +47,6 @@ export default function LockboxSection() {
                         </div>
                     </motion.div>
 
-                    {/* Right Column - Text Content */}
                     <motion.div
                         className="space-y-6 order-1 md:order-2"
                         initial={{ opacity: 0, x: 40 }}
@@ -59,17 +56,19 @@ export default function LockboxSection() {
                         <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-medium">
                             Lockbox protected cash flows by design
                         </h2>
-                        <div className="space-y-4 leading-relaxed">
-                            <p className="text-[#095520]/75 font-light">
+                        {/* BLACK TEXT & INCREASED SIZE (Change 2 & 4) */}
+                        <div className="space-y-4 leading-relaxed text-lg">
+                            <p className="text-black font-light">
                                 With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.
                             </p>
-                            <p className="text-[#095520]/60 font-light">
+                            <p className="text-black font-light">
                                 You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.
                             </p>
                         </div>
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            // YELLOW TEXT (Change 3)
+                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 View Current Listings

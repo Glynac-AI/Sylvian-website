@@ -12,14 +12,12 @@ export default function RentalYieldsSection() {
     return (
         <section ref={ref} className="py-32 px-6 bg-white relative overflow-hidden">
 
-            {/* Subtle background decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#008929]/[0.03] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
 
-                    {/* Left Column - Text Content */}
                     <motion.div
                         className="space-y-6"
                         initial={{ opacity: 0, x: -40 }}
@@ -29,17 +27,19 @@ export default function RentalYieldsSection() {
                         <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-medium">
                             Access established rental yields without ownership risk
                         </h2>
-                        <div className="space-y-4 leading-relaxed">
-                            <p className="text-[#095520]/75 font-light">
+                        {/* BLACK TEXT & INCREASED SIZE (Change 2 & 4) */}
+                        <div className="space-y-4 leading-relaxed text-lg">
+                            <p className="text-black font-light">
                                 RIAs can bypass the volatility of developer equity by participating in standardized debt issuance on existing properties. You are buying into proven rental yields rather than betting on the operational success of a developer.
                             </p>
-                            <p className="text-[#095520]/60 font-light">
+                            <p className="text-black font-light">
                                 You get direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
                             </p>
                         </div>
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            // YELLOW TEXT (Change 3)
+                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 View Current Listings
@@ -51,7 +51,6 @@ export default function RentalYieldsSection() {
                         </button>
                     </motion.div>
 
-                    {/* Right Column - Visual/Placeholder */}
                     <motion.div
                         className="relative"
                         initial={{ opacity: 0, x: 40 }}

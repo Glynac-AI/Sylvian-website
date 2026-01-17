@@ -29,7 +29,8 @@ export default function Navigation() {
             <Link href="/" className="flex items-center gap-3">
                 <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-8 w-8 md:h-10 md:w-10" />
                 <motion.div
-                    className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none"
+                    // INCREASED TRACKING (Change 8)
+                    className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
                     whileHover={{ opacity: 0.7 }}
                     transition={{ duration: 0.2 }}
                 >

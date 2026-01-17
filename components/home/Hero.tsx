@@ -140,10 +140,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] text-[#095520]">
+                        {/* REDUCED FONT SIZE BY ~40% (Change 1) */}
+                        <span className="block text-[1.5rem] sm:text-[1.8rem] md:text-[2.25rem] lg:text-[2.7rem] xl:text-[3rem] font-medium leading-[1] tracking-[-0.03em] text-[#095520]">
                             Structured real estate exposure
                         </span>
-                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] mt-3 text-[#8C9196]">
+                        <span className="block text-[1.5rem] sm:text-[1.8rem] md:text-[2.25rem] lg:text-[2.7rem] xl:text-[3rem] font-medium leading-[1] tracking-[-0.03em] mt-3 text-[#8C9196]">
                             Simplified for RIAs
                         </span>
                     </motion.h1>
@@ -155,10 +156,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <p className="text-base md:text-lg lg:text-xl leading-[1.65] text-[#095520]/75 font-light">
+                        {/* CHANGED TEXT COLOR TO BLACK (Change 2) & INCREASED SIZE (Change 4) */}
+                        <p className="text-lg md:text-xl lg:text-2xl leading-[1.65] text-black font-light">
                             Sylvan delivers structured real estate exposure through pre-approved, ring-fenced SPVs with lockbox-governed rental cash distributions.
                         </p>
-                        <p className="text-sm md:text-base lg:text-lg leading-[1.65] text-[#095520]/60 font-light">
+                        <p className="text-base md:text-lg lg:text-xl leading-[1.65] text-black font-light">
                             All of which provides RIAs a faster and more controlled path to real estate income.
                         </p>
                     </motion.div>
@@ -171,7 +173,8 @@ export default function Hero() {
                     >
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-white rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            // CHANGED TEXT COLOR TO YELLOW-400 (Change 3)
+                            className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 View Current Listings

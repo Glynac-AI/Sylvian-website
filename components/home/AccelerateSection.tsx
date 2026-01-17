@@ -64,26 +64,27 @@ export default function AccelerateSection() {
                         style={{ y: contentY }}
                     >
                         <motion.h2
-                            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-[1.1] tracking-[-0.02em] text-[#095520]"
+                            // UPDATED: Significantly reduced font size to ensure 2 lines max
+                            className="text-3xl md:text-4xl font-medium leading-[1.2] tracking-[-0.02em] text-[#095520]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            Accelerate capital deployment with a standardized framework
+                            Accelerate capital deployment<br className="hidden md:block" /> with a standardized framework
                         </motion.h2>
 
                         <motion.div
-                            className="space-y-6 text-base md:text-lg font-light leading-relaxed"
+                            className="space-y-6 text-lg md:text-xl font-light leading-relaxed"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            <p className="text-[#095520]/75">
+                            <p className="text-black">
                                 RIAs face long approval cycles for unfamiliar investment products. Sylvan structures every investment around existing income-producing real estate held in ring-fenced SPVs with predefined assets and cash flows.
                             </p>
-                            <p className="text-[#095520]/60">
+                            <p className="text-black">
                                 Approve our framework once, then deploy capital into multiple assets without analyzing a new structure every time.
                             </p>
                         </motion.div>
@@ -96,7 +97,7 @@ export default function AccelerateSection() {
                         >
                             <button
                                 onClick={() => window.location.href = '/offerings'}
-                                className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-white rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                                className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                             >
                                 <span className="relative z-10 flex items-center gap-3">
                                     View Current Listings
