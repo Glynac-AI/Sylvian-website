@@ -11,25 +11,15 @@ export default function LockboxSection() {
 
     return (
         <section ref={ref} className="py-32 px-6 bg-[#F8FAF9] relative overflow-hidden">
-
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#008929]/[0.03] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
-
-                    <motion.div
-                        className="relative order-2 md:order-1"
-                        initial={{ opacity: 0, x: -40 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    >
+                    <motion.div className="relative order-2 md:order-1" initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
                         <div className="relative aspect-square max-w-md mx-auto">
                             <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#095520]/10 shadow-2xl overflow-hidden">
-                                <div className="absolute inset-0 opacity-[0.03]" style={{
-                                    backgroundImage: `radial-gradient(circle at 2px 2px, #095520 1px, transparent 0)`,
-                                    backgroundSize: '32px 32px'
-                                }} />
+                                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #095520 1px, transparent 0)`, backgroundSize: '32px 32px' }} />
                                 <div className="relative h-full flex items-center justify-center p-12">
                                     <div className="text-center space-y-4">
                                         <div className="w-16 h-16 mx-auto rounded-full bg-[#095520]/5 flex items-center justify-center mb-6">
@@ -47,32 +37,24 @@ export default function LockboxSection() {
                         </div>
                     </motion.div>
 
-                    <motion.div
-                        className="space-y-6 order-1 md:order-2"
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-medium">
+                    <motion.div className="space-y-6 order-1 md:order-2" initial={{ opacity: 0, x: 40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>
+                        <h2 
+                            className="text-4xl md:text-5xl text-[#095520] leading-tight font-medium"
+                        >
                             Lockbox protected cash flows by design
                         </h2>
-                        {/* BLACK TEXT & INCREASED SIZE (Change 2 & 4) */}
                         <div className="space-y-4 leading-relaxed text-lg">
-                            <p className="text-black font-light">
-                                With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.
-                            </p>
-                            <p className="text-black font-light">
-                                You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.
-                            </p>
+                            <p className="text-black font-light">With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.</p>
+                            <p className="text-black font-light">You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.</p>
                         </div>
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            // YELLOW TEXT (Change 3)
-                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            // UPDATED: Reduced size (px-6/8 py-3/4) compared to Hero (px-8/10 py-4/5)
+                            className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 View Current Listings
-                                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>

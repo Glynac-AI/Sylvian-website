@@ -1,3 +1,4 @@
+// components/layout/Navigation.tsx
 'use client'
 
 import Link from 'next/link'
@@ -29,7 +30,6 @@ export default function Navigation() {
             <Link href="/" className="flex items-center gap-3">
                 <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-8 w-8 md:h-10 md:w-10" />
                 <motion.div
-                    // INCREASED TRACKING (Change 8)
                     className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
                     whileHover={{ opacity: 0.7 }}
                     transition={{ duration: 0.2 }}
@@ -95,7 +95,8 @@ export default function Navigation() {
                             scale: 1.05,
                             backgroundColor: '#095520',
                             borderColor: '#095520',
-                            color: '#ffffff'
+                            // UPDATE (2): Changed hover text color to yellow (#facc15) instead of white
+                            color: '#facc15'
                         }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.3 }}
@@ -148,16 +149,10 @@ export default function Navigation() {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: index * 0.1, duration: 0.3 }}
                                 >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setMobileOpen(false)}
-                                    >
+                                    <Link href={link.href} onClick={() => setMobileOpen(false)}>
                                         <motion.div
                                             className="text-[#013220] py-2"
-                                            whileHover={{ 
-                                                color: '#095520',
-                                                x: 8
-                                            }}
+                                            whileHover={{ color: '#095520', x: 8 }}
                                             transition={{ duration: 0.2 }}
                                         >
                                             {link.label}
@@ -172,32 +167,21 @@ export default function Navigation() {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.3 }}
                             >
-                                <Link
-                                    href="/login"
-                                    onClick={() => setMobileOpen(false)}
-                                >
+                                <Link href="/login" onClick={() => setMobileOpen(false)}>
                                     <motion.div
                                         className="block text-[#013220] py-2"
-                                        whileHover={{ 
-                                            color: '#095520',
-                                            x: 8
-                                        }}
+                                        whileHover={{ color: '#095520', x: 8 }}
                                         transition={{ duration: 0.2 }}
                                     >
                                         Log in
                                     </motion.div>
                                 </Link>
 
-                                <Link
-                                    href="/offerings"
-                                    onClick={() => setMobileOpen(false)}
-                                >
+                                <Link href="/offerings" onClick={() => setMobileOpen(false)}>
                                     <motion.div
                                         className="text-center border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide text-[#013220]"
-                                        whileHover={{ 
-                                            backgroundColor: '#013220',
-                                            color: '#f0d597'
-                                        }}
+                                        // UPDATE (2): Applied same hover change for mobile menu
+                                        whileHover={{ backgroundColor: '#013220', color: '#facc15' }}
                                         whileTap={{ scale: 0.95 }}
                                         transition={{ duration: 0.3 }}
                                     >
