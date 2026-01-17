@@ -15,8 +15,16 @@ export default function LockboxSection() {
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#008929]/[0.03] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                    <motion.div className="relative order-2 md:order-1" initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+                {/* MODIFICATION: Updated to grid-cols-12 with gap-12 to match AccelerateSection layout structure */}
+                <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+                    
+                    <motion.div 
+                        /* MODIFICATION: Set to 5 cols (Image Side) to maintain consistent card size */
+                        className="lg:col-span-5 relative order-2 lg:order-1" 
+                        initial={{ opacity: 0, x: -40 }} 
+                        animate={isInView ? { opacity: 1, x: 0 } : {}} 
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="relative aspect-square max-w-md mx-auto">
                             <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#095520]/10 shadow-2xl overflow-hidden">
                                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #095520 1px, transparent 0)`, backgroundSize: '32px 32px' }} />
@@ -37,19 +45,28 @@ export default function LockboxSection() {
                         </div>
                     </motion.div>
 
-                    <motion.div className="space-y-6 order-1 md:order-2" initial={{ opacity: 0, x: 40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>
+                    <motion.div 
+                        /* MODIFICATION: Set to 7 cols (Text Side) */
+                        className="lg:col-span-7 space-y-8 order-1 lg:order-2 lg:pl-12" 
+                        initial={{ opacity: 0, x: 40 }} 
+                        animate={isInView ? { opacity: 1, x: 0 } : {}} 
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <h2 
-                            className="text-4xl md:text-5xl text-[#095520] leading-tight font-medium"
+                            /* MODIFICATION: Applied exact same font size classes as AccelerateSection */
+                            className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]"
                         >
                             Lockbox protected cash flows by design
                         </h2>
-                        <div className="space-y-4 leading-relaxed text-lg">
-                            <p className="text-black font-light">With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.</p>
-                            <p className="text-black font-light">You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.</p>
+                        <div 
+                            /* MODIFICATION: Applied max-w-xl and text-base/text-lg to match AccelerateSection */
+                            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-xl"
+                        >
+                            <p className="text-black">With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.</p>
+                            <p className="text-black">You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.</p>
                         </div>
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            // UPDATED: Reduced size (px-6/8 py-3/4) compared to Hero (px-8/10 py-4/5)
                             className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                         >
                             <span className="relative z-10 flex items-center gap-3">

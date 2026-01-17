@@ -33,21 +33,24 @@ export default function AccelerateSection() {
                 <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
 
                     <motion.div 
-                        className="lg:col-span-7 space-y-8 lg:space-y-10" 
+                        className="lg:col-span-7 space-y-8" 
                         style={{ y: contentY }}
                     >
                         <motion.h2
-                            className="text-4xl md:text-5xl font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]"
+                            className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            Accelerate capital deployment<br className="hidden md:block" /> with a standardized framework
+                            Accelerate capital deployment with <br className="hidden lg:block" /> a standardized framework
                         </motion.h2>
 
                         <motion.div
-                            className="space-y-6 text-lg md:text-xl font-light leading-relaxed"
+                            /* MODIFICATION: Added max-w-xl here. 
+                               This constrains the width of the paragraphs to align with the red line 
+                               you indicated, without changing the card size or layout columns. */
+                            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-xl"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -69,7 +72,6 @@ export default function AccelerateSection() {
                         >
                             <button
                                 onClick={() => window.location.href = '/offerings'}
-                                // UPDATED: Reduced size (px-6/8 py-3/4) compared to Hero (px-8/10 py-4/5)
                                 className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
                             >
                                 <span className="relative z-10 flex items-center gap-3">
