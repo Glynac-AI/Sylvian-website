@@ -42,8 +42,6 @@ export default function Hero() {
 
             {/* Background Layers */}
             <div className="absolute inset-0 pointer-events-none">
-
-                {/* Large Sylvan Tree Logo - Right Side Background with Scroll Parallax */}
                 <motion.div
                     className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[850px] md:h-[850px] lg:w-[1000px] lg:h-[1000px]"
                     style={{
@@ -54,16 +52,9 @@ export default function Hero() {
                         opacity: logoOpacity
                     }}
                 >
-                    <Image
-                        src="/logo.png"
-                        alt=""
-                        fill
-                        className="object-contain opacity-100 translate-x-[20%]"
-                        priority
-                    />
+                    <Image src="/logo.png" alt="" fill className="object-contain opacity-100 translate-x-[20%]" priority />
                 </motion.div>
 
-                {/* Mouse-tracking gradient */}
                 <motion.div
                     className="absolute inset-0 opacity-40"
                     style={{
@@ -74,7 +65,6 @@ export default function Hero() {
                     }}
                 />
 
-                {/* Grid pattern with scroll fade */}
                 <motion.div
                     className="absolute inset-0"
                     style={{
@@ -84,7 +74,6 @@ export default function Hero() {
                     }}
                 />
 
-                {/* Floating shapes with parallax */}
                 <motion.div
                     className="absolute top-[10%] right-[15%] w-[650px] h-[650px] rounded-full opacity-25 blur-3xl"
                     style={{
@@ -106,7 +95,6 @@ export default function Hero() {
                     }}
                 />
 
-                {/* Topographic SVG lines */}
                 <svg className="absolute inset-0 w-full h-full opacity-[0.02]">
                     <defs>
                         <pattern id="topo" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
@@ -118,7 +106,6 @@ export default function Hero() {
                     <rect width="100%" height="100%" fill="url(#topo)" />
                 </svg>
 
-                {/* Noise texture */}
                 <div
                     className="absolute inset-0 opacity-[0.02] mix-blend-overlay"
                     style={{
@@ -140,10 +127,11 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] text-[#095520]">
+                        {/* UPDATE (1): Increased font size slightly to make the quote "bigger" as requested */}
+                        <span className="block text-[1.8rem] sm:text-[2.2rem] md:text-[2.6rem] lg:text-[3.2rem] xl:text-[3.8rem] font-medium leading-[1] tracking-[-0.03em] text-[#095520]">
                             Structured real estate exposure
                         </span>
-                        <span className="block text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] font-medium leading-[1] tracking-[-0.03em] mt-3 text-[#8C9196]">
+                        <span className="block text-[1.8rem] sm:text-[2.2rem] md:text-[2.6rem] lg:text-[3.2rem] xl:text-[3.8rem] font-medium leading-[1] tracking-[-0.03em] mt-3 text-[#8C9196]">
                             Simplified for RIAs
                         </span>
                     </motion.h1>
@@ -155,10 +143,10 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <p className="text-base md:text-lg lg:text-xl leading-[1.65] text-[#095520]/75 font-light">
+                        <p className="text-lg md:text-xl lg:text-2xl leading-[1.65] text-black font-light">
                             Sylvan delivers structured real estate exposure through pre-approved, ring-fenced SPVs with lockbox-governed rental cash distributions.
                         </p>
-                        <p className="text-sm md:text-base lg:text-lg leading-[1.65] text-[#095520]/60 font-light">
+                        <p className="text-base md:text-lg lg:text-xl leading-[1.65] text-black font-light">
                             All of which provides RIAs a faster and more controlled path to real estate income.
                         </p>
                     </motion.div>
@@ -171,9 +159,9 @@ export default function Hero() {
                     >
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-white rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            className="group relative inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.1em] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100"
                         >
-                            <span className="relative z-10 flex items-center gap-3">
+                            <span className="flex items-center gap-3">
                                 View Current Listings
                                 <svg
                                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -185,8 +173,6 @@ export default function Hero() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>
-
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#008929] via-[#095520] to-[#008929] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient" style={{ backgroundSize: '200% auto' }} />
                         </button>
                     </motion.div>
 

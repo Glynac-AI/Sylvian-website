@@ -23,23 +23,24 @@ export default function Footer() {
             <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#095520]/[0.015] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
+                {/* Changed grid-cols-4 to grid-cols-3 since we removed one column */}
+                <div className="grid md:grid-cols-3 gap-12 mb-12">
 
                     {/* Brand Column */}
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
-                            <img
+                            <Image
                                 src="/logo.png"
                                 alt="Sylvan Logo"
+                                width={40}
+                                height={40}
                                 className="h-10 w-10"
                             />
-                            <div className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none">
-                                S Y L V A N
+                            <div className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none">
+                                SYLVAN
                             </div>
                         </Link>
-                        <p className="text-[#013220]/60 max-w-md leading-relaxed font-light mb-6">
-                            Structured real estate exposure simplified for RIAs through pre-approved, ring-fenced SPVs with lockbox-governed rental cash distributions.
-                        </p>
+                        
                         <div className="flex gap-4">
                             {/* Social Icons */}
                             <motion.a
@@ -102,35 +103,6 @@ export default function Footer() {
                             ))}
                         </ul>
                     </div>
-
-                    {/* Resources */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4 tracking-wide text-[#013220]">Resources</h3>
-                        <ul className="space-y-3">
-                            {[
-                                { label: 'Offerings', href: '/offerings' },
-                                { label: 'Governance', href: '/governance' },
-                                { label: 'FAQ', href: '/faq' },
-                                { label: 'Log In', href: '/login' },
-                            ].map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-[#013220]/60 hover:text-[#013220] transition-colors duration-300 font-light inline-block"
-                                    >
-                                        <motion.span
-                                            whileHover={{ x: 4 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="inline-block"
-                                        >
-                                            {link.label}
-                                        </motion.span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
                 </div>
 
                 {/* Bottom Bar */}
