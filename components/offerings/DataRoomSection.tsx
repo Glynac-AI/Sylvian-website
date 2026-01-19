@@ -15,6 +15,12 @@ interface DocumentCategory {
     files: Document[]
 }
 
+interface ViewingDocument {
+    file: Document
+    index: number
+    category: string
+}
+
 interface DataRoomSectionProps {
     documents: DocumentCategory[]
     propertyTitle: string
@@ -23,7 +29,7 @@ interface DataRoomSectionProps {
 export default function DataRoomSection({ documents, propertyTitle }: DataRoomSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState(documents[0]?.category || '')
     const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
-    const [viewingDocument, setViewingDocument] = useState<{ file: Document; index: number; category: string } | null>(null)
+    const [viewingDocument, setViewingDocument] = useState<ViewingDocument | null>(null)
 
     const selectedDocs = documents.find(doc => doc.category === selectedCategory)
 
@@ -49,6 +55,10 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
     const formatDate = (dateString: string) => {
         const date = new Date(dateString)
         return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    }
+
+    const isDocumentViewing = (fileName: string, category: string) => {
+        return viewingDocument !== null && viewingDocument.file.name === fileName && viewingDocument.category === category
     }
 
     const getFileIcon = (fileName: string) => {
@@ -167,14 +177,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                 key={fileIndex}
                                                                 onClick={() => openDocument(file, fileIndex, docCategory.category)}
                                                                 className={`w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 group ${
-                                                                    viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                    isDocumentViewing(file.name, docCategory.category)
                                                                         ? 'bg-[#095520]/10'
                                                                         : 'hover:bg-white'
                                                                 }`}
                                                             >
                                                                 <div className="flex items-start gap-2">
                                                                     <div className={`flex-shrink-0 mt-0.5 transition-colors ${
-                                                                        viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                        isDocumentViewing(file.name, docCategory.category)
                                                                             ? 'text-[#095520]'
                                                                             : 'text-[#095520]/40 group-hover:text-[#095520]'
                                                                     }`}>
@@ -182,7 +192,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                     </div>
                                                                     <div className="flex-1 min-w-0">
                                                                         <p className={`text-xs font-medium transition-colors truncate ${
-                                                                            viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                            isDocumentViewing(file.name, docCategory.category)
                                                                                 ? 'text-[#095520] font-semibold'
                                                                                 : 'text-[#095520] group-hover:text-[#008929]'
                                                                         }`}>
@@ -229,14 +239,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
 
                                     {/* Document List */}
                                     <div className="space-y-3">
-                                        {selectedDocs?.files.map((file, index) => (
+                                        {selectedDocs?.files.map((file: Document, index) => (
                                             <motion.div
                                                 key={index}
                                                 initial={{ opacity: 0, x: 20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                                                 className={`rounded-xl p-4 transition-all duration-200 group cursor-pointer ${
-                                                    viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                    isDocumentViewing(file.name, selectedCategory)
                                                         ? 'bg-[#095520]/5 shadow-md border-2 border-[#095520]/20'
                                                         : 'bg-white hover:shadow-md'
                                                 }`}
@@ -245,7 +255,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 <div className="flex items-center justify-between">
                                                     <div className="flex items-center gap-4 flex-1 min-w-0">
                                                         <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${
-                                                            viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                            isDocumentViewing(file.name, selectedCategory)
                                                                 ? 'bg-[#095520]/15 text-[#095520]'
                                                                 : 'bg-[#095520]/5 text-[#095520]/60 group-hover:bg-[#095520]/10 group-hover:text-[#095520]'
                                                         }`}>
@@ -253,7 +263,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <h4 className={`text-sm font-semibold transition-colors truncate ${
-                                                                viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                                isDocumentViewing(file.name, selectedCategory)
                                                                     ? 'text-[#095520]'
                                                                     : 'text-[#095520] group-hover:text-[#008929]'
                                                             }`}>
