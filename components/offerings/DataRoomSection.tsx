@@ -22,16 +22,28 @@ interface DataRoomSectionProps {
 
 export default function DataRoomSection({ documents, propertyTitle }: DataRoomSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState(documents[0]?.category || '')
-    const [viewingDocument, setViewingDocument] = useState<{ file: Document; index: number } | null>(null)
+    const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
+    const [viewingDocument, setViewingDocument] = useState<{ file: Document; index: number; category: string } | null>(null)
 
     const selectedDocs = documents.find(doc => doc.category === selectedCategory)
 
-    const openDocument = (file: Document, index: number) => {
-        setViewingDocument({ file, index })
+    const openDocument = (file: Document, index: number, category: string) => {
+        setViewingDocument({ file, index, category })
+        // Auto-expand the dropdown when opening a document
+        setExpandedCategory(category)
     }
 
     const closeDocument = () => {
         setViewingDocument(null)
+    }
+
+    const handleCategoryClick = (category: string) => {
+        setSelectedCategory(category)
+        setViewingDocument(null)
+    }
+
+    const toggleDropdown = (category: string) => {
+        setExpandedCategory(expandedCategory === category ? null : category)
     }
 
     const formatDate = (dateString: string) => {
@@ -94,58 +106,102 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                             <h3 className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider mb-3 px-3">
                                 Document Categories
                             </h3>
-                            <nav className="space-y-1 mb-6">
+                            <nav className="space-y-2">
                                 {documents.map((docCategory, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setSelectedCategory(docCategory.category)}
-                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 flex items-center justify-between group ${
-                                            selectedCategory === docCategory.category
-                                                ? 'bg-[#095520] text-yellow-400 shadow-md'
-                                                : 'text-[#095520]/70 hover:bg-white hover:text-[#095520]'
-                                        }`}
-                                    >
-                                        <span className="text-sm font-medium">{docCategory.category}</span>
-                                        <span className={`text-xs px-2 py-0.5 rounded-full ${
-                                            selectedCategory === docCategory.category
-                                                ? 'bg-yellow-400/20 text-yellow-400'
-                                                : 'bg-[#095520]/10 text-[#095520]/50 group-hover:bg-[#095520]/20'
-                                        }`}>
-                                            {docCategory.files.length}
-                                        </span>
-                                    </button>
+                                    <div key={index}>
+                                        <div className="flex items-stretch gap-1">
+                                            {/* Category Name - Opens content area */}
+                                            <button
+                                                onClick={() => handleCategoryClick(docCategory.category)}
+                                                className={`flex-1 text-left px-4 py-3 rounded-l-xl transition-all duration-200 flex items-center justify-between group ${
+                                                    selectedCategory === docCategory.category
+                                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
+                                                        : 'text-[#095520]/70 hover:bg-white hover:text-[#095520]'
+                                                }`}
+                                            >
+                                                <span className="text-sm font-medium">{docCategory.category}</span>
+                                                <span className={`text-xs px-2 py-0.5 rounded-full ${
+                                                    selectedCategory === docCategory.category
+                                                        ? 'bg-yellow-400/20 text-yellow-400'
+                                                        : 'bg-[#095520]/10 text-[#095520]/50 group-hover:bg-[#095520]/20'
+                                                }`}>
+                                                    {docCategory.files.length}
+                                                </span>
+                                            </button>
+
+                                            {/* Chevron - Toggles dropdown */}
+                                            <button
+                                                onClick={() => toggleDropdown(docCategory.category)}
+                                                className={`px-3 rounded-r-xl transition-all duration-200 ${
+                                                    selectedCategory === docCategory.category
+                                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
+                                                        : 'text-[#095520]/70 hover:bg-white hover:text-[#095520]'
+                                                }`}
+                                            >
+                                                <svg
+                                                    className={`w-4 h-4 transition-transform duration-200 ${
+                                                        expandedCategory === docCategory.category ? 'rotate-180' : ''
+                                                    }`}
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        {/* Expandable Document List */}
+                                        <AnimatePresence>
+                                            {expandedCategory === docCategory.category && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.2 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="space-y-1 pt-2 pb-1 px-2">
+                                                        {docCategory.files.map((file, fileIndex) => (
+                                                            <button
+                                                                key={fileIndex}
+                                                                onClick={() => openDocument(file, fileIndex, docCategory.category)}
+                                                                className={`w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 group ${
+                                                                    viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                        ? 'bg-[#095520]/10'
+                                                                        : 'hover:bg-white'
+                                                                }`}
+                                                            >
+                                                                <div className="flex items-start gap-2">
+                                                                    <div className={`flex-shrink-0 mt-0.5 transition-colors ${
+                                                                        viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                            ? 'text-[#095520]'
+                                                                            : 'text-[#095520]/40 group-hover:text-[#095520]'
+                                                                    }`}>
+                                                                        {getFileIcon(file.name)}
+                                                                    </div>
+                                                                    <div className="flex-1 min-w-0">
+                                                                        <p className={`text-xs font-medium transition-colors truncate ${
+                                                                            viewingDocument?.file.name === file.name && viewingDocument?.category === docCategory.category
+                                                                                ? 'text-[#095520] font-semibold'
+                                                                                : 'text-[#095520] group-hover:text-[#008929]'
+                                                                        }`}>
+                                                                            {file.name}
+                                                                        </p>
+                                                                        <p className="text-[10px] text-[#095520]/40 mt-0.5">
+                                                                            {file.size}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
                                 ))}
                             </nav>
-
-                            {/* Document List in Sidebar */}
-                            <div className="border-t border-[#095520]/10 pt-4">
-                                <h3 className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider mb-3 px-3">
-                                    Documents
-                                </h3>
-                                <div className="space-y-1.5 max-h-[400px] overflow-y-auto">
-                                    {selectedDocs?.files.map((file, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => openDocument(file, index)}
-                                            className="w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 hover:bg-white group"
-                                        >
-                                            <div className="flex items-start gap-2">
-                                                <div className="flex-shrink-0 mt-0.5 text-[#095520]/40 group-hover:text-[#095520]">
-                                                    {getFileIcon(file.name)}
-                                                </div>
-                                                <div className="flex-1 min-w-0">
-                                                    <p className="text-xs font-medium text-[#095520] group-hover:text-[#008929] transition-colors truncate">
-                                                        {file.name}
-                                                    </p>
-                                                    <p className="text-[10px] text-[#095520]/40 mt-0.5">
-                                                        {file.size}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
 
@@ -179,16 +235,28 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 initial={{ opacity: 0, x: 20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                                                className="bg-white rounded-xl p-4 hover:shadow-md transition-all duration-200 group cursor-pointer"
-                                                onClick={() => openDocument(file, index)}
+                                                className={`rounded-xl p-4 transition-all duration-200 group cursor-pointer ${
+                                                    viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                        ? 'bg-[#095520]/5 shadow-md border-2 border-[#095520]/20'
+                                                        : 'bg-white hover:shadow-md'
+                                                }`}
+                                                onClick={() => openDocument(file, index, selectedCategory)}
                                             >
                                                 <div className="flex items-center justify-between">
                                                     <div className="flex items-center gap-4 flex-1 min-w-0">
-                                                        <div className="flex-shrink-0 w-12 h-12 bg-[#095520]/5 rounded-lg flex items-center justify-center text-[#095520]/60 group-hover:bg-[#095520]/10 group-hover:text-[#095520] transition-colors">
+                                                        <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${
+                                                            viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                                ? 'bg-[#095520]/15 text-[#095520]'
+                                                                : 'bg-[#095520]/5 text-[#095520]/60 group-hover:bg-[#095520]/10 group-hover:text-[#095520]'
+                                                        }`}>
                                                             {getFileIcon(file.name)}
                                                         </div>
                                                         <div className="flex-1 min-w-0">
-                                                            <h4 className="text-sm font-semibold text-[#095520] group-hover:text-[#008929] transition-colors truncate">
+                                                            <h4 className={`text-sm font-semibold transition-colors truncate ${
+                                                                viewingDocument?.file.name === file.name && viewingDocument?.category === selectedCategory
+                                                                    ? 'text-[#095520]'
+                                                                    : 'text-[#095520] group-hover:text-[#008929]'
+                                                            }`}>
                                                                 {file.name}
                                                             </h4>
                                                             <p className="text-xs text-[#095520]/50 mt-0.5">
