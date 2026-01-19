@@ -42,15 +42,14 @@ export default function RentalYieldsSection() {
                         </div>
                         <button
                             onClick={() => window.location.href = '/offerings'}
-                            className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                            className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100"
                         >
-                            <span className="relative z-10 flex items-center gap-3">
+                            <span className="flex items-center gap-3">
                                 View Current Listings
                                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#008929] via-[#095520] to-[#008929] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient" style={{ backgroundSize: '200% auto' }} />
                         </button>
                     </motion.div>
 
