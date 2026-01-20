@@ -23,7 +23,7 @@ interface ViewingDocument {
 
 interface DataRoomSectionProps {
     documents: DocumentCategory[]
-    propertyTitle: string
+    propertyTitle: string // Keeping propertyTitle for backwards compatibility
 }
 
 export default function DataRoomSection({ documents, propertyTitle }: DataRoomSectionProps) {

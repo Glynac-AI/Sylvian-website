@@ -4,39 +4,39 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import PropertyCard from '@/components/offerings/PropertyCard'
-import PropertyFilters from '@/components/offerings/PropertyFilters'
-import { mockProperties } from '@/data/mockProperties'
+import PortfolioCard from '@/components/offerings/PortfolioCard'
+import PortfolioFilters from '@/components/offerings/PortfolioFilters'
+import { mockPortfolios } from '@/data/mockPortfolios'
 
-// Use mock property data
-const properties = mockProperties
+// Use mock portfolio data
+const portfolios = mockPortfolios
 
 export default function OfferingsPage() {
-    const [selectedType, setSelectedType] = useState('All')
+    const [selectedStrategy, setSelectedStrategy] = useState('All')
     const [selectedStatus, setSelectedStatus] = useState('All')
     const [minInvestment, setMinInvestment] = useState('All')
 
-    // Filter properties based on selections
-    const filteredProperties = properties.filter(property => {
-        const typeMatch = selectedType === 'All' || property.propertyType === selectedType
-        const statusMatch = selectedStatus === 'All' || property.fundingStatus === selectedStatus
+    // Filter portfolios based on selections
+    const filteredPortfolios = portfolios.filter(portfolio => {
+        const strategyMatch = selectedStrategy === 'All' || portfolio.strategy === selectedStrategy
+        const statusMatch = selectedStatus === 'All' || portfolio.fundingStatus === selectedStatus
         const investmentMatch = minInvestment === 'All' ||
-            (minInvestment === '$25,000' && parseInt(property.minimumInvestment.replace(/[^0-9]/g, '')) <= 25000) ||
-            (minInvestment === '$50,000' && parseInt(property.minimumInvestment.replace(/[^0-9]/g, '')) <= 50000) ||
-            (minInvestment === '$75,000+' && parseInt(property.minimumInvestment.replace(/[^0-9]/g, '')) >= 75000)
+            (minInvestment === '$50,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 50000) ||
+            (minInvestment === '$75,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 75000) ||
+            (minInvestment === '$100,000+' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) >= 100000)
 
-        return typeMatch && statusMatch && investmentMatch
+        return strategyMatch && statusMatch && investmentMatch
     })
 
     // Get top listings (highest yield)
-    const topListings = [...properties].sort((a, b) => {
+    const topListings = [...portfolios].sort((a, b) => {
         const yieldA = parseFloat(a.targetYield.replace('%', ''))
         const yieldB = parseFloat(b.targetYield.replace('%', ''))
         return yieldB - yieldA
     }).slice(0, 3)
 
     // Get recent listings (by funding status Available or Funding)
-    const recentListings = properties.filter(p => p.fundingStatus === 'Available' || p.fundingStatus === 'Funding').slice(0, 3)
+    const recentListings = portfolios.filter(p => p.fundingStatus === 'Available' || p.fundingStatus === 'Funding').slice(0, 3)
 
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
@@ -63,10 +63,10 @@ export default function OfferingsPage() {
                         className="max-w-4xl"
                     >
                         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-[-0.02em] text-[#095520] mb-8">
-                            Investment Opportunities
+                            Investment Portfolios
                         </h1>
                         <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
-                            Explore our curated selection of income-producing real estate investments. Each opportunity is backed by established properties with proven rental yields and ring-fenced in structured SPVs.
+                            Explore our curated selection of diversified real estate portfolios. Each portfolio combines multiple properties to provide balanced returns, risk diversification, and professional asset management.
                         </p>
                     </motion.div>
                 </div>
@@ -86,13 +86,13 @@ export default function OfferingsPage() {
                             Top Opportunities
                         </h2>
                         <p className="text-lg text-[#095520]/60">
-                            Highest yielding investments available now
+                            Highest yielding portfolios available now
                         </p>
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {topListings.map((property, index) => (
-                            <PropertyCard key={property.id} property={property} index={index} />
+                        {topListings.map((portfolio, index) => (
+                            <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
                         ))}
                     </div>
                 </div>
@@ -112,13 +112,13 @@ export default function OfferingsPage() {
                             Recently Listed
                         </h2>
                         <p className="text-lg text-[#095520]/60">
-                            Latest properties open for investment
+                            Latest portfolios open for investment
                         </p>
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {recentListings.map((property, index) => (
-                            <PropertyCard key={property.id} property={property} index={index} />
+                        {recentListings.map((portfolio, index) => (
+                            <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
                         ))}
                     </div>
                 </div>
@@ -126,9 +126,9 @@ export default function OfferingsPage() {
 
             {/* All Listings Section with Filters */}
             <section className="bg-white border-t border-gray-200">
-                <PropertyFilters
-                    selectedType={selectedType}
-                    setSelectedType={setSelectedType}
+                <PortfolioFilters
+                    selectedStrategy={selectedStrategy}
+                    setSelectedStrategy={setSelectedStrategy}
                     selectedStatus={selectedStatus}
                     setSelectedStatus={setSelectedStatus}
                     minInvestment={minInvestment}
@@ -145,22 +145,22 @@ export default function OfferingsPage() {
                             className="mb-12"
                         >
                             <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-3">
-                                All Listings
+                                All Portfolios
                             </h2>
                             <div className="flex items-center justify-between">
                                 <p className="text-lg text-[#095520]/60">
-                                    Browse our complete investment portfolio
+                                    Browse our complete portfolio collection
                                 </p>
                                 <p className="text-sm text-[#095520]/60">
-                                    Showing <span className="font-semibold text-[#095520]">{filteredProperties.length}</span> {filteredProperties.length === 1 ? 'opportunity' : 'opportunities'}
+                                    Showing <span className="font-semibold text-[#095520]">{filteredPortfolios.length}</span> {filteredPortfolios.length === 1 ? 'portfolio' : 'portfolios'}
                                 </p>
                             </div>
                         </motion.div>
 
-                    {filteredProperties.length > 0 ? (
+                    {filteredPortfolios.length > 0 ? (
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {filteredProperties.map((property, index) => (
-                                <PropertyCard key={property.id} property={property} index={index} />
+                            {filteredPortfolios.map((portfolio, index) => (
+                                <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
                             ))}
                         </div>
                     ) : (
@@ -174,7 +174,7 @@ export default function OfferingsPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-medium text-[#095520] mb-2">No opportunities found</h3>
+                            <h3 className="text-xl font-medium text-[#095520] mb-2">No portfolios found</h3>
                             <p className="text-[#095520]/60">Try adjusting your filters to see more results</p>
                         </motion.div>
                     )}
