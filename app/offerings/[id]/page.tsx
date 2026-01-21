@@ -7,6 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPortfolioById } from '@/data/mockPortfolios'
 import DataRoomSection from '@/components/offerings/DataRoomSection'
+import CapitalStackVisualization from '@/components/offerings/CapitalStackVisualization'
+import SponsorProfile from '@/components/offerings/SponsorProfile'
+import RiskFactorsSection from '@/components/offerings/RiskFactorsSection'
+import DetailsPageNav from '@/components/offerings/DetailsPageNav'
 
 export default function PortfolioDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = use(params)
@@ -40,79 +44,106 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
-            {/* Hero Image Section */}
-            <section className="relative h-[calc(100vh-210px)] min-h-[500px] overflow-hidden">
-                <Image
-                    src={portfolio.image}
-                    alt={portfolio.title}
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            {/* Sticky Navigation */}
+            <DetailsPageNav portfolioTitle={portfolio.title} />
 
-                {/* Back Button */}
-                <Link
-                    href="/offerings"
-                    className="absolute top-8 left-8 z-10 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-[#095520] font-medium hover:bg-white transition-all duration-300 flex items-center gap-2"
-                >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Back to Listings
-                </Link>
+            {/* Back Button Section - Gap Above Image */}
+            <section className="py-6 px-6 bg-[#F3F4F1]">
+                <div className="max-w-7xl mx-auto">
+                    <Link
+                        href="/offerings"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-[#095520] font-medium hover:shadow-md transition-all duration-300"
+                    >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Listings
+                    </Link>
+                </div>
+            </section>
 
-                {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                    <div className="max-w-7xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
+            {/* Hero Image Section - Clean, No Overlays */}
+            <section className="relative h-[70vh] min-h-[600px] overflow-hidden px-6 mb-8">
+                <div className="relative h-full rounded-3xl overflow-hidden">
+                    <Image
+                        src={portfolio.image}
+                        alt={portfolio.title}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+            </section>
+
+            {/* Portfolio Title & Key Metrics - Full Width White Section */}
+            <section className="bg-white py-12 px-6 mb-8 shadow-md">
+                <div className="max-w-7xl mx-auto">
+                        {/* Title and Status */}
+                        <div className="mb-8">
                             <div className="flex flex-wrap items-center gap-3 mb-4">
                                 <span className={`px-4 py-1.5 text-sm font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
                                     {portfolio.fundingStatus}
                                 </span>
-                                <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-white/90 backdrop-blur-sm text-[#095520]">
+                                <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#F3F4F1] text-[#095520]">
                                     {portfolio.strategy}
                                 </span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-3">
+                            <h1 className="text-4xl md:text-5xl font-medium text-[#095520] mb-3">
                                 {portfolio.title}
                             </h1>
-                            <p className="text-xl text-white/90 flex items-center gap-2">
-                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <p className="text-lg text-black flex items-center gap-2">
+                                <svg className="w-5 h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
-                                {portfolio.portfolioMetrics.totalProperties} Properties • {portfolio.portfolioMetrics.geographicMarkets.length} Markets
+                                {portfolio.portfolioMetrics.totalProperties} Properties across {portfolio.portfolioMetrics.geographicMarkets.length} Markets
                             </p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
+                        </div>
 
-            {/* Key Metrics Bar */}
-            <section className="bg-white border-b border-gray-200 py-8 px-6 shadow-sm">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {/* Comprehensive Key Metrics Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pt-6 border-t border-gray-200">
                         <div>
-                            <p className="text-sm text-[#095520] mb-1">Target Yield</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Target Yield</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.targetYield}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520] mb-1">Investment Term</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Investment Term</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.investmentTerm}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520] mb-1">Minimum Investment</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Minimum Investment</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.minimumInvestment}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520] mb-1">Total Raise</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Raise</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.totalRaise}</p>
                         </div>
+                        <div>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Value</p>
+                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.totalValue}</p>
+                        </div>
+                        <div>
+                            <p className="text-sm text-[#095520]/70 mb-1.5">Avg. Occupancy</p>
+                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.averageOccupancy}</p>
+                        </div>
                     </div>
+
+                    {/* Funding Progress Bar (if not fully funded) */}
+                    {portfolio.fundingStatus !== 'Funded' && (
+                        <div className="mt-8 pt-6 border-t border-gray-200">
+                            <div className="flex items-center justify-between mb-3">
+                                <span className="text-sm font-medium text-[#095520]">Funding Progress</span>
+                                <span className="text-sm font-semibold text-[#095520]">{portfolio.fundingProgress}%</span>
+                            </div>
+                            <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${portfolio.fundingProgress}%` }}
+                                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                                    className="h-full bg-[#095520]"
+                                />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -124,6 +155,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         <div className="lg:col-span-2 space-y-12">
                             {/* Overview */}
                             <motion.div
+                                id="overview"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
@@ -145,6 +177,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
                             {/* Portfolio Metrics */}
                             <motion.div
+                                id="metrics"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -185,8 +218,14 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 </div>
                             </motion.div>
 
+                            {/* Sponsor Profile */}
+                            <div id="sponsor">
+                                <SponsorProfile sponsorProfile={portfolio.sponsorProfile} />
+                            </div>
+
                             {/* Property Allocation */}
                             <motion.div
+                                id="allocation"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.15 }}
@@ -237,8 +276,14 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 </div>
                             </motion.div>
 
+                            {/* Risk Factors */}
+                            <div id="risks">
+                                <RiskFactorsSection riskFactors={portfolio.riskFactors} />
+                            </div>
+
                             {/* Individual Properties */}
                             <motion.div
+                                id="properties"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.25 }}
@@ -314,6 +359,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
                             {/* Investment Structure */}
                             <motion.div
+                                id="structure"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -344,8 +390,12 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 </div>
                             </motion.div>
 
+                            {/* Capital Stack Visualization */}
+                            <CapitalStackVisualization capitalStack={portfolio.capitalStack} />
+
                             {/* Financials */}
                             <motion.div
+                                id="financials"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.35 }}
@@ -383,7 +433,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.4 }}
-                                className="bg-white rounded-2xl p-8 shadow-lg sticky top-[240px]"
+                                className="bg-white rounded-2xl p-8 shadow-lg sticky top-[120px]"
                             >
                                 <h3 className="text-xl font-semibold text-[#095520] mb-6">Investment Summary</h3>
 
@@ -437,7 +487,9 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
             </section>
 
             {/* Data Room Section */}
-            <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
+            <div id="documents">
+                <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
+            </div>
         </main>
     )
 }

@@ -37,7 +37,7 @@ export default function OfferingsPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-24 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
                 <div className="max-w-5xl mx-auto relative z-10">
@@ -52,6 +52,35 @@ export default function OfferingsPage() {
                         <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
                             Explore our curated selection of diversified real estate portfolios. Each portfolio combines multiple properties to provide balanced returns, risk diversification, and professional asset management.
                         </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Platform Stats Section - Elegant */}
+            <section className="py-12 px-6 bg-white border-b border-gray-200">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-8"
+                    >
+                        <div className="text-center">
+                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">$68M+</p>
+                            <p className="text-sm text-black">Total Invested</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">$12M+</p>
+                            <p className="text-sm text-black">Returns Delivered</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">3</p>
+                            <p className="text-sm text-black">Active Offerings</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">7.8%</p>
+                            <p className="text-sm text-black">Avg. Target Yield</p>
+                        </div>
                     </motion.div>
                 </div>
             </section>

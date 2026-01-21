@@ -51,8 +51,34 @@ export interface Portfolio {
         tenantDiversification: string // e.g., '50+ unique tenants'
     }
 
+    // Risk Factors
+    riskFactors: {
+        risk: string
+        description: string
+        mitigation: string
+    }[]
+
+    // Sponsor Profile
+    sponsorProfile: {
+        name: string
+        totalAUM: string
+        historicalPerformance: string
+        propertiesManaged: number
+        yearsInBusiness: number
+        teamSize: string
+        description: string
+    }
+
     // Individual properties in the portfolio
     properties: PropertyInPortfolio[]
+
+    // Capital Stack (for visualization)
+    capitalStack: {
+        layer: string // 'Senior Debt', 'Junior Debt', 'Preferred Equity', 'Common Equity'
+        amount: string
+        percentage: number
+        yieldRange?: string
+    }[]
 
     // Investment structure (aggregate)
     investmentStructure: {
@@ -79,6 +105,7 @@ export interface Portfolio {
             name: string
             size: string
             uploadDate: string
+            isGated?: boolean // If true, requires form submission to access
         }[]
     }[]
 }
@@ -118,6 +145,47 @@ export const mockPortfolios: Portfolio[] = [
             assetTypeDiversification: 'Class A Multifamily',
             tenantDiversification: '485+ residential tenants'
         },
+        riskFactors: [
+            {
+                risk: 'Interest Rate Risk',
+                description: 'Rising interest rates may increase borrowing costs and reduce property valuations, potentially impacting returns and refinancing options.',
+                mitigation: 'Fixed-rate senior debt locked for 5 years provides stable financing costs. Debt is structured at 60% LTV, providing equity cushion against valuation changes.'
+            },
+            {
+                risk: 'Vacancy Risk',
+                description: 'Extended vacancy periods or tenant turnover could reduce rental income and impact cash distributions to investors.',
+                mitigation: 'Portfolio currently maintains 94% average occupancy across high-demand Sunbelt markets with strong job growth. Properties are Class A quality attracting stable tenant base.'
+            }
+        ],
+        sponsorProfile: {
+            name: 'Sylvan Capital',
+            totalAUM: '$500M+',
+            historicalPerformance: 'Avg. Realized IRR: 14.2%',
+            propertiesManaged: 45,
+            yearsInBusiness: 12,
+            teamSize: '25+ professionals',
+            description: 'Sylvan Capital is a vertically integrated real estate investment and management firm specializing in multifamily and commercial properties across high-growth markets. Our experienced team combines institutional-grade underwriting with hands-on asset management.'
+        },
+        capitalStack: [
+            {
+                layer: 'Senior Debt',
+                amount: '$67,200,000',
+                percentage: 60,
+                yieldRange: '5.5% - 6.0%'
+            },
+            {
+                layer: 'Preferred Equity',
+                amount: '$22,400,000',
+                percentage: 20,
+                yieldRange: '9.0% - 10.0%'
+            },
+            {
+                layer: 'Common Equity',
+                amount: '$22,400,000',
+                percentage: 20,
+                yieldRange: '12.0% - 15.0%'
+            }
+        ],
         properties: [
             {
                 name: 'Riverside Luxury Apartments',
@@ -186,10 +254,10 @@ export const mockPortfolios: Portfolio[] = [
             {
                 category: 'Offering Documents',
                 files: [
-                    { name: 'Portfolio Private Placement Memorandum', size: '4.8 MB', uploadDate: '2026-01-10' },
-                    { name: 'Subscription Agreement', size: '1.2 MB', uploadDate: '2026-01-10' },
-                    { name: 'Operating Agreement', size: '1.8 MB', uploadDate: '2026-01-10' },
-                    { name: 'Portfolio Strategy Overview', size: '2.1 MB', uploadDate: '2026-01-10' }
+                    { name: 'Portfolio Private Placement Memorandum', size: '4.8 MB', uploadDate: '2026-01-10', isGated: true },
+                    { name: 'Subscription Agreement', size: '1.2 MB', uploadDate: '2026-01-10', isGated: true },
+                    { name: 'Operating Agreement', size: '1.8 MB', uploadDate: '2026-01-10', isGated: true },
+                    { name: 'Portfolio Strategy Overview', size: '2.1 MB', uploadDate: '2026-01-10', isGated: false }
                 ]
             },
             {
@@ -205,10 +273,10 @@ export const mockPortfolios: Portfolio[] = [
             {
                 category: 'Financial Documents',
                 files: [
-                    { name: 'Portfolio Pro Forma Model', size: '3.4 MB', uploadDate: '2026-01-10' },
-                    { name: 'Historical Financials (3 years)', size: '2.8 MB', uploadDate: '2026-01-10' },
-                    { name: 'Portfolio Operating Budget 2026', size: '1.2 MB', uploadDate: '2026-01-12' },
-                    { name: 'Sensitivity Analysis', size: '945 KB', uploadDate: '2026-01-10' }
+                    { name: 'Portfolio Pro Forma Model', size: '3.4 MB', uploadDate: '2026-01-10', isGated: true },
+                    { name: 'Historical Financials (3 years)', size: '2.8 MB', uploadDate: '2026-01-10', isGated: true },
+                    { name: 'Portfolio Operating Budget 2026', size: '1.2 MB', uploadDate: '2026-01-12', isGated: false },
+                    { name: 'Sensitivity Analysis', size: '945 KB', uploadDate: '2026-01-10', isGated: false }
                 ]
             },
             {
@@ -266,6 +334,47 @@ export const mockPortfolios: Portfolio[] = [
             assetTypeDiversification: '2 asset classes (Office & Retail)',
             tenantDiversification: '35+ commercial tenants across sectors'
         },
+        riskFactors: [
+            {
+                risk: 'Interest Rate Risk',
+                description: 'Changes in interest rates may affect property valuations and refinancing capabilities, potentially impacting overall portfolio returns.',
+                mitigation: 'Fixed-rate financing locked for 7 years eliminates near-term refinancing risk. Conservative 60% LTV provides substantial equity protection.'
+            },
+            {
+                risk: 'Tenant Concentration Risk',
+                description: 'Reliance on key tenants in office and retail sectors could impact income if major tenants vacate or fail to renew leases.',
+                mitigation: 'Portfolio includes Fortune 500 and investment-grade tenants with 8.5-year weighted average lease terms. Diversified across 35+ tenants in multiple sectors.'
+            }
+        ],
+        sponsorProfile: {
+            name: 'Sylvan Capital',
+            totalAUM: '$500M+',
+            historicalPerformance: 'Avg. Realized IRR: 14.2%',
+            propertiesManaged: 45,
+            yearsInBusiness: 12,
+            teamSize: '25+ professionals',
+            description: 'Sylvan Capital is a vertically integrated real estate investment and management firm specializing in multifamily and commercial properties across high-growth markets. Our experienced team combines institutional-grade underwriting with hands-on asset management.'
+        },
+        capitalStack: [
+            {
+                layer: 'Senior Debt',
+                amount: '$111,900,000',
+                percentage: 60,
+                yieldRange: '5.2% - 5.8%'
+            },
+            {
+                layer: 'Preferred Equity',
+                amount: '$37,300,000',
+                percentage: 20,
+                yieldRange: '8.5% - 9.5%'
+            },
+            {
+                layer: 'Common Equity',
+                amount: '$37,300,000',
+                percentage: 20,
+                yieldRange: '11.0% - 13.0%'
+            }
+        ],
         properties: [
             {
                 name: 'Downtown Office Complex',
@@ -422,6 +531,47 @@ export const mockPortfolios: Portfolio[] = [
             assetTypeDiversification: '3 asset classes (Multifamily, Retail, Industrial)',
             tenantDiversification: '350+ tenants across residential and commercial'
         },
+        riskFactors: [
+            {
+                risk: 'Vacancy Risk',
+                description: 'Current below-market occupancy rates (78% average) present execution risk during lease-up and renovation periods.',
+                mitigation: 'Capital improvement plans funded with $2.45M reserves. Experienced operating partners with proven track record in value-add repositioning.'
+            },
+            {
+                risk: 'Renovation Execution Risk',
+                description: 'Renovation delays or cost overruns could impact projected returns and timeline to stabilization.',
+                mitigation: 'Fixed-price construction contracts in place. Phased renovation approach minimizes operational disruption. Contingency reserves allocated for unexpected costs.'
+            }
+        ],
+        sponsorProfile: {
+            name: 'Sylvan Capital',
+            totalAUM: '$500M+',
+            historicalPerformance: 'Avg. Realized IRR: 14.2%',
+            propertiesManaged: 45,
+            yearsInBusiness: 12,
+            teamSize: '25+ professionals',
+            description: 'Sylvan Capital is a vertically integrated real estate investment and management firm specializing in multifamily and commercial properties across high-growth markets. Our experienced team combines institutional-grade underwriting with hands-on asset management.'
+        },
+        capitalStack: [
+            {
+                layer: 'Senior Debt',
+                amount: '$59,100,000',
+                percentage: 60,
+                yieldRange: '6.0% - 6.5%'
+            },
+            {
+                layer: 'Preferred Equity',
+                amount: '$19,700,000',
+                percentage: 20,
+                yieldRange: '10.0% - 11.0%'
+            },
+            {
+                layer: 'Common Equity',
+                amount: '$19,700,000',
+                percentage: 20,
+                yieldRange: '14.0% - 18.0%'
+            }
+        ],
         properties: [
             {
                 name: 'Riverside Gardens',

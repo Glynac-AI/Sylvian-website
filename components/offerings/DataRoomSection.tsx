@@ -84,8 +84,8 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
     }
 
     return (
-        <section className="bg-white py-16 px-6 border-t border-gray-200">
-            <div className="max-w-7xl mx-auto">
+        <section className="bg-[#F3F4F1] py-16 px-6 border-t border-gray-200">
+                <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="lg:col-span-3"
                     >
-                        <div className="bg-[#F3F4F1] rounded-2xl p-4 sticky top-[120px]">
+                        <div className="bg-white rounded-2xl p-4 sticky top-[120px] shadow-md">
                             <h3 className="text-xs font-semibold text-[#095520] uppercase tracking-wider mb-3 px-3">
                                 Document Categories
                             </h3>
@@ -226,7 +226,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="bg-[#F3F4F1] rounded-2xl p-6 md:p-8"
+                                    className="bg-white rounded-2xl p-6 md:p-8 shadow-md"
                                 >
                                     <div className="mb-6 pb-4 border-b border-gray-200">
                                         <h3 className="text-2xl font-semibold text-[#095520] mb-1">
@@ -262,20 +262,22 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                             {getFileIcon(file.name)}
                                                         </div>
                                                         <div className="flex-1 min-w-0">
-                                                            <h4 className={`text-sm font-semibold transition-colors truncate ${
-                                                                isDocumentViewing(file.name, selectedCategory)
-                                                                    ? 'text-[#095520]'
-                                                                    : 'text-black group-hover:text-[#008929]'
-                                                            }`}>
-                                                                {file.name}
-                                                            </h4>
+                                                            <div className="flex items-center gap-2">
+                                                                <h4 className={`text-sm font-semibold transition-colors truncate ${
+                                                                    isDocumentViewing(file.name, selectedCategory)
+                                                                        ? 'text-[#095520]'
+                                                                        : 'text-black group-hover:text-[#008929]'
+                                                                }`}>
+                                                                    {file.name}
+                                                                </h4>
+                                                            </div>
                                                             <p className="text-xs text-[#095520] mt-0.5">
                                                                 {file.size} • Uploaded {formatDate(file.uploadDate)}
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                                                        <button className="px-4 py-2 bg-[#095520] text-yellow-400 rounded-full text-xs font-semibold uppercase tracking-wider hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 active:translate-y-0 active:scale-100">
+                                                        <button className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 active:translate-y-0 active:scale-100 bg-[#095520] text-yellow-400 hover:shadow-lg">
                                                             View
                                                         </button>
                                                     </div>

@@ -52,9 +52,9 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
             transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
             <Link href={`/offerings/${portfolio.id}`}>
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden bg-gray-100">
+                <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                    {/* Image - Better size */}
+                    <div className="relative h-52 overflow-hidden bg-gray-100">
                         <Image
                             src={portfolio.image}
                             alt={portfolio.title}
@@ -73,63 +73,80 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
                         </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-5 space-y-3">
-                        {/* Title & Portfolio Info */}
+                    {/* Content - Tighter spacing */}
+                    <div className="p-5 bg-white space-y-3">
+                        {/* ONE BIG NUMBER - Target Yield prominently displayed */}
+                        <div className="text-center py-3 bg-gradient-to-br from-[#095520]/5 to-[#008929]/5 rounded-xl border border-[#095520]/10">
+                            <p className="text-xs text-[#095520] font-medium mb-1">TARGET YIELD</p>
+                            <p className="text-4xl font-bold text-[#095520]">{portfolio.targetYield}</p>
+                        </div>
+
+                        {/* Title */}
                         <div>
-                            <h3 className="text-lg font-semibold text-[#095520] mb-1 group-hover:text-[#008929] transition-colors">
+                            <h3 className="text-lg font-semibold text-[#095520] mb-2 group-hover:text-[#008929] transition-colors line-clamp-2">
                                 {portfolio.title}
                             </h3>
-                            <p className="text-sm text-[#095520] flex items-center gap-1">
+                            <div className="flex items-center gap-2 text-xs text-[#095520]">
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
-                                {portfolio.portfolioMetrics.totalProperties} Properties • {portfolio.portfolioMetrics.geographicMarkets.length} Markets
-                            </p>
-                        </div>
-
-                        {/* Key Metrics */}
-                        <div className="grid grid-cols-2 gap-3 py-3 border-t border-b border-gray-100">
-                            <div>
-                                <p className="text-xs text-[#095520] mb-0.5">Target Yield</p>
-                                <p className="text-base font-semibold text-black">{portfolio.targetYield}</p>
-                            </div>
-                            <div>
-                                <p className="text-xs text-[#095520] mb-0.5">Term</p>
-                                <p className="text-base font-semibold text-black">{portfolio.investmentTerm}</p>
-                            </div>
-                            <div>
-                                <p className="text-xs text-[#095520] mb-0.5">Minimum</p>
-                                <p className="text-base font-semibold text-black">{portfolio.minimumInvestment}</p>
-                            </div>
-                            <div>
-                                <p className="text-xs text-[#095520] mb-0.5">Total Raise</p>
-                                <p className="text-base font-semibold text-black">{portfolio.totalRaise}</p>
+                                <span>{portfolio.portfolioMetrics.totalProperties} Properties</span>
+                                <span className="text-[#095520]/30">•</span>
+                                <span>{portfolio.portfolioMetrics.geographicMarkets.length} Markets</span>
                             </div>
                         </div>
 
-                        {/* Funding Progress */}
-                        {portfolio.fundingStatus !== 'Funded' && (
-                            <div>
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className="text-xs text-[#095520]">Funding Progress</span>
-                                    <span className="text-xs font-semibold text-black">{portfolio.fundingProgress}%</span>
+                        {/* Simple Icon-based Metrics */}
+                        <div className="grid grid-cols-3 gap-3 pt-3 border-t border-gray-100">
+                            <div className="text-center">
+                                <div className="flex justify-center mb-1">
+                                    <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
+                                        <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        animate={{ width: `${portfolio.fundingProgress}%` }}
-                                        transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: [0.22, 1, 0.36, 1] }}
-                                        className="h-full bg-linear-to-r from-[#095520] to-[#008929]"
-                                    />
-                                </div>
+                                <p className="text-sm font-semibold text-black">{portfolio.investmentTerm}</p>
+                                <p className="text-xs text-[#095520]/60">Term</p>
                             </div>
-                        )}
+                            <div className="text-center">
+                                <div className="flex justify-center mb-1">
+                                    <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p className="text-sm font-semibold text-black">{portfolio.minimumInvestment}</p>
+                                <p className="text-xs text-[#095520]/60">Minimum</p>
+                            </div>
+                            <div className="text-center">
+                                <div className="flex justify-center mb-1">
+                                    {portfolio.fundingStatus !== 'Funded' ? (
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center relative">
+                                            <svg className="w-5 h-5 text-[#095520] transform -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="16" fill="none" stroke="#e5e7eb" strokeWidth="3" />
+                                                <circle cx="18" cy="18" r="16" fill="none" stroke="#095520" strokeWidth="3" strokeDasharray={`${portfolio.fundingProgress}, 100`} />
+                                            </svg>
+                                            <span className="absolute text-xs font-bold text-[#095520]">{portfolio.fundingProgress}%</span>
+                                        </div>
+                                    ) : (
+                                        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                                            <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                    )}
+                                </div>
+                                <p className="text-sm font-semibold text-black">{portfolio.fundingStatus !== 'Funded' ? `${portfolio.fundingProgress}%` : 'Funded'}</p>
+                                <p className="text-xs text-[#095520]/60">Status</p>
+                            </div>
+                        </div>
 
-                        {/* CTA Button */}
-                        <button className="w-full py-3 px-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-widest hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]">
+                        {/* CTA Button - Cleaner */}
+                        <button className="w-full py-2.5 px-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-wider hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
                             View Details
-                            <svg className="inline-block w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </button>
