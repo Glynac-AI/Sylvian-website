@@ -34,9 +34,6 @@ export default function OfferingsPage() {
         return yieldB - yieldA
     }).slice(0, 3)
 
-    // Get recent listings (by funding status Available or Funding)
-    const recentListings = portfolios.filter(p => p.fundingStatus === 'Available' || p.fundingStatus === 'Funding').slice(0, 3)
-
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
@@ -79,32 +76,6 @@ export default function OfferingsPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {topListings.map((portfolio, index) => (
-                            <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Recent Listings Section */}
-            <section className="py-16 px-6 bg-[#F3F4F1]">
-                <div className="max-w-7xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="mb-12"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-3">
-                            Recently Listed
-                        </h2>
-                        <p className="text-lg text-[#095520]/60">
-                            Latest portfolios open for investment
-                        </p>
-                    </motion.div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {recentListings.map((portfolio, index) => (
                             <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
                         ))}
                     </div>
