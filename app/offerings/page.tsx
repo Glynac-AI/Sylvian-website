@@ -3,7 +3,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import PortfolioCard from '@/components/offerings/PortfolioCard'
 import PortfolioFilters from '@/components/offerings/PortfolioFilters'
 import { mockPortfolios } from '@/data/mockPortfolios'
@@ -41,28 +40,16 @@ export default function OfferingsPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center px-6 bg-[#F3F4F1] overflow-hidden border-b border-gray-200 -mt-[88px] pt-[88px]">
-                {/* Background Grid */}
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
+            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
-                {/* Background Logo */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.025 }}
-                    transition={{ duration: 1 }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px] md:w-[850px] md:h-[850px] lg:w-[1000px] lg:h-[1000px] pointer-events-none"
-                >
-                    <Image src="/logo.png" alt="" fill className="object-contain opacity-100 translate-x-[20%]" priority />
-                </motion.div>
-
-                <div className="max-w-7xl mx-auto relative z-10 w-full">
+                <div className="max-w-5xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="max-w-4xl"
                     >
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] tracking-[-0.02em] text-[#095520] mb-8">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
                             Investment Portfolios
                         </h1>
                         <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">

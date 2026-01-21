@@ -97,7 +97,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                     <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-4">
                         Investment Documentation
                     </h2>
-                    <p className="text-lg text-[#095520]/60 max-w-3xl">
+                    <p className="text-lg text-black max-w-3xl">
                         Review comprehensive documentation for {propertyTitle}. All investment materials, property information, and legal documents are organized for your review.
                     </p>
                 </motion.div>
@@ -113,7 +113,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                         className="lg:col-span-3"
                     >
                         <div className="bg-[#F3F4F1] rounded-2xl p-4 sticky top-[120px]">
-                            <h3 className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider mb-3 px-3">
+                            <h3 className="text-xs font-semibold text-[#095520] uppercase tracking-wider mb-3 px-3">
                                 Document Categories
                             </h3>
                             <nav className="space-y-2">
@@ -194,11 +194,11 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                         <p className={`text-xs font-medium transition-colors truncate ${
                                                                             isDocumentViewing(file.name, docCategory.category)
                                                                                 ? 'text-[#095520] font-semibold'
-                                                                                : 'text-[#095520] group-hover:text-[#008929]'
+                                                                                : 'text-black group-hover:text-[#008929]'
                                                                         }`}>
                                                                             {file.name}
                                                                         </p>
-                                                                        <p className="text-[10px] text-[#095520]/40 mt-0.5">
+                                                                        <p className="text-[10px] text-[#095520] mt-0.5">
                                                                             {file.size}
                                                                         </p>
                                                                     </div>
@@ -232,7 +232,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                         <h3 className="text-2xl font-semibold text-[#095520] mb-1">
                                             {selectedCategory}
                                         </h3>
-                                        <p className="text-sm text-[#095520]/60">
+                                        <p className="text-sm text-black">
                                             {selectedDocs?.files.length} {selectedDocs?.files.length === 1 ? 'document' : 'documents'} available for review
                                         </p>
                                     </div>
@@ -265,11 +265,11 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                             <h4 className={`text-sm font-semibold transition-colors truncate ${
                                                                 isDocumentViewing(file.name, selectedCategory)
                                                                     ? 'text-[#095520]'
-                                                                    : 'text-[#095520] group-hover:text-[#008929]'
+                                                                    : 'text-black group-hover:text-[#008929]'
                                                             }`}>
                                                                 {file.name}
                                                             </h4>
-                                                            <p className="text-xs text-[#095520]/50 mt-0.5">
+                                                            <p className="text-xs text-[#095520] mt-0.5">
                                                                 {file.size} • Uploaded {formatDate(file.uploadDate)}
                                                             </p>
                                                         </div>
@@ -287,12 +287,12 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     {/* Help Section */}
                                     <div className="mt-8 p-4 bg-[#095520]/5 rounded-xl border border-[#095520]/10">
                                         <div className="flex gap-3">
-                                            <svg className="w-5 h-5 text-[#095520]/60 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className="w-5 h-5 text-[#095520] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                             <div>
                                                 <p className="text-sm font-medium text-[#095520] mb-1">Need assistance?</p>
-                                                <p className="text-xs text-[#095520]/60">
+                                                <p className="text-xs text-black">
                                                     Contact our investor relations team at <a href="mailto:invest@sylvan.com" className="underline hover:text-[#095520]">invest@sylvan.com</a> for document questions or access issues.
                                                 </p>
                                             </div>
@@ -326,7 +326,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                     <h3 className="text-lg font-semibold text-[#095520] truncate">
                                                         {viewingDocument.file.name}
                                                     </h3>
-                                                    <p className="text-xs text-[#095520]/50">
+                                                    <p className="text-xs text-[#095520]">
                                                         {viewingDocument.file.size} • Uploaded {formatDate(viewingDocument.file.uploadDate)}
                                                     </p>
                                                 </div>
@@ -360,14 +360,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                     <h1 className="text-2xl md:text-3xl font-bold text-[#095520] mb-2">
                                                         {viewingDocument.file.name}
                                                     </h1>
-                                                    <p className="text-[#095520]/60">
+                                                    <p className="text-black">
                                                         Document Preview - Mockup Content
                                                     </p>
                                                 </div>
 
                                                 {/* Placeholder Content */}
-                                                <div className="space-y-6 text-[#095520]/80">
-                                                    <p className="text-sm italic text-center text-[#095520]/50 border-2 border-dashed border-[#095520]/20 rounded-lg p-6 mb-8">
+                                                <div className="space-y-6 text-black">
+                                                    <p className="text-sm italic text-center text-[#095520] border-2 border-dashed border-[#095520]/20 rounded-lg p-6 mb-8">
                                                         This is a mockup document viewer. In production, this area would display the actual PDF or document content using a document renderer like PDF.js or an iframe.
                                                     </p>
 
@@ -389,7 +389,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
 
                                                     <div className="bg-[#F3F4F1] rounded-lg p-6 my-6 border-l-4 border-[#095520]">
                                                         <p className="font-semibold text-[#095520] mb-2">Important Notice:</p>
-                                                        <p className="text-sm">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                                        <p className="text-sm text-black">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                                                     </div>
 
                                                     <h2 className="text-xl font-semibold text-[#095520] mt-8 mb-4">Document Section 3</h2>

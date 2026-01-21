@@ -80,7 +80,7 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
                             <h3 className="text-lg font-semibold text-[#095520] mb-1 group-hover:text-[#008929] transition-colors">
                                 {portfolio.title}
                             </h3>
-                            <p className="text-sm text-[#095520]/60 flex items-center gap-1">
+                            <p className="text-sm text-[#095520] flex items-center gap-1">
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
@@ -91,20 +91,20 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
                         {/* Key Metrics */}
                         <div className="grid grid-cols-2 gap-3 py-3 border-t border-b border-gray-100">
                             <div>
-                                <p className="text-xs text-[#095520]/50 mb-0.5">Target Yield</p>
-                                <p className="text-base font-semibold text-[#095520]">{portfolio.targetYield}</p>
+                                <p className="text-xs text-[#095520] mb-0.5">Target Yield</p>
+                                <p className="text-base font-semibold text-black">{portfolio.targetYield}</p>
                             </div>
                             <div>
-                                <p className="text-xs text-[#095520]/50 mb-0.5">Term</p>
-                                <p className="text-base font-semibold text-[#095520]">{portfolio.investmentTerm}</p>
+                                <p className="text-xs text-[#095520] mb-0.5">Term</p>
+                                <p className="text-base font-semibold text-black">{portfolio.investmentTerm}</p>
                             </div>
                             <div>
-                                <p className="text-xs text-[#095520]/50 mb-0.5">Minimum</p>
-                                <p className="text-base font-semibold text-[#095520]">{portfolio.minimumInvestment}</p>
+                                <p className="text-xs text-[#095520] mb-0.5">Minimum</p>
+                                <p className="text-base font-semibold text-black">{portfolio.minimumInvestment}</p>
                             </div>
                             <div>
-                                <p className="text-xs text-[#095520]/50 mb-0.5">Total Raise</p>
-                                <p className="text-base font-semibold text-[#095520]">{portfolio.totalRaise}</p>
+                                <p className="text-xs text-[#095520] mb-0.5">Total Raise</p>
+                                <p className="text-base font-semibold text-black">{portfolio.totalRaise}</p>
                             </div>
                         </div>
 
@@ -112,15 +112,15 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
                         {portfolio.fundingStatus !== 'Funded' && (
                             <div>
                                 <div className="flex items-center justify-between mb-2">
-                                    <span className="text-xs text-[#095520]/50">Funding Progress</span>
-                                    <span className="text-xs font-semibold text-[#095520]">{portfolio.fundingProgress}%</span>
+                                    <span className="text-xs text-[#095520]">Funding Progress</span>
+                                    <span className="text-xs font-semibold text-black">{portfolio.fundingProgress}%</span>
                                 </div>
                                 <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                                     <motion.div
                                         initial={{ width: 0 }}
                                         animate={{ width: `${portfolio.fundingProgress}%` }}
                                         transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: [0.22, 1, 0.36, 1] }}
-                                        className="h-full bg-gradient-to-r from-[#095520] to-[#008929]"
+                                        className="h-full bg-linear-to-r from-[#095520] to-[#008929]"
                                     />
                                 </div>
                             </div>
