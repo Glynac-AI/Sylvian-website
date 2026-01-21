@@ -424,7 +424,7 @@ export const mockPortfolios: Portfolio[] = [
                 name: 'Southside Shopping Plaza',
                 location: 'Nashville, TN',
                 propertyType: 'Retail',
-                image: 'https://images.unsplash.com/photo-1519566335946-e6f65f11c7ea?w=800&q=80',
+                image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
                 squareFeet: 88000,
                 occupancyRate: '93%',
                 yearBuilt: 2013,

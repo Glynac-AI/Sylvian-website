@@ -37,7 +37,7 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
             case 'Available':
                 return 'bg-green-50 text-green-700 border-green-200'
             case 'Funding':
-                return 'bg-yellow-50 text-yellow-700 border-yellow-200'
+                return 'bg-[#F3F4F1] text-[#095520] border-[#095520]/20'
             case 'Funded':
                 return 'bg-gray-100 text-gray-600 border-gray-300'
             default:
@@ -61,20 +61,19 @@ export default function PortfolioCard({ portfolio, index }: PortfolioCardProps) 
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute top-4 right-4 flex gap-2">
-                            <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
-                                {portfolio.fundingStatus}
-                            </span>
-                        </div>
-                        <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520]/90 text-yellow-400 backdrop-blur-sm">
-                                {portfolio.strategy}
-                            </span>
-                        </div>
                     </div>
 
                     {/* Content - Tighter spacing */}
                     <div className="p-5 bg-white space-y-3">
+                        {/* Badges at top of content */}
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
+                                {portfolio.fundingStatus}
+                            </span>
+                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#F3F4F1] text-[#095520]">
+                                {portfolio.strategy}
+                            </span>
+                        </div>
                         {/* ONE BIG NUMBER - Target Yield prominently displayed */}
                         <div className="text-center py-3 bg-gradient-to-br from-[#095520]/5 to-[#008929]/5 rounded-xl border border-[#095520]/10">
                             <p className="text-xs text-[#095520] font-medium mb-1">TARGET YIELD</p>

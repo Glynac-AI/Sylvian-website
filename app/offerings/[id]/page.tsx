@@ -34,7 +34,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
             case 'Available':
                 return 'bg-green-50 text-green-700 border-green-200'
             case 'Funding':
-                return 'bg-yellow-50 text-yellow-700 border-yellow-200'
+                return 'bg-[#F3F4F1] text-[#095520] border-[#095520]/20'
             case 'Funded':
                 return 'bg-gray-100 text-gray-600 border-gray-300'
             default:
@@ -302,24 +302,24 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                                         fill
                                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                                     />
-                                                    <div className="absolute top-4 right-4">
-                                                        <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520]/90 text-yellow-400 backdrop-blur-sm">
-                                                            {property.propertyType}
-                                                        </span>
-                                                    </div>
                                                 </div>
 
                                                 {/* Property Info */}
                                                 <div className="md:col-span-2 p-6">
-                                                    <div className="mb-4">
-                                                        <h3 className="text-xl font-semibold text-[#095520] mb-2">{property.name}</h3>
-                                                        <p className="text-sm text-[#095520] flex items-center gap-1">
-                                                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                            </svg>
-                                                            {property.location}
-                                                        </p>
+                                                    <div className="flex items-start justify-between mb-4">
+                                                        <div className="flex-1">
+                                                            <h3 className="text-xl font-semibold text-[#095520] mb-2">{property.name}</h3>
+                                                            <p className="text-sm text-[#095520] flex items-center gap-1">
+                                                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                                </svg>
+                                                                {property.location}
+                                                            </p>
+                                                        </div>
+                                                        <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#F3F4F1] text-[#095520] border border-[#095520]/10 ml-4">
+                                                            {property.propertyType}
+                                                        </span>
                                                     </div>
 
                                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
