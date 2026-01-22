@@ -126,14 +126,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 className={`flex-1 text-left px-4 py-3 rounded-l-xl transition-all duration-200 flex items-center justify-between group ${
                                                     selectedCategory === docCategory.category
                                                         ? 'bg-[#095520] text-yellow-400 shadow-md'
-                                                        : 'text-[#095520]/70 hover:bg-white hover:text-[#095520]'
+                                                        : 'text-[#095520] hover:bg-[#095520]/5'
                                                 }`}
                                             >
                                                 <span className="text-sm font-medium">{docCategory.category}</span>
                                                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                                                     selectedCategory === docCategory.category
                                                         ? 'bg-yellow-400/20 text-yellow-400'
-                                                        : 'bg-[#095520]/10 text-[#095520]/50 group-hover:bg-[#095520]/20'
+                                                        : 'bg-[#095520]/10 text-[#095520] group-hover:bg-[#095520]/20'
                                                 }`}>
                                                     {docCategory.files.length}
                                                 </span>
@@ -145,7 +145,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 className={`px-3 rounded-r-xl transition-all duration-200 ${
                                                     selectedCategory === docCategory.category
                                                         ? 'bg-[#095520] text-yellow-400 shadow-md'
-                                                        : 'text-[#095520]/70 hover:bg-white hover:text-[#095520]'
+                                                        : 'text-[#095520] hover:bg-[#095520]/5'
                                                 }`}
                                             >
                                                 <svg
@@ -179,14 +179,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                 className={`w-full text-left px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                                                                     isDocumentViewing(file.name, docCategory.category)
                                                                         ? 'bg-[#095520]/10'
-                                                                        : 'hover:bg-white'
+                                                                        : 'hover:bg-[#095520]/5'
                                                                 }`}
                                                             >
                                                                 <div className="flex items-start gap-2">
                                                                     <div className={`flex-shrink-0 mt-0.5 transition-colors ${
                                                                         isDocumentViewing(file.name, docCategory.category)
                                                                             ? 'text-[#095520]'
-                                                                            : 'text-[#095520]/40 group-hover:text-[#095520]'
+                                                                            : 'text-[#095520]'
                                                                     }`}>
                                                                         {getFileIcon(file.name)}
                                                                     </div>
@@ -194,7 +194,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                         <p className={`text-xs font-medium transition-colors truncate ${
                                                                             isDocumentViewing(file.name, docCategory.category)
                                                                                 ? 'text-[#095520] font-semibold'
-                                                                                : 'text-black group-hover:text-[#008929]'
+                                                                                : 'text-[#095520]'
                                                                         }`}>
                                                                             {file.name}
                                                                         </p>
