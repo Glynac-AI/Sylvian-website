@@ -14,6 +14,21 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
   description: 'Standardized structured real estate income platform providing repeatable structure, workflow, and audit-ready documentation for institutional-grade real estate income investing.',
+  icons: {
+    icon: '/favicon.png',
+  },
+  openGraph: {
+    title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
+    description: 'Standardized structured real estate income platform providing repeatable structure, workflow, and audit-ready documentation for institutional-grade real estate income investing.',
+    images: [
+      {
+        url: '/og.png',
+        width: 1080,
+        height: 1080,
+        alt: 'Sylvan',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
