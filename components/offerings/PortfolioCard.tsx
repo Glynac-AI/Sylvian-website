@@ -128,33 +128,13 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                 </div>
 
                                 <div className="flex items-center gap-3">
-                                    {portfolio.fundingStatus !== 'Funded' ? (
-                                        <>
-                                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center relative flex-shrink-0">
-                                                <svg className="w-6 h-6 text-[#095520] transform -rotate-90" viewBox="0 0 36 36">
-                                                    <circle cx="18" cy="18" r="16" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-                                                    <circle cx="18" cy="18" r="16" fill="none" stroke="#095520" strokeWidth="3" strokeDasharray={`${portfolio.fundingProgress}, 100`} />
-                                                </svg>
-                                                <span className="absolute text-xs font-bold text-[#095520]">{portfolio.fundingProgress}%</span>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-semibold text-black">{portfolio.fundingProgress}% Funded</p>
-                                                <p className="text-xs text-[#095520]/60">Progress</p>
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-semibold text-black">Fully Funded</p>
-                                                <p className="text-xs text-[#095520]/60">Status</p>
-                                            </div>
-                                        </>
-                                    )}
+                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center flex-shrink-0">
+                                        <span className="text-xs font-bold text-[#095520]">{portfolio.fundingProgress}%</span>
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-semibold text-black">{portfolio.fundingStatus}</p>
+                                        <p className="text-xs text-[#095520]/60">Status</p>
+                                    </div>
                                 </div>
 
                                 {/* CTA Button */}
@@ -251,10 +231,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                 <div className="flex justify-center mb-1">
                                     {portfolio.fundingStatus !== 'Funded' ? (
                                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center relative">
-                                            <svg className="w-5 h-5 text-[#095520] transform -rotate-90" viewBox="0 0 36 36">
-                                                <circle cx="18" cy="18" r="16" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-                                                <circle cx="18" cy="18" r="16" fill="none" stroke="#095520" strokeWidth="3" strokeDasharray={`${portfolio.fundingProgress}, 100`} />
-                                            </svg>
+                                           
                                             <span className="absolute text-xs font-bold text-[#095520]">{portfolio.fundingProgress}%</span>
                                         </div>
                                     ) : (
@@ -265,7 +242,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                         </div>
                                     )}
                                 </div>
-                                <p className="text-sm font-semibold text-black">{portfolio.fundingStatus !== 'Funded' ? `${portfolio.fundingProgress}%` : 'Funded'}</p>
+                                <p className="text-sm font-semibold text-black">{portfolio.fundingStatus}</p>
                                 <p className="text-xs text-[#095520]/60">Status</p>
                             </div>
                         </div>

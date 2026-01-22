@@ -23,21 +23,9 @@ export default function Navigation() {
     ]
 
     const resourceLinks = [
-        {
-            label: 'Governance & Compliance',
-            href: '/resources/governance',
-            description: 'For Chief Compliance Officers'
-        },
-        {
-            label: 'Investment Strategy',
-            href: '/resources/investment-strategy',
-            description: 'For Chief Investment Officers'
-        },
-        {
-            label: 'Client Advisory',
-            href: '/resources/client-advisory',
-            description: 'For Registered Investment Advisors'
-        }
+        { label: 'For CCO', href: '/resources/governance' },
+        { label: 'For CIO', href: '/resources/investment-strategy' },
+        { label: 'For RIA', href: '/resources/client-advisory' }
     ]
 
     // Close dropdown when clicking outside
@@ -138,11 +126,8 @@ export default function Navigation() {
                                                             transition={{ delay: index * 0.05 }}
                                                             className="p-4 rounded-lg hover:bg-[#F3F4F1] transition-colors group cursor-pointer"
                                                         >
-                                                            <div className="text-sm font-semibold text-[#013220] mb-1 group-hover:text-[#095520] transition-colors">
+                                                            <div className="text-sm font-semibold text-[#013220] group-hover:text-[#095520] transition-colors">
                                                                 {resource.label}
-                                                            </div>
-                                                            <div className="text-xs text-[#013220]/70 leading-relaxed">
-                                                                {resource.description}
                                                             </div>
                                                         </motion.div>
                                                     </Link>
@@ -292,7 +277,7 @@ export default function Navigation() {
                                                         transition={{ duration: 0.3 }}
                                                         className="overflow-hidden"
                                                     >
-                                                        <div className="pl-4 pt-2 space-y-2">
+                                                        <div className="pl-4 pt-2 space-y-1">
                                                             {resourceLinks.map((resource) => (
                                                                 <Link
                                                                     key={resource.href}
@@ -303,20 +288,14 @@ export default function Navigation() {
                                                                     }}
                                                                 >
                                                                     <motion.div
-                                                                        className={`p-3 rounded-lg transition-colors ${pathname === resource.href
-                                                                                ? 'bg-[#095520]/10 border-l-4 border-[#095520]'
-                                                                                : 'bg-white hover:bg-[#095520]/5'
+                                                                        className={`py-2 ${pathname === resource.href
+                                                                                ? 'text-[#095520] font-semibold border-l-4 border-[#095520] pl-2'
+                                                                                : 'text-[#013220]'
                                                                             }`}
-                                                                        whileHover={{ x: 4 }}
+                                                                        whileHover={{ color: '#095520', x: 8 }}
                                                                         transition={{ duration: 0.2 }}
                                                                     >
-                                                                        <div className={`text-sm font-semibold mb-0.5 ${pathname === resource.href ? 'text-[#095520]' : 'text-[#013220]'
-                                                                            }`}>
-                                                                            {resource.label}
-                                                                        </div>
-                                                                        <div className="text-xs text-[#013220]/60">
-                                                                            {resource.description}
-                                                                        </div>
+                                                                        {resource.label}
                                                                     </motion.div>
                                                                 </Link>
                                                             ))}

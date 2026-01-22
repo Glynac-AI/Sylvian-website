@@ -20,7 +20,7 @@ export default function StrategyPage() {
             <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
-                <div className="max-w-5xl mx-auto relative z-10">
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
