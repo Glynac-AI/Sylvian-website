@@ -43,7 +43,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
     }
 
     return (
-        <main className="min-h-screen bg-[#F3F4F1]">
+        <div className="min-h-screen bg-[#F3F4F1] -mt-20 md:-mt-24 pt-20 md:pt-24">
             {/* Sticky Navigation */}
             <DetailsPageNav portfolioTitle={portfolio.title} />
 
@@ -490,6 +490,6 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
             <div id="documents">
                 <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
             </div>
-        </main>
+        </div>
     )
 }

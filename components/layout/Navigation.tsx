@@ -23,18 +23,18 @@ export default function Navigation() {
     ]
 
     const resourceLinks = [
-        { 
-            label: 'Governance & Compliance', 
+        {
+            label: 'Governance & Compliance',
             href: '/resources/governance',
             description: 'For Chief Compliance Officers'
         },
-        { 
-            label: 'Investment Strategy', 
+        {
+            label: 'Investment Strategy',
             href: '/resources/investment-strategy',
             description: 'For Chief Investment Officers'
         },
-        { 
-            label: 'Client Advisory', 
+        {
+            label: 'Client Advisory',
             href: '/resources/client-advisory',
             description: 'For Registered Investment Advisors'
         }
@@ -53,17 +53,18 @@ export default function Navigation() {
     }, [])
 
     return (
-        <motion.nav 
-            className="w-full py-6 px-4 md:px-12 flex justify-between items-center sticky top-0 bg-[#F3F4F1]/90 backdrop-blur-md z-50 border-b border-gray-200"
+        <>
+        <motion.nav
+            className="w-full py-4 md:py-6 px-4 md:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/90 backdrop-blur-md z-50 border-b border-gray-200"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-                <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-8 w-8 md:h-10 md:w-10" />
+            <Link href="/" className="flex items-center gap-2 md:gap-3">
+                <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                 <motion.div
-                    className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
+                    className="text-lg md:text-2xl tracking-[0.15em] md:tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
                     whileHover={{ opacity: 0.7 }}
                     transition={{ duration: 0.2 }}
                 >
@@ -72,7 +73,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 text-sm font-normal">
+            <div className="hidden lg:flex items-center space-x-8 text-sm font-normal">
                 {navLinks.map((link) => (
                     <div key={link.href} className="relative" ref={link.hasDropdown ? dropdownRef : null}>
                         {link.hasDropdown ? (
@@ -92,12 +93,12 @@ export default function Navigation() {
                                     >
                                         {link.label}
                                     </motion.span>
-                                    <motion.svg 
+                                    <motion.svg
                                         className="w-4 h-4 text-[#013220]"
                                         animate={{ rotate: resourcesOpen ? 180 : 0 }}
                                         transition={{ duration: 0.3 }}
-                                        fill="none" 
-                                        viewBox="0 0 24 24" 
+                                        fill="none"
+                                        viewBox="0 0 24 24"
                                         stroke="currentColor"
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -178,8 +179,8 @@ export default function Navigation() {
             </div>
 
             {/* Right Side Actions */}
-            <div className="hidden md:flex items-center gap-6">
-                <Link 
+            <div className="hidden lg:flex items-center gap-6">
+                <Link
                     href="/login"
                     onMouseEnter={() => setHoveredLink('login')}
                     onMouseLeave={() => setHoveredLink(null)}
@@ -220,16 +221,16 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <motion.button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden text-[#013220]"
+                className="lg:hidden text-[#013220]"
                 whileHover={{ color: '#095520' }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
                 aria-label="Toggle menu"
             >
-                <motion.svg 
-                    className="w-6 h-6" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                <motion.svg
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                     animate={{ rotate: mobileOpen ? 90 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -242,11 +243,13 @@ export default function Navigation() {
                 </motion.svg>
             </motion.button>
 
+        </motion.nav>
+
             {/* Mobile Menu */}
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="absolute top-full left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 md:hidden"
+                        className="fixed top-[57px] md:top-[73px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
@@ -264,9 +267,8 @@ export default function Navigation() {
                                         <div>
                                             <button
                                                 onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-                                                className={`w-full flex items-center justify-between py-2 ${
-                                                    pathname.startsWith('/resources') ? 'text-[#095520] font-semibold' : 'text-[#013220]'
-                                                }`}
+                                                className={`w-full flex items-center justify-between py-2 ${pathname.startsWith('/resources') ? 'text-[#095520] font-semibold' : 'text-[#013220]'
+                                                    }`}
                                             >
                                                 <span>{link.label}</span>
                                                 <motion.svg
@@ -301,17 +303,15 @@ export default function Navigation() {
                                                                     }}
                                                                 >
                                                                     <motion.div
-                                                                        className={`p-3 rounded-lg transition-colors ${
-                                                                            pathname === resource.href
+                                                                        className={`p-3 rounded-lg transition-colors ${pathname === resource.href
                                                                                 ? 'bg-[#095520]/10 border-l-4 border-[#095520]'
                                                                                 : 'bg-white hover:bg-[#095520]/5'
-                                                                        }`}
+                                                                            }`}
                                                                         whileHover={{ x: 4 }}
                                                                         transition={{ duration: 0.2 }}
                                                                     >
-                                                                        <div className={`text-sm font-semibold mb-0.5 ${
-                                                                            pathname === resource.href ? 'text-[#095520]' : 'text-[#013220]'
-                                                                        }`}>
+                                                                        <div className={`text-sm font-semibold mb-0.5 ${pathname === resource.href ? 'text-[#095520]' : 'text-[#013220]'
+                                                                            }`}>
                                                                             {resource.label}
                                                                         </div>
                                                                         <div className="text-xs text-[#013220]/60">
@@ -328,9 +328,8 @@ export default function Navigation() {
                                     ) : (
                                         <Link href={link.href} onClick={() => setMobileOpen(false)}>
                                             <motion.div
-                                                className={`py-2 ${
-                                                    pathname === link.href ? 'text-[#095520] font-semibold border-l-4 border-[#095520] pl-2' : 'text-[#013220]'
-                                                }`}
+                                                className={`py-2 ${pathname === link.href ? 'text-[#095520] font-semibold border-l-4 border-[#095520] pl-2' : 'text-[#013220]'
+                                                    }`}
                                                 whileHover={{ color: '#095520', x: 8 }}
                                                 transition={{ duration: 0.2 }}
                                             >
@@ -341,7 +340,7 @@ export default function Navigation() {
                                 </motion.div>
                             ))}
 
-                            <motion.div 
+                            <motion.div
                                 className="border-t border-gray-200 pt-4 space-y-4"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -372,6 +371,6 @@ export default function Navigation() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </>
     )
 }

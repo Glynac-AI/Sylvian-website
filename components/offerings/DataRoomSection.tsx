@@ -84,7 +84,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
     }
 
     return (
-        <section className="bg-[#F3F4F1] py-16 px-6 border-t border-gray-200">
+        <section className="bg-[#F3F4F1] py-8 md:py-16 px-4 md:px-6 border-t border-gray-200">
                 <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <motion.div
@@ -103,14 +103,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                 </motion.div>
 
                 {/* Data Room Layout */}
-                <div className="grid lg:grid-cols-12 gap-8">
-                    {/* Sidebar Navigation - Left */}
+                <div className="grid lg:grid-cols-12 gap-4 md:gap-8">
+                    {/* Sidebar Navigation - Hidden on Mobile */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="lg:col-span-3"
+                        className="hidden lg:block lg:col-span-3"
                     >
                         <div className="bg-white rounded-2xl p-4 sticky top-[120px] shadow-md">
                             <h3 className="text-xs font-semibold text-[#095520] uppercase tracking-wider mb-3 px-3">
@@ -226,9 +226,24 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    className="bg-white rounded-2xl p-6 md:p-8 shadow-md"
+                                    className="bg-white rounded-2xl p-4 md:p-6 lg:p-8 shadow-md"
                                 >
-                                    <div className="mb-6 pb-4 border-b border-gray-200">
+                                    {/* Mobile Category Selector */}
+                                    <div className="lg:hidden mb-4">
+                                        <select
+                                            value={selectedCategory}
+                                            onChange={(e) => handleCategoryClick(e.target.value)}
+                                            className="w-full px-4 py-3 bg-[#F3F4F1] border-2 border-[#095520]/20 rounded-xl text-[#095520] font-medium focus:outline-none focus:border-[#095520] transition-colors"
+                                        >
+                                            {documents.map((docCategory, index) => (
+                                                <option key={index} value={docCategory.category}>
+                                                    {docCategory.category} ({docCategory.files.length})
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    <div className="mb-4 md:mb-6 pb-4 border-b border-gray-200">
                                         <h3 className="text-2xl font-semibold text-[#095520] mb-1">
                                             {selectedCategory}
                                         </h3>
@@ -238,23 +253,23 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     </div>
 
                                     {/* Document List */}
-                                    <div className="space-y-3">
+                                    <div className="space-y-2 md:space-y-3">
                                         {selectedDocs?.files.map((file: Document, index) => (
                                             <motion.div
                                                 key={index}
                                                 initial={{ opacity: 0, x: 20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                                                className={`rounded-xl p-4 transition-all duration-200 group cursor-pointer ${
+                                                className={`rounded-xl p-3 md:p-4 transition-all duration-200 group cursor-pointer ${
                                                     isDocumentViewing(file.name, selectedCategory)
                                                         ? 'bg-[#095520]/5 shadow-md border-2 border-[#095520]/20'
                                                         : 'bg-white hover:shadow-md'
                                                 }`}
                                                 onClick={() => openDocument(file, index, selectedCategory)}
                                             >
-                                                <div className="flex items-center justify-between">
-                                                    <div className="flex items-center gap-4 flex-1 min-w-0">
-                                                        <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${
+                                                <div className="flex items-center justify-between gap-2">
+                                                    <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
+                                                        <div className={`shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center transition-colors ${
                                                             isDocumentViewing(file.name, selectedCategory)
                                                                 ? 'bg-[#095520]/15 text-[#095520]'
                                                                 : 'bg-[#095520]/5 text-[#095520]/60 group-hover:bg-[#095520]/10 group-hover:text-[#095520]'
@@ -263,7 +278,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <div className="flex items-center gap-2">
-                                                                <h4 className={`text-sm font-semibold transition-colors truncate ${
+                                                                <h4 className={`text-xs md:text-sm font-semibold transition-colors truncate ${
                                                                     isDocumentViewing(file.name, selectedCategory)
                                                                         ? 'text-[#095520]'
                                                                         : 'text-black group-hover:text-[#008929]'
@@ -271,13 +286,13 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                                     {file.name}
                                                                 </h4>
                                                             </div>
-                                                            <p className="text-xs text-[#095520] mt-0.5">
-                                                                {file.size} • Uploaded {formatDate(file.uploadDate)}
+                                                            <p className="text-[10px] md:text-xs text-[#095520] mt-0.5 truncate">
+                                                                {file.size} • {formatDate(file.uploadDate)}
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                                                        <button className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 active:translate-y-0 active:scale-100 bg-[#095520] text-yellow-400 hover:shadow-lg">
+                                                    <div className="shrink-0">
+                                                        <button className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-wider transition-all duration-300 bg-[#095520] text-yellow-400 hover:shadow-lg whitespace-nowrap">
                                                             View
                                                         </button>
                                                     </div>
@@ -312,37 +327,37 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     className="bg-white rounded-2xl overflow-hidden shadow-lg"
                                 >
                                     {/* Document Header with Navigation */}
-                                    <div className="sticky top-0 z-10 bg-white border-b border-gray-200 p-4 md:p-6">
-                                        <div className="flex items-center justify-between gap-4">
-                                            <div className="flex items-center gap-4 flex-1 min-w-0">
+                                    <div className="sticky top-0 z-10 bg-white border-b border-gray-200 p-3 md:p-4 lg:p-6">
+                                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                            <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
                                                 <button
                                                     onClick={closeDocument}
-                                                    className="flex items-center gap-2 px-4 py-2 bg-[#F3F4F1] hover:bg-[#095520]/10 rounded-full transition-colors text-[#095520] font-medium text-sm"
+                                                    className="shrink-0 flex items-center gap-1 md:gap-2 px-2 md:px-4 py-1.5 md:py-2 bg-[#F3F4F1] hover:bg-[#095520]/10 rounded-full transition-colors text-[#095520] font-medium text-xs md:text-sm"
                                                 >
-                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                                     </svg>
-                                                    Back
+                                                    <span className="hidden sm:inline">Back</span>
                                                 </button>
                                                 <div className="flex-1 min-w-0">
-                                                    <h3 className="text-lg font-semibold text-[#095520] truncate">
+                                                    <h3 className="text-sm md:text-lg font-semibold text-[#095520] truncate">
                                                         {viewingDocument.file.name}
                                                     </h3>
-                                                    <p className="text-xs text-[#095520]">
-                                                        {viewingDocument.file.size} • Uploaded {formatDate(viewingDocument.file.uploadDate)}
+                                                    <p className="text-[10px] md:text-xs text-[#095520] truncate">
+                                                        {viewingDocument.file.size} • {formatDate(viewingDocument.file.uploadDate)}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="flex items-center gap-2">
-                                                <button className="px-4 py-2 bg-white text-[#095520] border-2 border-[#095520]/20 rounded-full text-xs font-semibold uppercase tracking-wider hover:border-[#095520]/40 transition-all duration-300">
+                                            <div className="flex items-center gap-2 justify-end">
+                                                <button className="px-3 md:px-4 py-1.5 md:py-2 bg-white text-[#095520] border-2 border-[#095520]/20 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-wider hover:border-[#095520]/40 transition-all duration-300 whitespace-nowrap">
                                                     Download
                                                 </button>
                                                 <button
                                                     onClick={closeDocument}
-                                                    className="p-2 hover:bg-[#F3F4F1] rounded-full transition-colors"
+                                                    className="shrink-0 p-1.5 md:p-2 hover:bg-[#F3F4F1] rounded-full transition-colors"
                                                     title="Close"
                                                 >
-                                                    <svg className="w-5 h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <svg className="w-4 h-4 md:w-5 md:h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                                     </svg>
                                                 </button>
@@ -351,8 +366,8 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                     </div>
 
                                     {/* Document Content Area - Scrollable */}
-                                    <div className="p-6 md:p-8 bg-[#F3F4F1] min-h-[600px] max-h-[800px] overflow-y-auto">
-                                        <div className="bg-white rounded-lg p-8 md:p-12 shadow-sm">
+                                    <div className="p-4 md:p-6 lg:p-8 bg-[#F3F4F1] min-h-[400px] md:min-h-[600px] max-h-[800px] overflow-y-auto">
+                                        <div className="bg-white rounded-lg p-4 md:p-8 lg:p-12 shadow-sm">
                                             {/* Mock Document Content */}
                                             <div className="prose prose-sm md:prose-base max-w-none">
                                                 <div className="text-center mb-12">
