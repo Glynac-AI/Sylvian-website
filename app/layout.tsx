@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} overflow-x-hidden`}>
-      <body className="font-sans antialiased flex min-h-screen flex-col overflow-x-hidden">
+    <html lang="en" className={dmSans.variable}>
+      <body className="font-sans antialiased flex min-h-screen flex-col">
         <Navigation />
         <main className="flex-1 flex flex-col pt-20 md:pt-24">{children}</main>
         <Footer />

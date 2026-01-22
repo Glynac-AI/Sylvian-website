@@ -16,7 +16,7 @@ export default function Navigation() {
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     const navLinks = [
-        { label: 'Why Sylvan', href: '#' },
+        { label: 'Why Sylvan', href: '/' },
         { label: 'Strategy', href: '/strategy' },
         { label: 'Resources', href: '/resources', hasDropdown: true },
         { label: 'Contact Us', href: '/contact' }

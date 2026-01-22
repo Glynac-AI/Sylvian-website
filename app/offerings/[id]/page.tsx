@@ -43,12 +43,12 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
     }
 
     return (
-        <div className="min-h-screen bg-[#F3F4F1] -mt-20 md:-mt-24 pt-20 md:pt-24">
+        <main className="min-h-screen bg-[#F3F4F1] -mt-20 md:-mt-24">
             {/* Sticky Navigation */}
             <DetailsPageNav portfolioTitle={portfolio.title} />
 
             {/* Back Button Section - Gap Above Image */}
-            <section className="py-6 px-6 bg-[#F3F4F1]">
+            <section className="py-6 px-6 bg-[#F3F4F1] pt-24 md:pt-28">
                 <div className="max-w-7xl mx-auto">
                     <Link
                         href="/offerings"
@@ -490,6 +490,6 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
             <div id="documents">
                 <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
             </div>
-        </div>
+        </main>
     )
 }
