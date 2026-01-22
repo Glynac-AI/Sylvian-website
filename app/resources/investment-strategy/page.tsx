@@ -19,7 +19,7 @@ export default function InvestmentStrategyPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
                 <div className="max-w-5xl mx-auto relative z-10">
@@ -28,10 +28,10 @@ export default function InvestmentStrategyPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             Structured Real Estate Credit
                         </h1>
-                        <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
+                        <p className="text-base md:text-lg text-black font-light">
                             Debt exposure on stabilized real estate with contractual priority and structural protections.
                         </p>
                     </motion.div>
@@ -39,7 +39,7 @@ export default function InvestmentStrategyPage() {
             </section>
 
             {/* Section 1: Asset Selection */}
-            <section ref={section1Ref} className="py-32 px-6 bg-[#F3F4F1] relative overflow-hidden">
+            <section ref={section1Ref} className="py-20 px-6 bg-[#F3F4F1] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -52,7 +52,7 @@ export default function InvestmentStrategyPage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 01. Asset Selection
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -88,7 +88,7 @@ export default function InvestmentStrategyPage() {
                                             </div>
                                             <div className="ml-4">
                                                 <h4 className="text-sm font-bold text-[#095520] mb-1">Stabilized Cash Flow</h4>
-                                                <p className="text-xs text-[#095520]/70 leading-relaxed">Rental income must already exist at the time of investment</p>
+                                                <p className="text-xs text-[#095520] leading-relaxed">Rental income must already exist at the time of investment</p>
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@ export default function InvestmentStrategyPage() {
                                             </div>
                                             <div className="ml-4">
                                                 <h4 className="text-sm font-bold text-[#095520] mb-1">Legal Isolation</h4>
-                                                <p className="text-xs text-[#095520]/70 leading-relaxed">Each portfolio sits in a separate SPV, protected from developer liabilities</p>
+                                                <p className="text-xs text-[#095520] leading-relaxed">Each portfolio sits in a separate SPV, protected from developer liabilities</p>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@ export default function InvestmentStrategyPage() {
                                             </div>
                                             <div className="ml-4">
                                                 <h4 className="text-sm font-bold text-[#095520] mb-1">Uniform Structure</h4>
-                                                <p className="text-xs text-[#095520]/70 leading-relaxed">Same legal and economic terms across all investments</p>
+                                                <p className="text-xs text-[#095520] leading-relaxed">Same legal and economic terms across all investments</p>
                                             </div>
                                         </div>
                                     </div>
@@ -149,8 +149,8 @@ export default function InvestmentStrategyPage() {
                                     </div>
 
                                     <div className="h-28 bg-[#F3F4F1] border-2 border-[#095520]/30 rounded-b flex flex-col items-center justify-center">
-                                        <span className="text-sm font-medium text-[#095520]/70">Developer Equity</span>
-                                        <span className="text-xs text-[#095520]/50 mt-1">Protective cushion</span>
+                                        <span className="text-sm font-medium text-[#095520]">Developer Equity</span>
+                                        <span className="text-xs text-[#095520]/80 mt-1">Protective cushion</span>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@ export default function InvestmentStrategyPage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 02. Capital Structure
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -196,7 +196,7 @@ export default function InvestmentStrategyPage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 03. Payment Control
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -224,7 +224,7 @@ export default function InvestmentStrategyPage() {
 
                                     <div className="w-full p-4 bg-[#F3F4F1] border border-[#095520]/20 text-center rounded-lg mb-4">
                                         <div className="text-sm font-medium text-[#095520]">Monthly Rental Income</div>
-                                        <div className="text-xs text-[#095520]/60 mt-1">From property tenants</div>
+                                        <div className="text-xs text-[#095520] mt-1">From property tenants</div>
                                     </div>
 
                                     <div className="w-px h-8 bg-[#095520]/20 mb-4"></div>
@@ -250,7 +250,7 @@ export default function InvestmentStrategyPage() {
                         animate={section4InView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                        <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                             04. Portfolio Efficiency
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520] mb-4">

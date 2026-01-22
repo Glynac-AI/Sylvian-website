@@ -11,6 +11,8 @@ interface PortfolioFiltersProps {
     setSelectedStatus: (status: string) => void
     minInvestment: string
     setMinInvestment: (amount: string) => void
+    viewMode: 'grid' | 'list'
+    setViewMode: (mode: 'grid' | 'list') => void
 }
 
 export default function PortfolioFilters({
@@ -19,12 +21,13 @@ export default function PortfolioFilters({
     selectedStatus,
     setSelectedStatus,
     minInvestment,
-    setMinInvestment
+    setMinInvestment,
+    viewMode,
+    setViewMode
 }: PortfolioFiltersProps) {
     const [selectedTerm, setSelectedTerm] = useState('All')
     const [selectedAssetClass, setSelectedAssetClass] = useState('All')
     const [sortBy, setSortBy] = useState('newest')
-    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
     const strategies = ['All', 'Diversified Growth', 'Income-Focused', 'Value-Add']
     const statusOptions = ['All', 'Available', 'Funding', 'Funded']

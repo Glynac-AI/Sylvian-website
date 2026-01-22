@@ -19,7 +19,7 @@ export default function ClientAdvisoryPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
                 <div className="max-w-5xl mx-auto relative z-10">
@@ -28,10 +28,10 @@ export default function ClientAdvisoryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             Real Estate Income for Your Clients
                         </h1>
-                        <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
+                        <p className="text-base md:text-lg text-black font-light">
                             Offering real estate exposure with contractual payments and priority protection.
                         </p>
                     </motion.div>
@@ -39,7 +39,7 @@ export default function ClientAdvisoryPage() {
             </section>
 
             {/* Section 1: Client Positioning */}
-            <section ref={section1Ref} className="py-32 px-6 bg-[#F3F4F1] relative overflow-hidden">
+            <section ref={section1Ref} className="py-20 px-6 bg-[#F3F4F1] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -52,7 +52,7 @@ export default function ClientAdvisoryPage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 01. Client Positioning
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -82,7 +82,7 @@ export default function ClientAdvisoryPage() {
                                             <h4 className="text-sm font-bold text-[#095520]">Property Ownership</h4>
                                             <span className="text-xs font-bold text-[#095520]/40">Traditional</span>
                                         </div>
-                                        <div className="space-y-2 text-xs text-[#095520]/70">
+                                        <div className="space-y-2 text-xs text-[#095520]">
                                             <div className="flex items-center">
                                                 <span className="text-[#095520]/40 mr-2">•</span>
                                                 <span>Returns depend on portfolio value increase</span>
@@ -103,7 +103,7 @@ export default function ClientAdvisoryPage() {
                                             <h4 className="text-sm font-bold text-[#095520]">Other Standardized Platforms</h4>
                                             <span className="text-xs font-bold text-amber-600">Variable</span>
                                         </div>
-                                        <div className="space-y-2 text-xs text-[#095520]/70">
+                                        <div className="space-y-2 text-xs text-[#095520]">
                                             <div className="flex items-center">
                                                 <span className="text-[#095520]/40 mr-2">•</span>
                                                 <span>Structures vary across issuers and offerings</span>
@@ -187,7 +187,7 @@ export default function ClientAdvisoryPage() {
                                             </div>
                                             <div className="ml-4">
                                                 <h4 className="text-sm font-bold text-[#095520] mb-1">Priority Protection</h4>
-                                                <p className="text-xs text-[#095520]/70 leading-relaxed">Senior position means they get paid before the developer accesses cash</p>
+                                                <p className="text-xs text-[#095520] leading-relaxed">Senior position means they get paid before the developer accesses cash</p>
                                             </div>
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@ export default function ClientAdvisoryPage() {
                                             </div>
                                             <div className="ml-4">
                                                 <h4 className="text-sm font-bold text-[#095520] mb-1">Structural Cushion</h4>
-                                                <p className="text-xs text-[#095520]/70 leading-relaxed">Developer equity sits below their position, absorbing losses first</p>
+                                                <p className="text-xs text-[#095520] leading-relaxed">Developer equity sits below their position, absorbing losses first</p>
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@ export default function ClientAdvisoryPage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 02. Client Benefits
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -249,7 +249,7 @@ export default function ClientAdvisoryPage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 03. Risk Management
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -284,11 +284,11 @@ export default function ClientAdvisoryPage() {
                                         </div>
                                         <div className="flex items-center justify-between text-xs">
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Equity Owner:</span>
+                                                <span className="text-[#095520] mr-2">Equity Owner:</span>
                                                 <span className="text-red-600 font-medium">Fully Exposed</span>
                                             </div>
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Sylvan:</span>
+                                                <span className="text-[#095520] mr-2">Sylvan:</span>
                                                 <span className="text-emerald-600 font-bold">Avoided</span>
                                             </div>
                                         </div>
@@ -300,11 +300,11 @@ export default function ClientAdvisoryPage() {
                                         </div>
                                         <div className="flex items-center justify-between text-xs">
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Equity Owner:</span>
+                                                <span className="text-[#095520] mr-2">Equity Owner:</span>
                                                 <span className="text-red-600 font-medium">Critical</span>
                                             </div>
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Sylvan:</span>
+                                                <span className="text-[#095520] mr-2">Sylvan:</span>
                                                 <span className="text-emerald-600 font-bold">Less Critical</span>
                                             </div>
                                         </div>
@@ -316,11 +316,11 @@ export default function ClientAdvisoryPage() {
                                         </div>
                                         <div className="flex items-center justify-between text-xs">
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Equity Owner:</span>
+                                                <span className="text-[#095520] mr-2">Equity Owner:</span>
                                                 <span className="text-red-600 font-medium">High</span>
                                             </div>
                                             <div className="flex items-center">
-                                                <span className="text-[#095520]/60 mr-2">Sylvan:</span>
+                                                <span className="text-[#095520] mr-2">Sylvan:</span>
                                                 <span className="text-emerald-600 font-bold">Reduced</span>
                                             </div>
                                         </div>
@@ -353,7 +353,7 @@ export default function ClientAdvisoryPage() {
                         animate={section4InView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                        <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                             04. Portfolio Efficiency
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520] mb-4">

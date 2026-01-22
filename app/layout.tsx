@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className={dmSans.variable}>
       <body className="font-sans antialiased flex min-h-screen flex-col">
         <Navigation />
-        <main className="flex-1 flex flex-col pt-20 md:pt-24">{children}</main>
+        <main className="flex-1 flex flex-col pt-16 md:pt-20">{children}</main>
         <Footer />
       </body>
     </html>

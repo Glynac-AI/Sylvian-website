@@ -3,7 +3,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 
 export default function AccelerateSection() {
     const sectionRef = useRef(null)
@@ -14,53 +14,44 @@ export default function AccelerateSection() {
 
     const contentY = useTransform(scrollYProgress, [0, 1], [50, -50])
     const visualY = useTransform(scrollYProgress, [0, 1], [80, -80])
-    const logoOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.02, 0])
 
     return (
-        <section ref={sectionRef} className="relative py-32 md:py-40 px-6 bg-white overflow-hidden">
+        <section ref={sectionRef} className="relative py-36 md:py-44 px-6 bg-white overflow-hidden">
+            {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                    className="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[700px] md:h-[700px]"
-                    style={{ y: visualY, opacity: logoOpacity }}
-                >
-                    <Image src="/logo.png" alt="" fill className="object-contain opacity-100 -translate-x-[20%]" />
-                </motion.div>
-                <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full opacity-[0.03] blur-3xl" style={{ background: 'radial-gradient(circle, rgba(9, 85, 32, 1) 0%, transparent 70%)' }} />
-                <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
+                <div className="absolute top-[15%] right-[8%] w-[450px] h-[450px] rounded-full opacity-[0.025] blur-3xl bg-[#095520]" />
+                <div className="absolute inset-0 opacity-[0.012]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.2) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+                <div className="grid lg:grid-cols-12 gap-20 lg:gap-16 items-center">
 
-                    <motion.div 
-                        className="lg:col-span-7 space-y-8" 
+                    <motion.div
+                        className="lg:col-span-7 space-y-10"
                         style={{ y: contentY }}
                     >
                         <motion.h2
-                            className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]"
+                            className="text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] font-semibold leading-[1.12] tracking-[-0.02em] text-[#095520]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            Accelerate capital deployment with <br className="hidden lg:block" /> a standardized framework
+                            Accelerate capital deployment with a standardized framework
                         </motion.h2>
 
                         <motion.div
-                            /* MODIFICATION: Added max-w-xl here. 
-                               This constrains the width of the paragraphs to align with the red line 
-                               you indicated, without changing the card size or layout columns. */
-                            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-xl"
+                            className="space-y-7 text-base md:text-lg lg:text-[1.2rem] font-light leading-[1.7] max-w-2xl text-[#013220]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            <p className="text-black">
-                                RIAs face long approval cycles for unfamiliar investment products. Sylvan structures every investment around existing income-producing real estate held in ring-fenced SPVs with predefined assets and cash flows.
+                            <p>
+                                Unfamiliar investment structures mean long approval cycles and repeated internal reviews. Sylvan solves this by structuring every investment around existing income producing real estate held in ring fenced SPVs with predefined assets and cash flows.
                             </p>
-                            <p className="text-black">
-                                Approve our framework once, then deploy capital into multiple assets without analyzing a new structure every time.
+                            <p>
+                                Approve our framework once, then deploy capital into multiple assets without analysing a new structure every time.
                             </p>
                         </motion.div>
 
@@ -70,67 +61,89 @@ export default function AccelerateSection() {
                             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            <button
-                                onClick={() => window.location.href = '/offerings'}
-                                className="group relative inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-[0.1em] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100"
-                            >
-                                <span className="flex items-center gap-3">
+                            <Link href="/offerings">
+                                <button
+                                    className="group inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm md:text-base uppercase tracking-[0.12em] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
+                                >
                                     View Current Listings
-                                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
-                                </span>
-                            </button>
+                                </button>
+                            </Link>
                         </motion.div>
                     </motion.div>
 
-                    <motion.div 
-                        className="lg:col-span-5 relative" 
+                    <motion.div
+                        className="lg:col-span-5 relative"
                         style={{ y: visualY }}
                     >
-                        <motion.div className="relative aspect-[4/5] max-w-md mx-auto lg:ml-auto" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} viewport={{ once: true, margin: "-100px" }}>
-                            <div className="relative h-full rounded-2xl bg-[#F3F4F1] border border-[#095520]/5 shadow-xl overflow-hidden">
-                                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#095520]/20 to-transparent" />
-                                <div className="relative h-full p-8 md:p-10 flex flex-col justify-between">
-                                    <div className="space-y-6">
+                        <motion.div
+                            className="relative aspect-[4/5] max-w-md mx-auto lg:ml-auto"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            <div className="relative h-full rounded-2xl bg-gradient-to-br from-[#F3F4F1] to-white border border-[#095520]/10 shadow-2xl overflow-hidden">
+                                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#095520]/30 to-transparent" />
+                                <div className="relative h-full p-10 md:p-12 flex flex-col justify-between">
+                                    <div className="space-y-8">
                                         <div className="flex items-start justify-between">
                                             <div>
-                                                <div className="text-[10px] uppercase tracking-[0.2em] text-[#095520]/40 font-semibold mb-2">Framework</div>
-                                                <div className="text-2xl font-medium text-[#095520]">Standardized Structure</div>
+                                                <div className="text-[10px] uppercase tracking-[0.25em] text-[#095520]/50 font-bold mb-3">Framework</div>
+                                                <div className="text-2xl md:text-3xl font-semibold text-[#095520]">Standardized<br />Structure</div>
                                             </div>
-                                            <div className="w-12 h-12 rounded-full bg-[#095520]/5 flex items-center justify-center">
-                                                <svg className="w-6 h-6 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center">
+                                                <svg className="w-7 h-7 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div className="space-y-6 pt-4">
+                                        <div className="space-y-7 pt-6">
                                             {[
-                                                { label: 'One-Time Approval', value: '1×', color: 'from-[#095520] to-[#008929]' },
-                                                { label: 'Deployment Speed', value: '10×', color: 'from-[#008929] to-[#095520]' },
-                                                { label: 'Assets Available', value: 'Multiple', color: 'from-[#095520] to-[#095520]/70' }
+                                                { label: 'One-Time Approval', value: '1×', desc: 'Framework Review' },
+                                                { label: 'Deployment Speed', value: '10×', desc: 'Faster Capital Access' },
+                                                { label: 'Assets Available', value: 'Multiple', desc: 'Diversified Options' }
                                             ].map((metric, i) => (
-                                                <motion.div key={i} className="space-y-2" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.6 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }} viewport={{ once: true }}>
+                                                <motion.div
+                                                    key={i}
+                                                    className="space-y-3"
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{ duration: 0.6, delay: 0.6 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                                                    viewport={{ once: true }}
+                                                >
                                                     <div className="flex items-end justify-between">
-                                                        <span className="text-sm text-[#095520]/60">{metric.label}</span>
-                                                        <span className="text-xl font-semibold text-[#095520]">{metric.value}</span>
+                                                        <div>
+                                                            <span className="text-sm font-medium text-[#095520]/70 block mb-1">{metric.label}</span>
+                                                            <span className="text-xs text-[#095520]/50">{metric.desc}</span>
+                                                        </div>
+                                                        <span className="text-2xl font-bold text-[#095520]">{metric.value}</span>
                                                     </div>
-                                                    <div className="h-[2px] bg-gradient-to-r opacity-20" style={{ backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`, '--tw-gradient-from': '#095520', '--tw-gradient-to': '#008929' } as React.CSSProperties} />
+                                                    <div className="h-[2px] bg-gradient-to-r from-[#095520] to-[#095520]/20" />
                                                 </motion.div>
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="pt-8 space-y-3">
-                                        {['Ring-Fenced SPVs', 'Pre-Approved Structure', 'Repeatable Process'].map((feature, i) => (
-                                            <motion.div key={i} className="flex items-center gap-2 text-sm" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 1 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }} viewport={{ once: true }}>
-                                                <div className="w-1.5 h-1.5 rounded-full bg-[#095520]" />
-                                                <span className="text-[#095520]/70">{feature}</span>
+                                    <div className="pt-10 space-y-4">
+                                        {['Ring Fenced SPVs', 'Pre-Approved Structure', 'Repeatable Process'].map((feature, i) => (
+                                            <motion.div
+                                                key={i}
+                                                className="flex items-center gap-3 text-sm"
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.5, delay: 1 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                                                viewport={{ once: true }}
+                                            >
+                                                <div className="w-2 h-2 rounded-full bg-[#095520]" />
+                                                <span className="text-[#095520]/80 font-medium">{feature}</span>
                                             </motion.div>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-[#095520]/5 -z-10" />
+                            <div className="absolute -bottom-5 -right-5 w-full h-full rounded-2xl bg-[#095520]/[0.06] -z-10" />
                         </motion.div>
                     </motion.div>
 

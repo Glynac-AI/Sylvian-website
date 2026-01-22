@@ -17,7 +17,7 @@ export default function StrategyPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
                 <div className="max-w-5xl mx-auto relative z-10">
@@ -26,10 +26,10 @@ export default function StrategyPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             The Sylvan Framework
                         </h1>
-                        <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
+                        <p className="text-base md:text-lg text-black font-light">
                             A standardized approach to real estate debt, designed for RIA compliance and capital efficiency.
                         </p>
                     </motion.div>
@@ -37,7 +37,7 @@ export default function StrategyPage() {
             </section>
 
             {/* Section 1: The Asset */}
-            <section ref={section1Ref} className="py-32 px-6 bg-[#F3F4F1] relative overflow-hidden">
+            <section ref={section1Ref} className="py-20 px-6 bg-[#F3F4F1] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -62,7 +62,7 @@ export default function StrategyPage() {
                                         <div className="font-bold text-base">Sylvan Debt Position</div>
                                         <div className="text-xs text-yellow-400/70 mt-2">What you are buying</div>
                                     </div>
-                                    <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 text-[#095520]/60 text-center rounded-lg text-sm">
+                                    <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 text-[#095520] text-center rounded-lg text-sm">
                                         Developer Equity
                                         <span className="block text-xs text-[#095520]/40 mt-1">Absorbs volatility</span>
                                     </div>

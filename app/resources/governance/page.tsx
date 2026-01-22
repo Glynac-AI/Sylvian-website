@@ -20,19 +20,19 @@ export default function GovernancePage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-32 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
-                
+
                 <div className="max-w-5xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             Governance & Control Framework
                         </h1>
-                        <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
+                        <p className="text-base md:text-lg text-black font-light">
                             The structural controls that protect capital and cash flows across every Sylvan transaction.
                         </p>
                     </motion.div>
@@ -40,7 +40,7 @@ export default function GovernancePage() {
             </section>
 
             {/* Section 1: Asset Isolation */}
-            <section ref={section1Ref} className="py-32 px-6 bg-white relative overflow-hidden border-b border-gray-200">
+            <section ref={section1Ref} className="py-20 px-6 bg-white relative overflow-hidden border-b border-gray-200">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
                 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -53,7 +53,7 @@ export default function GovernancePage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}} 
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 01. Asset Isolation
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -79,10 +79,10 @@ export default function GovernancePage() {
                             <div className="bg-[#F3F4F1] p-10 rounded-2xl border border-[#095520]/10 shadow-lg">
                                 <div className="space-y-8">
                                     <div className="grid grid-cols-2 gap-4 opacity-40">
-                                        <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]/60">
+                                        <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]">
                                             Developer's<br/>Other Projects
                                         </div>
-                                        <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]/60">
+                                        <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]">
                                             Developer's<br/>Operating Liabilities
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@ export default function GovernancePage() {
                                             PROTECTED
                                         </div>
                                         <h4 className="font-bold text-[#095520] text-lg mb-1">Sylvan SPV</h4>
-                                        <p className="text-sm text-[#095520]/60">Your investment asset</p>
+                                        <p className="text-sm text-[#095520]">Your investment asset</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ export default function GovernancePage() {
                                     <div className="text-center">
                                         <div className="inline-block p-4 bg-[#F3F4F1] rounded-lg border border-[#095520]/20 mb-6">
                                             <div className="text-sm font-medium text-[#095520]">Monthly Rental Income</div>
-                                            <div className="text-xs text-[#095520]/60 mt-1">From tenants</div>
+                                            <div className="text-xs text-[#095520] mt-1">From tenants</div>
                                         </div>
                                     </div>
 
@@ -155,7 +155,7 @@ export default function GovernancePage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}} 
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 02. Payment Priority
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -188,7 +188,7 @@ export default function GovernancePage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}} 
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                            <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                                 03. Principal Protection
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
@@ -212,7 +212,7 @@ export default function GovernancePage() {
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="bg-[#F3F4F1] p-12 rounded-2xl border border-[#095520]/10 shadow-lg flex flex-col items-center">
-                                <div className="text-xs text-[#095520]/50 mb-6 text-center">Capital Structure</div>
+                                <div className="text-xs text-[#095520]/80 mb-6 text-center">Capital Structure</div>
                                 
                                 <div className="w-full max-w-sm space-y-3 relative">
                                     <div className="relative">
@@ -231,7 +231,7 @@ export default function GovernancePage() {
                                     <div className="relative">
                                         <div className="h-24 bg-white border-2 border-[#095520]/30 rounded flex flex-col items-center justify-center text-[#095520]/70 text-sm">
                                             <div className="font-medium">Developer Equity</div>
-                                            <div className="text-xs text-[#095520]/50 mt-1">Protective cushion</div>
+                                            <div className="text-xs text-[#095520]/80 mt-1">Protective cushion</div>
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +250,7 @@ export default function GovernancePage() {
                         animate={section4InView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="text-xs font-bold text-[#095520]/50 uppercase tracking-widest mb-4">
+                        <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
                             04. Deployment Efficiency
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520] mb-4">
@@ -279,17 +279,17 @@ export default function GovernancePage() {
                         <div className="space-y-4">
                             <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
                                 <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 1</div>
-                                <div className="text-sm text-[#095520]/60">Multifamily, Austin</div>
+                                <div className="text-sm text-[#095520]">Multifamily, Austin</div>
                             </div>
 
                             <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
                                 <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 2</div>
-                                <div className="text-sm text-[#095520]/60">Industrial, Phoenix</div>
+                                <div className="text-sm text-[#095520]">Industrial, Phoenix</div>
                             </div>
 
                             <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
                                 <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 3</div>
-                                <div className="text-sm text-[#095520]/60">Retail, Denver</div>
+                                <div className="text-sm text-[#095520]">Retail, Denver</div>
                             </div>
                         </div>
                     </motion.div>

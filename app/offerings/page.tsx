@@ -14,6 +14,7 @@ export default function OfferingsPage() {
     const [selectedStrategy, setSelectedStrategy] = useState('All')
     const [selectedStatus, setSelectedStatus] = useState('All')
     const [minInvestment, setMinInvestment] = useState('All')
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
     // Filter portfolios based on selections
     const filteredPortfolios = portfolios.filter(portfolio => {
@@ -37,7 +38,7 @@ export default function OfferingsPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-24 px-6 bg-white overflow-hidden border-b border-gray-200">
+            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
                 <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
 
                 <div className="max-w-5xl mx-auto relative z-10">
@@ -46,66 +47,37 @@ export default function OfferingsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-6 tracking-tight leading-[1.1]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             Investment Portfolios
                         </h1>
-                        <p className="text-xl md:text-2xl text-black font-light leading-relaxed max-w-3xl">
-                            Explore our curated selection of diversified real estate portfolios. Each portfolio combines multiple properties to provide balanced returns, risk diversification, and professional asset management.
+                        <p className="text-base md:text-lg text-black font-light">
+                            Explore curated diversified real estate portfolios with balanced returns and professional management.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Platform Stats Section - Elegant */}
-            <section className="py-12 px-6 bg-white border-b border-gray-200">
-                <div className="max-w-7xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8"
-                    >
-                        <div className="text-center">
-                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">$68M+</p>
-                            <p className="text-sm text-black">Total Invested</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">$12M+</p>
-                            <p className="text-sm text-black">Returns Delivered</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">3</p>
-                            <p className="text-sm text-black">Active Offerings</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-3xl md:text-4xl font-semibold text-[#095520] mb-2">7.8%</p>
-                            <p className="text-sm text-black">Avg. Target Yield</p>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
             {/* Top Listings Section */}
-            <section className="py-16 px-6 bg-white border-b border-gray-200">
+            <section className="py-12 px-6 bg-white border-b border-gray-200">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="mb-12"
+                        className="mb-8"
                     >
-                        <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold text-[#095520] mb-2">
                             Top Opportunities
                         </h2>
-                        <p className="text-lg text-[#095520]/60">
+                        <p className="text-base text-[#095520]">
                             Highest yielding portfolios available now
                         </p>
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {topListings.map((portfolio, index) => (
-                            <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
+                            <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} viewMode="grid" />
                         ))}
                     </div>
                 </div>
@@ -120,6 +92,8 @@ export default function OfferingsPage() {
                     setSelectedStatus={setSelectedStatus}
                     minInvestment={minInvestment}
                     setMinInvestment={setMinInvestment}
+                    viewMode={viewMode}
+                    setViewMode={setViewMode}
                 />
 
                 <div className="py-16 px-6">
@@ -135,19 +109,19 @@ export default function OfferingsPage() {
                                 All Portfolios
                             </h2>
                             <div className="flex items-center justify-between">
-                                <p className="text-lg text-[#095520]/60">
+                                <p className="text-lg text-[#095520]">
                                     Browse our complete portfolio collection
                                 </p>
-                                <p className="text-sm text-[#095520]/60">
+                                <p className="text-sm text-[#095520]">
                                     Showing <span className="font-semibold text-[#095520]">{filteredPortfolios.length}</span> {filteredPortfolios.length === 1 ? 'portfolio' : 'portfolios'}
                                 </p>
                             </div>
                         </motion.div>
 
                     {filteredPortfolios.length > 0 ? (
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className={viewMode === 'grid' ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-8' : 'flex flex-col gap-6'}>
                             {filteredPortfolios.map((portfolio, index) => (
-                                <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} />
+                                <PortfolioCard key={portfolio.id} portfolio={portfolio} index={index} viewMode={viewMode} />
                             ))}
                         </div>
                     ) : (
@@ -162,7 +136,7 @@ export default function OfferingsPage() {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-medium text-[#095520] mb-2">No portfolios found</h3>
-                            <p className="text-[#095520]/60">Try adjusting your filters to see more results</p>
+                            <p className="text-[#095520]">Try adjusting your filters to see more results</p>
                         </motion.div>
                     )}
                     </div>
