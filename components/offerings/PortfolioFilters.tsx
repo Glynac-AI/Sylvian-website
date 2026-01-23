@@ -26,7 +26,7 @@ export default function PortfolioFilters({
 
     // Updated Status Options to match your previous request
     const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
-    const investmentRanges = ['All', '$0-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
+    const investmentRanges = ['All', '$25k-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
 
     return (
