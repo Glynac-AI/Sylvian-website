@@ -15,7 +15,12 @@ export const metadata: Metadata = {
   title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
   description: 'Standardized structured real estate income platform providing repeatable structure, workflow, and audit-ready documentation for institutional-grade real estate income investing.',
   icons: {
-    icon: '/favicon.png',
+    icon: [
+      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
     title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
