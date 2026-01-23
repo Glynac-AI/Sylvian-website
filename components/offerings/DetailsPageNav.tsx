@@ -18,7 +18,6 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
         { id: 'overview', label: 'Overview' },
         { id: 'metrics', label: 'Metrics' },
         { id: 'sponsor', label: 'Sponsor' },
-        { id: 'allocation', label: 'Allocation' },
         { id: 'risks', label: 'Risks' },
         { id: 'properties', label: 'Properties' },
         { id: 'structure', label: 'Structure' },
