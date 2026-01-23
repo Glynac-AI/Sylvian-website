@@ -12,9 +12,9 @@ export default function Footer() {
             { label: 'Strategy', href: '/strategy' }
         ],
         resources: [
-            { label: 'Governance & Compliance', href: '/resources/governance' },
-            { label: 'Investment Strategy', href: '/resources/investment-strategy' },
-            { label: 'Client Advisory', href: '/resources/client-advisory' }
+            { label: 'For CCOs', href: '/resources/governance' },
+            { label: 'For CIOs', href: '/resources/investment-strategy' },
+            { label: 'For RIAs', href: '/resources/client-advisory' }
         ],
         quickLinks: [
             { label: 'View Listings', href: '/offerings' },

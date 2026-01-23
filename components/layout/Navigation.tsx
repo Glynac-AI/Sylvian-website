@@ -23,9 +23,9 @@ export default function Navigation() {
     ]
 
     const resourceLinks = [
-        { label: 'For CCO', href: '/resources/governance' },
-        { label: 'For CIO', href: '/resources/investment-strategy' },
-        { label: 'For RIA', href: '/resources/client-advisory' }
+        { label: 'For CCOs', href: '/resources/governance' },
+        { label: 'For CIOs', href: '/resources/investment-strategy' },
+        { label: 'For RIAs', href: '/resources/client-advisory' }
     ]
 
     // Close dropdown when clicking outside
