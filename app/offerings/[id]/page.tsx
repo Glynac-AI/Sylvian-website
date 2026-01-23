@@ -31,11 +31,11 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
     const getStatusColor = (status: string) => {
         switch (status) {
-            case 'Available':
-                return 'bg-green-50 text-green-700 border-green-200'
-            case 'Funding':
-                return 'bg-[#F3F4F1] text-[#095520] border-[#095520]/20'
-            case 'Funded':
+            case 'Active':
+                return 'bg-white text-[#095520] border-white'
+            case 'Closing Soon':
+                return 'bg-amber-100 text-amber-800 border-amber-200'
+            case 'Closed':
                 return 'bg-gray-100 text-gray-600 border-gray-300'
             default:
                 return 'bg-gray-100 text-gray-600 border-gray-300'
@@ -62,7 +62,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                 </div>
             </section>
 
-            {/* Hero Image Section - Clean, No Overlays */}
+            {/* Hero Image Section - With Badges Overlay */}
             <section className="relative h-[70vh] min-h-[600px] overflow-hidden px-6 mb-8">
                 <div className="relative h-full rounded-3xl overflow-hidden">
                     <Image
@@ -72,22 +72,23 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         className="object-cover"
                         priority
                     />
+                    {/* Badges on Image Section */}
+                    <div className="absolute top-6 left-6 flex gap-3 z-10">
+                        <span className={`px-4 py-1.5 text-sm font-semibold rounded-full shadow-md border ${getStatusColor(portfolio.fundingStatus)}`}>
+                            {portfolio.fundingStatus}
+                        </span>
+                        <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-md">
+                            {portfolio.strategy}
+                        </span>
+                    </div>
                 </div>
             </section>
 
             {/* Portfolio Title & Key Metrics - Full Width White Section */}
             <section className="bg-white py-12 px-6 mb-8 shadow-md">
                 <div className="max-w-7xl mx-auto">
-                        {/* Title and Status */}
+                        {/* Title (Badges removed from here) */}
                         <div className="mb-8">
-                            <div className="flex flex-wrap items-center gap-3 mb-4">
-                                <span className={`px-4 py-1.5 text-sm font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
-                                    {portfolio.fundingStatus}
-                                </span>
-                                <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#F3F4F1] text-[#095520]">
-                                    {portfolio.strategy}
-                                </span>
-                            </div>
                             <h1 className="text-4xl md:text-5xl font-medium text-[#095520] mb-3">
                                 {portfolio.title}
                             </h1>
@@ -127,8 +128,8 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         </div>
                     </div>
 
-                    {/* Funding Progress Bar (if not fully funded) */}
-                    {portfolio.fundingStatus !== 'Funded' && (
+                    {/* Funding Progress Bar (if not closed) */}
+                    {portfolio.fundingStatus !== 'Closed' && (
                         <div className="mt-8 pt-6 border-t border-gray-200">
                             <div className="flex items-center justify-between mb-3">
                                 <span className="text-sm font-medium text-[#095520]">Funding Progress</span>
@@ -202,7 +203,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                     <div className="space-y-4">
                                         <div>
                                             <p className="text-sm text-[#095520]">Total Square Feet</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalSquareFeet.toLocaleString()} SF</p>
+                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalSquareFeet.toLocaleString('en-US')} SF</p>
                                         </div>
                                         {portfolio.portfolioMetrics.totalUnits > 0 && (
                                             <div>
@@ -223,34 +224,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 <SponsorProfile sponsorProfile={portfolio.sponsorProfile} />
                             </div>
 
-                            {/* Property Allocation */}
-                            <motion.div
-                                id="allocation"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.15 }}
-                                className="bg-white rounded-2xl p-8 shadow-md"
-                            >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Asset Allocation</h2>
-                                <div className="space-y-4">
-                                    {portfolio.propertyAllocation.map((allocation, index) => (
-                                        <div key={index}>
-                                            <div className="flex justify-between items-center mb-2">
-                                                <span className="text-black font-medium">{allocation.type}</span>
-                                                <span className="text-black font-semibold">{allocation.percentage}% ({allocation.count} {allocation.count === 1 ? 'property' : 'properties'})</span>
-                                            </div>
-                                            <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                                <motion.div
-                                                    initial={{ width: 0 }}
-                                                    animate={{ width: `${allocation.percentage}%` }}
-                                                    transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                                                    className="h-full bg-gradient-to-r from-[#095520] to-[#008929]"
-                                                />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
+                            {/* Removed Asset Allocation Section */}
 
                             {/* Diversification */}
                             <motion.div
@@ -329,7 +303,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                                         </div>
                                                         <div>
                                                             <p className="text-[#095520] mb-1">Square Feet</p>
-                                                            <p className="font-semibold text-black">{property.squareFeet.toLocaleString()} SF</p>
+                                                            <p className="font-semibold text-black">{property.squareFeet.toLocaleString('en-US')} SF</p>
                                                         </div>
                                                         {property.totalUnits && (
                                                             <div>
@@ -437,7 +411,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                             >
                                 <h3 className="text-xl font-semibold text-[#095520] mb-6">Investment Summary</h3>
 
-                                {portfolio.fundingStatus !== 'Funded' && (
+                                {portfolio.fundingStatus !== 'Closed' && (
                                     <div className="mb-6">
                                         <div className="flex items-center justify-between mb-2">
                                             <span className="text-sm text-[#095520]">Funding Progress</span>

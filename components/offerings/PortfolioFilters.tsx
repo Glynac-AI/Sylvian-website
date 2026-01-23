@@ -5,8 +5,6 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 interface PortfolioFiltersProps {
-    selectedStrategy: string
-    setSelectedStrategy: (strategy: string) => void
     selectedStatus: string
     setSelectedStatus: (status: string) => void
     minInvestment: string
@@ -16,8 +14,6 @@ interface PortfolioFiltersProps {
 }
 
 export default function PortfolioFilters({
-    selectedStrategy,
-    setSelectedStrategy,
     selectedStatus,
     setSelectedStatus,
     minInvestment,
@@ -26,14 +22,12 @@ export default function PortfolioFilters({
     setViewMode
 }: PortfolioFiltersProps) {
     const [selectedTerm, setSelectedTerm] = useState('All')
-    const [selectedAssetClass, setSelectedAssetClass] = useState('All')
     const [sortBy, setSortBy] = useState('newest')
 
-    const strategies = ['All', 'Diversified Growth', 'Income-Focused', 'Value-Add']
-    const statusOptions = ['All', 'Available', 'Funding', 'Funded']
+    // Updated Status Options to match your previous request
+    const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
     const investmentRanges = ['All', '$0-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
-    const assetClassOptions = ['All', 'Multifamily', 'Office', 'Retail', 'Industrial', 'Mixed-Use']
 
     return (
         <section className="sticky top-22 z-20 bg-white border-b border-gray-200 shadow-sm">
@@ -46,42 +40,6 @@ export default function PortfolioFilters({
                 >
                     {/* Main Filter Row */}
                     <div className="flex items-center gap-4 mb-3 pb-3 border-b border-gray-100">
-                        {/* Asset Class Dropdown */}
-                        <div className="relative">
-                            <select
-                                value={selectedAssetClass}
-                                onChange={(e) => setSelectedAssetClass(e.target.value)}
-                                className="pl-4 pr-10 py-2 rounded-full text-sm font-medium bg-white text-[#095520] border border-gray-200 hover:border-[#095520]/30 focus:outline-none focus:ring-2 focus:ring-[#095520]/20 transition-all cursor-pointer appearance-none"
-                            >
-                                {assetClassOptions.map((option) => (
-                                    <option key={option} value={option}>
-                                        {option === 'All' ? 'Asset Type' : option}
-                                    </option>
-                                ))}
-                            </select>
-                            <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#095520] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-
-                        {/* Strategy Dropdown */}
-                        <div className="relative">
-                            <select
-                                value={selectedStrategy}
-                                onChange={(e) => setSelectedStrategy(e.target.value)}
-                                className="pl-4 pr-10 py-2 rounded-full text-sm font-medium bg-white text-[#095520] border border-gray-200 hover:border-[#095520]/30 focus:outline-none focus:ring-2 focus:ring-[#095520]/20 transition-all cursor-pointer appearance-none"
-                            >
-                                {strategies.map((option) => (
-                                    <option key={option} value={option}>
-                                        {option === 'All' ? 'Strategy' : option}
-                                    </option>
-                                ))}
-                            </select>
-                            <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#095520] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-
                         {/* Minimum Investment Slider/Dropdown */}
                         <div className="relative">
                             <select
@@ -192,16 +150,14 @@ export default function PortfolioFilters({
                         ))}
 
                         {/* Clear Filters */}
-                        {(selectedStrategy !== 'All' || selectedStatus !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All' || selectedAssetClass !== 'All') && (
+                        {(selectedStatus !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All') && (
                             <motion.button
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 onClick={() => {
-                                    setSelectedStrategy('All')
                                     setSelectedStatus('All')
                                     setMinInvestment('All')
                                     setSelectedTerm('All')
-                                    setSelectedAssetClass('All')
                                 }}
                                 className="ml-auto text-xs text-[#095520]/60 hover:text-[#095520] underline underline-offset-2 transition-colors"
                             >

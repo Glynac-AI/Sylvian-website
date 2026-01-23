@@ -21,7 +21,8 @@ export default function PropertyFilters({
     setMinInvestment
 }: PropertyFiltersProps) {
     const propertyTypes = ['All', 'Multifamily', 'Commercial', 'Retail', 'Medical', 'Industrial']
-    const statusOptions = ['All', 'Available', 'Funding', 'Funded']
+    // Updated Status Options
+    const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
     const investmentOptions = ['All', '$25,000', '$50,000', '$75,000+']
 
     const FilterButton = ({ label, isSelected, onClick }: { label: string, isSelected: boolean, onClick: () => void }) => (

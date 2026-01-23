@@ -29,11 +29,11 @@ interface PropertyCardProps {
 export default function PropertyCard({ property, index }: PropertyCardProps) {
     const getStatusColor = (status: string) => {
         switch (status) {
-            case 'Available':
+            case 'Active':
                 return 'bg-green-50 text-green-700 border-green-200'
-            case 'Funding':
-                return 'bg-yellow-50 text-yellow-700 border-yellow-200'
-            case 'Funded':
+            case 'Closing Soon':
+                return 'bg-amber-50 text-amber-700 border-amber-200'
+            case 'Closed':
                 return 'bg-gray-100 text-gray-600 border-gray-300'
             default:
                 return 'bg-gray-100 text-gray-600 border-gray-300'
@@ -105,7 +105,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
                         </div>
 
                         {/* Funding Progress */}
-                        {property.fundingStatus !== 'Funded' && (
+                        {property.fundingStatus !== 'Closed' && (
                             <div>
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-xs text-[#095520]/50">Funding Progress</span>

@@ -35,11 +35,11 @@ interface PortfolioCardProps {
 export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: PortfolioCardProps) {
     const getStatusColor = (status: string) => {
         switch (status) {
-            case 'Available':
-                return 'bg-green-50 text-green-700 border-green-200'
-            case 'Funding':
-                return 'bg-[#F3F4F1] text-[#095520] border-[#095520]/20'
-            case 'Funded':
+            case 'Active':
+                return 'bg-white text-[#095520] border-white' // Matches "Available" pill style in image
+            case 'Closing Soon':
+                return 'bg-amber-100 text-amber-800 border-amber-200'
+            case 'Closed':
                 return 'bg-gray-100 text-gray-600 border-gray-300'
             default:
                 return 'bg-gray-100 text-gray-600 border-gray-300'
@@ -64,22 +64,23 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
+                            {/* Badges on Image for List View too */}
+                            <div className="absolute top-3 left-3 flex gap-2">
+                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520]">
+                                    {portfolio.strategy}
+                                </span>
+                            </div>
+                            <div className="absolute top-3 right-3">
+                                <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
+                                    {portfolio.fundingStatus}
+                                </span>
+                            </div>
                         </div>
 
                         {/* Content - Horizontal layout */}
                         <div className="flex-1 p-6 bg-white flex flex-col">
                             <div className="flex items-start justify-between mb-4">
                                 <div className="flex-1">
-                                    {/* Badges */}
-                                    <div className="flex items-center gap-2 flex-wrap mb-3">
-                                        <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
-                                            {portfolio.fundingStatus}
-                                        </span>
-                                        <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#F3F4F1] text-[#095520]">
-                                            {portfolio.strategy}
-                                        </span>
-                                    </div>
-
                                     {/* Title */}
                                     <h3 className="text-2xl font-semibold text-[#095520] mb-2 group-hover:text-[#008929] transition-colors">
                                         {portfolio.title}
@@ -169,19 +170,21 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
+                        {/* REVERTED: Badges overlaid on image */}
+                        <div className="absolute top-4 left-4">
+                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-sm">
+                                {portfolio.strategy}
+                            </span>
+                        </div>
+                        <div className="absolute top-4 right-4">
+                             <span className={`px-3 py-1 text-xs font-semibold rounded-full shadow-sm ${getStatusColor(portfolio.fundingStatus)}`}>
+                                {portfolio.fundingStatus}
+                            </span>
+                        </div>
                     </div>
 
                     {/* Content - Tighter spacing */}
                     <div className="p-5 bg-white space-y-3">
-                        {/* Badges at top of content */}
-                        <div className="flex items-center gap-2 flex-wrap">
-                            <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getStatusColor(portfolio.fundingStatus)}`}>
-                                {portfolio.fundingStatus}
-                            </span>
-                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#F3F4F1] text-[#095520]">
-                                {portfolio.strategy}
-                            </span>
-                        </div>
                         {/* ONE BIG NUMBER - Target Yield prominently displayed */}
                         <div className="text-center py-3 bg-gradient-to-br from-[#095520]/5 to-[#008929]/5 rounded-xl border border-[#095520]/10">
                             <p className="text-xs text-[#095520] font-medium mb-1">TARGET YIELD</p>
@@ -229,9 +232,8 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                             </div>
                             <div className="text-center">
                                 <div className="flex justify-center mb-1">
-                                    {portfolio.fundingStatus !== 'Funded' ? (
+                                    {portfolio.fundingStatus !== 'Closed' ? (
                                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#095520]/10 to-[#008929]/10 flex items-center justify-center relative">
-                                           
                                             <span className="absolute text-xs font-bold text-[#095520]">{portfolio.fundingProgress}%</span>
                                         </div>
                                     ) : (

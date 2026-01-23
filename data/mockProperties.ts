@@ -9,7 +9,7 @@ export interface Property {
     targetYield: string
     investmentTerm: string
     minimumInvestment: string
-    fundingStatus: 'Available' | 'Funding' | 'Funded'
+    fundingStatus: 'Active' | 'Closing Soon' | 'Closed' // Updated types
     fundingProgress: number
     totalRaise: string
     description: string
@@ -57,7 +57,7 @@ export const mockProperties: Property[] = [
         targetYield: '7.5%',
         investmentTerm: '5 years',
         minimumInvestment: '$25,000',
-        fundingStatus: 'Available',
+        fundingStatus: 'Active', // Changed
         fundingProgress: 45,
         totalRaise: '$5,000,000',
         description: 'Class A multifamily property with established rental income in a prime Austin location. This property features modern amenities, strong tenant demographics, and consistent cash flow performance.',
@@ -138,7 +138,7 @@ export const mockProperties: Property[] = [
         targetYield: '6.8%',
         investmentTerm: '7 years',
         minimumInvestment: '$50,000',
-        fundingStatus: 'Funding',
+        fundingStatus: 'Closing Soon', // Changed
         fundingProgress: 78,
         totalRaise: '$8,500,000',
         description: 'Premium office space with long-term corporate tenants and stable cash flows. Located in Nashville\'s central business district with excellent access to transportation and amenities.',
@@ -218,7 +218,7 @@ export const mockProperties: Property[] = [
         targetYield: '7.2%',
         investmentTerm: '5 years',
         minimumInvestment: '$35,000',
-        fundingStatus: 'Available',
+        fundingStatus: 'Active', // Changed
         fundingProgress: 23,
         totalRaise: '$4,200,000',
         description: 'Anchored retail center with diverse tenant mix in a high-growth suburban market. Strong traffic patterns and excellent visibility from major thoroughfares.',

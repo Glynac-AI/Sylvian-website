@@ -80,9 +80,7 @@ export default function Footer() {
                             </div>
                         </Link>
 
-                        <p className="text-[#013220] leading-relaxed mb-6 max-w-sm">
-                            Building sustainable wealth through carefully curated real estate portfolios. Your trusted partner in institutional-grade property investments.
-                        </p>
+                        {/* Paragraph Removed Here */}
 
                         {/* Social Icons */}
                         <div className="flex gap-3">

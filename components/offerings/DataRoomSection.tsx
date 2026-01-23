@@ -97,9 +97,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                     <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-4">
                         Investment Documentation
                     </h2>
-                    <p className="text-lg text-black max-w-3xl">
-                        Review comprehensive documentation for {propertyTitle}. All investment materials, property information, and legal documents are organized for your review.
-                    </p>
+                    {/* Description text removed as requested */}
                 </motion.div>
 
                 {/* Data Room Layout */}

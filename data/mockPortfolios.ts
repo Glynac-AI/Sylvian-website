@@ -16,49 +16,39 @@ export interface PropertyInPortfolio {
 export interface Portfolio {
     id: number
     title: string
-    strategy: string // e.g., 'Diversified Growth', 'Income-Focused', 'Value-Add'
+    strategy: string
     image: string
     targetYield: string
     investmentTerm: string
     minimumInvestment: string
-    fundingStatus: 'Available' | 'Funding' | 'Funded'
+    fundingStatus: 'Active' | 'Closing Soon' | 'Closed' // Updated types
     fundingProgress: number
     totalRaise: string
     description: string
     highlights: string[]
-
-    // Portfolio-specific aggregates
     portfolioMetrics: {
         totalProperties: number
         totalValue: string
         averageOccupancy: string
         totalSquareFeet: number
         totalUnits: number
-        geographicMarkets: string[] // e.g., ['Austin, TX', 'Nashville, TN']
+        geographicMarkets: string[]
     }
-
-    // Property mix/allocation
     propertyAllocation: {
-        type: string // e.g., 'Multifamily', 'Commercial', 'Retail'
+        type: string
         percentage: number
         count: number
     }[]
-
-    // Risk diversification
     diversification: {
-        geographicDiversification: string // e.g., '4 markets across 3 states'
-        assetTypeDiversification: string // e.g., '3 asset classes'
-        tenantDiversification: string // e.g., '50+ unique tenants'
+        geographicDiversification: string
+        assetTypeDiversification: string
+        tenantDiversification: string
     }
-
-    // Risk Factors
     riskFactors: {
         risk: string
         description: string
         mitigation: string
     }[]
-
-    // Sponsor Profile
     sponsorProfile: {
         name: string
         totalAUM: string
@@ -68,19 +58,13 @@ export interface Portfolio {
         teamSize: string
         description: string
     }
-
-    // Individual properties in the portfolio
     properties: PropertyInPortfolio[]
-
-    // Capital Stack (for visualization)
     capitalStack: {
-        layer: string // 'Senior Debt', 'Junior Debt', 'Preferred Equity', 'Common Equity'
+        layer: string
         amount: string
         percentage: number
         yieldRange?: string
     }[]
-
-    // Investment structure (aggregate)
     investmentStructure: {
         structureType: string
         totalSeniorDebt: string
@@ -88,8 +72,6 @@ export interface Portfolio {
         weightedAvgDSCR: string
         totalReserves: string
     }
-
-    // Financial information (aggregate)
     financials: {
         projectedAnnualReturn: string
         cashDistributionSchedule: string
@@ -97,15 +79,13 @@ export interface Portfolio {
         exitStrategy: string
         totalAnnualRent: string
     }
-
-    // Documents for the portfolio
     documents: {
         category: string
         files: {
             name: string
             size: string
             uploadDate: string
-            isGated?: boolean // If true, requires form submission to access
+            isGated?: boolean
         }[]
     }[]
 }
@@ -119,7 +99,7 @@ export const mockPortfolios: Portfolio[] = [
         targetYield: '7.8%',
         investmentTerm: '5 years',
         minimumInvestment: '$50,000',
-        fundingStatus: 'Available',
+        fundingStatus: 'Active', // Changed from Available
         fundingProgress: 42,
         totalRaise: '$18,500,000',
         description: 'A carefully curated portfolio of Class A multifamily properties across high-growth Sunbelt markets. This diversified portfolio combines stable cash flow with appreciation potential in markets experiencing strong population and job growth.',
@@ -307,7 +287,7 @@ export const mockPortfolios: Portfolio[] = [
         targetYield: '7.2%',
         investmentTerm: '7 years',
         minimumInvestment: '$75,000',
-        fundingStatus: 'Funding',
+        fundingStatus: 'Closing Soon', // Changed from Funding
         fundingProgress: 73,
         totalRaise: '$32,500,000',
         description: 'A diversified portfolio combining premium office and retail assets in thriving urban markets. This portfolio focuses on stable income generation through long-term corporate tenants and essential retail anchors.',
@@ -503,7 +483,7 @@ export const mockPortfolios: Portfolio[] = [
         targetYield: '8.5%',
         investmentTerm: '4 years',
         minimumInvestment: '$100,000',
-        fundingStatus: 'Available',
+        fundingStatus: 'Active', // Changed from Available
         fundingProgress: 28,
         totalRaise: '$24,800,000',
         description: 'A strategic portfolio of underperforming assets with significant upside potential through renovations, improved management, and market repositioning. This portfolio targets superior returns through active value creation.',

@@ -11,21 +11,19 @@ import { mockPortfolios } from '@/data/mockPortfolios'
 const portfolios = mockPortfolios
 
 export default function OfferingsPage() {
-    const [selectedStrategy, setSelectedStrategy] = useState('All')
     const [selectedStatus, setSelectedStatus] = useState('All')
     const [minInvestment, setMinInvestment] = useState('All')
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
     // Filter portfolios based on selections
     const filteredPortfolios = portfolios.filter(portfolio => {
-        const strategyMatch = selectedStrategy === 'All' || portfolio.strategy === selectedStrategy
         const statusMatch = selectedStatus === 'All' || portfolio.fundingStatus === selectedStatus
         const investmentMatch = minInvestment === 'All' ||
             (minInvestment === '$50,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 50000) ||
             (minInvestment === '$75,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 75000) ||
             (minInvestment === '$100,000+' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) >= 100000)
 
-        return strategyMatch && statusMatch && investmentMatch
+        return statusMatch && investmentMatch
     })
 
     // Get top listings (highest yield)
@@ -86,8 +84,6 @@ export default function OfferingsPage() {
             {/* All Listings Section with Filters */}
             <section className="bg-white border-t border-gray-200">
                 <PortfolioFilters
-                    selectedStrategy={selectedStrategy}
-                    setSelectedStrategy={setSelectedStrategy}
                     selectedStatus={selectedStatus}
                     setSelectedStatus={setSelectedStatus}
                     minInvestment={minInvestment}
