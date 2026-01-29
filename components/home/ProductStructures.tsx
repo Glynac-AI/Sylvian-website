@@ -1,81 +1,73 @@
 // components/home/ProductStructures.tsx
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-
-const products = [
-    {
-        title: "Asset-Level Senior Secured Notes",
-        description: "Designed for stabilized or near-stabilized assets with predictable cash flow. These notes prioritize capital preservation and current income through senior security, defined payment priority, and shorter to moderate duration.",
-        tag: "Stabilized"
-    },
-    {
-        title: "Bridge and Refinance Notes",
-        description: "Designed for assets undergoing refinancing, repositioning, or interim execution steps. These notes carry higher return potential than stabilized notes, reflecting increased timing and execution risk over a defined transition period.",
-        tag: "Transitional"
-    },
-    {
-        title: "Completion and Construction-to-Stabilization Notes",
-        description: "Designed for late-stage development or completion phases where capital is required to deliver or stabilize an asset. These notes reflect higher return expectations due to construction, budget, and delivery risk, with defined milestones and duration.",
-        tag: "Development"
-    }
-]
-
 export default function ProductStructures() {
-    const sectionRef = useRef(null)
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-50px" })
-
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start end", "end start"]
-    })
-
-    const visualY = useTransform(scrollYProgress, [0, 1], [60, -60])
-
     return (
-        <section ref={sectionRef} className="py-28 md:py-36 px-6 bg-white relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#095520]/[0.015] rounded-full blur-3xl" />
-                <div className="absolute inset-0 opacity-[0.008]" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #095520 1px, transparent 0)`, backgroundSize: '48px 48px' }} />
+        <section className="max-w-7xl mx-auto px-6 py-32 border-b border-[#E5E7EB]">
+            <div className="text-center mb-20 max-w-2xl mx-auto">
+                <h2 className="text-4xl font-serif text-[#111827] mb-6">Three Standardized Product Structures</h2>
+                <p className="text-gray-600">
+                    Sylvan offers a small, fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
+                </p>
             </div>
 
-            <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
-                <div className="space-y-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-center max-w-3xl mx-auto"
-                    >
-                        <h2 className="text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] font-semibold leading-[1.2] tracking-[-0.02em] text-[#095520] mb-4">
-                            Three Standardized Product Structures
-                        </h2>
-                        <p className="text-base md:text-lg text-black/70 leading-relaxed">
-                            Sylvan offers a small, fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
-                        </p>
-                    </motion.div>
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="flex justify-center">
+                    <svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M70,40 L40,40 L40,460 L70,460" fill="none" stroke="#D1D5DB" strokeWidth="1.5"/>
+                        <text x="30" y="250" fontFamily="Roboto Mono" fontSize="10" fill="#9CA3AF" transform="rotate(-90 30,250)" textAnchor="middle">UNIFIED COVENANT FRAMEWORK</text>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {products.map((product, index) => (
-                            <motion.div
-                                key={product.title}
-                                className="bg-[#F3F4F1] rounded-xl p-8 border border-[#095520]/8 hover:border-[#095520]/15 hover:shadow-md transition-all flex flex-col h-full"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.5, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                            >
-                                <h3 className="text-xl md:text-2xl font-bold text-[#095520] leading-tight pb-4 border-b border-[#095520]/20">
-                                    {product.title}
-                                </h3>
-                                <p className="text-base md:text-lg text-black/70 leading-[1.7] pt-4 flex-1">
-                                    {product.description}
-                                </p>
-                            </motion.div>
-                        ))}
+                        <g transform="translate(80, 40)">
+                            <rect x="0" y="0" width="280" height="110" rx="2" fill="#F9FAFB" stroke="#0A3F28" strokeWidth="2" strokeDasharray="8,4" />
+                            <text x="140" y="50" fontFamily="Inter" fontSize="16" fontWeight="bold" fill="#0A3F28" textAnchor="middle">Completion Notes</text>
+                            <text x="140" y="75" fontFamily="Inter" fontSize="12" fill="#6B7280" textAnchor="middle">Construction & Stabilization</text>
+                        </g>
+
+                        <line x1="220" y1="150" x2="220" y2="180" stroke="#E5E7EB" strokeWidth="2"/>
+
+                        <g transform="translate(80, 180)">
+                            <rect x="0" y="0" width="280" height="110" rx="2" fill="#E8F5E9" stroke="#0A3F28" strokeWidth="1" />
+                            <text x="140" y="50" fontFamily="Inter" fontSize="16" fontWeight="bold" fill="#0A3F28" textAnchor="middle">Bridge & Refinance</text>
+                            <text x="140" y="75" fontFamily="Inter" fontSize="12" fill="#145A3C" textAnchor="middle">Transitional Execution</text>
+                        </g>
+
+                        <line x1="220" y1="290" x2="220" y2="320" stroke="#E5E7EB" strokeWidth="2"/>
+
+                        <g transform="translate(60, 320)">
+                            <rect x="10" y="10" width="320" height="140" rx="2" fill="#E5E7EB" />
+                            <rect x="0" y="0" width="320" height="140" rx="2" fill="#0A3F28" />
+                            <text x="160" y="65" fontFamily="Playfair Display" fontSize="22" fill="#FFFFFF" textAnchor="middle">Senior Secured</text>
+                            <text x="160" y="95" fontFamily="Inter" fontSize="10" fontWeight="bold" fill="#D9B44A" textAnchor="middle" letterSpacing="2">STABILIZED ASSET BASE</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div className="space-y-12">
+                    <div className="group hover:bg-gray-50 p-6 rounded transition cursor-default">
+                        <h3 className="font-serif text-2xl text-[#111827] mb-3 group-hover:text-[#0A3F28] transition">
+                            Completion and Construction-to-Stabilization Notes
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed text-sm">
+                            Designed for late-stage development or completion phases where capital is required to deliver or stabilize an asset. These notes reflect higher return expectations due to construction, budget, and delivery risk, with defined milestones and duration.
+                        </p>
+                    </div>
+                    <div className="h-px bg-gray-100 w-full"></div>
+                    <div className="group hover:bg-gray-50 p-6 rounded transition cursor-default">
+                        <h3 className="font-serif text-2xl text-[#111827] mb-3 group-hover:text-[#0A3F28] transition">
+                            Bridge and Refinance Notes
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed text-sm">
+                            Designed for assets undergoing refinancing, repositioning, or interim execution steps. These notes carry higher return potential than stabilized notes, reflecting increased timing and execution risk over a defined transition period.
+                        </p>
+                    </div>
+                    <div className="h-px bg-gray-100 w-full"></div>
+                    <div className="group hover:bg-gray-50 p-6 rounded transition cursor-default">
+                        <h3 className="font-serif text-2xl text-[#111827] mb-3 group-hover:text-[#0A3F28] transition">
+                            Asset-Level Senior Secured Notes
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed text-sm">
+                            Designed for stabilized or near-stabilized assets with predictable cash flow. These notes prioritize capital preservation and current income through senior security, defined payment priority, and shorter to moderate duration.
+                        </p>
                     </div>
                 </div>
             </div>

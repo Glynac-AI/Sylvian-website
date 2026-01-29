@@ -1,111 +1,112 @@
 // components/home/Hero.tsx
 'use client'
 
-import { motion, useMotionValue, useTransform, useScroll } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
+import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function Hero() {
-    const sectionRef = useRef(null)
-    const mouseX = useMotionValue(0)
-    const mouseY = useMotionValue(0)
-
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start start", "end start"]
-    })
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            mouseX.set(e.clientX)
-            mouseY.set(e.clientY)
-        }
-        window.addEventListener('mousemove', handleMouseMove)
-        return () => window.removeEventListener('mousemove', handleMouseMove)
-    }, [mouseX, mouseY])
-
-    const gradientX = useTransform(mouseX, [0, 1920], ['0%', '100%'])
-    const gradientY = useTransform(mouseY, [0, 1080], ['0%', '100%'])
-    const logoY = useTransform(scrollYProgress, [0, 1], [0, 200])
-    const logoOpacity = useTransform(scrollYProgress, [0, 0.5], [0.02, 0])
-    const contentY = useTransform(scrollYProgress, [0, 1], [0, -100])
-    const gridOpacity = useTransform(scrollYProgress, [0, 0.5], [0.025, 0])
-
     return (
-        <section ref={sectionRef} className="relative min-h-[calc(100vh-4.25rem)] md:min-h-[calc(100vh-5.25rem)] flex items-center overflow-hidden bg-[#F3F4F1]">
-            {/* Background Layers */}
-            <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                    className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[750px] md:h-[750px] lg:w-[900px] lg:h-[900px]"
-                    style={{
-                        y: useTransform([mouseY, logoY], ([mouse, scroll]) => (mouse as number * 0.03) + (scroll as number)),
-                        opacity: logoOpacity
-                    }}
-                >
-                    <Image src="/logo.png" alt="" fill className="object-contain opacity-100 translate-x-[20%]" priority />
-                </motion.div>
+        <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-20 items-center border-b border-[#E5E7EB]">
+            <motion.div
+                className="fade-in"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+                <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
+                    Institutional Diligence
+                </span>
+                <h1 className="text-5xl lg:text-6xl font-serif text-[#111827] leading-[1.1] mb-8">
+                    Real estate sponsor <br />
+                    <span className="italic text-[#0A3F28]">diligence, standardized.</span>
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    Sylvan provides standardized sponsor operating records through enforced contractual obligations and mandatory disclosures.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-10">
+                    You evaluate how sponsors <strong>actually behave</strong> under financial pressure before you commit capital.
+                </p>
+                <RequestAccessButton className="bg-[#0A3F28] text-white px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#145A3C] transition shadow-lg">
+                    Request Access
+                </RequestAccessButton>
+            </motion.div>
 
-                <motion.div
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                        background: useTransform([gradientX, gradientY], ([x, y]) => `radial-gradient(circle at ${x} ${y}, rgba(9, 85, 32, 0.04) 0%, transparent 50%)`)
-                    }}
-                />
-
-                <motion.div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.15) 1px, transparent 1px)`,
-                        backgroundSize: '80px 80px',
-                        opacity: gridOpacity
-                    }}
-                />
-
-                <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-gradient-to-br from-[#095520]/20 to-transparent" />
-                <div className="absolute bottom-[20%] left-[10%] w-[400px] h-[400px] rounded-full opacity-15 blur-3xl bg-gradient-to-br from-[#008929]/15 to-transparent" />
-            </div>
-
-            {/* Content */}
-            <motion.div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12" style={{ y: contentY }}>
-                <div className="max-w-3xl space-y-8">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.5rem] font-semibold leading-[1.15] tracking-[-0.02em] text-[#095520]"
-                    >
-                        Real estate sponsor diligence, standardized
-                    </motion.h1>
-
-                    <motion.div
-                        className="space-y-5 max-w-2xl"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <p className="text-base md:text-lg leading-[1.7] text-black">
-                            Sylvan provides standardized sponsor operating records through enforced contractual obligations and mandatory disclosures.
-                        </p>
-                        <p className="text-base md:text-lg leading-[1.7] text-[#013220]">
-                            You evaluate how sponsors actually behave under financial pressure before you commit capital.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <Link href="/request-access">
-                            <button className="group inline-flex items-center gap-2.5 px-8 py-5 bg-[#095520] text-yellow-400 rounded-full font-semibold text-base uppercase tracking-[0.1em] shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-                                Request Access
-                                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </button>
-                        </Link>
-                    </motion.div>
+            <motion.div
+                className="fade-in"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+            >
+                <div className="bg-white p-2 rounded shadow-[0_20px_40px_-4px_rgba(10,63,40,0.1)] border border-[#E5E7EB]">
+                    <div className="bg-gray-50 border-b border-[#E5E7EB] p-4 flex justify-between items-center rounded-t-sm">
+                        <div>
+                            <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                                Record ID: SV-8821
+                            </div>
+                            <div className="text-sm font-bold text-[#0A3F28] font-serif">
+                                Sponsor Operating Record
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded">
+                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                            <span className="text-[9px] font-mono font-bold text-gray-600">LIVE FEED</span>
+                        </div>
+                    </div>
+                    <div className="p-6 space-y-5">
+                        <div className="flex items-center justify-between group">
+                            <div className="flex items-center gap-4">
+                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
+                                <div>
+                                    <div className="text-sm font-bold text-[#111827]">Cash Flow Stress Test</div>
+                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
+                                        METRIC: DSCR-STRESS-01
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-right">
+                                <div className="text-sm font-mono font-bold text-[#111827]">PASS (1.45x)</div>
+                                <div className="text-[10px] text-green-600 font-bold uppercase tracking-wide">
+                                    ● Verified
+                                </div>
+                            </div>
+                        </div>
+                        <div className="h-px bg-gray-100 w-full"></div>
+                        <div className="flex items-center justify-between group">
+                            <div className="flex items-center gap-4">
+                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
+                                <div>
+                                    <div className="text-sm font-bold text-[#111827]">Reserve Maintenance</div>
+                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
+                                        METRIC: RES-FUND-04
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-right">
+                                <div className="text-sm font-mono font-bold text-[#111827]">102% Funded</div>
+                                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wide">
+                                    Target: 100%
+                                </div>
+                            </div>
+                        </div>
+                        <div className="h-px bg-gray-100 w-full"></div>
+                        <div className="flex items-center justify-between group">
+                            <div className="flex items-center gap-4">
+                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
+                                <div>
+                                    <div className="text-sm font-bold text-[#111827]">Disclosure Latency</div>
+                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
+                                        METRIC: COMMS-LAT-09
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-right">
+                                <div className="text-sm font-mono font-bold text-[#111827]">&lt; 24 Hours</div>
+                                <div className="text-[10px] text-[#D9B44A] font-bold uppercase tracking-wide">
+                                    Top Tier
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
         </section>

@@ -6,18 +6,17 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import AuthModal from '@/components/auth/AuthModal'
+import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function Navigation() {
     const pathname = usePathname()
     const [mobileOpen, setMobileOpen] = useState(false)
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
-    const [authModalOpen, setAuthModalOpen] = useState(false)
-
+    
     const navLinks = [
         { label: 'Home', href: '/' },
         { label: 'Sponsor Evaluation', href: '/sponsor-evaluation' },
-        { label: 'Methodology', href: '/methodology' },
+        { label: 'Methodology', href: '/evaluation-methodology' },
         { label: 'For Investors', href: '/how-investors-use-sylvan' },
         { label: 'Standards', href: '/sponsor-standards' },
         { label: 'Resources', href: '/resources' },
@@ -69,27 +68,9 @@ export default function Navigation() {
 
                 {/* Right Side Actions */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <button
-                        onClick={() => setAuthModalOpen(true)}
-                        className="text-base tracking-[0.025em] text-[#013220] hover:text-[#095520] transition-colors"
-                    >
-                        Log in
-                    </button>
-
-                    <Link href="/request-access">
-                        <motion.div
-                            className="border border-[#013220] px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider bg-transparent text-[#013220]"
-                            whileHover={{
-                                backgroundColor: '#095520',
-                                borderColor: '#095520',
-                                color: '#facc15'
-                            }}
-                            whileTap={{ scale: 0.98 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            Request Access
-                        </motion.div>
-                    </Link>
+                    <RequestAccessButton className="border border-[#013220] px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer">
+                        Request Access
+                    </RequestAccessButton>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -130,32 +111,17 @@ export default function Navigation() {
                                 </Link>
                             ))}
                             <div className="border-t border-gray-200 mt-3 pt-4 space-y-3">
-                                <button
-                                    onClick={() => {
-                                        setMobileOpen(false)
-                                        setAuthModalOpen(true)
-                                    }}
-                                    className="block text-base tracking-[0.025em] text-[#013220] w-full text-left"
-                                >
-                                    Log in
-                                </button>
-                                <Link href="/request-access" onClick={() => setMobileOpen(false)}>
-                                    <div className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220]">
+                                <div onClick={() => setMobileOpen(false)}>
+                                    <RequestAccessButton className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer w-full">
                                         Request Access
-                                    </div>
-                                </Link>
+                                    </RequestAccessButton>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            {/* Auth Modal */}
-            <AuthModal
-                isOpen={authModalOpen}
-                onClose={() => setAuthModalOpen(false)}
-                initialMode="login"
-            />
         </>
     )
 }

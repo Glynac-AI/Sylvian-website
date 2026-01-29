@@ -1,25 +1,32 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Lora } from 'next/font/google'
+import { Playfair_Display, Inter, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
-// Elegant serif for headings - sophisticated institutional aesthetic
-const cormorantGaramond = Cormorant_Garamond({
+// Playfair Display for headings - elegant serif
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-heading',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-serif',
+  weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
 })
 
-// Readable serif for body text - refined with excellent legibility
-const lora = Lora({
+// Inter for body text - clean sans-serif
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+  variable: '--font-sans',
+  weight: ['300', '400', '500', '600'],
+})
+
+// Roboto Mono for monospace text
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -53,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${cormorantGaramond.variable} ${lora.variable}`}>
-      <body className="font-body antialiased flex min-h-screen flex-col">
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${robotoMono.variable}`}>
+      <body className="font-sans antialiased flex min-h-screen flex-col bg-[#F9FAFB] text-[#111827]">
         <Navigation />
         <main className="flex-1 flex flex-col pt-17 md:pt-21">{children}</main>
         <Footer />

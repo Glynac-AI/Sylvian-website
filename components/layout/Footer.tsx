@@ -4,6 +4,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function Footer() {
     const footerLinks = {
@@ -17,10 +18,6 @@ export default function Footer() {
             { label: 'How Investors Use Sylvan', href: '/how-investors-use-sylvan' },
             { label: 'Resources', href: '/resources' },
             { label: 'FAQ', href: '/faq' }
-        ],
-        quickLinks: [
-            { label: 'Request Access', href: '/request-access' },
-            { label: 'Login', href: '/login' }
         ]
     }
 
@@ -69,7 +66,7 @@ export default function Footer() {
                                 height={48}
                                 className="h-12 w-12"
                             />
-                            <div className="text-2xl tracking-[0.4em] uppercase font-heading text-[#013220] select-none group-hover:text-[#095520] transition-colors">
+                            <div className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none group-hover:text-[#095520] transition-colors">
                                 SYLVAN
                             </div>
                         </Link>
@@ -142,24 +139,9 @@ export default function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">Get Started</h3>
-                        <ul className="space-y-3">
-                            {footerLinks.quickLinks.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
-                                    >
-                                        <motion.span
-                                            whileHover={{ x: 4 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="inline-block"
-                                        >
-                                            {link.label}
-                                        </motion.span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <RequestAccessButton className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block cursor-pointer">
+                            Request Access
+                        </RequestAccessButton>
                     </div>
                 </div>
 

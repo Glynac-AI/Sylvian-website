@@ -1,20 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --font-body: var(--font-body), "Lora", Georgia, serif;
-  --font-heading: var(--font-heading), "Cormorant Garamond", "Garamond", Georgia, serif;
-  --font-sans: var(--font-body), "Lora", Georgia, serif;
+  --font-serif: var(--font-serif), "Playfair Display", serif;
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+  --font-mono: var(--font-mono), "Roboto Mono", monospace;
 }
 
-/* Body text uses Lora for excellent readability */
+/* Body text uses Inter for clean readability */
 body {
-  font-family: var(--font-body), "Lora", Georgia, serif;
+  font-family: var(--font-sans), "Inter", sans-serif;
 }
 
-/* Headings use Cormorant Garamond for elegant, sophisticated look */
+/* Headings use Playfair Display for elegant, sophisticated look */
 h1, h2, h3, h4, h5, h6,
-.font-heading {
-  font-family: var(--font-heading), "Cormorant Garamond", "Garamond", Georgia, serif;
+.font-serif {
+  font-family: var(--font-serif), "Playfair Display", serif;
+}
+
+/* Typography Polish */
+.tracking-wide-audit {
+  letter-spacing: 0.15em;
+}
+
+/* Animation Utilities */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gradient {
@@ -24,4 +51,11 @@ h1, h2, h3, h4, h5, h6,
 
 .animate-gradient {
   animation: gradient 3s ease infinite;
+}
+
+/* Grid Background for Charts */
+.chart-grid {
+  background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+                    linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+  background-size: 20px 20px;
 }

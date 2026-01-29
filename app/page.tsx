@@ -2,19 +2,21 @@
 'use client'
 
 import Hero from '@/components/home/Hero'
-import OpeningSection from '@/components/home/OpeningSection'
-import ValuePropositions from '@/components/home/ValuePropositions'
+import StatementSection from '@/components/home/StatementSection'
+import MainFeatures from '@/components/home/MainFeatures'
 import ProductStructures from '@/components/home/ProductStructures'
 import WhatSylvanTracks from '@/components/home/WhatSylvanTracks'
+import ClosingCTA from '@/components/home/ClosingCTA'
 
 export default function HomePage() {
   return (
-    <>
+    <main className="antialiased">
       <Hero />
-      <OpeningSection />
-      <ValuePropositions />
+      <StatementSection />
+      <MainFeatures />
       <ProductStructures />
       <WhatSylvanTracks />
-    </>
+      <ClosingCTA />
+    </main>
   )
 }
