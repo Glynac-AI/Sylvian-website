@@ -21,11 +21,6 @@ export default function RequestAccessModal({ isOpen, onClose }: RequestAccessMod
 
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
     // Prevent body scroll when modal is open
     useEffect(() => {
@@ -71,7 +66,7 @@ export default function RequestAccessModal({ isOpen, onClose }: RequestAccessMod
         }))
     }
 
-    if (!mounted) return null
+    if (typeof window === 'undefined') return null
 
     return createPortal(
         <AnimatePresence>
