@@ -1,19 +1,30 @@
 import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, Lora } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
-const dmSans = DM_Sans({
+// Elegant serif for headings - sophisticated institutional aesthetic
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-dm-sans',
+  variable: '--font-heading',
   weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
+
+// Readable serif for body text - refined with excellent legibility
+const lora = Lora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
-  title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
-  description: 'Standardized structured real estate income platform providing repeatable structure, workflow, and audit-ready documentation for institutional-grade real estate income investing.',
+  title: 'Sylvan - Standardized Real Estate Sponsor Diligence',
+  description: 'Sylvan provides standardized sponsor operating records through enforced contractual obligations and mandatory disclosures. Evaluate how sponsors behave under financial pressure before you commit capital.',
   icons: {
     icon: [
       { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
@@ -23,8 +34,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Sylvan - Structured Real Estate Income Framework for RIAs',
-    description: 'Standardized structured real estate income platform providing repeatable structure, workflow, and audit-ready documentation for institutional-grade real estate income investing.',
+    title: 'Sylvan - Standardized Real Estate Sponsor Diligence',
+    description: 'Sylvan provides standardized sponsor operating records through enforced contractual obligations and mandatory disclosures. Evaluate how sponsors behave under financial pressure.',
     images: [
       {
         url: '/og.png',
@@ -42,10 +53,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={dmSans.variable}>
-      <body className="font-sans antialiased flex min-h-screen flex-col">
+    <html lang="en" className={`${cormorantGaramond.variable} ${lora.variable}`}>
+      <body className="font-body antialiased flex min-h-screen flex-col">
         <Navigation />
-        <main className="flex-1 flex flex-col pt-16 md:pt-20">{children}</main>
+        <main className="flex-1 flex flex-col pt-17 md:pt-21">{children}</main>
         <Footer />
       </body>
     </html>

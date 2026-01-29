@@ -4,352 +4,158 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import AuthModal from '@/components/auth/AuthModal'
 
 export default function Navigation() {
     const pathname = usePathname()
     const [mobileOpen, setMobileOpen] = useState(false)
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
-    const [resourcesOpen, setResourcesOpen] = useState(false)
-    const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
-    const dropdownRef = useRef<HTMLDivElement>(null)
+    const [authModalOpen, setAuthModalOpen] = useState(false)
 
     const navLinks = [
-        { label: 'Why Sylvan', href: '/' },
-        { label: 'Strategy', href: '/strategy' },
-        { label: 'Resources', href: '/resources', hasDropdown: true },
-        { label: 'Contact Us', href: '/contact' }
+        { label: 'Home', href: '/' },
+        { label: 'Sponsor Evaluation', href: '/sponsor-evaluation' },
+        { label: 'Methodology', href: '/methodology' },
+        { label: 'For Investors', href: '/how-investors-use-sylvan' },
+        { label: 'Standards', href: '/sponsor-standards' },
+        { label: 'Resources', href: '/resources' },
+        { label: 'FAQ', href: '/faq' }
     ]
-
-    const resourceLinks = [
-        { label: 'For CCOs', href: '/resources/governance' },
-        { label: 'For CIOs', href: '/resources/investment-strategy' },
-        { label: 'For RIAs', href: '/resources/client-advisory' }
-    ]
-
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setResourcesOpen(false)
-            }
-        }
-
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
 
     return (
         <>
-        <motion.nav
-            className="w-full py-4 md:py-6 px-4 md:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/90 backdrop-blur-md z-50 border-b border-gray-200"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 md:gap-3">
-                <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10" />
-                <motion.div
-                    className="text-lg md:text-2xl tracking-[0.15em] md:tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
-                    whileHover={{ opacity: 0.7 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    SYLVAN
-                </motion.div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8 text-sm font-normal">
-                {navLinks.map((link) => (
-                    <div key={link.href} className="relative" ref={link.hasDropdown ? dropdownRef : null}>
-                        {link.hasDropdown ? (
-                            <>
-                                <button
-                                    onMouseEnter={() => {
-                                        setHoveredLink(link.href)
-                                        setResourcesOpen(true)
-                                    }}
-                                    onClick={() => setResourcesOpen(!resourcesOpen)}
-                                    className="relative flex items-center gap-1"
-                                >
-                                    <motion.span
-                                        className="text-[#013220]"
-                                        whileHover={{ color: '#095520' }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        {link.label}
-                                    </motion.span>
-                                    <motion.svg
-                                        className="w-4 h-4 text-[#013220]"
-                                        animate={{ rotate: resourcesOpen ? 180 : 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </motion.svg>
-                                    <motion.span
-                                        className="absolute -bottom-1 left-0 h-[2px] bg-[#095520]"
-                                        initial={{ width: 0 }}
-                                        animate={{ width: (hoveredLink === link.href || pathname.startsWith('/resources')) ? '100%' : 0 }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    />
-                                </button>
-
-                                {/* Dropdown Menu */}
-                                <AnimatePresence>
-                                    {resourcesOpen && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50"
-                                            onMouseLeave={() => {
-                                                setResourcesOpen(false)
-                                                setHoveredLink(null)
-                                            }}
-                                        >
-                                            <div className="p-2">
-                                                {resourceLinks.map((resource, index) => (
-                                                    <Link
-                                                        key={resource.href}
-                                                        href={resource.href}
-                                                        onClick={() => setResourcesOpen(false)}
-                                                    >
-                                                        <motion.div
-                                                            initial={{ opacity: 0, x: -10 }}
-                                                            animate={{ opacity: 1, x: 0 }}
-                                                            transition={{ delay: index * 0.05 }}
-                                                            className="p-4 rounded-lg hover:bg-[#F3F4F1] transition-colors group cursor-pointer"
-                                                        >
-                                                            <div className="text-sm font-semibold text-[#013220] group-hover:text-[#095520] transition-colors">
-                                                                {resource.label}
-                                                            </div>
-                                                        </motion.div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </>
-                        ) : (
-                            <Link
-                                href={link.href}
-                                onMouseEnter={() => setHoveredLink(link.href)}
-                                onMouseLeave={() => setHoveredLink(null)}
-                                className="relative"
-                            >
-                                <motion.span
-                                    className="text-[#013220]"
-                                    whileHover={{ color: '#095520' }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    {link.label}
-                                </motion.span>
-                                <motion.span
-                                    className="absolute -bottom-1 left-0 h-[2px] bg-[#095520]"
-                                    initial={{ width: 0 }}
-                                    animate={{ width: (hoveredLink === link.href || pathname === link.href) ? '100%' : 0 }}
-                                    transition={{ duration: 0.3, ease: "easeOut" }}
-                                />
-                            </Link>
-                        )}
-                    </div>
-                ))}
-            </div>
-
-            {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center gap-6">
-                <Link
-                    href="/login"
-                    onMouseEnter={() => setHoveredLink('login')}
-                    onMouseLeave={() => setHoveredLink(null)}
-                    className="relative text-sm"
-                >
-                    <motion.span
-                        className="text-[#013220]"
-                        whileHover={{ color: '#095520' }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        Log in
-                    </motion.span>
-                    <motion.span
-                        className="absolute -bottom-0.5 left-0 h-[1px] bg-[#095520]"
-                        initial={{ width: 0 }}
-                        animate={{ width: hoveredLink === 'login' ? '100%' : 0 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                    />
-                </Link>
-
-                <Link href="/offerings">
+            <motion.nav
+                className="w-full py-5 md:py-7 px-4 md:px-8 lg:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/95 backdrop-blur-md z-50 border-b border-gray-200/50"
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2 md:gap-3">
+                    <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                     <motion.div
-                        className="relative border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide bg-transparent text-[#013220] overflow-hidden"
-                        whileHover={{
-                            scale: 1.05,
-                            backgroundColor: '#095520',
-                            borderColor: '#095520',
-                            color: '#facc15'
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
+                        className="text-lg md:text-2xl tracking-[0.15em] md:tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
+                        whileHover={{ opacity: 0.7 }}
+                        transition={{ duration: 0.2 }}
                     >
-                        VIEW LISTINGS
+                        SYLVAN
                     </motion.div>
                 </Link>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <motion.button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden text-[#013220]"
-                whileHover={{ color: '#095520' }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                aria-label="Toggle menu"
-            >
-                <motion.svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    animate={{ rotate: mobileOpen ? 90 : 0 }}
-                    transition={{ duration: 0.3 }}
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex items-center space-x-6 text-base tracking-[0.025em]">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onMouseEnter={() => setHoveredLink(link.href)}
+                            onMouseLeave={() => setHoveredLink(null)}
+                            className="relative py-2 whitespace-nowrap"
+                        >
+                            <span className={`transition-colors duration-200 ${pathname === link.href ? 'text-[#095520] font-medium' : 'text-[#013220] hover:text-[#095520]'}`}>
+                                {link.label}
+                            </span>
+                            <motion.span
+                                className="absolute -bottom-0.5 left-0 h-[1.5px] bg-[#095520]"
+                                initial={{ width: 0 }}
+                                animate={{ width: (hoveredLink === link.href || pathname === link.href) ? '100%' : 0 }}
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                            />
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Right Side Actions */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <button
+                        onClick={() => setAuthModalOpen(true)}
+                        className="text-base tracking-[0.025em] text-[#013220] hover:text-[#095520] transition-colors"
+                    >
+                        Log in
+                    </button>
+
+                    <Link href="/request-access">
+                        <motion.div
+                            className="border border-[#013220] px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider bg-transparent text-[#013220]"
+                            whileHover={{
+                                backgroundColor: '#095520',
+                                borderColor: '#095520',
+                                color: '#facc15'
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            Request Access
+                        </motion.div>
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setMobileOpen(!mobileOpen)}
+                    className="lg:hidden text-[#013220] p-1"
+                    aria-label="Toggle menu"
                 >
-                    {mobileOpen ? (
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    ) : (
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    )}
-                </motion.svg>
-            </motion.button>
-
-        </motion.nav>
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        {mobileOpen ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        )}
+                    </svg>
+                </button>
+            </motion.nav>
 
             {/* Mobile Menu */}
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="fixed top-[57px] md:top-[73px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50"
-                        initial={{ opacity: 0, y: -20 }}
+                        className="fixed top-[68px] md:top-[84px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50 max-h-[calc(100vh-68px)] md:max-h-[calc(100vh-84px)] overflow-y-auto"
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
                     >
-                        <div className="flex flex-col py-4 px-4 space-y-4">
-                            {navLinks.map((link, index) => (
-                                <motion.div
+                        <div className="flex flex-col py-4 px-4">
+                            {navLinks.map((link) => (
+                                <Link
                                     key={link.href}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                                    href={link.href}
+                                    onClick={() => setMobileOpen(false)}
+                                    className={`py-3 text-base tracking-[0.025em] ${pathname === link.href ? 'text-[#095520] font-medium' : 'text-[#013220]'}`}
                                 >
-                                    {link.hasDropdown ? (
-                                        <div>
-                                            <button
-                                                onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-                                                className={`w-full flex items-center justify-between py-2 ${pathname.startsWith('/resources') ? 'text-[#095520] font-semibold' : 'text-[#013220]'
-                                                    }`}
-                                            >
-                                                <span>{link.label}</span>
-                                                <motion.svg
-                                                    className="w-4 h-4"
-                                                    animate={{ rotate: mobileResourcesOpen ? 180 : 0 }}
-                                                    transition={{ duration: 0.3 }}
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </motion.svg>
-                                            </button>
-
-                                            <AnimatePresence>
-                                                {mobileResourcesOpen && (
-                                                    <motion.div
-                                                        initial={{ height: 0, opacity: 0 }}
-                                                        animate={{ height: "auto", opacity: 1 }}
-                                                        exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.3 }}
-                                                        className="overflow-hidden"
-                                                    >
-                                                        <div className="pl-4 pt-2 space-y-1">
-                                                            {resourceLinks.map((resource) => (
-                                                                <Link
-                                                                    key={resource.href}
-                                                                    href={resource.href}
-                                                                    onClick={() => {
-                                                                        setMobileOpen(false)
-                                                                        setMobileResourcesOpen(false)
-                                                                    }}
-                                                                >
-                                                                    <motion.div
-                                                                        className={`py-2 ${pathname === resource.href
-                                                                                ? 'text-[#095520] font-semibold border-l-4 border-[#095520] pl-2'
-                                                                                : 'text-[#013220]'
-                                                                            }`}
-                                                                        whileHover={{ color: '#095520', x: 8 }}
-                                                                        transition={{ duration: 0.2 }}
-                                                                    >
-                                                                        {resource.label}
-                                                                    </motion.div>
-                                                                </Link>
-                                                            ))}
-                                                        </div>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
-                                        </div>
-                                    ) : (
-                                        <Link href={link.href} onClick={() => setMobileOpen(false)}>
-                                            <motion.div
-                                                className={`py-2 ${pathname === link.href ? 'text-[#095520] font-semibold border-l-4 border-[#095520] pl-2' : 'text-[#013220]'
-                                                    }`}
-                                                whileHover={{ color: '#095520', x: 8 }}
-                                                transition={{ duration: 0.2 }}
-                                            >
-                                                {link.label}
-                                            </motion.div>
-                                        </Link>
-                                    )}
-                                </motion.div>
+                                    {link.label}
+                                </Link>
                             ))}
-
-                            <motion.div
-                                className="border-t border-gray-200 pt-4 space-y-4"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.4, duration: 0.3 }}
-                            >
-                                <Link href="/login" onClick={() => setMobileOpen(false)}>
-                                    <motion.div
-                                        className="block text-[#013220] py-2"
-                                        whileHover={{ color: '#095520', x: 8 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        Log in
-                                    </motion.div>
+                            <div className="border-t border-gray-200 mt-3 pt-4 space-y-3">
+                                <button
+                                    onClick={() => {
+                                        setMobileOpen(false)
+                                        setAuthModalOpen(true)
+                                    }}
+                                    className="block text-base tracking-[0.025em] text-[#013220] w-full text-left"
+                                >
+                                    Log in
+                                </button>
+                                <Link href="/request-access" onClick={() => setMobileOpen(false)}>
+                                    <div className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220]">
+                                        Request Access
+                                    </div>
                                 </Link>
-
-                                <Link href="/offerings" onClick={() => setMobileOpen(false)}>
-                                    <motion.div
-                                        className="text-center border-2 border-[#013220] px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide text-[#013220]"
-                                        whileHover={{ backgroundColor: '#013220', color: '#facc15' }}
-                                        whileTap={{ scale: 0.95 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        VIEW LISTINGS
-                                    </motion.div>
-                                </Link>
-                            </motion.div>
+                            </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Auth Modal */}
+            <AuthModal
+                isOpen={authModalOpen}
+                onClose={() => setAuthModalOpen(false)}
+                initialMode="login"
+            />
         </>
     )
 }

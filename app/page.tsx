@@ -2,17 +2,19 @@
 'use client'
 
 import Hero from '@/components/home/Hero'
-import AccelerateSection from '@/components/home/AccelerateSection'
-import LockboxSection from '@/components/home/LockboxSection'
-import RentalYieldsSection from '@/components/home/RentalYieldsSection'
+import OpeningSection from '@/components/home/OpeningSection'
+import ValuePropositions from '@/components/home/ValuePropositions'
+import ProductStructures from '@/components/home/ProductStructures'
+import WhatSylvanTracks from '@/components/home/WhatSylvanTracks'
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <AccelerateSection />
-      <LockboxSection />
-      <RentalYieldsSection />
+      <OpeningSection />
+      <ValuePropositions />
+      <ProductStructures />
+      <WhatSylvanTracks />
     </>
   )
 }
