@@ -7,18 +7,19 @@ import Image from 'next/image'
 
 export default function Footer() {
     const footerLinks = {
-        company: [
-            { label: 'Why Sylvan', href: '/' },
-            { label: 'Strategy', href: '/strategy' }
+        platform: [
+            { label: 'Home', href: '/' },
+            { label: 'Sponsor Evaluation', href: '/sponsor-evaluation' },
+            { label: 'Our Methodology', href: '/methodology' },
+            { label: 'Sponsor Standards', href: '/sponsor-standards' }
         ],
-        resources: [
-            { label: 'For CCOs', href: '/resources/governance' },
-            { label: 'For CIOs', href: '/resources/investment-strategy' },
-            { label: 'For RIAs', href: '/resources/client-advisory' }
+        investors: [
+            { label: 'How Investors Use Sylvan', href: '/how-investors-use-sylvan' },
+            { label: 'Resources', href: '/resources' },
+            { label: 'FAQ', href: '/faq' }
         ],
         quickLinks: [
-            { label: 'View Listings', href: '/offerings' },
-            { label: 'Contact Us', href: '/contact' },
+            { label: 'Request Access', href: '/request-access' },
             { label: 'Login', href: '/login' }
         ]
     }
@@ -37,13 +38,6 @@ export default function Footer() {
             icon: (
                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
             )
-        },
-        {
-            name: 'Facebook',
-            href: '#',
-            icon: (
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            )
         }
     ]
 
@@ -59,13 +53,13 @@ export default function Footer() {
                 />
             </div>
 
-            {/* Subtle gradient orbs - very minimal */}
+            {/* Subtle gradient orbs */}
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#095520]/[0.02] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-                    {/* Brand Column - Spans 2 columns on large screens */}
+                    {/* Brand Column */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
                             <Image
@@ -75,12 +69,10 @@ export default function Footer() {
                                 height={48}
                                 className="h-12 w-12"
                             />
-                            <div className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none group-hover:text-[#095520] transition-colors">
+                            <div className="text-2xl tracking-[0.4em] uppercase font-heading text-[#013220] select-none group-hover:text-[#095520] transition-colors">
                                 SYLVAN
                             </div>
                         </Link>
-
-                        {/* Paragraph Removed Here */}
 
                         {/* Social Icons */}
                         <div className="flex gap-3">
@@ -101,15 +93,15 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Company Links */}
+                    {/* Platform Links */}
                     <div>
-                        <h3 className="text-sm font-bold mb-5 tracking-wider text-[#013220] uppercase">Company</h3>
+                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">Platform</h3>
                         <ul className="space-y-3">
-                            {footerLinks.company.map((link) => (
+                            {footerLinks.platform.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-sm inline-block"
+                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
                                     >
                                         <motion.span
                                             whileHover={{ x: 4 }}
@@ -124,15 +116,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Resources Links */}
+                    {/* Investors Links */}
                     <div>
-                        <h3 className="text-sm font-bold mb-5 tracking-wider text-[#013220] uppercase">Resources</h3>
+                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">For Investors</h3>
                         <ul className="space-y-3">
-                            {footerLinks.resources.map((link) => (
+                            {footerLinks.investors.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-sm inline-block"
+                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
                                     >
                                         <motion.span
                                             whileHover={{ x: 4 }}
@@ -149,13 +141,13 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-sm font-bold mb-5 tracking-wider text-[#013220] uppercase">Quick Links</h3>
+                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">Get Started</h3>
                         <ul className="space-y-3">
                             {footerLinks.quickLinks.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-sm inline-block"
+                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
                                     >
                                         <motion.span
                                             whileHover={{ x: 4 }}
@@ -174,14 +166,14 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#013220]/10">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <div className="text-sm text-[#013220]">
+                        <div className="text-base text-[#013220]">
                             <span>© 2026 Sylvan. All rights reserved.</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-[#013220]">
+                        <div className="flex items-center gap-2 text-base text-[#013220]">
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
-                            <span>Institutional Real Estate Platform</span>
+                            <span>Standardized Sponsor Diligence Platform</span>
                         </div>
                     </div>
                 </div>
