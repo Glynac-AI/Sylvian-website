@@ -1,8 +1,8 @@
 // app/offerings/[id]/page.tsx
 'use client'
 
-import { use } from 'react'
-import { motion } from 'framer-motion'
+import { use, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPortfolioById } from '@/data/mockPortfolios'
@@ -15,6 +15,7 @@ import DetailsPageNav from '@/components/offerings/DetailsPageNav'
 export default function PortfolioDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = use(params)
     const portfolio = getPortfolioById(parseInt(resolvedParams.id))
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
 
     if (!portfolio) {
         return (
@@ -44,8 +45,8 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
     return (
         <main className="min-h-screen bg-[#F3F4F1] -mt-20 md:-mt-24">
-            {/* Sticky Navigation */}
-            <DetailsPageNav portfolioTitle={portfolio.title} />
+            {/* Sticky Navigation - Only show when authenticated */}
+            {isAuthenticated && <DetailsPageNav portfolioTitle={portfolio.title} />}
 
             {/* Back Button Section - Gap Above Image */}
             <section className="py-6 px-6 bg-[#F3F4F1] pt-24 md:pt-28">
@@ -62,8 +63,8 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                 </div>
             </section>
 
-            {/* Hero Image Section - With Badges Overlay */}
-            <section className="relative h-[70vh] min-h-[600px] overflow-hidden px-6 mb-8">
+            {/* Hero Image Section */}
+            <section className="relative h-[60vh] min-h-[500px] overflow-hidden px-6">
                 <div className="relative h-full rounded-3xl overflow-hidden">
                     <Image
                         src={portfolio.image}
@@ -72,7 +73,10 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         className="object-cover"
                         priority
                     />
-                    {/* Badges on Image Section */}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                    {/* Badges */}
                     <div className="absolute top-6 left-6 flex gap-3 z-10">
                         <span className={`px-4 py-1.5 text-sm font-semibold rounded-full shadow-md border ${getStatusColor(portfolio.fundingStatus)}`}>
                             {portfolio.fundingStatus}
@@ -81,80 +85,178 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                             {portfolio.strategy}
                         </span>
                     </div>
-                </div>
-            </section>
 
-            {/* Portfolio Title & Key Metrics - Full Width White Section */}
-            <section className="bg-white py-12 px-6 mb-8 shadow-md">
-                <div className="max-w-7xl mx-auto">
-                        {/* Title (Badges removed from here) */}
-                        <div className="mb-8">
-                            <h1 className="text-4xl md:text-5xl font-medium text-[#095520] mb-3">
+                    {/* Bottom content overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div className="max-w-7xl mx-auto">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 drop-shadow-lg">
                                 {portfolio.title}
                             </h1>
-                            <p className="text-lg text-black flex items-center gap-2">
-                                <svg className="w-5 h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            <p className="text-white/80 flex items-center gap-2 text-lg">
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                                 {portfolio.portfolioMetrics.totalProperties} Properties across {portfolio.portfolioMetrics.geographicMarkets.length} Markets
                             </p>
                         </div>
-
-                        {/* Comprehensive Key Metrics Grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pt-6 border-t border-gray-200">
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Target Yield</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.targetYield}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Investment Term</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.investmentTerm}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Minimum Investment</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.minimumInvestment}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Raise</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.totalRaise}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Value</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.totalValue}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Avg. Occupancy</p>
-                            <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.averageOccupancy}</p>
-                        </div>
                     </div>
-
-                    {/* Funding Progress Bar (if not closed) */}
-                    {portfolio.fundingStatus !== 'Closed' && (
-                        <div className="mt-8 pt-6 border-t border-gray-200">
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="text-sm font-medium text-[#095520]">Funding Progress</span>
-                                <span className="text-sm font-semibold text-[#095520]">{portfolio.fundingProgress}%</span>
-                            </div>
-                            <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${portfolio.fundingProgress}%` }}
-                                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                                    className="h-full bg-[#095520]"
-                                />
-                            </div>
-                        </div>
-                    )}
                 </div>
             </section>
+
+            {/* Key Metrics Bar - Only when NOT authenticated (teaser) */}
+            {!isAuthenticated && (
+                <section className="bg-white py-6 px-6 shadow-lg -mt-6 mx-6 rounded-2xl relative z-20 mb-8">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                            <div className="text-center">
+                                <p className="text-xs text-[#095520]/60 uppercase tracking-wider mb-1">Target Yield</p>
+                                <p className="text-2xl md:text-3xl font-bold text-[#095520]">{portfolio.targetYield}</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-xs text-[#095520]/60 uppercase tracking-wider mb-1">Investment Term</p>
+                                <p className="text-2xl md:text-3xl font-bold text-[#095520]">{portfolio.investmentTerm}</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-xs text-[#095520]/60 uppercase tracking-wider mb-1">Minimum</p>
+                                <p className="text-2xl md:text-3xl font-bold text-[#095520]">{portfolio.minimumInvestment}</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-xs text-[#095520]/60 uppercase tracking-wider mb-1">Total Raise</p>
+                                <p className="text-2xl md:text-3xl font-bold text-[#095520]">{portfolio.totalRaise}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Full Metrics Section - Only when authenticated (original layout) */}
+            {isAuthenticated && (
+                <section className="bg-white py-12 px-6 mt-8 mb-8 shadow-md">
+                    <div className="max-w-7xl mx-auto">
+                        {/* Key Metrics Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-8">
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Target Yield</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.targetYield}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Investment Term</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.investmentTerm}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Minimum</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.minimumInvestment}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Total Raise</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.totalRaise}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Total Value</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.portfolioMetrics.totalValue}</p>
+                            </div>
+                            <div>
+                                <p className="text-sm text-[#095520]/60 uppercase tracking-wider mb-1">Avg. Occupancy</p>
+                                <p className="text-2xl font-bold text-[#095520]">{portfolio.portfolioMetrics.averageOccupancy}</p>
+                            </div>
+                        </div>
+
+                        {/* Funding Progress Bar */}
+                        {portfolio.fundingStatus !== 'Closed' && (
+                            <div className="pt-6 border-t border-gray-200">
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-sm font-medium text-[#095520]">Funding Progress</span>
+                                    <span className="text-sm font-semibold text-[#095520]">{portfolio.fundingProgress}%</span>
+                                </div>
+                                <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${portfolio.fundingProgress}%` }}
+                                        transition={{ duration: 1, delay: 0.3 }}
+                                        className="h-full bg-gradient-to-r from-[#095520] to-[#008929]"
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </section>
+            )}
 
             {/* Main Content */}
             <section className="py-16 px-6">
                 <div className="max-w-7xl mx-auto">
+                    {/* Pre-auth Content - Overview + Login CTA */}
+                    {!isAuthenticated && (
+                        <>
+                            {/* Overview */}
+                            <motion.div
+                                id="overview"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                                className="bg-white rounded-2xl p-8 md:p-10 shadow-md"
+                            >
+                                <h2 className="text-2xl md:text-3xl font-semibold text-[#095520] mb-6">Portfolio Overview</h2>
+                                <p className="text-lg md:text-xl text-black leading-relaxed mb-8 max-w-4xl">{portfolio.description}</p>
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                                    {portfolio.highlights.map((highlight, index) => (
+                                        <div key={index} className="flex items-start gap-3 p-4 bg-[#F3F4F1]/50 rounded-xl">
+                                            <svg className="w-5 h-5 text-[#095520] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span className="text-sm md:text-base text-[#013220]">{highlight}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
+                            {/* Login CTA */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="mt-12 text-center max-w-2xl mx-auto"
+                            >
+                                <div className="bg-gradient-to-br from-[#095520]/5 to-[#008929]/5 rounded-2xl p-10 border border-[#095520]/10">
+                                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#095520]/10 flex items-center justify-center">
+                                        <svg className="w-8 h-8 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-semibold text-[#095520] mb-3">
+                                        Sign in to view full details
+                                    </h3>
+                                    <p className="text-[#013220]/70 mb-8 max-w-md mx-auto">
+                                        Access detailed financials, property information, investment structure, and documents.
+                                    </p>
+                                    <button
+                                        onClick={() => setIsAuthenticated(true)}
+                                        className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#095520] text-white rounded-full font-medium hover:bg-[#074418] transition-colors"
+                                    >
+                                        Sign in to continue
+                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </>
+                    )}
+
+                    {/* Full Content - Only when authenticated */}
+                    <AnimatePresence>
+                        {isAuthenticated && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
                     <div className="grid lg:grid-cols-3 gap-12">
                         {/* Left Column - Main Info */}
-                        <div className="lg:col-span-2 space-y-12">
-                            {/* Overview */}
+                        <div className="lg:col-span-2 space-y-8">
+
+                            {/* Portfolio Overview */}
                             <motion.div
                                 id="overview"
                                 initial={{ opacity: 0, y: 20 }}
@@ -167,7 +269,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {portfolio.highlights.map((highlight, index) => (
                                         <div key={index} className="flex items-start gap-2">
-                                            <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className="w-5 h-5 text-green-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                                             </svg>
                                             <span className="text-sm text-black">{highlight}</span>
@@ -457,13 +559,18 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                             </motion.div>
                         </div>
                     </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </section>
 
-            {/* Data Room Section */}
-            <div id="documents">
-                <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
-            </div>
+            {/* Data Room Section - Only when authenticated */}
+            {isAuthenticated && (
+                <div id="documents">
+                    <DataRoomSection documents={portfolio.documents} propertyTitle={portfolio.title} />
+                </div>
+            )}
         </main>
     )
 }

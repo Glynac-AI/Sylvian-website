@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import AuthModal from '@/components/auth/AuthModal'
 
 export default function Navigation() {
     const pathname = usePathname()
@@ -13,6 +14,7 @@ export default function Navigation() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
     const [resourcesOpen, setResourcesOpen] = useState(false)
     const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
+    const [authModalOpen, setAuthModalOpen] = useState(false)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     const navLinks = [
@@ -165,8 +167,8 @@ export default function Navigation() {
 
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-6">
-                <Link
-                    href="/login"
+                <button
+                    onClick={() => setAuthModalOpen(true)}
                     onMouseEnter={() => setHoveredLink('login')}
                     onMouseLeave={() => setHoveredLink(null)}
                     className="relative text-sm"
@@ -184,7 +186,7 @@ export default function Navigation() {
                         animate={{ width: hoveredLink === 'login' ? '100%' : 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     />
-                </Link>
+                </button>
 
                 <Link href="/offerings">
                     <motion.div
@@ -325,7 +327,7 @@ export default function Navigation() {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.3 }}
                             >
-                                <Link href="/login" onClick={() => setMobileOpen(false)}>
+                                <button onClick={() => { setMobileOpen(false); setAuthModalOpen(true); }}>
                                     <motion.div
                                         className="block text-[#013220] py-2"
                                         whileHover={{ color: '#095520', x: 8 }}
@@ -333,7 +335,7 @@ export default function Navigation() {
                                     >
                                         Log in
                                     </motion.div>
-                                </Link>
+                                </button>
 
                                 <Link href="/offerings" onClick={() => setMobileOpen(false)}>
                                     <motion.div
@@ -350,6 +352,9 @@ export default function Navigation() {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Auth Modal */}
+            <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
         </>
     )
 }

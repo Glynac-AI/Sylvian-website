@@ -26,7 +26,7 @@ export default function StrategyPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
                             The Sylvan Framework
                         </h1>
                         <p className="text-base md:text-lg text-black font-light">
@@ -121,7 +121,7 @@ export default function StrategyPage() {
                                     Rental income never touches the developer's accounts. Tenants pay directly into a third-party bank-controlled lockbox that functions like an independent escrow.
                                 </p>
                                 <p className="text-black">
-                                    The bank releases funds in strict order enforced by contract. <strong>Direct operational expenses are funded first</strong>, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
+                                    The bank releases funds in strict order enforced by contract. Direct operational expenses are funded first, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
                                 </p>
                             </div>
                         </motion.div>

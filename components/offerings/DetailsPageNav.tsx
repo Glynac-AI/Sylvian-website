@@ -27,8 +27,8 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
 
     useEffect(() => {
         const handleScroll = () => {
-            // Show nav after scrolling past hero section (adjust threshold as needed)
-            setIsVisible(window.scrollY > 400)
+            // Show nav after scrolling past the first viewport
+            setIsVisible(window.scrollY > window.innerHeight * 0.7)
         }
 
         window.addEventListener('scroll', handleScroll)
