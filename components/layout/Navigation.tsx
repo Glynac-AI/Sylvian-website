@@ -26,7 +26,7 @@ export default function Navigation() {
     return (
         <>
             <motion.nav
-                className="w-full py-3 md:py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/95 backdrop-blur-md z-50 border-b border-gray-200/50"
+                className="w-full py-4 md:py-5 px-4 md:px-8 lg:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/95 backdrop-blur-md z-50 border-b border-gray-200/50"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -97,7 +97,7 @@ export default function Navigation() {
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="fixed top-[52px] md:top-[60px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50 max-h-[calc(100vh-52px)] md:max-h-[calc(100vh-60px)] overflow-y-auto"
+                        className="fixed top-[56px] md:top-[68px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50 max-h-[calc(100vh-56px)] md:max-h-[calc(100vh-68px)] overflow-y-auto"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}

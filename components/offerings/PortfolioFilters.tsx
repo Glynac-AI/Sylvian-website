@@ -35,7 +35,7 @@ export default function PortfolioFilters({
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
 
     return (
-        <section className="sticky top-12 md:top-14 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <section className="sticky top-16 md:top-18 z-20 bg-white border-b border-gray-200 shadow-sm">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}

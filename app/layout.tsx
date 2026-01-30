@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${robotoMono.variable}`}>
       <body className="font-sans antialiased flex min-h-screen flex-col bg-[#F9FAFB] text-[#111827]">
         <Navigation />
-        <main className="flex-1 flex flex-col pt-12 md:pt-14">{children}</main>
+        <main className="flex-1 flex flex-col pt-16 md:pt-18">{children}</main>
         <Footer />
       </body>
     </html>
