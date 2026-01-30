@@ -52,9 +52,9 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                 <div className="max-w-7xl mx-auto">
                     <Link
                         href="/offerings"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-[#095520] font-medium hover:shadow-md transition-all duration-300"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full text-sm text-[#095520] hover:shadow-md transition-all duration-300"
                     >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                         Back to Listings
@@ -78,7 +78,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                             {portfolio.fundingStatus}
                         </span>
                         <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-md">
-                            {portfolio.strategy}
+                            {portfolio.noteType}
                         </span>
                     </div>
                 </div>

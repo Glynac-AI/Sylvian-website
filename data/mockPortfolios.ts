@@ -17,6 +17,7 @@ export interface Portfolio {
     id: number
     title: string
     strategy: string
+    noteType: 'Senior Secured' | 'Bridge & Refinance' | 'Completion'
     image: string
     targetYield: string
     investmentTerm: string
@@ -95,6 +96,7 @@ export const mockPortfolios: Portfolio[] = [
         id: 1,
         title: 'Sunbelt Multifamily Growth Portfolio',
         strategy: 'Diversified Growth',
+        noteType: 'Senior Secured',
         image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
         targetYield: '7.8%',
         investmentTerm: '5 years',
@@ -283,6 +285,7 @@ export const mockPortfolios: Portfolio[] = [
         id: 2,
         title: 'Metro Core Mixed-Use Portfolio',
         strategy: 'Income-Focused',
+        noteType: 'Senior Secured',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
         targetYield: '7.2%',
         investmentTerm: '7 years',
@@ -479,6 +482,7 @@ export const mockPortfolios: Portfolio[] = [
         id: 3,
         title: 'Value-Add Opportunity Portfolio',
         strategy: 'Value-Add',
+        noteType: 'Bridge & Refinance',
         image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
         targetYield: '8.5%',
         investmentTerm: '4 years',

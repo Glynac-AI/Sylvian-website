@@ -7,6 +7,8 @@ import { useState } from 'react'
 interface PortfolioFiltersProps {
     selectedStatus: string
     setSelectedStatus: (status: string) => void
+    selectedNoteType: string
+    setSelectedNoteType: (type: string) => void
     minInvestment: string
     setMinInvestment: (amount: string) => void
     viewMode: 'grid' | 'list'
@@ -16,6 +18,8 @@ interface PortfolioFiltersProps {
 export default function PortfolioFilters({
     selectedStatus,
     setSelectedStatus,
+    selectedNoteType,
+    setSelectedNoteType,
     minInvestment,
     setMinInvestment,
     viewMode,
@@ -26,11 +30,12 @@ export default function PortfolioFilters({
 
     // Updated Status Options to match your previous request
     const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
+    const noteTypeOptions = ['All', 'Senior Secured', 'Bridge & Refinance', 'Completion']
     const investmentRanges = ['All', '$25k-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
 
     return (
-        <section className="sticky top-22 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <section className="sticky top-12 md:top-14 z-20 bg-white border-b border-gray-200 shadow-sm">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -130,6 +135,26 @@ export default function PortfolioFilters({
                         </div>
                     </div>
 
+                    {/* Note Type Filter Pills Row */}
+                    <div className="flex items-center gap-2 flex-wrap mb-3">
+                        <span className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider">
+                            Note Type:
+                        </span>
+                        {noteTypeOptions.map((type) => (
+                            <button
+                                key={type}
+                                onClick={() => setSelectedNoteType(type)}
+                                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                                    selectedNoteType === type
+                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
+                                        : 'bg-gray-50 text-[#095520]/70 hover:bg-[#095520]/5 border border-gray-200'
+                                }`}
+                            >
+                                {type}
+                            </button>
+                        ))}
+                    </div>
+
                     {/* Status Filter Pills Row */}
                     <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider">
@@ -150,12 +175,13 @@ export default function PortfolioFilters({
                         ))}
 
                         {/* Clear Filters */}
-                        {(selectedStatus !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All') && (
+                        {(selectedStatus !== 'All' || selectedNoteType !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All') && (
                             <motion.button
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 onClick={() => {
                                     setSelectedStatus('All')
+                                    setSelectedNoteType('All')
                                     setMinInvestment('All')
                                     setSelectedTerm('All')
                                 }}

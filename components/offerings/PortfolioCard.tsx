@@ -9,6 +9,7 @@ interface Portfolio {
     id: number
     title: string
     strategy: string
+    noteType: 'Senior Secured' | 'Bridge & Refinance' | 'Completion'
     image: string
     targetYield: string
     investmentTerm: string
@@ -64,10 +65,10 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
-                            {/* Badges on Image for List View too */}
+                            {/* Note Type Badge on Image for List View */}
                             <div className="absolute top-3 left-3 flex gap-2">
                                 <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520]">
-                                    {portfolio.strategy}
+                                    {portfolio.noteType}
                                 </span>
                             </div>
                             <div className="absolute top-3 right-3">
@@ -170,10 +171,10 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        {/* REVERTED: Badges overlaid on image */}
+                        {/* Note Type Badge overlaid on image */}
                         <div className="absolute top-4 left-4">
                             <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-sm">
-                                {portfolio.strategy}
+                                {portfolio.noteType}
                             </span>
                         </div>
                         <div className="absolute top-4 right-4">

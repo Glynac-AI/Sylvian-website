@@ -58,17 +58,14 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                        <Link href="/" className="inline-block mb-6 group">
                             <Image
                                 src="/logo.png"
-                                alt="Sylvan Logo"
-                                width={48}
-                                height={48}
-                                className="h-12 w-12"
+                                alt="Sylvan"
+                                width={180}
+                                height={24}
+                                className="h-7 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
                             />
-                            <div className="text-2xl tracking-[0.4em] uppercase font-serif text-[#013220] select-none group-hover:text-[#095520] transition-colors">
-                                SYLVAN
-                            </div>
                         </Link>
 
                         {/* Social Icons */}

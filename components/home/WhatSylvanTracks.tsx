@@ -3,7 +3,7 @@
 
 export default function WhatSylvanTracks() {
     return (
-        <section className="bg-[#111827] py-32 text-white">
+        <section className="bg-[#0A3F28] py-32 text-white">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20 max-w-2xl mx-auto">
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
@@ -17,8 +17,8 @@ export default function WhatSylvanTracks() {
 
                 <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {/* Payment Reliability */}
-                    <div className="bg-gray-800 p-6 rounded border border-gray-700 hover:border-[#D9B44A] transition group">
-                        <div className="h-24 mb-6 border-b border-gray-700 flex items-end pb-4 gap-1">
+                    <div className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group">
+                        <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-end pb-4 gap-1">
                             <div className="w-1.5 h-6 bg-green-500 rounded-sm"></div>
                             <div className="w-1.5 h-6 bg-green-500 rounded-sm"></div>
                             <div className="w-1.5 h-6 bg-green-500 rounded-sm"></div>
@@ -34,8 +34,8 @@ export default function WhatSylvanTracks() {
                     </div>
 
                     {/* Capital Discipline */}
-                    <div className="bg-gray-800 p-6 rounded border border-gray-700 hover:border-[#D9B44A] transition group">
-                        <div className="h-24 mb-6 border-b border-gray-700 flex items-center">
+                    <div className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group">
+                        <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-center">
                             <div className="w-full h-1 bg-gray-600 rounded-full relative">
                                 <div className="absolute left-0 top-0 h-1 bg-[#D9B44A] w-4/5 rounded-full"></div>
                                 <div className="absolute right-0 -top-4 text-[9px] font-mono text-[#D9B44A]">80% RES</div>
@@ -50,8 +50,8 @@ export default function WhatSylvanTracks() {
                     </div>
 
                     {/* Forecast Accuracy */}
-                    <div className="bg-gray-800 p-6 rounded border border-gray-700 hover:border-[#D9B44A] transition group">
-                        <div className="h-24 mb-6 border-b border-gray-700 flex items-center justify-center relative">
+                    <div className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group">
+                        <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-center justify-center relative">
                             <svg width="100%" height="40" fill="none">
                                 <path d="M0,20 Q25,10 50,20 T100,20" stroke="#6B7280" strokeDasharray="2,2" strokeWidth="1"/>
                                 <path d="M0,20 Q25,12 50,20 T100,20" stroke="#D9B44A" strokeWidth="1.5"/>
@@ -66,8 +66,8 @@ export default function WhatSylvanTracks() {
                     </div>
 
                     {/* Disclosure Patterns */}
-                    <div className="bg-gray-800 p-6 rounded border border-gray-700 hover:border-[#D9B44A] transition group">
-                        <div className="h-24 mb-6 border-b border-gray-700 flex items-center">
+                    <div className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group">
+                        <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-center">
                             <div className="flex items-center gap-3">
                                 <div className="relative">
                                     <div className="w-3 h-3 rounded-full bg-red-500 animate-ping absolute opacity-75"></div>
@@ -88,8 +88,8 @@ export default function WhatSylvanTracks() {
                     </div>
 
                     {/* Consistency Over Time */}
-                    <div className="bg-gray-800 p-6 rounded border border-gray-700 hover:border-[#D9B44A] transition group">
-                        <div className="h-24 mb-6 border-b border-gray-700 flex items-end gap-1.5 pb-4 justify-center">
+                    <div className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group">
+                        <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-end gap-1.5 pb-4 justify-center">
                             <div className="w-2 bg-gray-600 h-6"></div>
                             <div className="w-2 bg-gray-600 h-6"></div>
                             <div className="w-2 bg-gray-600 h-6"></div>

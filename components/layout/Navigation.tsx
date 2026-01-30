@@ -26,25 +26,23 @@ export default function Navigation() {
     return (
         <>
             <motion.nav
-                className="w-full py-5 md:py-7 px-4 md:px-8 lg:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/95 backdrop-blur-md z-50 border-b border-gray-200/50"
+                className="w-full py-3 md:py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center fixed top-0 left-0 right-0 bg-[#F3F4F1]/95 backdrop-blur-md z-50 border-b border-gray-200/50"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             >
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 md:gap-3">
-                    <Image src="/logo.png" alt="Sylvan Logo" width={40} height={40} className="h-7 w-7 md:h-8 md:w-8 lg:h-10 lg:w-10" />
+                <Link href="/">
                     <motion.div
-                        className="text-lg md:text-2xl tracking-[0.15em] md:tracking-[0.4em] uppercase font-serif text-[#013220] select-none"
-                        whileHover={{ opacity: 0.7 }}
+                        whileHover={{ opacity: 0.8 }}
                         transition={{ duration: 0.2 }}
                     >
-                        SYLVAN
+                        <Image src="/logo.png" alt="Sylvan" width={160} height={20} className="h-4 md:h-5 lg:h-6 w-auto" />
                     </motion.div>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center space-x-6 text-base tracking-[0.025em]">
+                <div className="hidden lg:flex items-center space-x-5 text-sm tracking-[0.025em]">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
@@ -68,7 +66,13 @@ export default function Navigation() {
 
                 {/* Right Side Actions */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <RequestAccessButton className="border border-[#013220] px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer">
+                    <Link
+                        href="/offerings"
+                        className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200"
+                    >
+                        Offerings
+                    </Link>
+                    <RequestAccessButton className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer">
                         Request Access
                     </RequestAccessButton>
                 </div>
@@ -93,7 +97,7 @@ export default function Navigation() {
             <AnimatePresence>
                 {mobileOpen && (
                     <motion.div
-                        className="fixed top-[68px] md:top-[84px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50 max-h-[calc(100vh-68px)] md:max-h-[calc(100vh-84px)] overflow-y-auto"
+                        className="fixed top-[52px] md:top-[60px] left-0 right-0 bg-[#F3F4F1] border-b border-gray-200 lg:hidden z-50 max-h-[calc(100vh-52px)] md:max-h-[calc(100vh-60px)] overflow-y-auto"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
@@ -111,6 +115,13 @@ export default function Navigation() {
                                 </Link>
                             ))}
                             <div className="border-t border-gray-200 mt-3 pt-4 space-y-3">
+                                <Link
+                                    href="/offerings"
+                                    onClick={() => setMobileOpen(false)}
+                                    className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-[#facc15] transition-colors duration-200 block w-full"
+                                >
+                                    Offerings
+                                </Link>
                                 <div onClick={() => setMobileOpen(false)}>
                                     <RequestAccessButton className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer w-full">
                                         Request Access
