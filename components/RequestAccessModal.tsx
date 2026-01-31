@@ -56,16 +56,30 @@ export default function RequestAccessModal({ isOpen, onClose }: RequestAccessMod
         } catch (error) {
             console.error('Submit error:', error)
             setSubmitStatus('error')
+            setTimeout(() => {
+                setSubmitStatus('idle')
+            }, 5000)
         } finally {
             setIsSubmitting(false)
         }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData(prev => ({
-            ...prev,
-            [e.target.name]: e.target.value
-        }))
+        const { name, value } = e.target
+
+        // Phone validation: only allow numbers (no formatting characters)
+        if (name === 'phone') {
+            const sanitizedValue = value.replace(/[^0-9]/g, '')
+            setFormData(prev => ({
+                ...prev,
+                [name]: sanitizedValue
+            }))
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }))
+        }
     }
 
     if (typeof window === 'undefined') return null
@@ -178,10 +192,13 @@ export default function RequestAccessModal({ isOpen, onClose }: RequestAccessMod
                                             id="phone"
                                             name="phone"
                                             required
+                                            pattern="[0-9]{10}"
+                                            title="Please enter exactly 10 digits"
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 text-sm border border-[#E5E7EB] rounded focus:outline-none focus:ring-2 focus:ring-[#0A3F28] focus:border-transparent transition"
-                                            placeholder="+1 (555) 000-0000"
+                                            placeholder="5551234567"
+                                            maxLength={10}
                                         />
                                     </div>
                                 </div>
@@ -215,6 +232,22 @@ export default function RequestAccessModal({ isOpen, onClose }: RequestAccessMod
                                     </svg>
                                     <span className="text-sm text-[#0A3F28] font-medium">
                                         Thank you! We'll be in touch shortly.
+                                    </span>
+                                </motion.div>
+                            )}
+
+                            {/* Error Message */}
+                            {submitStatus === 'error' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="mt-4 p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2"
+                                >
+                                    <svg className="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span className="text-sm text-red-800 font-medium">
+                                        We're having trouble processing your request. Please try again in a moment.
                                     </span>
                                 </motion.div>
                             )}

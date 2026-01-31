@@ -4,7 +4,7 @@ export async function POST(request: Request) {
     try {
         const body = await request.json()
 
-        const response = await fetch(`${process.env.STRAPI_URL}/api/request-accesses`, {
+        const response = await fetch(`${process.env.STRAPI_URL}/api/sylvan-request-accesses`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,7 +16,9 @@ export async function POST(request: Request) {
                     email: body.email,
                     companyName: body.companyName || null,
                     phone: body.phone,
-                    message: body.message || null
+                    message: body.message || null,
+                    tenant: 2,
+                    submittedAt: new Date().toISOString()
                 }
             })
         })
