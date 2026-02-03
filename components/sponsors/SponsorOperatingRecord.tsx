@@ -88,7 +88,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                     {paymentBehavior.last12Months.map((payment, index) => {
                                         const x = 50 + (index * 58.3)
                                         let color = '#0A3F28'
-                                        let strokeColor = 'white'
+                                        const strokeColor = 'white'
                                         let radius = 6
 
                                         if (payment.status === 'injection') {
