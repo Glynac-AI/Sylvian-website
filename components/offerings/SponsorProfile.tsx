@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 interface SponsorProfileData {
     name: string
@@ -66,6 +67,21 @@ export default function SponsorProfile({ sponsorProfile }: SponsorProfileProps) 
                     <p className="text-xs text-[#095520]/70 mb-1">Approach</p>
                     <p className="text-xl font-semibold text-[#095520]">Integrated</p>
                 </div>
+            </div>
+
+            {/* Link to Full Sponsor Profile */}
+            <div className="pt-6 border-t border-gray-200">
+                <Link href="/sponsors/1">
+                    <button className="w-full bg-[#095520] text-yellow-400 py-3 px-6 rounded-lg font-semibold text-sm uppercase tracking-widest hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        View Full Operating Record
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </Link>
+                <p className="text-xs text-center text-[#095520]/70 mt-3">
+                    See complete behavioral metrics and track record
+                </p>
             </div>
         </motion.div>
     )
