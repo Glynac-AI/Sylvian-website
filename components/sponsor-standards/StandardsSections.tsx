@@ -14,28 +14,28 @@ export default function StandardsSections() {
                             Sponsors are evaluated for participation based on minimum requirements, including:
                         </p>
 
-                        <div className="grid grid-cols-1 gap-0 border border-[#E5E7EB] mb-6">
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Demonstrated operating history in relevant asset types</span>
-                            </div>
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Established financial controls and accounting practices</span>
-                            </div>
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Sufficient liquidity and balance-sheet capacity</span>
-                            </div>
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Ability to operate within standardized SPV, covenant, and reserve frameworks</span>
-                            </div>
-                            <div className="p-4 flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Commitment to mandatory, uniform reporting and disclosure requirements</span>
-                            </div>
-                        </div>
+                        <ul className="space-y-3 mb-6">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                <span className="text-sm text-gray-700">Demonstrated operating history in relevant asset types</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                <span className="text-sm text-gray-700">Established financial controls and accounting practices</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                <span className="text-sm text-gray-700">Sufficient liquidity and balance-sheet capacity</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                <span className="text-sm text-gray-700">Ability to operate within standardized SPV, covenant, and reserve frameworks</span>
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                <span className="text-sm text-gray-700">Commitment to mandatory, uniform reporting and disclosure requirements</span>
+                            </li>
+                        </ul>
 
                         <p className="text-[#4B5563] mt-6 leading-relaxed">
                             Admission reflects readiness to operate under institutional discipline, not marketing strength or deal volume.

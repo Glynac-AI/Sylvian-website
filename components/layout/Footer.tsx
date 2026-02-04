@@ -11,7 +11,7 @@ export default function Footer() {
         platform: [
             { label: 'Home', href: '/' },
             { label: 'Sponsor Evaluation', href: '/sponsor-evaluation' },
-            { label: 'Our Methodology', href: '/methodology' },
+            { label: 'Our Methodology', href: '/evaluation-methodology' },
             { label: 'Sponsor Standards', href: '/sponsor-standards' }
         ],
         investors: [
@@ -39,7 +39,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="bg-[#E8EAE6] pt-20 pb-8 px-6 border-t border-gray-200 relative overflow-hidden">
+        <footer className="bg-[#E8EAE6] pt-16 pb-8 px-6 border-t border-gray-200 relative overflow-hidden">
             {/* Subtle Tree Background - Right Side */}
             <div className="absolute right-0 bottom-0 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] pointer-events-none">
                 <Image
@@ -55,31 +55,31 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <Link href="/" className="inline-block mb-6 group">
+                        <Link href="/" className="inline-block mb-5 group">
                             <Image
                                 src="/logo.png"
                                 alt="Sylvan"
-                                width={180}
-                                height={24}
-                                className="h-7 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+                                width={140}
+                                height={20}
+                                className="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
                             />
                         </Link>
 
                         {/* Social Icons */}
-                        <div className="flex gap-3">
+                        <div className="flex gap-2">
                             {socialLinks.map((social) => (
                                 <motion.a
                                     key={social.name}
                                     href={social.href}
                                     aria-label={social.name}
-                                    className="w-11 h-11 rounded-full bg-[#013220]/5 flex items-center justify-center hover:bg-[#095520] hover:text-yellow-400 text-[#013220] transition-all duration-300"
-                                    whileHover={{ scale: 1.1, y: -2 }}
+                                    className="w-9 h-9 rounded-full bg-[#013220]/5 flex items-center justify-center hover:bg-[#013220] hover:text-white text-[#013220] transition-all duration-300"
+                                    whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                         {social.icon}
                                     </svg>
                                 </motion.a>
@@ -89,21 +89,15 @@ export default function Footer() {
 
                     {/* Platform Links */}
                     <div>
-                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">Platform</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-sm font-bold mb-4 tracking-wider text-[#013220] uppercase">Platform</h3>
+                        <ul className="space-y-2.5">
                             {footerLinks.platform.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
+                                        className="text-[#111827] hover:text-[#013220] transition-colors duration-200 text-sm"
                                     >
-                                        <motion.span
-                                            whileHover={{ x: 4 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="inline-block"
-                                        >
-                                            {link.label}
-                                        </motion.span>
+                                        {link.label}
                                     </Link>
                                 </li>
                             ))}
@@ -112,21 +106,15 @@ export default function Footer() {
 
                     {/* Investors Links */}
                     <div>
-                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">For Investors</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-sm font-bold mb-4 tracking-wider text-[#013220] uppercase">For Investors</h3>
+                        <ul className="space-y-2.5">
                             {footerLinks.investors.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block"
+                                        className="text-[#111827] hover:text-[#013220] transition-colors duration-200 text-sm"
                                     >
-                                        <motion.span
-                                            whileHover={{ x: 4 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="inline-block"
-                                        >
-                                            {link.label}
-                                        </motion.span>
+                                        {link.label}
                                     </Link>
                                 </li>
                             ))}
@@ -135,21 +123,21 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-base font-bold mb-5 tracking-wider text-[#013220] uppercase">Get Started</h3>
-                        <RequestAccessButton className="text-[#013220] hover:text-[#095520] transition-colors duration-200 text-base inline-block cursor-pointer">
+                        <h3 className="text-sm font-bold mb-4 tracking-wider text-[#013220] uppercase">Get Started</h3>
+                        <RequestAccessButton className="text-[#111827] hover:text-[#013220] transition-colors duration-200 text-sm cursor-pointer">
                             Request Access
                         </RequestAccessButton>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-8 border-t border-[#013220]/10">
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <div className="text-base text-[#013220]">
-                            <span>© 2026 Sylvan. All rights reserved.</span>
+                <div className="pt-6 border-t border-[#013220]/10">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+                        <div className="text-xs text-[#013220]/60">
+                            <span>&copy; 2026 Sylvan. All rights reserved.</span>
                         </div>
-                        <div className="flex items-center gap-2 text-base text-[#013220]">
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex items-center gap-1.5 text-xs text-[#013220]/60">
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                             <span>Standardized Sponsor Diligence Platform</span>

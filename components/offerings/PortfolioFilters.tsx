@@ -7,8 +7,8 @@ import { useState } from 'react'
 interface PortfolioFiltersProps {
     selectedStatus: string
     setSelectedStatus: (status: string) => void
-    selectedNoteType: string
-    setSelectedNoteType: (type: string) => void
+    selectedStructure: string
+    setSelectedStructure: (type: string) => void
     minInvestment: string
     setMinInvestment: (amount: string) => void
     viewMode: 'grid' | 'list'
@@ -18,24 +18,24 @@ interface PortfolioFiltersProps {
 export default function PortfolioFilters({
     selectedStatus,
     setSelectedStatus,
-    selectedNoteType,
-    setSelectedNoteType,
+    selectedStructure,
+    setSelectedStructure,
     minInvestment,
     setMinInvestment,
     viewMode,
     setViewMode
 }: PortfolioFiltersProps) {
     const [selectedTerm, setSelectedTerm] = useState('All')
-    const [sortBy, setSortBy] = useState('newest')
 
-    // Updated Status Options to match your previous request
     const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
-    const noteTypeOptions = ['All', 'Senior Secured', 'Bridge & Refinance', 'Completion']
+    const structureOptions = ['All', 'Senior Secured', 'Bridge & Refinance', 'Completion']
     const investmentRanges = ['All', '$25k-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
 
+    const hasActiveFilters = selectedStatus !== 'All' || selectedStructure !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All'
+
     return (
-        <section className="sticky top-16 md:top-18 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <section className="sticky top-16 md:top-18 z-20 bg-[#0A3F28]">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -43,153 +43,131 @@ export default function PortfolioFilters({
                     transition={{ duration: 0.5 }}
                     className="py-4"
                 >
-                    {/* Main Filter Row */}
-                    <div className="flex items-center gap-4 mb-3 pb-3 border-b border-gray-100">
-                        {/* Minimum Investment Slider/Dropdown */}
-                        <div className="relative">
-                            <select
-                                value={minInvestment}
-                                onChange={(e) => setMinInvestment(e.target.value)}
-                                className="pl-4 pr-10 py-2 rounded-full text-sm font-medium bg-white text-[#095520] border border-gray-200 hover:border-[#095520]/30 focus:outline-none focus:ring-2 focus:ring-[#095520]/20 transition-all cursor-pointer appearance-none"
-                            >
-                                {investmentRanges.map((option) => (
-                                    <option key={option} value={option}>
-                                        {option === 'All' ? 'Min. Investment' : option}
-                                    </option>
-                                ))}
-                            </select>
-                            <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#095520] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
+                    {/* Single Row Layout */}
+                    <div className="flex items-center justify-between gap-6">
+                        {/* Left: Product Structure Pills */}
+                        <div className="flex items-center gap-2">
+                            {structureOptions.map((structure) => (
+                                <button
+                                    key={structure}
+                                    onClick={() => setSelectedStructure(structure)}
+                                    className={`px-4 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
+                                        selectedStructure === structure
+                                            ? 'bg-[#D9B44A] text-[#0A3F28]'
+                                            : 'text-white/70 hover:text-white border border-white/20 hover:border-white/40'
+                                    }`}
+                                >
+                                    {structure === 'All' ? 'All' : structure}
+                                </button>
+                            ))}
                         </div>
 
-                        {/* Term Dropdown */}
-                        <div className="relative">
-                            <select
-                                value={selectedTerm}
-                                onChange={(e) => setSelectedTerm(e.target.value)}
-                                className="pl-4 pr-10 py-2 rounded-full text-sm font-medium bg-white text-[#095520] border border-gray-200 hover:border-[#095520]/30 focus:outline-none focus:ring-2 focus:ring-[#095520]/20 transition-all cursor-pointer appearance-none"
-                            >
-                                {termOptions.map((option) => (
-                                    <option key={option} value={option}>
-                                        {option === 'All' ? 'Term' : option}
-                                    </option>
-                                ))}
-                            </select>
-                            <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#095520] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-
-                        {/* Spacer */}
-                        <div className="flex-1" />
-
-                        {/* Sort By Dropdown */}
-                        <div className="relative">
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                className="pl-4 pr-10 py-2 rounded-full text-sm font-medium bg-white text-[#095520] border border-gray-200 hover:border-[#095520]/30 focus:outline-none focus:ring-2 focus:ring-[#095520]/20 transition-all cursor-pointer appearance-none"
-                            >
-                                <option value="newest">Newest</option>
-                                <option value="yield-high">Highest Yield</option>
-                                <option value="yield-low">Lowest Yield</option>
-                                <option value="min-low">Min. Investment: Low to High</option>
-                                <option value="min-high">Min. Investment: High to Low</option>
-                                <option value="term-short">Term: Short to Long</option>
-                                <option value="term-long">Term: Long to Short</option>
-                            </select>
-                            <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#095520] pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-
-                        {/* View Toggle */}
-                        <div className="flex items-center gap-1 border border-gray-200 rounded-full p-1">
-                            <button
-                                onClick={() => setViewMode('grid')}
-                                className={`p-2 rounded-full transition-all duration-300 ${
-                                    viewMode === 'grid'
-                                        ? 'bg-[#095520] text-yellow-400'
-                                        : 'text-[#095520]/50 hover:text-[#095520]'
-                                }`}
-                                title="Grid view"
-                            >
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        {/* Right: Dropdowns + View Toggle */}
+                        <div className="flex items-center gap-3">
+                            {/* Status Dropdown */}
+                            <div className="relative">
+                                <select
+                                    value={selectedStatus}
+                                    onChange={(e) => setSelectedStatus(e.target.value)}
+                                    className="pl-4 pr-9 py-2 text-sm font-medium uppercase tracking-wide bg-transparent text-white/70 border border-white/20 hover:border-white/40 focus:outline-none transition-all cursor-pointer appearance-none"
+                                >
+                                    {statusOptions.map((option) => (
+                                        <option key={option} value={option} className="text-gray-900 normal-case">
+                                            {option === 'All' ? 'Status' : option}
+                                        </option>
+                                    ))}
+                                </select>
+                                <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-white/50 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
-                            </button>
-                            <button
-                                onClick={() => setViewMode('list')}
-                                className={`p-2 rounded-full transition-all duration-300 ${
-                                    viewMode === 'list'
-                                        ? 'bg-[#095520] text-yellow-400'
-                                        : 'text-[#095520]/50 hover:text-[#095520]'
-                                }`}
-                                title="List view"
-                            >
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </div>
+
+                            {/* Min Investment Dropdown */}
+                            <div className="relative">
+                                <select
+                                    value={minInvestment}
+                                    onChange={(e) => setMinInvestment(e.target.value)}
+                                    className="pl-4 pr-9 py-2 text-sm font-medium uppercase tracking-wide bg-transparent text-white/70 border border-white/20 hover:border-white/40 focus:outline-none transition-all cursor-pointer appearance-none"
+                                >
+                                    {investmentRanges.map((option) => (
+                                        <option key={option} value={option} className="text-gray-900 normal-case">
+                                            {option === 'All' ? 'Investment' : option}
+                                        </option>
+                                    ))}
+                                </select>
+                                <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-white/50 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
-                            </button>
+                            </div>
+
+                            {/* Term Dropdown */}
+                            <div className="relative">
+                                <select
+                                    value={selectedTerm}
+                                    onChange={(e) => setSelectedTerm(e.target.value)}
+                                    className="pl-4 pr-9 py-2 text-sm font-medium uppercase tracking-wide bg-transparent text-white/70 border border-white/20 hover:border-white/40 focus:outline-none transition-all cursor-pointer appearance-none"
+                                >
+                                    {termOptions.map((option) => (
+                                        <option key={option} value={option} className="text-gray-900 normal-case">
+                                            {option === 'All' ? 'Term' : option}
+                                        </option>
+                                    ))}
+                                </select>
+                                <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-white/50 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+
+                            {/* Clear Filters */}
+                            {hasActiveFilters && (
+                                <motion.button
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    onClick={() => {
+                                        setSelectedStatus('All')
+                                        setSelectedStructure('All')
+                                        setMinInvestment('All')
+                                        setSelectedTerm('All')
+                                    }}
+                                    className="text-xs text-[#D9B44A] hover:text-[#D9B44A]/80 transition-colors uppercase tracking-wide"
+                                >
+                                    Clear
+                                </motion.button>
+                            )}
+
+                            {/* Divider */}
+                            <div className="h-6 w-px bg-white/20" />
+
+                            {/* View Toggle */}
+                            <div className="flex items-center gap-1">
+                                <button
+                                    onClick={() => setViewMode('grid')}
+                                    className={`p-2 transition-all duration-300 ${
+                                        viewMode === 'grid'
+                                            ? 'text-[#D9B44A]'
+                                            : 'text-white/50 hover:text-white/70'
+                                    }`}
+                                    title="Grid view"
+                                >
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                    </svg>
+                                </button>
+                                <button
+                                    onClick={() => setViewMode('list')}
+                                    className={`p-2 transition-all duration-300 ${
+                                        viewMode === 'list'
+                                            ? 'text-[#D9B44A]'
+                                            : 'text-white/50 hover:text-white/70'
+                                    }`}
+                                    title="List view"
+                                >
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Note Type Filter Pills Row */}
-                    <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <span className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider">
-                            Note Type:
-                        </span>
-                        {noteTypeOptions.map((type) => (
-                            <button
-                                key={type}
-                                onClick={() => setSelectedNoteType(type)}
-                                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                                    selectedNoteType === type
-                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
-                                        : 'bg-gray-50 text-[#095520]/70 hover:bg-[#095520]/5 border border-gray-200'
-                                }`}
-                            >
-                                {type}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Status Filter Pills Row */}
-                    <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-xs font-semibold text-[#095520]/50 uppercase tracking-wider">
-                            Status:
-                        </span>
-                        {statusOptions.map((status) => (
-                            <button
-                                key={status}
-                                onClick={() => setSelectedStatus(status)}
-                                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                                    selectedStatus === status
-                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
-                                        : 'bg-gray-50 text-[#095520]/70 hover:bg-[#095520]/5 border border-gray-200'
-                                }`}
-                            >
-                                {status}
-                            </button>
-                        ))}
-
-                        {/* Clear Filters */}
-                        {(selectedStatus !== 'All' || selectedNoteType !== 'All' || minInvestment !== 'All' || selectedTerm !== 'All') && (
-                            <motion.button
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                onClick={() => {
-                                    setSelectedStatus('All')
-                                    setSelectedNoteType('All')
-                                    setMinInvestment('All')
-                                    setSelectedTerm('All')
-                                }}
-                                className="ml-auto text-xs text-[#095520]/60 hover:text-[#095520] underline underline-offset-2 transition-colors"
-                            >
-                                Clear all filters
-                            </motion.button>
-                        )}
                     </div>
                 </motion.div>
             </div>

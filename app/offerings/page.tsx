@@ -12,20 +12,20 @@ const portfolios = mockPortfolios
 
 export default function OfferingsPage() {
     const [selectedStatus, setSelectedStatus] = useState('All')
-    const [selectedNoteType, setSelectedNoteType] = useState('All')
+    const [selectedStructure, setSelectedStructure] = useState('All')
     const [minInvestment, setMinInvestment] = useState('All')
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
     // Filter portfolios based on selections
     const filteredPortfolios = portfolios.filter(portfolio => {
         const statusMatch = selectedStatus === 'All' || portfolio.fundingStatus === selectedStatus
-        const noteTypeMatch = selectedNoteType === 'All' || portfolio.noteType === selectedNoteType
+        const structureMatch = selectedStructure === 'All' || portfolio.noteType === selectedStructure
         const investmentMatch = minInvestment === 'All' ||
             (minInvestment === '$50,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 50000) ||
             (minInvestment === '$75,000' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) <= 75000) ||
             (minInvestment === '$100,000+' && parseInt(portfolio.minimumInvestment.replace(/[^0-9]/g, '')) >= 100000)
 
-        return statusMatch && noteTypeMatch && investmentMatch
+        return statusMatch && structureMatch && investmentMatch
     })
 
     // Get top listings (highest yield)
@@ -37,26 +37,6 @@ export default function OfferingsPage() {
 
     return (
         <>
-            {/* Hero Section */}
-            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
-                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
-
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
-                            Structured Notes
-                        </h1>
-                        <p className="text-base md:text-lg text-black font-light">
-                            Explore real estate-backed structured notes with standardized sponsor operating records and enforced transparency.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
-
             {/* Top Listings Section */}
             <section className="py-12 px-6 bg-white border-b border-gray-200">
                 <div className="max-w-7xl mx-auto">
@@ -71,7 +51,7 @@ export default function OfferingsPage() {
                             Top Opportunities
                         </h2>
                         <p className="text-base text-[#095520]">
-                            Highest yielding notes available now
+                            Highest yielding opportunities available now
                         </p>
                     </motion.div>
 
@@ -88,8 +68,8 @@ export default function OfferingsPage() {
                 <PortfolioFilters
                     selectedStatus={selectedStatus}
                     setSelectedStatus={setSelectedStatus}
-                    selectedNoteType={selectedNoteType}
-                    setSelectedNoteType={setSelectedNoteType}
+                    selectedStructure={selectedStructure}
+                    setSelectedStructure={setSelectedStructure}
                     minInvestment={minInvestment}
                     setMinInvestment={setMinInvestment}
                     viewMode={viewMode}
@@ -106,14 +86,14 @@ export default function OfferingsPage() {
                             className="mb-12"
                         >
                             <h2 className="text-3xl md:text-4xl font-semibold text-[#095520] mb-3">
-                                All Notes
+                                All Opportunities
                             </h2>
                             <div className="flex items-center justify-between">
                                 <p className="text-lg text-[#095520]">
-                                    Browse all available structured notes
+                                    Browse all available investment opportunities
                                 </p>
                                 <p className="text-sm text-[#095520]">
-                                    Showing <span className="font-semibold text-[#095520]">{filteredPortfolios.length}</span> {filteredPortfolios.length === 1 ? 'note' : 'notes'}
+                                    Showing <span className="font-semibold text-[#095520]">{filteredPortfolios.length}</span> {filteredPortfolios.length === 1 ? 'opportunity' : 'opportunities'}
                                 </p>
                             </div>
                         </motion.div>
@@ -135,7 +115,7 @@ export default function OfferingsPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-medium text-[#095520] mb-2">No notes found</h3>
+                            <h3 className="text-xl font-medium text-[#095520] mb-2">No opportunities found</h3>
                             <p className="text-[#095520]">Try adjusting your filters to see more results</p>
                         </motion.div>
                     )}

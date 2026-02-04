@@ -6,27 +6,29 @@ import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function NeutralByDesign() {
     return (
-        <section className="bg-[#111827] text-white py-32 text-center">
+        <section className="bg-[#013220] text-white py-32 text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
-                <div className="w-12 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
+                <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
                 <h2 className="text-4xl lg:text-5xl font-serif mb-8">Decision Authority Remains With Investors</h2>
 
-                <p className="text-xl text-gray-400 mb-8">Sylvan does not:</p>
+                <p className="text-xl text-gray-300 font-serif italic mb-8">Sylvan does not:</p>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-center text-xs font-bold uppercase tracking-widest text-[#4B5563]">
-                    <div className="border-t border-[#4B5563] pt-4">No Ratings</div>
-                    <div className="border-t border-[#4B5563] pt-4">No Rankings</div>
-                    <div className="border-t border-[#4B5563] pt-4">No Endorsements</div>
-                    <div className="border-t border-[#4B5563] pt-4">No Optimization</div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-center text-xs font-bold uppercase tracking-widest text-gray-300">
+                    <div className="border-t border-[#095520] pt-4">No Ratings</div>
+                    <div className="border-t border-[#095520] pt-4">No Rankings</div>
+                    <div className="border-t border-[#095520] pt-4">No Endorsements</div>
+                    <div className="border-t border-[#095520] pt-4">No Optimization</div>
                 </div>
 
-                <p className="text-2xl font-serif leading-relaxed mb-12 text-gray-300">
-                    "The platform records what happens under standardized obligations.<br />
-                    <span className="text-white italic">Institutions evaluate the evidence and decide how to act on it.</span>"
-                </p>
+                <div className="inline-block border border-white/20 p-8 rounded-sm bg-white/5 backdrop-blur-sm mb-12">
+                    <p className="text-lg leading-relaxed font-serif text-white">
+                        "The platform records what happens under standardized obligations.<br />
+                        <span className="text-[#D9B44A]">Institutions evaluate the evidence and decide how to act on it.</span>"
+                    </p>
+                </div>
 
                 <div className="flex flex-col md:flex-row gap-6 justify-center">
-                    <RequestAccessButton className="bg-[#0A3F28] text-white px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#052e1c] transition shadow-lg border border-transparent cursor-pointer">
+                    <RequestAccessButton className="bg-[#D9B44A] text-[#013220] px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#E5C05D] transition shadow-lg border border-transparent cursor-pointer">
                         Request Access
                     </RequestAccessButton>
                     <Link href="/how-investors-use-sylvan">

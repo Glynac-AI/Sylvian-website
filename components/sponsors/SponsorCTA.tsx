@@ -11,7 +11,7 @@ interface SponsorCTAProps {
 
 export default function SponsorCTA({ sponsorName, portfolioIds }: SponsorCTAProps) {
     return (
-        <section className="bg-[#0A3F28] py-20 text-white text-center border-t border-[#145A3C]">
+        <section className="bg-[#013220] py-20 text-white text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function SponsorCTA({ sponsorName, portfolioIds }: SponsorCTAProp
 
                     <div className="flex flex-col md:flex-row gap-6 justify-center">
                         <Link href="/offerings">
-                            <button className="bg-[#D9B44A] text-[#0A3F28] px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#E5C05D] transition shadow-lg">
+                            <button className="bg-[#D9B44A] text-[#013220] px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#E5C05D] transition shadow-lg">
                                 View All Offerings
                             </button>
                         </Link>

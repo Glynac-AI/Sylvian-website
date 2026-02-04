@@ -6,10 +6,10 @@ import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function ClosingCTA() {
     return (
-        <section className="bg-[#111827] text-white py-32 text-center">
+        <section className="bg-[#013220] text-white py-32 text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row gap-6 justify-center">
-                    <RequestAccessButton className="bg-[#0A3F28] text-white px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#052e1c] transition shadow-lg border border-transparent cursor-pointer">
+                    <RequestAccessButton className="bg-[#D9B44A] text-[#013220] px-10 py-4 text-xs font-bold tracking-widest uppercase hover:bg-[#E5C05D] transition shadow-lg border border-transparent cursor-pointer">
                         Request Access
                     </RequestAccessButton>
                     <Link href="/sponsor-standards">
