@@ -2,6 +2,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import RequestAccessButton from '@/components/RequestAccessButton'
 
 export default function Hero() {
@@ -32,81 +33,20 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-                className="fade-in"
+                className="fade-in flex justify-center"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
             >
-                <div className="bg-white p-2 rounded shadow-[0_20px_40px_-4px_rgba(10,63,40,0.1)] border border-[#E5E7EB]">
-                    <div className="bg-gray-50 border-b border-[#E5E7EB] p-4 flex justify-between items-center rounded-t-sm">
-                        <div>
-                            <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                Record ID: SV-8821
-                            </div>
-                            <div className="text-sm font-bold text-[#0A3F28] font-serif">
-                                Sponsor Operating Record
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-[9px] font-mono font-bold text-gray-600">LIVE FEED</span>
-                        </div>
-                    </div>
-                    <div className="p-6 space-y-5">
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-sm font-bold text-[#111827]">Cash Flow Stress Test</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: DSCR-STRESS-01
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-sm font-mono font-bold text-[#111827]">PASS (1.45x)</div>
-                                <div className="text-[10px] text-green-600 font-bold uppercase tracking-wide">
-                                    ● Verified
-                                </div>
-                            </div>
-                        </div>
-                        <div className="h-px bg-gray-100 w-full"></div>
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-sm font-bold text-[#111827]">Reserve Maintenance</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: RES-FUND-04
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-sm font-mono font-bold text-[#111827]">102% Funded</div>
-                                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wide">
-                                    Target: 100%
-                                </div>
-                            </div>
-                        </div>
-                        <div className="h-px bg-gray-100 w-full"></div>
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-sm font-bold text-[#111827]">Disclosure Latency</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: COMMS-LAT-09
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-sm font-mono font-bold text-[#111827]">&lt; 24 Hours</div>
-                                <div className="text-[10px] text-[#D9B44A] font-bold uppercase tracking-wide">
-                                    Top Tier
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="relative w-full max-w-lg">
+                    <Image
+                        src="/home/hero-section.svg"
+                        alt="Sponsor Operating Record Dashboard"
+                        width={600}
+                        height={500}
+                        className="w-full h-auto"
+                        priority
+                    />
                 </div>
             </motion.div>
         </section>

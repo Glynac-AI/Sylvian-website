@@ -12,16 +12,26 @@ export default function Navigation() {
     const pathname = usePathname()
     const [mobileOpen, setMobileOpen] = useState(false)
     const [hoveredLink, setHoveredLink] = useState<string | null>(null)
-    
-    const navLinks = [
+    const [resourcesOpen, setResourcesOpen] = useState(false)
+
+    const navLinksBeforeResources = [
         { label: 'Home', href: '/' },
         { label: 'Sponsor Evaluation', href: '/sponsor-evaluation' },
         { label: 'Methodology', href: '/evaluation-methodology' },
         { label: 'For Investors', href: '/how-investors-use-sylvan' },
-        { label: 'Standards', href: '/sponsor-standards' },
-        { label: 'Resources', href: '/resources' },
+        { label: 'Standards', href: '/sponsor-standards' }
+    ]
+
+    const navLinksAfterResources = [
         { label: 'FAQ', href: '/faq' }
     ]
+
+    const resourceLinks = [
+        { label: 'For CIOs', href: '/resources/for-cios' },
+        { label: 'For CCOs', href: '/resources/for-ccos' }
+    ]
+
+    const isResourcesActive = pathname.startsWith('/resources')
 
     return (
         <>
@@ -43,7 +53,87 @@ export default function Navigation() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center space-x-5 text-sm tracking-[0.025em]">
-                    {navLinks.map((link) => (
+                    {navLinksBeforeResources.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onMouseEnter={() => setHoveredLink(link.href)}
+                            onMouseLeave={() => setHoveredLink(null)}
+                            className="relative py-2 whitespace-nowrap"
+                        >
+                            <span className={`transition-colors duration-200 ${pathname === link.href ? 'text-[#095520] font-medium' : 'text-[#013220] hover:text-[#095520]'}`}>
+                                {link.label}
+                            </span>
+                            <motion.span
+                                className="absolute -bottom-0.5 left-0 h-[1.5px] bg-[#095520]"
+                                initial={{ width: 0 }}
+                                animate={{ width: (hoveredLink === link.href || pathname === link.href) ? '100%' : 0 }}
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                            />
+                        </Link>
+                    ))}
+
+                    {/* Resources Dropdown */}
+                    <div
+                        className="relative py-2"
+                        onMouseEnter={() => {
+                            setResourcesOpen(true)
+                            setHoveredLink('/resources')
+                        }}
+                        onMouseLeave={() => {
+                            setResourcesOpen(false)
+                            setHoveredLink(null)
+                        }}
+                    >
+                        <button className="relative whitespace-nowrap flex items-center gap-1">
+                            <span className={`transition-colors duration-200 ${isResourcesActive ? 'text-[#095520] font-medium' : 'text-[#013220] hover:text-[#095520]'}`}>
+                                Resources
+                            </span>
+                            <svg
+                                className={`w-3 h-3 transition-transform duration-200 ${isResourcesActive ? 'text-[#095520]' : 'text-[#013220]'} ${resourcesOpen ? 'rotate-180' : ''}`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <motion.span
+                                className="absolute -bottom-0.5 left-0 h-[1.5px] bg-[#095520]"
+                                initial={{ width: 0 }}
+                                animate={{ width: (hoveredLink === '/resources' || isResourcesActive) ? '100%' : 0 }}
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                            />
+                        </button>
+
+                        {/* Dropdown Menu */}
+                        <AnimatePresence>
+                            {resourcesOpen && (
+                                <motion.div
+                                    className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl overflow-hidden z-50"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    {resourceLinks.map((link) => (
+                                        <Link
+                                            key={link.href}
+                                            href={link.href}
+                                            className={`block px-4 py-3 text-sm transition-colors duration-150 ${
+                                                pathname === link.href
+                                                    ? 'bg-[#095520] text-white font-medium'
+                                                    : 'text-[#013220] hover:bg-[#F3F4F1] hover:text-[#095520]'
+                                            }`}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+
+                    {navLinksAfterResources.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
@@ -104,7 +194,7 @@ export default function Navigation() {
                         transition={{ duration: 0.2 }}
                     >
                         <div className="flex flex-col py-4 px-4">
-                            {navLinks.map((link) => (
+                            {navLinksBeforeResources.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
@@ -114,6 +204,58 @@ export default function Navigation() {
                                     {link.label}
                                 </Link>
                             ))}
+
+                            {/* Resources Dropdown in Mobile */}
+                            <div>
+                                <button
+                                    onClick={() => setResourcesOpen(!resourcesOpen)}
+                                    className={`w-full py-3 text-base tracking-[0.025em] text-left flex items-center justify-between ${isResourcesActive ? 'text-[#095520] font-medium' : 'text-[#013220]'}`}
+                                >
+                                    Resources
+                                    <svg
+                                        className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <AnimatePresence>
+                                    {resourcesOpen && (
+                                        <motion.div
+                                            className="pl-4 space-y-1"
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            {resourceLinks.map((link) => (
+                                                <Link
+                                                    key={link.href}
+                                                    href={link.href}
+                                                    onClick={() => setMobileOpen(false)}
+                                                    className={`block py-2 text-sm tracking-[0.025em] ${pathname === link.href ? 'text-[#095520] font-medium' : 'text-[#013220]'}`}
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {navLinksAfterResources.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setMobileOpen(false)}
+                                    className={`py-3 text-base tracking-[0.025em] ${pathname === link.href ? 'text-[#095520] font-medium' : 'text-[#013220]'}`}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+
                             <div className="border-t border-gray-200 mt-3 pt-4 space-y-3">
                                 <Link
                                     href="/offerings"

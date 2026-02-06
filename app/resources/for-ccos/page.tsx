@@ -1,21 +1,18 @@
-// app/resources/governance/page.tsx
+// app/resources/for-ccos/page.tsx
 'use client'
 
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
-import Image from 'next/image'
 
-export default function GovernancePage() {
+export default function ForCCOsPage() {
     const section1Ref = useRef(null)
     const section2Ref = useRef(null)
     const section3Ref = useRef(null)
-    const section4Ref = useRef(null)
-    
+
     const section1InView = useInView(section1Ref, { once: true, margin: "-100px" })
     const section2InView = useInView(section2Ref, { once: true, margin: "-100px" })
     const section3InView = useInView(section3Ref, { once: true, margin: "-100px" })
-    const section4InView = useInView(section4Ref, { once: true, margin: "-100px" })
 
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
@@ -30,27 +27,27 @@ export default function GovernancePage() {
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
-                            Governance & Control Framework
+                            Sylvan Resources
                         </h1>
                         <p className="text-base md:text-lg text-black font-light">
-                            The structural controls that protect capital and cash flows across every Sylvan transaction.
+                            For CCOs
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Section 1: Asset Isolation */}
+            {/* Section 1: Ring-Fenced SPVs */}
             <section ref={section1Ref} className="py-20 px-6 bg-white relative overflow-hidden border-b border-gray-200">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
-                
+
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
-                        
+
                         {/* Content */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7 space-y-8"
-                            initial={{ opacity: 0, x: -40 }} 
-                            animate={section1InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: -40 }}
+                            animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
@@ -64,26 +61,26 @@ export default function GovernancePage() {
                                     Each investment sits in its own standalone legal entity, completely separate from the developer's other operations and liabilities.
                                 </p>
                                 <p className="text-black">
-                                    If the developer faces litigation, creditor claims, or bankruptcy, those issues remain outside the SPV. The asset you invested in stays protected and isolated.
+                                    If the developer faces litigation, creditor claims, or bankruptcy, those issues remain outside the SPV. The assets you invested in stays protected and isolated.
                                 </p>
                             </div>
                         </motion.div>
 
                         {/* Visualization */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5 relative"
-                            initial={{ opacity: 0, x: 40 }} 
-                            animate={section1InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="bg-[#F3F4F1] p-10 rounded-2xl border border-[#095520]/10 shadow-lg">
                                 <div className="space-y-8">
                                     <div className="grid grid-cols-2 gap-4 opacity-40">
                                         <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]">
-                                            Developer's<br/>Other Projects
+                                            Developer's<br />Other Projects
                                         </div>
                                         <div className="p-4 bg-white border-2 border-dashed border-[#095520]/30 rounded text-center text-xs text-[#095520]">
-                                            Developer's<br/>Operating Liabilities
+                                            Developer's<br />Operating Liabilities
                                         </div>
                                     </div>
 
@@ -109,64 +106,65 @@ export default function GovernancePage() {
                 </div>
             </section>
 
-            {/* Section 2: Payment Priority */}
+            {/* Section 2: Standardization by Product Category */}
             <section ref={section2Ref} className="py-32 px-6 bg-[#F3F4F1] relative overflow-hidden">
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#008929]/[0.03] rounded-full blur-3xl" />
-                
+
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
-                        
+
                         {/* Visualization */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5 relative order-2 lg:order-1"
-                            initial={{ opacity: 0, x: -40 }} 
-                            animate={section2InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: -40 }}
+                            animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="bg-white p-10 rounded-2xl border border-[#095520]/10 shadow-lg">
-                                <div className="space-y-6">
-                                    <div className="text-center">
-                                        <div className="inline-block p-4 bg-[#F3F4F1] rounded-lg border border-[#095520]/20 mb-6">
-                                            <div className="text-sm font-medium text-[#095520]">Monthly Rental Income</div>
-                                            <div className="text-xs text-[#095520] mt-1">From tenants</div>
-                                        </div>
+                                <h3 className="text-xs font-bold text-[#095520]/40 uppercase tracking-widest mb-6 text-center">
+                                    Standardized Framework
+                                </h3>
+                                <div className="space-y-4">
+                                    <div className="p-5 bg-[#F3F4F1] border border-[#095520]/20 rounded-lg text-center">
+                                        <div className="font-semibold text-sm text-[#095520]">Legal Structure</div>
+                                        <div className="text-xs text-[#095520]/60 mt-1">Identical documentation</div>
                                     </div>
-
-                                    <div className="flex justify-center">
-                                        <div className="w-px h-8 bg-[#095520]/20"></div>
+                                    <div className="p-5 bg-[#F3F4F1] border border-[#095520]/20 rounded-lg text-center">
+                                        <div className="font-semibold text-sm text-[#095520]">Controls</div>
+                                        <div className="text-xs text-[#095520]/60 mt-1">Fixed requirements</div>
                                     </div>
-
-                                    <div>
-                                        <div className="p-6 bg-[#095520] text-white rounded-lg text-center shadow-xl">
-                                            <div className="text-xs font-bold text-yellow-400 uppercase mb-2">Bank Controlled</div>
-                                            <div className="text-lg font-bold mb-1">Lockbox Account</div>
-                                            <div className="text-xs text-white/70">Developer cannot access directly</div>
-                                            <div className="text-xs text-white/70 mt-3 pt-3 border-t border-white/20">Third party bank controls all distributions</div>
-                                        </div>
+                                    <div className="p-5 bg-[#F3F4F1] border border-[#095520]/20 rounded-lg text-center">
+                                        <div className="font-semibold text-sm text-[#095520]">Disclosure</div>
+                                        <div className="text-xs text-[#095520]/60 mt-1">Uniform standards</div>
                                     </div>
+                                </div>
+                                <div className="mt-6 p-5 bg-[#095520] text-white rounded-lg shadow-xl text-center">
+                                    <div className="text-xs font-bold text-yellow-400 uppercase mb-2">No Exceptions</div>
+                                    <div className="font-bold text-sm">Zero Sponsor Variations</div>
+                                    <div className="text-xs text-white/70 mt-1">Consistent governance</div>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Content */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7 space-y-8 order-1 lg:order-2 lg:pl-12"
-                            initial={{ opacity: 0, x: 40 }} 
-                            animate={section2InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
-                                02. Payment Priority
+                                02. Product Standardization
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
-                                Bank-Controlled Lockbox
+                                Standardization by Product Category
                             </h2>
                             <div className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-xl">
                                 <p className="text-black">
-                                    Rental income flows directly into a bank-controlled lockbox that functions as an independent escrow. The developer never has direct access to these funds.
+                                    Sylvan enforces standardized legal, structural, and reporting frameworks within each product category, with no sponsor-specific exceptions. Each transaction of the same product type follows identical documentation, controls, and disclosure requirements.
                                 </p>
                                 <p className="text-black">
-                                    The bank distributes payments in a fixed order enforced by contract. While funds are released for direct operational expenses to keep the asset performing, the developer receives no profit distributions until you are paid.
+                                    This product-level standardization reduces interpretation risk, supports consistent oversight, and ensures sponsor records are defensible, auditable, and comparable within defined governance boundaries.
                                 </p>
                             </div>
                         </motion.div>
@@ -174,22 +172,22 @@ export default function GovernancePage() {
                 </div>
             </section>
 
-            {/* Section 3: Principal Protection */}
-            <section ref={section3Ref} className="py-32 px-6 bg-white relative overflow-hidden border-b border-gray-200">
+            {/* Section 3: Structural Protection */}
+            <section ref={section3Ref} className="py-32 px-6 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />
-                
+
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
-                        
+
                         {/* Content */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7 space-y-8"
-                            initial={{ opacity: 0, x: -40 }} 
-                            animate={section3InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: -40 }}
+                            animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
-                                03. Principal Protection
+                                03. Capital Protection
                             </div>
                             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520]">
                                 Your Position is Structurally Protected
@@ -205,15 +203,15 @@ export default function GovernancePage() {
                         </motion.div>
 
                         {/* Visualization */}
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5 relative"
-                            initial={{ opacity: 0, x: 40 }} 
-                            animate={section3InView ? { opacity: 1, x: 0 } : {}} 
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <div className="bg-[#F3F4F1] p-12 rounded-2xl border border-[#095520]/10 shadow-lg flex flex-col items-center">
                                 <div className="text-xs text-[#095520]/80 mb-6 text-center">Capital Structure</div>
-                                
+
                                 <div className="w-full max-w-sm space-y-3 relative">
                                     <div className="relative">
                                         <div className="h-12 bg-slate-200 border border-slate-300 rounded flex items-center justify-center text-slate-600 text-sm font-medium">
@@ -223,7 +221,7 @@ export default function GovernancePage() {
 
                                     <div className="relative">
                                         <div className="h-20 bg-[#095520] text-yellow-400 flex flex-col items-center justify-center relative shadow-lg rounded">
-                                            <div className="font-bold text-lg">Your Sylvan Position</div>
+                                            <div className="font-bold text-lg">Your Position</div>
                                             <div className="text-xs text-yellow-400/70 mt-1">Protected by equity below</div>
                                         </div>
                                     </div>
@@ -231,68 +229,13 @@ export default function GovernancePage() {
                                     <div className="relative">
                                         <div className="h-24 bg-white border-2 border-[#095520]/30 rounded flex flex-col items-center justify-center text-[#095520]/70 text-sm">
                                             <div className="font-medium">Developer Equity</div>
-                                            <div className="text-xs text-[#095520]/80 mt-1">Protective cushion</div>
+                                            <div className="text-xs text-[#095520]/80 mt-1">Absorbs impact first</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
-                </div>
-            </section>
-
-            {/* Section 4: Deployment Efficiency */}
-            <section ref={section4Ref} className="py-32 px-6 bg-[#F3F4F1]">
-                <div className="max-w-7xl mx-auto">
-                    <motion.div
-                        className="text-center max-w-3xl mx-auto mb-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={section4InView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <div className="text-xs font-bold text-[#095520]/80 uppercase tracking-widest mb-4">
-                            04. Deployment Efficiency
-                        </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-medium leading-[1.15] tracking-[-0.02em] text-[#095520] mb-4">
-                            One Approval, Multiple Investments
-                        </h2>
-                        <p className="text-base md:text-lg font-light text-black leading-relaxed mt-4 max-w-2xl mx-auto">
-                            You review and approve the Sylvan structure once. After that, you can deploy into multiple portfolios without repeating the full legal and compliance review process each time.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={section4InView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                        <div className="bg-[#095520] text-white p-12 rounded-xl shadow-xl text-center">
-                            <div className="text-xs font-bold text-yellow-400 uppercase mb-4 tracking-widest">Year 1</div>
-                            <h3 className="text-2xl font-bold mb-4">Full Structure Review</h3>
-                            <p className="text-sm text-white/70 mb-8">One-time approval of the Sylvan framework</p>
-                            <div className="pt-6 border-t border-white/20">
-                                <div className="text-3xl font-bold">3-4 weeks</div>
-                            </div>
-                        </div>
-
-                        <div className="space-y-4">
-                            <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
-                                <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 1</div>
-                                <div className="text-sm text-[#095520]">Multifamily, Austin</div>
-                            </div>
-
-                            <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
-                                <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 2</div>
-                                <div className="text-sm text-[#095520]">Industrial, Phoenix</div>
-                            </div>
-
-                            <div className="p-6 bg-white border-2 border-emerald-600 rounded-lg shadow-sm text-center">
-                                <div className="font-bold text-[#095520] text-lg mb-1">Portfolio 3</div>
-                                <div className="text-sm text-[#095520]">Retail, Denver</div>
-                            </div>
-                        </div>
-                    </motion.div>
                 </div>
             </section>
         </main>
