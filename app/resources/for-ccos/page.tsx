@@ -17,19 +17,25 @@ export default function ForCCOsPage() {
     return (
         <main className="min-h-screen bg-[#F3F4F1]">
             {/* Hero Section */}
-            <section className="relative py-12 px-6 bg-white overflow-hidden border-b border-gray-200">
-                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `linear-gradient(rgba(9, 85, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(9, 85, 32, 0.3) 1px, transparent 1px)`, backgroundSize: '80px 80px' }} />
+            <section className="bg-[#0A3F28] text-white pt-32 pb-20 relative overflow-hidden">
+                {/* Two small triangles — top-right and bottom-left */}
+                <div className="absolute inset-0 opacity-[0.07]">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M70,0 L100,0 L100,30 Z" fill="#99F6E4"/>
+                        <path d="M0,70 L30,100 L0,100 Z" fill="#99F6E4"/>
+                    </svg>
+                </div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3 tracking-tight leading-[1.1]">
+                        <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-4">
                             Sylvan Resources
                         </h1>
-                        <p className="text-base md:text-lg text-black font-light">
+                        <p className="text-lg text-gray-300 font-light">
                             For CCOs
                         </p>
                     </motion.div>

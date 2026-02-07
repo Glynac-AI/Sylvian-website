@@ -5,33 +5,49 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
     return (
-        <section className="max-w-7xl mx-auto px-6 pt-32 pb-24 border-b border-[#E5E7EB]">
-            <motion.div
-                className="max-w-4xl fade-in"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-            >
-                <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-px bg-[#D9B44A]"></div>
-                    <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.1em]">
+        <section className="bg-[#0A3F28] text-white pt-32 pb-40 relative overflow-hidden">
+            {/* Circle — bottom-right */}
+            <div className="absolute bottom-0 right-0 w-1/2 h-full opacity-[0.07]">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <circle cx="100" cy="100" r="60" fill="#34D399"/>
+                </svg>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <motion.div
+                    className="fade-in"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                >
+                    <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-6 block">
                         Sponsor Standards
                     </span>
-                </div>
-                <h1 className="text-5xl lg:text-6xl font-serif text-[#111827] leading-[1.1] mb-8">
-                    Institutional readiness <br />
-                    <span className="italic text-[#0A3F28]">is required.</span>
-                </h1>
-                <p className="text-xl text-[#4B5563] leading-relaxed mb-8 max-w-2xl">
-                    Sylvan is designed to produce institution-grade sponsor operating records. Participation is limited to sponsors that meet clear admission standards and commit to ongoing transparency.
-                </p>
-                <div className="p-8 bg-white border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] max-w-3xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1 h-full bg-[#0A3F28]"></div>
-                    <p className="text-lg text-[#4B5563] font-serif italic">
-                        "These standards exist to protect the integrity of the evidence and the comparability of sponsor behavior across the platform."
+                    <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-8">
+                        Institutional readiness <br />
+                        <span className="italic text-gray-300">is required.</span>
+                    </h1>
+                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#145A3C] pl-6">
+                        Sylvan is designed to produce institution-grade sponsor operating records. Participation is limited to sponsors that meet clear admission standards and commit to ongoing transparency.
                     </p>
+                </motion.div>
+            </div>
+
+            {/* Quote — bottom right */}
+            <div className="hidden lg:block absolute bottom-28 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 z-10">
+                <div className="flex justify-end">
+                    <motion.div
+                        className="max-w-sm"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+                    >
+                        <p className="text-[15px] text-gray-300 font-serif italic leading-relaxed">
+                            &ldquo;These standards exist to protect the integrity of the evidence and the comparability of sponsor behavior across the platform.&rdquo;
+                        </p>
+                    </motion.div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }

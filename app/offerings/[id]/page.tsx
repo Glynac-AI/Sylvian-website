@@ -148,6 +148,20 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                 </div>
             </section>
 
+            {/* Sponsor Profile - Full Width with Dark Green Background */}
+            <section id="sponsor" className="bg-[#0A3F28] text-white py-16 px-6 lg:px-12 relative overflow-hidden">
+                {/* Two parallel diagonal stripes */}
+                <div className="absolute inset-0 opacity-[0.07]">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M70,0 L100,0 L100,30 L30,100 L0,100 L0,70 Z" fill="#86EFAC"/>
+                        <path d="M90,0 L100,0 L100,10 L10,100 L0,100 L0,90 Z" fill="#86EFAC" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div className="relative z-10">
+                    <SponsorProfile sponsorProfile={portfolio.sponsorProfile} />
+                </div>
+            </section>
+
             {/* Main Content */}
             <section className="py-16 px-6">
                 <div className="max-w-7xl mx-auto">
@@ -218,11 +232,6 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                     </div>
                                 </div>
                             </motion.div>
-
-                            {/* Sponsor Profile */}
-                            <div id="sponsor">
-                                <SponsorProfile sponsorProfile={portfolio.sponsorProfile} />
-                            </div>
 
                             {/* Removed Asset Allocation Section */}
 

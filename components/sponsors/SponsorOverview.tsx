@@ -10,8 +10,8 @@ interface SponsorOverviewProps {
 
 export default function SponsorOverview({ sponsor }: SponsorOverviewProps) {
     return (
-        <section className="bg-white py-24 border-b border-[#E5E7EB]">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="bg-gray-50 py-24 border-b border-[#E5E7EB]">
+            <div className="w-full px-6 lg:px-12">
                 {/* Admission Badge Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

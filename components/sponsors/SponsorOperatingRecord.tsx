@@ -14,6 +14,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
     return (
         <section className="bg-white py-20">
             <div className="max-w-7xl mx-auto px-6">
+                <div className="bg-gray-50 rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-200">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-6"></div>
@@ -143,9 +144,8 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-20 bg-gray-50 -mx-6 px-6 py-16 border-b border-[#E5E7EB]"
+                    className="mb-20 bg-white rounded-xl p-8 border-b border-[#E5E7EB]"
                 >
-                    <div className="max-w-7xl mx-auto">
                         <div className="grid lg:grid-cols-12 gap-16 items-center">
                             <div className="lg:col-span-7 order-2 lg:order-1">
                                 <div className="bg-white border border-[#E5E7EB] p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
@@ -203,7 +203,6 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                 </p>
                             </div>
                         </div>
-                    </div>
                 </motion.div>
 
                 {/* 03. Forecast Accuracy */}
@@ -276,9 +275,8 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="mb-20 bg-gray-50 -mx-6 px-6 py-16 border-b border-[#E5E7EB]"
+                    className="mb-20 bg-white rounded-xl p-8 border-b border-[#E5E7EB]"
                 >
-                    <div className="max-w-7xl mx-auto">
                         <div className="grid lg:grid-cols-12 gap-16 items-center">
                             <div className="lg:col-span-7 order-2 lg:order-1">
                                 <div className="bg-white border border-[#E5E7EB] p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
@@ -342,7 +340,6 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                 </p>
                             </div>
                         </div>
-                    </div>
                 </motion.div>
 
                 {/* 05. Consistency Over Time */}
@@ -430,6 +427,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                         </div>
                     </div>
                 </motion.div>
+                </div>
             </div>
         </section>
     )

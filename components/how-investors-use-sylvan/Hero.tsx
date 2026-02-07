@@ -6,9 +6,11 @@ import { motion } from 'framer-motion'
 export default function Hero() {
     return (
         <section className="bg-[#0A3F28] text-white pt-32 pb-20 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
+            {/* Two parallel diagonal stripes */}
+            <div className="absolute inset-0 opacity-[0.07]">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M0,100 L100,0 L100,100 Z" fill="white"/>
+                    <path d="M70,0 L100,0 L100,30 L30,100 L0,100 L0,70 Z" fill="#86EFAC"/>
+                    <path d="M90,0 L100,0 L100,10 L10,100 L0,100 L0,90 Z" fill="#86EFAC" opacity="0.5"/>
                 </svg>
             </div>
 
