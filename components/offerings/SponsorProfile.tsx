@@ -29,43 +29,43 @@ export default function SponsorProfile({ sponsorProfile }: SponsorProfileProps) 
             <h2 className="text-3xl lg:text-4xl font-serif text-white mb-2">Sponsor Profile</h2>
             <p className="text-sm text-gray-300 mb-8">The team managing your investment</p>
 
-            <div className="mb-8 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-semibold text-white mb-3">{sponsorProfile.name}</h3>
-                <p className="text-sm text-gray-200 leading-relaxed">
+            <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-white mb-3">{sponsorProfile.name}</h3>
+                <p className="text-base text-gray-200 leading-relaxed">
                     {sponsorProfile.description}
                 </p>
             </div>
 
             {/* Clean Metrics Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Total AUM</p>
-                    <p className="text-xl font-semibold text-white">{sponsorProfile.totalAUM}</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8 py-8 border-y border-white/20">
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Total AUM</p>
+                    <p className="text-2xl font-semibold text-white">{sponsorProfile.totalAUM}</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Avg. IRR</p>
-                    <p className="text-xl font-semibold text-white">{sponsorProfile.historicalPerformance.split(': ')[1]}</p>
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Avg. IRR</p>
+                    <p className="text-2xl font-semibold text-white">{sponsorProfile.historicalPerformance.split(': ')[1]}</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Properties</p>
-                    <p className="text-xl font-semibold text-white">{sponsorProfile.propertiesManaged}</p>
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Properties</p>
+                    <p className="text-2xl font-semibold text-white">{sponsorProfile.propertiesManaged}</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Experience</p>
-                    <p className="text-xl font-semibold text-white">{sponsorProfile.yearsInBusiness} years</p>
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Experience</p>
+                    <p className="text-2xl font-semibold text-white">{sponsorProfile.yearsInBusiness} years</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Team Size</p>
-                    <p className="text-xl font-semibold text-white">{sponsorProfile.teamSize}</p>
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Team Size</p>
+                    <p className="text-2xl font-semibold text-white">{sponsorProfile.teamSize}</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <p className="text-xs text-gray-300 mb-1">Approach</p>
-                    <p className="text-xl font-semibold text-white">Integrated</p>
+                <div>
+                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Approach</p>
+                    <p className="text-2xl font-semibold text-white">Integrated</p>
                 </div>
             </div>
 

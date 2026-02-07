@@ -84,9 +84,9 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                 </div>
             </section>
 
-            {/* Portfolio Title & Key Metrics - Full Width White Section */}
-            <section className="bg-white py-12 px-6 mb-8 shadow-md">
-                <div className="max-w-7xl mx-auto">
+            {/* Portfolio Title & Key Metrics - Rounded Card */}
+            <section className="px-6 mb-8">
+                <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
                         {/* Title (Badges removed from here) */}
                         <div className="mb-8">
                             <h1 className="text-4xl md:text-5xl font-medium text-[#095520] mb-3">
@@ -150,12 +150,8 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
             {/* Sponsor Profile - Full Width with Dark Green Background */}
             <section id="sponsor" className="bg-[#0A3F28] text-white py-16 px-6 lg:px-12 relative overflow-hidden">
-                {/* Two parallel diagonal stripes */}
-                <div className="absolute inset-0 opacity-[0.07]">
-                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M70,0 L100,0 L100,30 L30,100 L0,100 L0,70 Z" fill="#86EFAC"/>
-                        <path d="M90,0 L100,0 L100,10 L10,100 L0,100 L0,90 Z" fill="#86EFAC" opacity="0.5"/>
-                    </svg>
+                {/* Single big stripe - covers right 2/3 of section */}
+                <div className="absolute right-0 top-0 w-2/3 h-full bg-[#86EFAC] opacity-[0.07]">
                 </div>
                 <div className="relative z-10">
                     <SponsorProfile sponsorProfile={portfolio.sponsorProfile} />
