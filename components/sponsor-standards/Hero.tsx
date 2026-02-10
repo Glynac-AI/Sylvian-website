@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
     return (
-        <section className="bg-[#0A3F28] text-white pt-32 pb-40 relative overflow-hidden">
+        <section className="bg-[#0A3F28] text-white pt-32 pb-40 min-h-[650px] relative overflow-hidden">
             {/* Circle — bottom-right */}
             <div className="absolute bottom-0 right-0 w-1/2 h-full opacity-[0.07]">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">

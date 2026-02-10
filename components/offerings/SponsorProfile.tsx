@@ -26,12 +26,10 @@ export default function SponsorProfile({ sponsorProfile }: SponsorProfileProps) 
             transition={{ duration: 0.6, delay: 0.12 }}
             className="max-w-6xl mx-auto"
         >
-            <h2 className="text-3xl lg:text-4xl font-serif text-white mb-2">Sponsor Profile</h2>
-            <p className="text-sm text-gray-300 mb-8">The team managing your investment</p>
-
             <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-white mb-3">{sponsorProfile.name}</h3>
-                <p className="text-base text-gray-200 leading-relaxed">
+                <p className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4">Sponsor Profile</p>
+                <h2 className="text-3xl lg:text-4xl font-serif text-white mb-4">{sponsorProfile.name}</h2>
+                <p className="text-base text-gray-200 leading-relaxed max-w-3xl">
                     {sponsorProfile.description}
                 </p>
             </div>

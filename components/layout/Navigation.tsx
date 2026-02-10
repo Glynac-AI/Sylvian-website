@@ -92,7 +92,7 @@ export default function Navigation() {
                         {/* Resources Toggle */}
                         <div
                             ref={resourcesRef}
-                            className="relative py-2"
+                            className="relative"
                             onMouseEnter={() => {
                                 setResourcesOpen(true)
                                 setHoveredLink('/resources')
@@ -102,7 +102,7 @@ export default function Navigation() {
                                 setHoveredLink(null)
                             }}
                         >
-                            <button className="relative whitespace-nowrap flex items-center gap-1">
+                            <button className="relative py-2 whitespace-nowrap flex items-center gap-1">
                                 <span className={`transition-colors duration-200 ${isResourcesActive ? 'text-[#095520] font-medium' : 'text-[#013220] hover:text-[#095520]'}`}>
                                     Resources
                                 </span>
