@@ -6,10 +6,12 @@ import { motion } from 'framer-motion'
 export default function Hero() {
     return (
         <section className="bg-[#0A3F28] text-white pt-32 pb-40 min-h-[650px] relative overflow-hidden">
-            {/* Circle — bottom-right */}
+            {/* Angular bars — bottom-right */}
             <div className="absolute bottom-0 right-0 w-1/2 h-full opacity-[0.07]">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <circle cx="100" cy="100" r="60" fill="#34D399"/>
+                    <path d="M60,100 L100,100 L100,60 Z" fill="#34D399"/>
+                    <path d="M40,100 L100,100 L100,40 Z" fill="#34D399" opacity="0.6"/>
+                    <path d="M20,100 L100,100 L100,20 Z" fill="#34D399" opacity="0.3"/>
                 </svg>
             </div>
 
