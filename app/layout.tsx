@@ -61,7 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${robotoMono.variable}`}>
-      <body className="font-sans antialiased flex min-h-screen flex-col bg-[#F9FAFB] text-[#111827]">
+      <body suppressHydrationWarning className="font-sans antialiased flex min-h-screen flex-col bg-[#F9FAFB] text-[#111827]">
         <Navigation />
         <main className="flex-1 flex flex-col pt-16 md:pt-18">{children}</main>
         <Footer />
