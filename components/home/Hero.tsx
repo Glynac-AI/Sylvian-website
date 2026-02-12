@@ -13,9 +13,9 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-                <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
+                {/* <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                     Institutional Diligence
-                </span>
+                </span> */}
                 <h1 className="text-5xl lg:text-6xl font-serif text-[#111827] leading-[1.1] mb-8">
                     Know your real estate <br />
                     sponsors <span className="italic text-[#0A3F28]">before you invest.</span>

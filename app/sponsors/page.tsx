@@ -44,6 +44,14 @@ export default function SponsorsPage() {
                 </div>
             </section>
 
+            <section className="bg-[#0A3F28] text-white py-8 px-6 border-l-4 border-[#D9B44A]">
+                <div className="max-w-7xl mx-auto">
+                    <p className="text-lg italic font-serif leading-relaxed">
+                        Verified sponsors with transparent operating records and consistent performance under standardized obligations.
+                    </p>
+                </div>
+            </section>
+
             {/* Filters Section */}
             <section className="bg-gray-50 border-b border-gray-200 py-6 px-6">
                 <div className="max-w-7xl mx-auto">
