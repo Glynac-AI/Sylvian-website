@@ -10,12 +10,12 @@ export default function StatementSection() {
                     Sylvan gives you what sponsor diligence has always lacked: observable, repeatable{' '}
                     <span className="text-[#0A3F28] italic">behavioral evidence</span> under real financial obligation.
                 </h2>
-                <div className="grid md:grid-cols-2 gap-12 text-left text-gray-600 text-lg leading-relaxed">
+                                <div className="grid md:grid-cols-2 gap-12 text-left text-gray-600 text-lg leading-relaxed">
                     <p>
-                        You see how sponsors manage cash flow stress, maintain reserves, disclose problems, and forecast performance, not through sponsor-controlled reporting, but through uniform contractual requirements enforced by Sylvan.
+                        See how sponsors manage cash flow stress, maintain reserves, and forecast performance through uniform contractual requirements enforced by Sylvan, not sponsor-controlled reporting.
                     </p>
                     <p>
-                        Sponsor evaluation no longer depends on what a sponsor chooses to show. It depends on contractual obligations where non-compliance has immediate, enforceable consequences.
+                        Sponsor evaluation now depends on contractual obligations with enforceable consequences, not on what sponsors choose to show.
                     </p>
                 </div>
             </div>
