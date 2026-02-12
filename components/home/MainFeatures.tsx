@@ -2,42 +2,81 @@
 'use client'
 
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
 
 export default function MainFeatures() {
+    // Refs for each section
+    const sec1Ref = useRef(null)
+    const sec2Ref = useRef(null)
+    const sec3Ref = useRef(null)
+    const sec4Ref = useRef(null)
+
+    // InView hooks
+    const sec1InView = useInView(sec1Ref, { once: true, margin: "-100px" })
+    const sec2InView = useInView(sec2Ref, { once: true, margin: "-100px" })
+    const sec3InView = useInView(sec3Ref, { once: true, margin: "-100px" })
+    const sec4InView = useInView(sec4Ref, { once: true, margin: "-100px" })
+
     return (
         <>
-            {/* Section 01: Complete Operating Visibility */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
-                <div className="order-2 lg:order-1">
-                    <div className="flex items-center gap-2 mb-4">
-                        <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Dimensions</span>
-                        <div className="h-px bg-gray-200 w-12"></div>
-                    </div>
-                    <h2 className="text-4xl font-serif mb-6 text-[#111827]">Complete Operating Visibility</h2>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                        You see five dimensions of sponsor behavior tracked across every obligation: how reliably they pay and from what source, how they manage capital and reserves under pressure, how accurate their forecasts are against actual performance, how quickly they disclose problems, and whether these patterns hold consistent across multiple deals.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-sm font-medium">
-                        Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture that references and pitch decks cannot provide.
-                    </p>
-                </div>
-                <div className="order-1 lg:order-2 flex justify-center">
-                    <div className="relative w-full max-w-md">
-                        <Image
-                            src="/home/operating-visibility.svg"
-                            alt="Five dimensions of sponsor behavior tracking"
-                            width={500}
-                            height={500}
-                            className="w-full h-auto"
-                        />
-                    </div>
+            {/* Section 01: Complete Operating Visibility (White) */}
+            <section ref={sec1Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+                    <motion.div 
+                        className="order-2 lg:order-1"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={sec1InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
+                        <div className="flex items-center gap-2 mb-4">
+                            <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Dimensions</span>
+                            <div className="h-px bg-gray-200 w-12"></div>
+                        </div>
+                        
+                        <h2 className="text-3xl lg:text-4xl font-serif mb-6 text-[#111827] leading-tight">
+                            Complete Operating Visibility
+                        </h2>
+
+                        <div className="space-y-4 max-w-md">
+                            <p className="text-gray-600 text-base leading-normal">
+                                You see five dimensions of sponsor behavior tracked across every obligation: how reliably they pay and from what source, how they manage capital and reserves under pressure, how accurate their forecasts are against actual performance, how quickly they disclose problems, and whether these patterns hold consistent across multiple deals.
+                            </p>
+                            <p className="text-gray-600 text-sm font-medium leading-normal">
+                                Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture that references and pitch decks cannot provide.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        className="order-1 lg:order-2 flex justify-center"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={sec1InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                    >
+                        <div className="relative w-full max-w-md">
+                            <Image
+                                src="/home/operating-visibility.svg"
+                                alt="Five dimensions of sponsor behavior tracking"
+                                width={500}
+                                height={500}
+                                className="w-full h-auto"
+                            />
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Section 02: Lockbox Protected Payment Priority */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            {/* Section 02: Lockbox Protected Payment Priority (Gray) */}
+            <section ref={sec2Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
-                    <div className="order-1 flex justify-center">
+                    <motion.div 
+                        className="order-1 flex justify-center"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={sec2InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                    >
                         <div className="relative w-full max-w-lg">
                             <Image
                                 src="/home/lockbox.svg"
@@ -47,56 +86,91 @@ export default function MainFeatures() {
                                 className="w-full h-auto"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="order-2">
+                    <motion.div 
+                        className="order-2"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={sec2InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Mechanics</span>
                             <div className="h-px bg-gray-200 w-12"></div>
                         </div>
-                        <h2 className="text-4xl font-serif mb-6 text-[#111827]">Lockbox Protected Payment Priority</h2>
-                        <p className="text-gray-600 mb-6 leading-relaxed">
-                            Rental income never touches the developer's accounts. Tenants pay directly into a third-party bank-controlled lockbox that functions like an independent escrow.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed">
-                            The bank releases funds in strict order enforced by contract. Direct operational expenses are funded first, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
-                        </p>
-                    </div>
+                        
+                        <h2 className="text-3xl lg:text-4xl font-serif mb-6 text-[#111827] leading-tight">
+                            Lockbox Protected Payment Priority
+                        </h2>
+
+                        <div className="space-y-4 max-w-md">
+                            <p className="text-gray-600 text-base leading-normal">
+                                Rental income never touches the developer's accounts. Tenants pay directly into a third-party bank-controlled lockbox that functions like an independent escrow.
+                            </p>
+                            <p className="text-gray-600 text-base leading-normal">
+                                The bank releases funds in strict order enforced by contract. Direct operational expenses are funded first, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Section 03: Standardized Comparability */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
-                <div className="order-2 lg:order-1">
-                    <div className="flex items-center gap-2 mb-4">
-                        <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Standards</span>
-                        <div className="h-px bg-gray-200 w-12"></div>
-                    </div>
-                    <h2 className="text-4xl font-serif mb-6 text-[#111827]">Standardized Comparability</h2>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                        Every offering on Sylvan uses identical SPV structures, covenant frameworks, reserve requirements, and reporting templates. Sponsors cannot customize formats or negotiate exceptions. When comparing sponsors, each is evaluated against the same obligations, measurements, and standards.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-sm font-medium">
-                        This level of structural standardization enables sponsor behavior to be compared consistently across different operators and asset types.
-                    </p>
-                </div>
-                <div className="order-1 lg:order-2 flex justify-center">
-                    <div className="relative w-full max-w-md">
-                        <Image
-                            src="/home/standardized-comparability.svg"
-                            alt="Standardized comparison across sponsors"
-                            width={500}
-                            height={400}
-                            className="w-full h-auto"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 04: Risk Profile */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            {/* Section 03: Standardized Comparability (White) */}
+            <section ref={sec3Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
-                    <div className="order-1">
+                    <motion.div 
+                        className="order-2 lg:order-1"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={sec3InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
+                        <div className="flex items-center gap-2 mb-4">
+                            <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Standards</span>
+                            <div className="h-px bg-gray-200 w-12"></div>
+                        </div>
+
+                        <h2 className="text-3xl lg:text-4xl font-serif mb-6 text-[#111827] leading-tight">
+                            Standardized Comparability
+                        </h2>
+
+                        <div className="space-y-4 max-w-md">
+                            <p className="text-gray-600 text-base leading-normal">
+                                Every offering on Sylvan uses identical SPV structures, covenant frameworks, reserve requirements, and reporting templates. Sponsors cannot customize formats or negotiate exceptions. When comparing sponsors, each is evaluated against the same obligations, measurements, and standards.
+                            </p>
+                            <p className="text-gray-600 text-sm font-medium leading-normal">
+                                This level of structural standardization enables sponsor behavior to be compared consistently across different operators and asset types.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        className="order-1 lg:order-2 flex justify-center"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={sec3InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                    >
+                        <div className="relative w-full max-w-md">
+                            <Image
+                                src="/home/standardized-comparability.svg"
+                                alt="Standardized comparison across sponsors"
+                                width={500}
+                                height={400}
+                                className="w-full h-auto"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Section 04: Risk Profile (Gray) */}
+            <section ref={sec4Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+                    <motion.div 
+                        className="order-1"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={sec4InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                    >
                         <div className="bg-white p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
                             <svg width="100%" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="40" y1="20" x2="40" y2="220" stroke="#D1D5DB" strokeWidth="1"/>
@@ -122,21 +196,32 @@ export default function MainFeatures() {
                                 <text x="380" y="90" fontFamily="Inter" fontSize="10" fontWeight="bold" fill="#0A3F28" textAnchor="end">SYLVAN YIELD</text>
                             </svg>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="order-2">
+                    <motion.div 
+                        className="order-2"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={sec4InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Risk Profile</span>
                             <div className="h-px bg-gray-200 w-12"></div>
                         </div>
-                        <h2 className="text-4xl font-serif mb-6 text-[#111827]">Consistent Yield Without Equity Risk</h2>
-                        <p className="text-gray-600 mb-6 leading-relaxed">
-                            Taking debt positions on existing income producing properties lets you bypass the volatility of developer equity. You are buying into proven rental yields rather than betting on the operational success of a developer.
-                        </p>
-                        <p className="text-gray-600 leading-relaxed">
-                            This gives you direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
-                        </p>
-                    </div>
+
+                        <h2 className="text-3xl lg:text-4xl font-serif mb-6 text-[#111827] leading-tight">
+                            Consistent Yield Without Equity Risk
+                        </h2>
+
+                        <div className="space-y-4 max-w-md">
+                            <p className="text-gray-600 text-base leading-normal">
+                                Taking debt positions on existing income producing properties lets you bypass the volatility of developer equity. You are buying into proven rental yields rather than betting on the operational success of a developer.
+                            </p>
+                            <p className="text-gray-600 text-base leading-normal">
+                                This gives you direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </>

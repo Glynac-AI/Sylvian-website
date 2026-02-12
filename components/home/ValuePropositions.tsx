@@ -2,12 +2,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useInView } from 'framer-motion'
 
 const valueProps = [
     {
-        title: "Complete Operating Visibility",
+        titlePart1: "Complete Operating",
+        titlePart2: "Visibility",
         description: "You see five dimensions of sponsor behavior tracked across every obligation: how reliably they pay and from what source, how they manage capital and reserves under pressure, how accurate their forecasts are against actual performance, how quickly they disclose problems, and whether these patterns hold consistent across multiple deals.",
         detail: "Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture that references and pitch decks cannot provide.",
         icon: (
@@ -18,7 +19,8 @@ const valueProps = [
         )
     },
     {
-        title: "Lockbox Protected Payment Priority",
+        titlePart1: "Lockbox Protected",
+        titlePart2: "Payment Priority",
         description: "All cash flow moves through Sylvan's ring-fenced SPVs with lockbox-controlled distributions. Rental income flows first to debt service and required reserves, with any excess available to sponsors only after Sylvan investors are fully paid.",
         detail: "Payment source is tracked and classified by Sylvan, providing immediate visibility into whether obligations are satisfied from property income or sponsor liquidity support.",
         icon: (
@@ -28,7 +30,8 @@ const valueProps = [
         )
     },
     {
-        title: "Standardized Comparability",
+        titlePart1: "Standardized",
+        titlePart2: "Comparability",
         description: "Every offering on Sylvan uses identical SPV structures, covenant frameworks, reserve requirements, and reporting templates. Sponsors cannot customize formats or negotiate exceptions. When comparing sponsors, each is evaluated against the same obligations, measurements, and standards.",
         detail: "This level of structural standardization enables sponsor behavior to be compared consistently across different operators and asset types.",
         icon: (
@@ -38,7 +41,8 @@ const valueProps = [
         )
     },
     {
-        title: "Consistent Yield Without Equity Risk",
+        titlePart1: "Consistent Yield",
+        titlePart2: "Without Equity Risk",
         description: "Taking debt positions on existing income producing properties lets you bypass the volatility of developer equity. You are buying into proven rental yields rather than betting on the operational success of a developer.",
         detail: "This gives you direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.",
         icon: (
@@ -51,10 +55,10 @@ const valueProps = [
 
 export default function ValuePropositions() {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-50px" })
+    const isInView = useInView(ref, { once: true, margin: "-100px" })
 
     return (
-        <section ref={ref} className="py-28 md:py-36 px-6 bg-[#F3F4F1] relative overflow-hidden">
+        <section ref={ref} className="py-28 md:py-36 px-6 bg-white relative overflow-hidden border-b border-[#E5E7EB]">
             {/* Background elements */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-[20%] left-[5%] w-[500px] h-[500px] bg-[#095520]/[0.02] rounded-full blur-3xl" />
@@ -64,31 +68,42 @@ export default function ValuePropositions() {
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="space-y-24 lg:space-y-28">
                     {valueProps.map((prop, index) => (
-                        <motion.div
-                            key={prop.title}
-                            className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                        >
+                        <div key={index} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            
                             {/* Content - alternates left/right */}
-                            <div className={`space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                                <h3 className="text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] font-semibold text-[#095520] leading-tight">
-                                    {prop.title}
+                            <motion.div 
+                                className={`space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}
+                                initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
+                                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.8, delay: index * 0.15, ease: 'easeOut' }}
+                            >
+                                {/* Two-Liner Heading */}
+                                <h3 className="text-3xl lg:text-4xl font-serif text-[#095520] leading-tight">
+                                    <span className="block font-normal text-[#111827]">{prop.titlePart1}</span>
+                                    <span className="block italic">{prop.titlePart2}</span>
                                 </h3>
-                                <p className="text-base md:text-lg leading-relaxed text-black/80">
-                                    {prop.description}
-                                </p>
-                                <div className="pt-3 border-t border-[#095520]/10">
-                                    <p className="text-base text-[#095520] leading-relaxed">
-                                        {prop.detail}
+                                
+                                {/* Compact Subtext */}
+                                <div className="max-w-md space-y-4">
+                                    <p className="text-base leading-normal text-black/80">
+                                        {prop.description}
                                     </p>
+                                    <div className="pt-3 border-t border-[#095520]/10">
+                                        <p className="text-sm text-[#095520] leading-normal font-medium">
+                                            {prop.detail}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Visual - alternates right/left */}
-                            <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                                <div className="relative aspect-square max-w-md mx-auto">
+                            <motion.div 
+                                className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}
+                                initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
+                                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.8, delay: index * 0.15 + 0.2, ease: 'easeOut' }}
+                            >
+                                <div className="relative aspect-square max-w-sm mx-auto">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#095520]/5 to-[#008929]/5 rounded-2xl" />
                                     <div className="relative h-full bg-white rounded-2xl border border-[#095520]/10 shadow-lg p-8 md:p-10 flex items-center justify-center">
                                         <div className="text-center space-y-6">
@@ -98,13 +113,13 @@ export default function ValuePropositions() {
                                                 </div>
                                             </div>
                                             <div className="text-sm uppercase tracking-wider text-[#095520] font-semibold">
-                                                {prop.title.split(' ').slice(0, 2).join(' ')}
+                                                {prop.titlePart1} {prop.titlePart2}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -7,9 +7,13 @@ import RequestAccessButton from '@/components/RequestAccessButton'
 export default function NeutralByDesign() {
     return (
         <section className="bg-[#013220] text-white py-32 text-center border-t border-[#095520]">
-            <div className="max-w-4xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6">
                 <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
-                <h2 className="text-4xl lg:text-5xl font-serif mb-8">Decision Authority Remains With Investors</h2>
+                
+                {/* Single Line Heading enforced with whitespace-nowrap and responsive sizing */}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-8 whitespace-nowrap overflow-hidden text-ellipsis">
+                    Decision Authority Remains With Investors
+                </h2>
 
                 <p className="text-xl text-gray-300 font-serif italic mb-8">Sylvan does not:</p>
 

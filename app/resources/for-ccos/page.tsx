@@ -35,7 +35,7 @@ export default function ForCCOsPage() {
                         <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-4">
                             Sylvan Resources
                         </h1>
-                        <p className="text-lg text-gray-300 font-light">
+                        <p className="italic text-gray-300">
                             For CCOs
                         </p>
                     </motion.div>
