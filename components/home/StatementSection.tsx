@@ -3,7 +3,7 @@
 
 export default function StatementSection() {
     return (
-        <section className="bg-gray-50 py-24 border-b border-[#E5E7EB]">
+        <section className="bg-white py-24 border-b border-[#E5E7EB]">
             <div className="max-w-4xl mx-auto px-6 text-center">
                 <div className="w-12 h-1 bg-[#0A3F28] mx-auto mb-10"></div>
                 <h2 className="text-2xl lg:text-3xl font-serif leading-relaxed text-[#111827] mb-10">

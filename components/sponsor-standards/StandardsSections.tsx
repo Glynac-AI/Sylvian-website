@@ -98,7 +98,7 @@ export default function StandardsSections() {
             </section>
 
             {/* Section 02: Ongoing Participation Requirements */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+            <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="flex justify-center">
                     <div className="bg-white p-8 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full max-w-md">
                         <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E5E7EB]">
@@ -164,7 +164,7 @@ export default function StandardsSections() {
             </section>
 
             {/* Section 03: Enforcement and Accountability */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section className="bg-white border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Enforcement</span>

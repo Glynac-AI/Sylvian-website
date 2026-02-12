@@ -81,7 +81,7 @@ export default function MethodologySections() {
             </section>
 
             {/* Section 02: Mandatory Uniform Reporting */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+            <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="flex justify-center">
                     <div className="bg-white p-6 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full">
                         <div className="flex items-center justify-between mb-4 border-b border-[#E5E7EB] pb-2">
@@ -153,7 +153,7 @@ export default function MethodologySections() {
             </section>
 
             {/* Section 03: Platform-Tracked Events */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section className="bg-white border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Observation</span>
@@ -232,7 +232,7 @@ export default function MethodologySections() {
             </section>
 
             {/* Section 04: Enforcement and Accountability */}
-            <section className="max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
+            <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="grid lg:grid-cols-2 gap-24 items-center">
                     <div className="order-2 lg:order-1 flex justify-center">
                         <div className="relative py-10 pl-10 pr-4">
@@ -284,7 +284,7 @@ export default function MethodologySections() {
             </section>
 
             {/* Section 05: Auditability and Record Integrity */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
                 <div>
                     <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
                     <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability and Record Integrity<br /><span className="italic">evidence is durable.</span></h2>

@@ -29,7 +29,7 @@ export default function ProductStructures() {
     const containerRef = useRef(null)
     const containerInView = useInView(containerRef, { once: true, margin: "-100px" })
     return (
-        <section ref={containerRef} className="bg-[#F9FAFB] py-32 border-b border-[#E5E7EB]">
+        <section ref={containerRef} className="bg-[#F3F4F1] py-32 border-b border-[#E5E7EB]">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     className="text-center mb-20 max-w-3xl mx-auto"

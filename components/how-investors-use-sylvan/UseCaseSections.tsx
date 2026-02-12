@@ -5,7 +5,7 @@ export default function UseCaseSections() {
     return (
         <>
             {/* Section 01: Verify Before You Commit */}
-            <section className="max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
+            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
                 <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <h2 className="text-4xl font-serif text-[#111827] mb-6">Verify Before You Commit</h2>
@@ -90,7 +90,7 @@ export default function UseCaseSections() {
             </section>
 
             {/* Section 02: Standardize Your Investment Review */}
-            <section className="bg-gray-50 border-b border-[#E5E7EB]">
+            <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-7 order-2 lg:order-1">
                         <div className="bg-white border border-[#E5E7EB] p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
@@ -183,7 +183,7 @@ export default function UseCaseSections() {
             </section>
 
             {/* Section 03: Monitor Your Portfolio in Real-Time */}
-            <section className="max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
+            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
                 <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <h2 className="text-4xl font-serif text-[#111827] mb-6">Monitor Your Portfolio in Real-Time</h2>
@@ -261,7 +261,7 @@ export default function UseCaseSections() {
             </section>
 
             {/* Section 04: Automate Your Fiduciary Oversight */}
-            <section className="bg-gray-50 border-b border-[#E5E7EB]">
+            <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-7 order-2 lg:order-1">
                         <div className="bg-white border border-[#E5E7EB] p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">

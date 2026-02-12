@@ -9,7 +9,7 @@ export default function WhatSylvanTracks() {
     const containerInView = useInView(containerRef, { once: true, margin: "-100px" })
 
     return (
-        <section ref={containerRef} className="bg-[#0A3F28] py-32 text-white">
+        <section ref={containerRef} className="bg-[#0A3F28] py-32 text-white border-b border-[#E5E7EB]">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     className="text-center mb-20 max-w-2xl mx-auto"

@@ -10,7 +10,7 @@ interface SponsorTeamProps {
 
 export default function SponsorTeam({ team }: SponsorTeamProps) {
     return (
-        <section className="bg-gray-50 py-20 border-y border-[#E5E7EB]">
+        <section className="bg-[#F3F4F1] py-20 border-y border-[#E5E7EB]">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">

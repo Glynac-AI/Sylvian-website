@@ -19,7 +19,7 @@ export default function MainFeatures() {
     return (
         <>
             {/* Section 01: Complete Operating Visibility */}
-            <section ref={section1Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+            <section ref={section1Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB] bg-white">
                 <motion.div
                     className="order-2 lg:order-1"
                     initial={{ opacity: 0, x: -40 }}
@@ -57,7 +57,7 @@ export default function MainFeatures() {
             </section>
 
             {/* Section 02: Lockbox Protected Payment Priority */}
-            <section ref={section2Ref} className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section ref={section2Ref} className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <motion.div
                         className="order-1 flex justify-center"
@@ -98,7 +98,7 @@ export default function MainFeatures() {
             </section>
 
             {/* Section 03: Standardized Comparability */}
-            <section ref={section3Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+            <section ref={section3Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB] bg-white">
                 <motion.div
                     className="order-2 lg:order-1"
                     initial={{ opacity: 0, x: -40 }}
@@ -136,7 +136,7 @@ export default function MainFeatures() {
             </section>
 
             {/* Section 04: Risk Profile */}
-            <section ref={section4Ref} className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section ref={section4Ref} className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <motion.div
                         className="order-1"
