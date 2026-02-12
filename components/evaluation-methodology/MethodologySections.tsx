@@ -9,7 +9,7 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div className="order-2 lg:order-1">
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Framework</span>
-                        <h2 className="text-4xl font-serif text-[#111827] mb-6">Standardized Structures</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Standardized Structures<br /><span className="italic">same framework for all.</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Every obligation follows the same framework</h3>
 
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
@@ -139,7 +139,7 @@ export default function MethodologySections() {
 
                 <div>
                     <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
-                    <h2 className="text-4xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting<br /><span className="italic">transparency is required.</span></h2>
                     <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Transparency is not optional</h3>
                     <p className="text-[#4B5563] mb-8 leading-relaxed">
                         Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
@@ -157,7 +157,7 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Observation</span>
-                        <h2 className="text-4xl font-serif text-[#111827] mb-6">Platform-Tracked Events</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Platform-Tracked Events<br /><span className="italic">behavior is captured as it happens.</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Behavior is captured as it happens</h3>
                         <p className="text-[#4B5563] mb-8 leading-relaxed">
                             Sylvan records and timestamps payment events, reserve compliance, and disclosure timing. Evidence is captured consistently, not summarized after the fact.
@@ -271,7 +271,7 @@ export default function MethodologySections() {
 
                     <div className="order-1 lg:order-2">
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">04. Accountability</span>
-                        <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Enforcement and Accountability<br /><span className="italic">standards are maintained.</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are maintained over time</h3>
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             Reporting failures are treated first as platform compliance matters. Persistent or material non-compliance escalates under the governing documents.
@@ -287,7 +287,7 @@ export default function MethodologySections() {
             <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                 <div>
                     <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
-                    <h2 className="text-4xl font-serif text-[#111827] mb-6">Auditability and Record Integrity</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability and Record Integrity<br /><span className="italic">evidence is durable.</span></h2>
                     <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is durable and reviewable</h3>
                     <p className="text-[#4B5563] mb-8 leading-relaxed">
                         Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.

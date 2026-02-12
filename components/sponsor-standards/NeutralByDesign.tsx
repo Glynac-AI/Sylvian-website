@@ -9,7 +9,7 @@ export default function NeutralByDesign() {
         <section className="bg-[#013220] text-white py-32 text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
-                <h2 className="text-4xl lg:text-5xl font-serif mb-8">Decision Authority Remains With Investors</h2>
+                <h2 className="text-2xl lg:text-3xl font-serif mb-8">Decision Authority Remains With Investors<br /><span className="italic">institutions decide how to act.</span></h2>
 
                 <p className="text-xl text-gray-300 font-serif italic mb-8">Sylvan does not:</p>
 

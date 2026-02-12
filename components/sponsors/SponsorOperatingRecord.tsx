@@ -18,8 +18,8 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-6"></div>
-                    <h2 className="text-4xl lg:text-5xl font-serif text-[#111827] mb-4">
-                        Operating Record
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-4">
+                        Operating Record<br /><span className="italic">observable behavior captured.</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Observable behavior captured across live financial obligations
@@ -40,7 +40,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Reliability</span>
                             </div>
-                            <h3 className="text-4xl font-serif text-[#111827] mb-6">Payment Behavior</h3>
+                            <h3 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Payment Behavior<br /><span className="italic text-lg">reliability and sources.</span></h3>
 
                             <div className="grid grid-cols-2 gap-4 mb-6">
                                 <div className="bg-[#E8F5E9] p-4 rounded border border-[#0A3F28]/20">
@@ -190,7 +190,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                     <div className="w-8 h-px bg-[#D9B44A]"></div>
                                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Discipline</span>
                                 </div>
-                                <h3 className="text-4xl font-serif text-[#111827] mb-6">Capital & Reserve Discipline</h3>
+                                <h3 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Capital & Reserve Discipline<br /><span className="italic text-lg">managed under pressure.</span></h3>
 
                                 <div className="bg-white p-6 rounded border border-[#E5E7EB] shadow-sm mb-6">
                                     <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Reserve Adequacy</p>
@@ -219,7 +219,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Accuracy</span>
                             </div>
-                            <h3 className="text-4xl font-serif text-[#111827] mb-6">Forecast Accuracy</h3>
+                            <h3 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Forecast Accuracy<br /><span className="italic text-lg">actual performance vs. projections.</span></h3>
 
                             <div className="bg-white p-6 rounded border border-[#E5E7EB] shadow-sm mb-6">
                                 <p className="text-xs text-gray-600 uppercase tracking-widest mb-2">Average Variance</p>
@@ -318,7 +318,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                     <div className="w-8 h-px bg-[#D9B44A]"></div>
                                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Transparency</span>
                                 </div>
-                                <h3 className="text-4xl font-serif text-[#111827] mb-6">Disclosure Behavior</h3>
+                                <h3 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Disclosure Behavior<br /><span className="italic text-lg">speed of truth-telling.</span></h3>
 
                                 <div className="grid grid-cols-2 gap-4 mb-6">
                                     <div className="bg-white p-6 rounded border border-[#E5E7EB] shadow-sm col-span-2">
@@ -356,7 +356,7 @@ export default function SponsorOperatingRecordSection({ operatingRecord }: Spons
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">05. History</span>
                             </div>
-                            <h3 className="text-4xl font-serif text-[#111827] mb-6">Consistency Over Time</h3>
+                            <h3 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Consistency Over Time<br /><span className="italic text-lg">patterns across multiple deals.</span></h3>
 
                             <div className="grid grid-cols-2 gap-4 mb-6">
                                 <div className="bg-white p-6 rounded border border-[#E5E7EB] shadow-sm col-span-2">

@@ -67,7 +67,7 @@ export default function SponsorOverview({ sponsor }: SponsorOverviewProps) {
                         <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                             Company Overview
                         </span>
-                        <h2 className="text-3xl font-serif text-[#111827] mb-6">About {sponsor.name}</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">About {sponsor.name}<br /><span className="italic">company overview.</span></h2>
                         <p className="text-gray-700 leading-relaxed mb-8 text-lg">
                             {sponsor.description}
                         </p>

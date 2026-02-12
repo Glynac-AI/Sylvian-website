@@ -9,7 +9,7 @@ export default function StandardsSections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div className="order-2 lg:order-1">
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Admission</span>
-                        <h2 className="text-4xl font-serif text-[#111827] mb-6">Published Admission Criteria</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Published Admission Criteria<br /><span className="italic">institutional readiness required.</span></h2>
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             Sponsors are evaluated for participation based on minimum requirements, including:
                         </p>
@@ -132,7 +132,7 @@ export default function StandardsSections() {
 
                 <div>
                     <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Participation</span>
-                    <h2 className="text-4xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements<br /><span className="italic">continuous discipline required.</span></h2>
                     <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
                     <p className="text-[#4B5563] mb-6 leading-relaxed">
                         Sponsors are expected to maintain:
@@ -168,7 +168,7 @@ export default function StandardsSections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Enforcement</span>
-                        <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Enforcement and Accountability<br /><span className="italic">integrity is preserved.</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             Reporting or disclosure failures are treated first as platform compliance matters, with defined resolution periods. Persistent or material non-compliance can result in:

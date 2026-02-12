@@ -21,8 +21,8 @@ export default function SponsorPortfolio({ portfolioIds, sponsorName }: SponsorP
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                         Active Portfolio
                     </span>
-                    <h2 className="text-4xl font-serif text-[#111827] mb-4">
-                        Current Offerings
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-4">
+                        Current Offerings<br /><span className="italic">available opportunities.</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Explore available investment opportunities from {sponsorName}

@@ -6,9 +6,11 @@ export default function StatementSection() {
         <section className="bg-gray-50 py-24 border-b border-[#E5E7EB]">
             <div className="max-w-4xl mx-auto px-6 text-center">
                 <div className="w-12 h-1 bg-[#0A3F28] mx-auto mb-10"></div>
-                <h2 className="text-3xl lg:text-4xl font-serif leading-relaxed text-[#111827] mb-10">
+                <h2 className="text-2xl lg:text-3xl font-serif leading-relaxed text-[#111827] mb-10">
                     Sylvan gives you what sponsor diligence has always lacked: observable, repeatable{' '}
-                    <span className="text-[#0A3F28] italic">behavioral evidence</span> under real financial obligation.
+                    <span className="text-[#0A3F28]">behavioral evidence</span> under real financial obligation.
+                    <br />
+                    <span className="italic text-[#0A3F28]">Enforced obligations reveal real behavior.</span>
                 </h2>
                                 <div className="grid md:grid-cols-2 gap-12 text-left text-gray-600 text-lg leading-relaxed">
                     <p>

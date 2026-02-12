@@ -27,7 +27,7 @@ export default function ProductStructures() {
         <section className="bg-[#F9FAFB] py-32 border-b border-[#E5E7EB]">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-20 max-w-3xl mx-auto">
-                    <h2 className="text-4xl lg:text-5xl font-serif text-[#111827] mb-6">Three Standardized Product Structures</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Three Standardized Product Structures<br /><span className="italic">operating under the same framework.</span></h2>
                     <p className="text-lg text-gray-600 leading-relaxed">
                         Sylvan offers a small, fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
                     </p>

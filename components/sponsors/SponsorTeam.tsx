@@ -16,8 +16,8 @@ export default function SponsorTeam({ team }: SponsorTeamProps) {
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                         Leadership Team
                     </span>
-                    <h2 className="text-4xl font-serif text-[#111827] mb-4">
-                        Experience & Expertise
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-4">
+                        Experience & Expertise<br /><span className="italic">deep institutional experience.</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         A proven team with deep institutional experience

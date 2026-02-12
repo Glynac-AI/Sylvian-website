@@ -20,8 +20,8 @@ export default function SponsorCTA({ sponsorName, portfolioIds }: SponsorCTAProp
                     transition={{ duration: 0.6 }}
                 >
                     <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
-                    <h2 className="text-4xl lg:text-5xl font-serif mb-6">
-                        Explore Investment Opportunities
+                    <h2 className="text-2xl lg:text-3xl font-serif mb-6">
+                        Explore Investment Opportunities<br /><span className="italic">backed by verified data.</span>
                     </h2>
                     <p className="text-xl text-gray-300 font-serif italic mb-12">
                         {sponsorName} has {portfolioIds.length} active {portfolioIds.length === 1 ? 'offering' : 'offerings'} available

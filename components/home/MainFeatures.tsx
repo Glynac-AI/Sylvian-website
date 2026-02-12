@@ -13,7 +13,7 @@ export default function MainFeatures() {
                         <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Dimensions</span>
                         <div className="h-px bg-gray-200 w-12"></div>
                     </div>
-                    <h2 className="text-4xl font-serif mb-6 text-[#111827]">Complete Operating Visibility</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif mb-6 text-[#111827]">Complete Operating Visibility<br /><span className="italic">across every dimension.</span></h2>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                         You see five dimensions of sponsor behavior tracked across every obligation: how reliably they pay and from what source, how they manage capital and reserves under pressure, how accurate their forecasts are against actual performance, how quickly they disclose problems, and whether these patterns hold consistent across multiple deals.
                     </p>
@@ -54,7 +54,7 @@ export default function MainFeatures() {
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Mechanics</span>
                             <div className="h-px bg-gray-200 w-12"></div>
                         </div>
-                        <h2 className="text-4xl font-serif mb-6 text-[#111827]">Lockbox Protected Payment Priority</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif mb-6 text-[#111827]">Lockbox Protected Payment Priority<br /><span className="italic">enforced by contract.</span></h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
                             Rental income never touches the developer's accounts. Tenants pay directly into a third-party bank-controlled lockbox that functions like an independent escrow.
                         </p>
@@ -72,7 +72,7 @@ export default function MainFeatures() {
                         <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Standards</span>
                         <div className="h-px bg-gray-200 w-12"></div>
                     </div>
-                    <h2 className="text-4xl font-serif mb-6 text-[#111827]">Standardized Comparability</h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif mb-6 text-[#111827]">Standardized Comparability<br /><span className="italic">across all sponsors.</span></h2>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                         Every offering on Sylvan uses identical SPV structures, covenant frameworks, reserve requirements, and reporting templates. Sponsors cannot customize formats or negotiate exceptions. When comparing sponsors, each is evaluated against the same obligations, measurements, and standards.
                     </p>
@@ -129,7 +129,7 @@ export default function MainFeatures() {
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Risk Profile</span>
                             <div className="h-px bg-gray-200 w-12"></div>
                         </div>
-                        <h2 className="text-4xl font-serif mb-6 text-[#111827]">Consistent Yield Without Equity Risk</h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif mb-6 text-[#111827]">Consistent Yield Without Equity Risk<br /><span className="italic">stable returns on real assets.</span></h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
                             Taking debt positions on existing income producing properties lets you bypass the volatility of developer equity. You are buying into proven rental yields rather than betting on the operational success of a developer.
                         </p>

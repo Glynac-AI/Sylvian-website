@@ -9,7 +9,7 @@ export default function NeutralByDesign() {
         <section className="bg-[#013220] text-white py-32 text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
-                <h2 className="text-4xl lg:text-5xl font-serif mb-12">Neutral by Design</h2>
+                <h2 className="text-2xl lg:text-3xl font-serif mb-12">Neutral by Design<br /><span className="italic">investors decide the meaning.</span></h2>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-center text-xs font-bold uppercase tracking-widest text-gray-300">
                     <div className="border-t border-[#095520] pt-4">No Ratings</div>
