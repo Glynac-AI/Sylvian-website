@@ -44,10 +44,10 @@ export default function SponsorsPage() {
                 </div>
             </section>
 
-            <section className="bg-[#0A3F28] text-white py-8 px-6 border-l-4 border-[#D9B44A]">
+            <section className="bg-white py-12 px-6 border-l-4 border-[#D9B44A]">
                 <div className="max-w-7xl mx-auto">
-                    <p className="text-lg italic font-serif leading-relaxed">
-                        Verified sponsors with transparent operating records and consistent performance under standardized obligations.
+                    <p className="text-xl italic font-serif leading-relaxed text-gray-700">
+                        &ldquo;Verified sponsors with transparent operating records and consistent performance under standardized obligations.&rdquo;
                     </p>
                 </div>
             </section>
