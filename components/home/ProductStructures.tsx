@@ -1,6 +1,9 @@
 // components/home/ProductStructures.tsx
 'use client'
 
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
 const products = [
     {
         number: 1,
@@ -23,19 +26,32 @@ const products = [
 ]
 
 export default function ProductStructures() {
+    const containerRef = useRef(null)
+    const containerInView = useInView(containerRef, { once: true, margin: "-100px" })
     return (
-        <section className="bg-[#F9FAFB] py-32 border-b border-[#E5E7EB]">
+        <section ref={containerRef} className="bg-[#F9FAFB] py-32 border-b border-[#E5E7EB]">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-20 max-w-3xl mx-auto">
+                <motion.div
+                    className="text-center mb-20 max-w-3xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={containerInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
                     <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Three Standardized Product Structures<br /><span className="italic">operating under the same framework.</span></h2>
                     <p className="text-lg text-gray-600 leading-relaxed">
                         Sylvan offers a small, fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {products.map((product) => (
-                        <div key={product.number} className="relative pt-8">
+                    {products.map((product, index) => (
+                        <motion.div
+                            key={product.number}
+                            className="relative pt-8"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={containerInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        >
                             {/* Number Badge */}
                             <div className="absolute -top-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-[#013220] rounded-full flex items-center justify-center z-10">
                                 <span className="text-white text-2xl font-bold">{product.number}</span>
@@ -48,7 +64,7 @@ export default function ProductStructures() {
                                 <div className="w-full h-px bg-[#013220] mb-6"></div>
                                 <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -2,13 +2,30 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 export default function MainFeatures() {
+    const section1Ref = useRef(null)
+    const section2Ref = useRef(null)
+    const section3Ref = useRef(null)
+    const section4Ref = useRef(null)
+
+    const section1InView = useInView(section1Ref, { once: true, margin: "-100px" })
+    const section2InView = useInView(section2Ref, { once: true, margin: "-100px" })
+    const section3InView = useInView(section3Ref, { once: true, margin: "-100px" })
+    const section4InView = useInView(section4Ref, { once: true, margin: "-100px" })
+
     return (
         <>
             {/* Section 01: Complete Operating Visibility */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
-                <div className="order-2 lg:order-1">
+            <section ref={section1Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+                <motion.div
+                    className="order-2 lg:order-1"
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={section1InView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
                     <div className="flex items-center gap-2 mb-4">
                         <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Dimensions</span>
                         <div className="h-px bg-gray-200 w-12"></div>
@@ -20,8 +37,13 @@ export default function MainFeatures() {
                     <p className="text-gray-600 leading-relaxed text-sm font-medium">
                         Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture that references and pitch decks cannot provide.
                     </p>
-                </div>
-                <div className="order-1 lg:order-2 flex justify-center">
+                </motion.div>
+                <motion.div
+                    className="order-1 lg:order-2 flex justify-center"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={section1InView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                >
                     <div className="relative w-full max-w-md">
                         <Image
                             src="/home/operating-visibility.svg"
@@ -31,13 +53,18 @@ export default function MainFeatures() {
                             className="w-full h-auto"
                         />
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* Section 02: Lockbox Protected Payment Priority */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section ref={section2Ref} className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
-                    <div className="order-1 flex justify-center">
+                    <motion.div
+                        className="order-1 flex justify-center"
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={section2InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="relative w-full max-w-lg">
                             <Image
                                 src="/home/lockbox.svg"
@@ -47,9 +74,14 @@ export default function MainFeatures() {
                                 className="w-full h-auto"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="order-2">
+                    <motion.div
+                        className="order-2"
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={section2InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Mechanics</span>
                             <div className="h-px bg-gray-200 w-12"></div>
@@ -61,13 +93,18 @@ export default function MainFeatures() {
                         <p className="text-gray-600 leading-relaxed">
                             The bank releases funds in strict order enforced by contract. Direct operational expenses are funded first, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
             {/* Section 03: Standardized Comparability */}
-            <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
-                <div className="order-2 lg:order-1">
+            <section ref={section3Ref} className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center border-b border-[#E5E7EB]">
+                <motion.div
+                    className="order-2 lg:order-1"
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={section3InView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
                     <div className="flex items-center gap-2 mb-4">
                         <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Standards</span>
                         <div className="h-px bg-gray-200 w-12"></div>
@@ -79,8 +116,13 @@ export default function MainFeatures() {
                     <p className="text-gray-600 leading-relaxed text-sm font-medium">
                         This level of structural standardization enables sponsor behavior to be compared consistently across different operators and asset types.
                     </p>
-                </div>
-                <div className="order-1 lg:order-2 flex justify-center">
+                </motion.div>
+                <motion.div
+                    className="order-1 lg:order-2 flex justify-center"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={section3InView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                >
                     <div className="relative w-full max-w-md">
                         <Image
                             src="/home/standardized-comparability.svg"
@@ -90,13 +132,18 @@ export default function MainFeatures() {
                             className="w-full h-auto"
                         />
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* Section 04: Risk Profile */}
-            <section className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
+            <section ref={section4Ref} className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
-                    <div className="order-1">
+                    <motion.div
+                        className="order-1"
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={section4InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="bg-white p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
                             <svg width="100%" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="40" y1="20" x2="40" y2="220" stroke="#D1D5DB" strokeWidth="1"/>
@@ -122,9 +169,14 @@ export default function MainFeatures() {
                                 <text x="380" y="90" fontFamily="Inter" fontSize="10" fontWeight="bold" fill="#0A3F28" textAnchor="end">SYLVAN YIELD</text>
                             </svg>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="order-2">
+                    <motion.div
+                        className="order-2"
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={section4InView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    >
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Risk Profile</span>
                             <div className="h-px bg-gray-200 w-12"></div>
@@ -136,7 +188,7 @@ export default function MainFeatures() {
                         <p className="text-gray-600 leading-relaxed">
                             This gives you direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>
