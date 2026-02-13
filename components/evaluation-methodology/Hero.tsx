@@ -27,27 +27,14 @@ export default function Hero() {
                         Evidence comes from <br />
                         <span className="italic text-gray-300">obligation, not interpretation.</span>
                     </h1>
-                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#145A3C] pl-6">
-                        Sylvan does not rely on sponsor narratives, discretionary reporting, or retrospective explanations.
+                    {/* Updated text to use the quote content and style (serif italic) */}
+                    <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
+                        Evidence is produced by placing sponsors under standardized contractual obligations and recording what happens when those obligations bind.
                     </p>
                 </motion.div>
             </div>
 
-            {/* Quote — bottom right */}
-            <div className="hidden lg:block absolute bottom-28 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 z-10">
-                <div className="flex justify-end">
-                    <motion.div
-                        className="max-w-sm"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-                    >
-                        <p className="text-[15px] text-gray-300 font-serif italic leading-relaxed">
-                            &ldquo;Evidence is produced by placing sponsors under standardized contractual obligations and recording what happens when those obligations bind.&rdquo;
-                        </p>
-                    </motion.div>
-                </div>
-            </div>
+            {/* Quote section removed */}
         </section>
     )
 }

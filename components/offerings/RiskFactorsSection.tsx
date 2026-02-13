@@ -28,20 +28,22 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
             transition={{ duration: 0.6, delay: 0.25 }}
             className="bg-white rounded-2xl p-8 shadow-md"
         >
-            <h2 className="text-2xl font-semibold text-[#095520] mb-2">Risk Factors & Disclosures</h2>
-            <p className="text-sm text-[#095520]/70 mb-6">
+            {/* UPDATED: Heading to 3xl to match main page */}
+            <h2 className="text-3xl font-semibold text-[#095520] mb-3">Risk Factors & Disclosures</h2>
+            {/* UPDATED: Subtext to text-base */}
+            <p className="text-base text-[#095520]/70 mb-8">
                 Understanding the risks is essential for informed investment decisions
             </p>
 
             {/* Important Notice */}
-            <div className="mb-6 p-4 bg-[#F3F4F1] rounded-xl border-l-4 border-[#095520]">
-                <p className="text-xs text-black">
+            <div className="mb-8 p-5 bg-[#F3F4F1] rounded-xl border-l-4 border-[#095520]">
+                <p className="text-sm text-black">
                     <span className="font-semibold">Important:</span> All investments carry risk, including potential loss of principal. Please review all offering documents carefully.
                 </p>
             </div>
 
-            {/* Risk Factors List - Clean */}
-            <div className="space-y-3">
+            {/* Risk Factors List */}
+            <div className="space-y-4">
                 {riskFactors.map((factor, index) => (
                     <motion.div
                         key={index}
@@ -53,12 +55,13 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
                         {/* Risk Header */}
                         <button
                             onClick={() => toggleExpand(index)}
-                            className="w-full p-5 bg-white hover:bg-[#F3F4F1]/50 transition-all duration-300 text-left"
+                            className="w-full p-6 bg-white hover:bg-[#F3F4F1]/50 transition-all duration-300 text-left"
                         >
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-base font-semibold text-[#095520] flex-1">{factor.risk}</h3>
+                            <div className="flex items-center justify-between gap-4">
+                                {/* UPDATED: Risk Title to text-lg */}
+                                <h3 className="text-lg font-semibold text-[#095520] flex-1">{factor.risk}</h3>
                                 <svg
-                                    className={`w-5 h-5 text-[#095520] transition-transform duration-300 flex-shrink-0 ml-4 ${
+                                    className={`w-6 h-6 text-[#095520] transition-transform duration-300 flex-shrink-0 ${
                                         expandedIndex === index ? 'rotate-180' : ''
                                     }`}
                                     fill="none"
@@ -79,17 +82,19 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
                                 transition={{ duration: 0.3 }}
                                 className="border-t-2 border-gray-100"
                             >
-                                <div className="p-5 bg-[#F3F4F1]/30 space-y-4">
+                                <div className="p-6 bg-[#F3F4F1]/30 space-y-5">
                                     {/* Description */}
                                     <div>
                                         <p className="text-xs font-semibold text-[#095520]/70 uppercase tracking-wider mb-2">Risk Description</p>
-                                        <p className="text-sm text-black">{factor.description}</p>
+                                        {/* UPDATED: Description to text-base */}
+                                        <p className="text-base text-black leading-relaxed">{factor.description}</p>
                                     </div>
 
                                     {/* Mitigation */}
-                                    <div className="p-4 bg-white rounded-lg border border-gray-200">
+                                    <div className="p-5 bg-white rounded-lg border border-gray-200">
                                         <p className="text-xs font-semibold text-[#095520] uppercase tracking-wider mb-2">Mitigation Strategy</p>
-                                        <p className="text-sm text-black">{factor.mitigation}</p>
+                                        {/* UPDATED: Mitigation to text-base */}
+                                        <p className="text-base text-black leading-relaxed">{factor.mitigation}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -99,8 +104,8 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
             </div>
 
             {/* Additional Info */}
-            <div className="mt-6 p-4 bg-[#F3F4F1] rounded-xl">
-                <p className="text-sm text-black">
+            <div className="mt-8 p-5 bg-[#F3F4F1] rounded-xl">
+                <p className="text-base text-black">
                     For a comprehensive list of all risk factors, please review the Private Placement Memorandum in the Investment Documentation section.
                 </p>
             </div>

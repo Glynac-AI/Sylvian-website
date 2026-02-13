@@ -40,21 +40,37 @@ export default function MethodologySections() {
                                 All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions. This ensures behavior is observed under the same rules across sponsors and assets.
                             </p>
 
-                            <div className="grid grid-cols-1 gap-0 border border-[#E5E7EB]">
-                                <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
+                            <div className="flex flex-col">
+                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
+                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
                                     <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Ring-fenced SPVs</span>
                                 </div>
-                                <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
+                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
+                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
                                     <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Standard covenant packages</span>
                                 </div>
-                                <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
+                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
+                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
                                     <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Uniform reserve requirements</span>
                                 </div>
-                                <div className="p-4 flex items-center gap-3">
-                                    <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
+                                <div className="py-4 flex items-center gap-3">
+                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
                                     <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Defined payment mechanics</span>
                                 </div>
                             </div>
@@ -210,18 +226,19 @@ export default function MethodologySections() {
                             <p className="text-[#4B5563] mb-8 leading-relaxed">
                                 Sylvan records and timestamps payment events, reserve compliance, and disclosure timing. Evidence is captured consistently, not summarized after the fact.
                             </p>
-                            <ul className="space-y-3 text-sm text-[#4B5563] font-mono">
-                                <li className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                    Payment events and delinquencies
+
+                            <ul className="space-y-4">
+                                <li className="flex gap-3 items-start">
+                                    <span className="text-[#0A3F28] font-bold">↳</span>
+                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Payment events and delinquencies</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                    Source of payments (Cash vs Capital)
+                                <li className="flex gap-3 items-start">
+                                    <span className="text-[#0A3F28] font-bold">↳</span>
+                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Source of payments (Cash vs Capital)</span>
                                 </li>
-                                <li className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                    Reporting revisions and restatements
+                                <li className="flex gap-3 items-start">
+                                    <span className="text-[#0A3F28] font-bold">↳</span>
+                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Reporting revisions and restatements</span>
                                 </li>
                             </ul>
                         </motion.div>
@@ -341,9 +358,13 @@ export default function MethodologySections() {
                             <p className="text-[#4B5563] mb-6 leading-relaxed">
                                 Reporting failures are treated first as platform compliance matters. Persistent or material non-compliance escalates under the governing documents.
                             </p>
-                            <p className="text-lg font-serif italic text-[#0A3F28]">
-                                "The integrity and consistency of sponsor operating evidence take precedence over platform volume."
-                            </p>
+                            
+                            {/* UPDATED QUOTE STYLE */}
+                            <div className="p-6 border-l-2 border-[#D9B44A] bg-white">
+                                <p className="text-sm font-serif italic text-[#111827]">
+                                    "The integrity and consistency of sponsor operating evidence take precedence over platform volume."
+                                </p>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -364,7 +385,7 @@ export default function MethodologySections() {
                             <p className="text-[#4B5563] mb-8 leading-relaxed">
                                 Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.
                             </p>
-                            <p className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest">
+                            <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
                                 Sponsor operating records are suitable for fiduciary documentation.
                             </p>
                         </motion.div>

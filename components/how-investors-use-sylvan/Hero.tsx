@@ -28,8 +28,9 @@ export default function Hero() {
                         Real sponsor behavior, <br />
                         <span className="italic text-gray-300">actionable intelligence.</span>
                     </h1>
-                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#145A3C] pl-6">
-                        Sylvan provides institutional investors with verified sponsor operating records—so allocation decisions can be made on evidence, not pitch decks.
+                    {/* Applied 'font-serif italic' and 'max-w-2xl' to match Methodology page style */}
+                    <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
+                        Sylvan provides institutional investors with verified sponsor operating records so allocation decisions can be made on evidence, not pitch decks.
                     </p>
                 </motion.div>
             </div>

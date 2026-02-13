@@ -231,7 +231,8 @@ export default function StandardsSections() {
                                     Suspension or removal from the platform
                                 </li>
                             </ul>
-                            <p className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest">
+                            {/* UPDATED STYLE: Matched to "Verify Before You Commit" footer style */}
+                            <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
                                 These outcomes are governance actions, not judgments.
                             </p>
                         </motion.div>

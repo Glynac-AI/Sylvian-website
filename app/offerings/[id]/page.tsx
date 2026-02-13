@@ -86,13 +86,14 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
 
             {/* Portfolio Title & Key Metrics - Rounded Card */}
             <section className="px-6 mb-8">
-                <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-                        {/* Title (Badges removed from here) */}
+                <div className="max-w-7xl mx-auto bg-white rounded-2xl p-8 lg:p-10 shadow-lg">
+                        {/* Title Section */}
                         <div className="mb-8">
-                            <h1 className="text-4xl md:text-5xl font-medium text-[#095520] mb-3">
+                            {/* Balanced H1: 4xl on desktop, 3xl on mobile. Matches Strategy page H2s roughly. */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#095520] mb-3">
                                 {portfolio.title}
                             </h1>
-                            <p className="text-lg text-black flex items-center gap-2">
+                            <p className="text-base md:text-lg text-black flex items-center gap-2">
                                 <svg className="w-5 h-5 text-[#095520]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
@@ -103,27 +104,28 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         {/* Comprehensive Key Metrics Grid */}
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pt-6 border-t border-gray-200">
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Target Yield</p>
+                            {/* Standardized Labels (sm) and Values (2xl) */}
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Target Yield</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.targetYield}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Investment Term</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Term</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.investmentTerm}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Minimum Investment</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Min Inv</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.minimumInvestment}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Raise</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Raise</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.totalRaise}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Total Value</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Value</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.totalValue}</p>
                         </div>
                         <div>
-                            <p className="text-sm text-[#095520]/70 mb-1.5">Avg. Occupancy</p>
+                            <p className="text-sm text-[#095520]/70 mb-1.5 uppercase tracking-wide">Occupancy</p>
                             <p className="text-2xl font-semibold text-[#095520]">{portfolio.portfolioMetrics.averageOccupancy}</p>
                         </div>
                     </div>
@@ -131,11 +133,11 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                     {/* Funding Progress Bar (if not closed) */}
                     {portfolio.fundingStatus !== 'Closed' && (
                         <div className="mt-8 pt-6 border-t border-gray-200">
-                            <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center justify-between mb-2">
                                 <span className="text-sm font-medium text-[#095520]">Funding Progress</span>
                                 <span className="text-sm font-semibold text-[#095520]">{portfolio.fundingProgress}%</span>
                             </div>
-                            <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div className="w-full h-2.5 bg-gray-100 rounded-full overflow-hidden">
                                 <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: `${portfolio.fundingProgress}%` }}
@@ -161,9 +163,9 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
             {/* Main Content */}
             <section className="py-16 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-3 gap-12">
+                    <div className="grid lg:grid-cols-3 gap-10">
                         {/* Left Column - Main Info */}
-                        <div className="lg:col-span-2 space-y-12">
+                        <div className="lg:col-span-2 space-y-10">
                             {/* Overview */}
                             <motion.div
                                 id="overview"
@@ -172,15 +174,17 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-4">Portfolio Overview</h2>
-                                <p className="text-lg text-black leading-relaxed mb-6">{portfolio.description}</p>
+                                {/* Uniform Section Heading: 3xl */}
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-5">Portfolio Overview</h2>
+                                {/* Readable Body Text: text-base */}
+                                <p className="text-base text-black leading-relaxed mb-6">{portfolio.description}</p>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {portfolio.highlights.map((highlight, index) => (
-                                        <div key={index} className="flex items-start gap-2">
+                                        <div key={index} className="flex items-start gap-2.5">
                                             <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                                             </svg>
-                                            <span className="text-sm text-black">{highlight}</span>
+                                            <span className="text-base text-black">{highlight}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -194,42 +198,41 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Portfolio Metrics</h2>
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-6">Portfolio Metrics</h2>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-4">
                                         <div>
+                                            {/* Label: text-sm, Value: text-lg */}
                                             <p className="text-sm text-[#095520]">Total Properties</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalProperties}</p>
+                                            <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.totalProperties}</p>
                                         </div>
                                         <div>
                                             <p className="text-sm text-[#095520]">Total Portfolio Value</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalValue}</p>
+                                            <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.totalValue}</p>
                                         </div>
                                         <div>
                                             <p className="text-sm text-[#095520]">Average Occupancy</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.averageOccupancy}</p>
+                                            <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.averageOccupancy}</p>
                                         </div>
                                     </div>
                                     <div className="space-y-4">
                                         <div>
                                             <p className="text-sm text-[#095520]">Total Square Feet</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalSquareFeet.toLocaleString('en-US')} SF</p>
+                                            <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.totalSquareFeet.toLocaleString('en-US')} SF</p>
                                         </div>
                                         {portfolio.portfolioMetrics.totalUnits > 0 && (
                                             <div>
                                                 <p className="text-sm text-[#095520]">Total Units</p>
-                                                <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.totalUnits}</p>
+                                                <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.totalUnits}</p>
                                             </div>
                                         )}
                                         <div>
                                             <p className="text-sm text-[#095520]">Geographic Markets</p>
-                                            <p className="text-base font-medium text-black">{portfolio.portfolioMetrics.geographicMarkets.join(', ')}</p>
+                                            <p className="text-lg font-medium text-black">{portfolio.portfolioMetrics.geographicMarkets.join(', ')}</p>
                                         </div>
                                     </div>
                                 </div>
                             </motion.div>
-
-                            {/* Removed Asset Allocation Section */}
 
                             {/* Diversification */}
                             <motion.div
@@ -238,24 +241,24 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Risk Diversification</h2>
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-6">Risk Diversification</h2>
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Geographic Diversification</span>
-                                        <span className="font-semibold text-black">{portfolio.diversification.geographicDiversification}</span>
+                                        <span className="text-base text-[#095520]">Geographic Diversification</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.diversification.geographicDiversification}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Asset Type Diversification</span>
-                                        <span className="font-semibold text-black">{portfolio.diversification.assetTypeDiversification}</span>
+                                        <span className="text-base text-[#095520]">Asset Type Diversification</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.diversification.assetTypeDiversification}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3">
-                                        <span className="text-[#095520]">Tenant Diversification</span>
-                                        <span className="font-semibold text-black">{portfolio.diversification.tenantDiversification}</span>
+                                        <span className="text-base text-[#095520]">Tenant Diversification</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.diversification.tenantDiversification}</span>
                                     </div>
                                 </div>
                             </motion.div>
 
-                            {/* Risk Factors */}
+                            {/* Risk Factors - Component handles internal sizing */}
                             <div id="risks">
                                 <RiskFactorsSection riskFactors={portfolio.riskFactors} />
                             </div>
@@ -268,7 +271,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.25 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Properties in Portfolio</h2>
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-6">Properties in Portfolio</h2>
                                 <div className="space-y-6">
                                     {portfolio.properties.map((property, index) => (
                                         <div key={index} className="group overflow-hidden rounded-xl border border-gray-200 bg-white hover:shadow-lg transition-all duration-300">
@@ -344,27 +347,27 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Investment Structure</h2>
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-6">Investment Structure</h2>
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Structure Type</span>
-                                        <span className="font-semibold text-black">{portfolio.investmentStructure.structureType}</span>
+                                        <span className="text-base text-[#095520]">Structure Type</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.investmentStructure.structureType}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Total Senior Debt</span>
-                                        <span className="font-semibold text-black">{portfolio.investmentStructure.totalSeniorDebt}</span>
+                                        <span className="text-base text-[#095520]">Total Senior Debt</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.investmentStructure.totalSeniorDebt}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Weighted Avg LTV</span>
-                                        <span className="font-semibold text-black">{portfolio.investmentStructure.weightedAvgLTV}</span>
+                                        <span className="text-base text-[#095520]">Weighted Avg LTV</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.investmentStructure.weightedAvgLTV}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Weighted Avg DSCR</span>
-                                        <span className="font-semibold text-black">{portfolio.investmentStructure.weightedAvgDSCR}</span>
+                                        <span className="text-base text-[#095520]">Weighted Avg DSCR</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.investmentStructure.weightedAvgDSCR}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3">
-                                        <span className="text-[#095520]">Total Reserves</span>
-                                        <span className="font-semibold text-black">{portfolio.investmentStructure.totalReserves}</span>
+                                        <span className="text-base text-[#095520]">Total Reserves</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.investmentStructure.totalReserves}</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -380,27 +383,27 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.35 }}
                                 className="bg-white rounded-2xl p-8 shadow-md"
                             >
-                                <h2 className="text-2xl font-semibold text-[#095520] mb-6">Financial Projections</h2>
+                                <h2 className="text-3xl font-semibold text-[#095520] mb-6">Financial Projections</h2>
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Projected Annual Return</span>
-                                        <span className="font-semibold text-black">{portfolio.financials.projectedAnnualReturn}</span>
+                                        <span className="text-base text-[#095520]">Projected Annual Return</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.financials.projectedAnnualReturn}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Distribution Schedule</span>
-                                        <span className="font-semibold text-black">{portfolio.financials.cashDistributionSchedule}</span>
+                                        <span className="text-base text-[#095520]">Distribution Schedule</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.financials.cashDistributionSchedule}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Hold Period</span>
-                                        <span className="font-semibold text-black">{portfolio.financials.holdPeriod}</span>
+                                        <span className="text-base text-[#095520]">Hold Period</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.financials.holdPeriod}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                                        <span className="text-[#095520]">Exit Strategy</span>
-                                        <span className="font-semibold text-black">{portfolio.financials.exitStrategy}</span>
+                                        <span className="text-base text-[#095520]">Exit Strategy</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.financials.exitStrategy}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3">
-                                        <span className="text-[#095520]">Total Annual Rent</span>
-                                        <span className="font-semibold text-black">{portfolio.financials.totalAnnualRent}</span>
+                                        <span className="text-base text-[#095520]">Total Annual Rent</span>
+                                        <span className="text-base font-semibold text-black">{portfolio.financials.totalAnnualRent}</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -414,7 +417,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="bg-white rounded-2xl p-8 shadow-lg sticky top-[120px]"
                             >
-                                <h3 className="text-xl font-semibold text-[#095520] mb-6">Investment Summary</h3>
+                                <h3 className="text-2xl font-semibold text-[#095520] mb-6">Investment Summary</h3>
 
                                 {portfolio.fundingStatus !== 'Closed' && (
                                     <div className="mb-6">
@@ -434,19 +437,19 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                 )}
 
                                 <div className="space-y-3 mb-8">
-                                    <div className="flex justify-between text-sm">
+                                    <div className="flex justify-between text-base">
                                         <span className="text-[#095520]">Target Yield</span>
                                         <span className="font-semibold text-black">{portfolio.targetYield}</span>
                                     </div>
-                                    <div className="flex justify-between text-sm">
+                                    <div className="flex justify-between text-base">
                                         <span className="text-[#095520]">Minimum</span>
                                         <span className="font-semibold text-black">{portfolio.minimumInvestment}</span>
                                     </div>
-                                    <div className="flex justify-between text-sm">
+                                    <div className="flex justify-between text-base">
                                         <span className="text-[#095520]">Term</span>
                                         <span className="font-semibold text-black">{portfolio.investmentTerm}</span>
                                     </div>
-                                    <div className="flex justify-between text-sm">
+                                    <div className="flex justify-between text-base">
                                         <span className="text-[#095520]">Properties</span>
                                         <span className="font-semibold text-black">{portfolio.portfolioMetrics.totalProperties}</span>
                                     </div>

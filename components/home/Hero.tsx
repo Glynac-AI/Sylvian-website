@@ -13,10 +13,6 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-                <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
-                    Institutional Diligence
-                </span>
-                
                 {/* Two-liner Roman/Italic Heading */}
                 <h1 className="text-4xl lg:text-5xl font-serif text-[#111827] leading-[1.1] mb-8">
                     <span className="block font-normal">Know your real estate sponsors</span>
