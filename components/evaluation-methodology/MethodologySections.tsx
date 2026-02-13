@@ -16,22 +16,38 @@ export default function MethodologySections() {
                             All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions. This ensures behavior is observed under the same rules across sponsors and assets.
                         </p>
 
-                        <div className="grid grid-cols-1 gap-0 border border-[#E5E7EB]">
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Ring-fenced SPVs</span>
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span className="text-sm font-medium text-[#111827]">Ring-fenced SPVs</span>
                             </div>
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Standard covenant packages</span>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span className="text-sm font-medium text-[#111827]">Standard covenant packages</span>
                             </div>
-                            <div className="p-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Uniform reserve requirements</span>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span className="text-sm font-medium text-[#111827]">Uniform reserve requirements</span>
                             </div>
-                            <div className="p-4 flex items-center gap-3">
-                                <div className="w-2 h-2 border border-[#0A3F28] bg-[#D9B44A]/20"></div>
-                                <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Defined payment mechanics</span>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span className="text-sm font-medium text-[#111827]">Defined payment mechanics</span>
                             </div>
                         </div>
                     </div>

@@ -41,31 +41,31 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
             </div>
 
             {/* Risk Factors List - Clean */}
-            <div className="space-y-3">
+            <div className="space-y-4">
                 {riskFactors.map((factor, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                        className="rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#095520]/20 transition-all duration-300"
+                        className="border border-gray-200 bg-white overflow-hidden hover:border-[#095520]/30 transition-all duration-300"
                     >
                         {/* Risk Header */}
                         <button
                             onClick={() => toggleExpand(index)}
-                            className="w-full p-5 bg-white hover:bg-[#F3F4F1]/50 transition-all duration-300 text-left"
+                            className="w-full p-6 hover:bg-[#F3F4F1]/30 transition-all duration-300 text-left"
                         >
                             <div className="flex items-center justify-between">
-                                <h3 className="text-base font-semibold text-[#095520] flex-1">{factor.risk}</h3>
+                                <h3 className="text-lg font-semibold text-[#095520] flex-1">{factor.risk}</h3>
                                 <svg
-                                    className={`w-5 h-5 text-[#095520] transition-transform duration-300 flex-shrink-0 ml-4 ${
+                                    className={`w-6 h-6 text-[#095520] transition-transform duration-300 flex-shrink-0 ml-4 ${
                                         expandedIndex === index ? 'rotate-180' : ''
                                     }`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
                                 >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </button>
@@ -77,19 +77,19 @@ export default function RiskFactorsSection({ riskFactors }: RiskFactorsSectionPr
                                 animate={{ height: 'auto', opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="border-t-2 border-gray-100"
+                                className="border-t border-gray-200"
                             >
-                                <div className="p-5 bg-[#F3F4F1]/30 space-y-4">
+                                <div className="p-6 bg-[#F3F4F1]/20 space-y-5">
                                     {/* Description */}
                                     <div>
-                                        <p className="text-xs font-semibold text-[#095520]/70 uppercase tracking-wider mb-2">Risk Description</p>
-                                        <p className="text-sm text-black">{factor.description}</p>
+                                        <p className="text-sm font-semibold text-[#095520]/70 uppercase tracking-wide mb-3">Risk Description</p>
+                                        <p className="text-base text-black leading-relaxed">{factor.description}</p>
                                     </div>
 
                                     {/* Mitigation */}
-                                    <div className="p-4 bg-white rounded-lg border border-gray-200">
-                                        <p className="text-xs font-semibold text-[#095520] uppercase tracking-wider mb-2">Mitigation Strategy</p>
-                                        <p className="text-sm text-black">{factor.mitigation}</p>
+                                    <div className="p-5 bg-white border border-gray-200">
+                                        <p className="text-sm font-semibold text-[#095520] uppercase tracking-wide mb-3">Mitigation Strategy</p>
+                                        <p className="text-base text-black leading-relaxed">{factor.mitigation}</p>
                                     </div>
                                 </div>
                             </motion.div>

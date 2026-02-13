@@ -99,66 +99,68 @@ export default function StandardsSections() {
 
             {/* Section 02: Ongoing Participation Requirements */}
             <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
-                <div className="flex justify-center">
-                    <div className="bg-white p-8 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full max-w-md">
-                        <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E5E7EB]">
-                            <h3 className="font-serif text-lg text-[#111827]">Ongoing Requirements</h3>
-                            <span className="text-[10px] font-mono text-gray-400 uppercase">CONTINUOUS</span>
-                        </div>
-
-                        <div className="space-y-4">
-                            <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
-                                <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Reporting</span>
-                                <p className="text-sm text-[#4B5563]">Timely and complete reporting on fixed schedules</p>
-                            </div>
-
-                            <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
-                                <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Disclosure</span>
-                                <p className="text-sm text-[#4B5563]">Accurate disclosure of payment sources and liquidity support</p>
-                            </div>
-
-                            <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
-                                <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Compliance</span>
-                                <p className="text-sm text-[#4B5563]">Compliance with covenant and reserve requirements</p>
-                            </div>
-
-                            <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
-                                <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Communication</span>
-                                <p className="text-sm text-[#4B5563]">Transparent communication when issues arise</p>
-                            </div>
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+                    <div>
+                        <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Participation</span>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements<br /><span className="italic">continuous discipline required.</span></h2>
+                        <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
+                        <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            Sponsors are expected to maintain:
+                        </p>
+                        <ul className="space-y-3 mb-8 text-sm text-gray-700">
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                Timely and complete reporting on fixed schedules
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                Accurate disclosure of payment sources and liquidity support
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                Compliance with covenant and reserve requirements
+                            </li>
+                            <li className="flex gap-3 items-start">
+                                <span className="text-[#0A3F28] font-bold">↳</span>
+                                Transparent communication when issues arise
+                            </li>
+                        </ul>
+                        <div className="p-6 border-l-2 border-[#D9B44A] bg-[#F9FAFB]">
+                            <p className="text-sm font-serif italic text-[#111827]">
+                                "Operating behavior is observed and recorded across every obligation."
+                            </p>
                         </div>
                     </div>
-                </div>
 
-                <div>
-                    <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Participation</span>
-                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements<br /><span className="italic">continuous discipline required.</span></h2>
-                    <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
-                    <p className="text-[#4B5563] mb-6 leading-relaxed">
-                        Sponsors are expected to maintain:
-                    </p>
-                    <ul className="space-y-3 mb-8 text-sm text-gray-700">
-                        <li className="flex gap-3 items-start">
-                            <span className="text-[#0A3F28] font-bold">↳</span>
-                            Timely and complete reporting on fixed schedules
-                        </li>
-                        <li className="flex gap-3 items-start">
-                            <span className="text-[#0A3F28] font-bold">↳</span>
-                            Accurate disclosure of payment sources and liquidity support
-                        </li>
-                        <li className="flex gap-3 items-start">
-                            <span className="text-[#0A3F28] font-bold">↳</span>
-                            Compliance with covenant and reserve requirements
-                        </li>
-                        <li className="flex gap-3 items-start">
-                            <span className="text-[#0A3F28] font-bold">↳</span>
-                            Transparent communication when issues arise
-                        </li>
-                    </ul>
-                    <div className="p-6 border-l-2 border-[#D9B44A] bg-[#F9FAFB]">
-                        <p className="text-sm font-serif italic text-[#111827]">
-                            "Operating behavior is observed and recorded across every obligation."
-                        </p>
+                    <div className="flex justify-center">
+                        <div className="bg-white p-8 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full max-w-md">
+                            <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E5E7EB]">
+                                <h3 className="font-serif text-lg text-[#111827]">Ongoing Requirements</h3>
+                                <span className="text-[10px] font-mono text-gray-400 uppercase">CONTINUOUS</span>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
+                                    <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Reporting</span>
+                                    <p className="text-sm text-[#4B5563]">Timely and complete reporting on fixed schedules</p>
+                                </div>
+
+                                <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
+                                    <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Disclosure</span>
+                                    <p className="text-sm text-[#4B5563]">Accurate disclosure of payment sources and liquidity support</p>
+                                </div>
+
+                                <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
+                                    <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Compliance</span>
+                                    <p className="text-sm text-[#4B5563]">Compliance with covenant and reserve requirements</p>
+                                </div>
+
+                                <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
+                                    <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Communication</span>
+                                    <p className="text-sm text-[#4B5563]">Transparent communication when issues arise</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -187,7 +189,7 @@ export default function StandardsSections() {
                                 Suspension or removal from the platform
                             </li>
                         </ul>
-                        <p className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest">
+                        <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
                             These outcomes are governance actions, not judgments.
                         </p>
                     </div>
