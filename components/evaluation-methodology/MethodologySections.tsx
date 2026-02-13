@@ -278,9 +278,11 @@ export default function MethodologySections() {
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             Reporting failures are treated first as platform compliance matters. Persistent or material non-compliance escalates under the governing documents.
                         </p>
-                        <p className="text-lg font-serif italic text-[#0A3F28]">
-                            "The integrity and consistency of sponsor operating evidence take precedence over platform volume."
-                        </p>
+                        <div className="p-6 border-l-2 border-[#D9B44A] bg-[#F9FAFB]">
+                            <p className="text-sm font-serif italic text-[#111827]">
+                                 "The integrity and consistency of sponsor operating evidence take precedence over platform volume."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
