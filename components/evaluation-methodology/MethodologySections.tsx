@@ -82,72 +82,74 @@ export default function MethodologySections() {
 
             {/* Section 02: Mandatory Uniform Reporting */}
             <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
-                <div className="flex justify-center">
-                    <div className="bg-white p-6 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full">
-                        <div className="flex items-center justify-between mb-4 border-b border-[#E5E7EB] pb-2">
-                            <span className="text-[10px] font-bold uppercase text-[#9CA3AF]">Input Source</span>
-                            <span className="text-[10px] font-bold uppercase text-[#9CA3AF]">Sylvan Output</span>
-                        </div>
-
-                        <div className="flex gap-4 items-center">
-                            <div className="w-1/3 space-y-2 opacity-50 grayscale">
-                                <div className="h-16 border border-gray-300 bg-gray-50 p-2 relative transform rotate-[-2deg]">
-                                    <div className="w-full h-1 bg-gray-300 mb-1"></div>
-                                    <div className="w-2/3 h-1 bg-gray-300"></div>
-                                    <span className="absolute bottom-1 right-1 text-[8px] font-mono">.XLS</span>
-                                </div>
-                                <div className="h-16 border border-gray-300 bg-gray-50 p-2 relative transform rotate-[3deg] translate-y-[-10px]">
-                                    <div className="w-full h-1 bg-gray-300 mb-1"></div>
-                                    <div className="w-1/2 h-1 bg-gray-300"></div>
-                                    <span className="absolute bottom-1 right-1 text-[8px] font-mono">.PDF</span>
-                                </div>
-                            </div>
-
-                            <div className="w-1/6 flex justify-center">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A3F28" strokeWidth="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
-
-                            <div className="w-1/2 border border-[#0A3F28] bg-white shadow-sm">
-                                <div className="bg-[#0A3F28] h-2 w-full"></div>
-                                <div className="p-2 space-y-2">
-                                    <div className="flex justify-between border-b border-gray-100 pb-1">
-                                        <span className="text-[8px] font-mono text-gray-500">METRIC</span>
-                                        <span className="text-[8px] font-mono text-gray-500">VAL</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-[9px] font-bold text-[#111827]">DSCR_YTD</span>
-                                        <span className="text-[9px] font-mono text-[#111827]">1.25x</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-[9px] font-bold text-[#111827]">NOI_ACT</span>
-                                        <span className="text-[9px] font-mono text-[#111827]">$4.2M</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-[9px] font-bold text-[#111827]">EXP_RATIO</span>
-                                        <span className="text-[9px] font-mono text-[#111827]">32.0%</span>
-                                    </div>
-                                </div>
-                                <div className="bg-gray-50 p-1 text-center">
-                                    <div className="text-[7px] text-[#0A3F28] font-bold uppercase tracking-widest">Standardized</div>
-                                </div>
-                            </div>
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+                    <div>
+                        <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting<br /><span className="italic">transparency is required.</span></h2>
+                        <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Transparency is not optional</h3>
+                        <p className="text-[#4B5563] mb-8 leading-relaxed">
+                            Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
+                        </p>
+                        <div className="p-6 border-l-2 border-[#D9B44A] bg-[#F9FAFB]">
+                            <p className="text-sm font-serif italic text-[#111827]">
+                                "Reporting is a contractual requirement, not a courtesy."
+                            </p>
                         </div>
                     </div>
-                </div>
 
-                <div>
-                    <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
-                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting<br /><span className="italic">transparency is required.</span></h2>
-                    <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Transparency is not optional</h3>
-                    <p className="text-[#4B5563] mb-8 leading-relaxed">
-                        Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
-                    </p>
-                    <div className="p-6 border-l-2 border-[#D9B44A] bg-[#F9FAFB]">
-                        <p className="text-sm font-serif italic text-[#111827]">
-                            "Reporting is a contractual requirement, not a courtesy."
-                        </p>
+                    <div className="flex justify-center">
+                        <div className="bg-white p-6 border border-[#E5E7EB] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] w-full max-w-md">
+                            <div className="flex items-center justify-between mb-4 border-b border-[#E5E7EB] pb-2">
+                                <span className="text-[10px] font-bold uppercase text-[#9CA3AF]">Input Source</span>
+                                <span className="text-[10px] font-bold uppercase text-[#9CA3AF]">Sylvan Output</span>
+                            </div>
+
+                            <div className="flex gap-4 items-center">
+                                <div className="w-1/3 space-y-2 opacity-50 grayscale">
+                                    <div className="h-16 border border-gray-300 bg-gray-50 p-2 relative transform rotate-[-2deg]">
+                                        <div className="w-full h-1 bg-gray-300 mb-1"></div>
+                                        <div className="w-2/3 h-1 bg-gray-300"></div>
+                                        <span className="absolute bottom-1 right-1 text-[8px] font-mono">.XLS</span>
+                                    </div>
+                                    <div className="h-16 border border-gray-300 bg-gray-50 p-2 relative transform rotate-[3deg] translate-y-[-10px]">
+                                        <div className="w-full h-1 bg-gray-300 mb-1"></div>
+                                        <div className="w-1/2 h-1 bg-gray-300"></div>
+                                        <span className="absolute bottom-1 right-1 text-[8px] font-mono">.PDF</span>
+                                    </div>
+                                </div>
+
+                                <div className="w-1/6 flex justify-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A3F28" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+
+                                <div className="w-1/2 border border-[#0A3F28] bg-white shadow-sm">
+                                    <div className="bg-[#0A3F28] h-2 w-full"></div>
+                                    <div className="p-2 space-y-2">
+                                        <div className="flex justify-between border-b border-gray-100 pb-1">
+                                            <span className="text-[8px] font-mono text-gray-500">METRIC</span>
+                                            <span className="text-[8px] font-mono text-gray-500">VAL</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-[9px] font-bold text-[#111827]">DSCR_YTD</span>
+                                            <span className="text-[9px] font-mono text-[#111827]">1.25x</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-[9px] font-bold text-[#111827]">NOI_ACT</span>
+                                            <span className="text-[9px] font-mono text-[#111827]">$4.2M</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-[9px] font-bold text-[#111827]">EXP_RATIO</span>
+                                            <span className="text-[9px] font-mono text-[#111827]">32.0%</span>
+                                        </div>
+                                    </div>
+                                    <div className="bg-gray-50 p-1 text-center">
+                                        <div className="text-[7px] text-[#0A3F28] font-bold uppercase tracking-widest">Standardized</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -285,50 +287,52 @@ export default function MethodologySections() {
 
             {/* Section 05: Auditability and Record Integrity */}
             <section className="bg-white border-b border-[#E5E7EB]">
-                <div>
-                    <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
-                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability and Record Integrity<br /><span className="italic">evidence is durable.</span></h2>
-                    <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is durable and reviewable</h3>
-                    <p className="text-[#4B5563] mb-8 leading-relaxed">
-                        Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.
-                    </p>
-                    <p className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest">
-                        Sponsor operating records are suitable for fiduciary documentation.
-                    </p>
-                </div>
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
+                    <div>
+                        <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability and Record Integrity<br /><span className="italic">evidence is durable.</span></h2>
+                        <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is durable and reviewable</h3>
+                        <p className="text-[#4B5563] mb-8 leading-relaxed">
+                            Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.
+                        </p>
+                        <p className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest">
+                            Sponsor operating records are suitable for fiduciary documentation.
+                        </p>
+                    </div>
 
-                <div className="flex justify-center">
-                    <div className="relative w-full max-w-sm">
-                        <div className="absolute top-2 left-2 w-full h-full border border-gray-200 bg-white shadow-sm z-0"></div>
-                        <div className="absolute top-4 left-4 w-full h-full border border-gray-200 bg-white shadow-sm z-10"></div>
+                    <div className="flex justify-center">
+                        <div className="relative w-full max-w-sm">
+                            <div className="absolute top-2 left-2 w-full h-full border border-gray-200 bg-white shadow-sm z-0"></div>
+                            <div className="absolute top-4 left-4 w-full h-full border border-gray-200 bg-white shadow-sm z-10"></div>
 
-                        <div className="relative z-20 w-full h-full border border-[#E5E7EB] bg-white shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] p-8">
-                            <div className="flex items-center justify-between mb-8">
-                                <div className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-[#0A3F28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                    </svg>
-                                    <span className="text-xs font-bold uppercase text-[#111827]">Record Locked</span>
+                            <div className="relative z-20 w-full h-full border border-[#E5E7EB] bg-white shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] p-8">
+                                <div className="flex items-center justify-between mb-8">
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-[#0A3F28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                        </svg>
+                                        <span className="text-xs font-bold uppercase text-[#111827]">Record Locked</span>
+                                    </div>
+                                    <div className="w-16 h-px bg-[#E5E7EB]"></div>
                                 </div>
-                                <div className="w-16 h-px bg-[#E5E7EB]"></div>
-                            </div>
 
-                            <div className="space-y-4 font-mono text-[10px] text-[#4B5563]">
-                                <div className="flex justify-between">
-                                    <span className="text-[#9CA3AF]">SHA-256 HASH</span>
-                                    <span>a1b2c3...d4e5</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="text-[#9CA3AF]">CREATED</span>
-                                    <span>2026-01-24 14:02:11</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="text-[#9CA3AF]">MODIFIED</span>
-                                    <span>-- NULL --</span>
-                                </div>
-                                <div className="flex justify-between border-t border-[#E5E7EB] pt-4 mt-4">
-                                    <span className="text-[#9CA3AF]">VERIFICATION</span>
-                                    <span className="text-[#0A3F28] font-bold">VALID</span>
+                                <div className="space-y-4 font-mono text-[10px] text-[#4B5563]">
+                                    <div className="flex justify-between">
+                                        <span className="text-[#9CA3AF]">SHA-256 HASH</span>
+                                        <span>a1b2c3...d4e5</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="text-[#9CA3AF]">CREATED</span>
+                                        <span>2026-01-24 14:02:11</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="text-[#9CA3AF]">MODIFIED</span>
+                                        <span>-- NULL --</span>
+                                    </div>
+                                    <div className="flex justify-between border-t border-[#E5E7EB] pt-4 mt-4">
+                                        <span className="text-[#9CA3AF]">VERIFICATION</span>
+                                        <span className="text-[#0A3F28] font-bold">VALID</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
