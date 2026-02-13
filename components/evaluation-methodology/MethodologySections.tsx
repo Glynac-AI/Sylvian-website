@@ -164,18 +164,18 @@ export default function MethodologySections() {
                         <p className="text-[#4B5563] mb-8 leading-relaxed">
                             Sylvan records and timestamps payment events, reserve compliance, and disclosure timing. Evidence is captured consistently, not summarized after the fact.
                         </p>
-                        <ul className="space-y-3 text-sm text-[#4B5563] font-mono">
-                            <li className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                Payment events and delinquencies
+                        <ul className="space-y-3 text-sm text-[#4B5563]">
+                            <li className="flex items-start gap-2">
+                                <span className="text-[#4B5563] mt-0.5">↳</span>
+                                <span>Payment events and delinquencies</span>
                             </li>
-                            <li className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                Source of payments (Cash vs Capital)
+                            <li className="flex items-start gap-2">
+                                <span className="text-[#4B5563] mt-0.5">↳</span>
+                                <span>Source of payments (Cash vs Capital)</span>
                             </li>
-                            <li className="flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-[#0A3F28]"></div>
-                                Reporting revisions and restatements
+                            <li className="flex items-start gap-2">
+                                <span className="text-[#4B5563] mt-0.5">↳</span>
+                                <span>Reporting revisions and restatements</span>
                             </li>
                         </ul>
                     </div>
