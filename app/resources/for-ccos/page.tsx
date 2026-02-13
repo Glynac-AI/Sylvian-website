@@ -42,14 +42,6 @@ export default function ForCCOsPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-12 px-6 border-l-4 border-[#D9B44A]">
-                <div className="max-w-7xl mx-auto">
-                    <p className="text-xl italic font-serif leading-relaxed text-gray-700">
-                        &ldquo;Standardized structures and mandatory reporting create transparent operating records for compliance and risk assessment.&rdquo;
-                    </p>
-                </div>
-            </section>
-
             {/* Section 1: Ring-Fenced SPVs */}
             <section ref={section1Ref} className="py-20 px-6 bg-white relative overflow-hidden border-b border-gray-200">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />

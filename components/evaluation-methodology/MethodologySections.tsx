@@ -9,45 +9,53 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div className="order-2 lg:order-1">
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Framework</span>
-                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Standardized Structures<br /><span className="italic">same framework for all.</span></h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Standardized <br /><span className="italic">Structures</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Every obligation follows the same framework</h3>
 
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions. This ensures behavior is observed under the same rules across sponsors and assets.
                         </p>
 
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                        <div className="bg-white border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] rounded">
+                            <div className="flex justify-between items-center px-6 py-4 border-b border-[#E5E7EB]">
+                                <h4 className="font-serif text-base text-[#111827]">Standardized Framework</h4>
+                                <div className="border border-[#0A3F28] px-2 py-1">
+                                    <span className="text-[8px] font-bold text-[#0A3F28] uppercase tracking-widest">Uniform Terms</span>
                                 </div>
-                                <span className="text-sm font-medium text-[#111827]">Ring-fenced SPVs</span>
                             </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                            <div className="divide-y divide-[#E5E7EB]">
+                                <div className="flex items-center gap-4 px-6 py-4">
+                                    <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm font-medium text-[#111827]">Ring-fenced SPVs</span>
                                 </div>
-                                <span className="text-sm font-medium text-[#111827]">Standard covenant packages</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                                <div className="flex items-center gap-4 px-6 py-4">
+                                    <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm font-medium text-[#111827]">Standard covenant packages</span>
                                 </div>
-                                <span className="text-sm font-medium text-[#111827]">Uniform reserve requirements</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                                <div className="flex items-center gap-4 px-6 py-4">
+                                    <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm font-medium text-[#111827]">Uniform reserve requirements</span>
                                 </div>
-                                <span className="text-sm font-medium text-[#111827]">Defined payment mechanics</span>
+                                <div className="flex items-center gap-4 px-6 py-4">
+                                    <div className="w-8 h-8 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm font-medium text-[#111827]">Defined payment mechanics</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,7 +109,7 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
-                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting<br /><span className="italic">transparency is required.</span></h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Mandatory Uniform <br /><span className="italic">Reporting</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Transparency is not optional</h3>
                         <p className="text-[#4B5563] mb-8 leading-relaxed">
                             Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
@@ -175,7 +183,7 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Observation</span>
-                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Platform-Tracked Events<br /><span className="italic">behavior is captured as it happens.</span></h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Platform<br /><span className="italic">Tracked Events</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Behavior is captured as it happens</h3>
                         <p className="text-[#4B5563] mb-8 leading-relaxed">
                             Sylvan records and timestamps payment events, reserve compliance, and disclosure timing. Evidence is captured consistently, not summarized after the fact.
@@ -251,7 +259,7 @@ export default function MethodologySections() {
 
             {/* Section 04: Enforcement and Accountability */}
             <section className="bg-[#F3F4F1] border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-2 gap-24 items-center">
+                <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div className="order-2 lg:order-1 flex justify-center">
                         <div className="relative py-10 pl-10 pr-4">
                             <div className="absolute left-[59px] top-0 bottom-0 w-px bg-gray-300"></div>
@@ -289,7 +297,7 @@ export default function MethodologySections() {
 
                     <div className="order-1 lg:order-2">
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">04. Accountability</span>
-                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Enforcement and Accountability<br /><span className="italic">standards are maintained.</span></h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Enforcement<br /><span className="italic"> and Accountability</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are maintained over time</h3>
                         <p className="text-[#4B5563] mb-6 leading-relaxed">
                             Reporting failures are treated first as platform compliance matters. Persistent or material non-compliance escalates under the governing documents.
@@ -308,7 +316,7 @@ export default function MethodologySections() {
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
                     <div>
                         <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
-                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability and Record Integrity<br /><span className="italic">evidence is durable.</span></h2>
+                        <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Auditability <br /><span className="italic">and Record Integrity</span></h2>
                         <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is durable and reviewable</h3>
                         <p className="text-[#4B5563] mb-8 leading-relaxed">
                             Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.

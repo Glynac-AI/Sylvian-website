@@ -5,8 +5,9 @@ export default function UseCaseSections() {
     return (
         <>
             {/* Section 01: Verify Before You Commit */}
-            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
+                <div className="max-w-7xl mx-auto px-6 py-24">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <h2 className="text-4xl font-serif text-[#111827] mb-6">Verify Before You Commit</h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
@@ -85,6 +86,7 @@ export default function UseCaseSections() {
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -183,8 +185,9 @@ export default function UseCaseSections() {
             </section>
 
             {/* Section 03: Monitor Your Portfolio in Real-Time */}
-            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
+                <div className="max-w-7xl mx-auto px-6 py-24">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <h2 className="text-4xl font-serif text-[#111827] mb-6">Monitor Your Portfolio in Real-Time</h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
@@ -256,6 +259,7 @@ export default function UseCaseSections() {
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>

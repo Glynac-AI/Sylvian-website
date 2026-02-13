@@ -20,7 +20,7 @@ export default function WhatSylvanTracks() {
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                         Observable Signals
                     </span>
-                    <h2 className="text-2xl lg:text-3xl font-serif mb-6">What Sylvan Tracks<br /><span className="italic">five observable signals.</span></h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif mb-6">What Sylvan Tracks</h2>
                     <p className="text-gray-400 leading-relaxed">
                         Sylvan measures sponsor behavior through five observable signals captured across every transaction. These signals aggregate into longitudinal sponsor operating records.
                     </p>

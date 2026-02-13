@@ -41,14 +41,6 @@ export default function StrategyPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-12 px-6 border-l-4 border-[#D9B44A]">
-                <div className="max-w-7xl mx-auto">
-                    <p className="text-xl italic font-serif leading-relaxed text-gray-700">
-                        &ldquo;Standardized structures ensure comparable sponsor behavior is observed under identical rules and obligations.&rdquo;
-                    </p>
-                </div>
-            </section>
-
             {/* Section 1: The Asset */}
             <section ref={section1Ref} className="py-20 px-6 bg-[#F3F4F1] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#095520]/[0.03] rounded-full blur-3xl" />

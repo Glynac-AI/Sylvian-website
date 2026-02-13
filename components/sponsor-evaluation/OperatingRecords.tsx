@@ -9,7 +9,7 @@ export default function OperatingRecords() {
         <section className="bg-[#013220] py-32 text-white text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="w-16 h-1 bg-[#D9B44A] mx-auto mb-8"></div>
-                <h2 className="text-2xl lg:text-3xl font-serif mb-6">Sponsor Operating Records<br /></h2>
+                <h2 className="text-4xl lg:text-5xl font-serif mb-6">Sponsor Operating Records<br /></h2>
                 <p className="text-xl text-gray-300 font-serif italic mb-12">Longitudinal, comparable, decision-ready</p>
 
                 <div className="grid md:grid-cols-3 gap-8 mb-16 text-left">

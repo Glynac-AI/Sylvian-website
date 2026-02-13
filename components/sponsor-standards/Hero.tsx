@@ -29,7 +29,7 @@ export default function Hero() {
                         Institutional readiness <br />
                         <span className="italic text-gray-300">is required.</span>
                     </h1>
-                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#145A3C] pl-6">
+                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#D9B44A] pl-6">
                         Sylvan is designed to produce institution-grade sponsor operating records. Participation is limited to sponsors that meet clear admission standards and commit to ongoing transparency.
                     </p>
                 </motion.div>

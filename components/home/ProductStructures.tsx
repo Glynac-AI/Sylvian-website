@@ -37,7 +37,7 @@ export default function ProductStructures() {
                     animate={containerInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Three Standardized Product Structures<br /><span className="italic">operating under the same framework.</span></h2>
+                    <h2 className="text-2xl lg:text-3xl font-serif text-[#111827] mb-6">Three Standardized <br /><span className="italic">Product Structures</span></h2>
                     <p className="text-lg text-gray-600 leading-relaxed">
                         Sylvan offers a small, fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
                     </p>

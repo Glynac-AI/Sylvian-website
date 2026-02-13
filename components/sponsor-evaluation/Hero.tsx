@@ -27,7 +27,7 @@ export default function Hero() {
                         Sponsor operating behavior, <br />
                         <span className="italic text-gray-300">made visible.</span>
                     </h1>
-                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#145A3C] pl-6">
+                    <p className="text-lg text-gray-300 leading-relaxed max-w-lg border-l border-[#D9B44A] pl-6">
                         Sylvan shows how real estate sponsors <strong>actually operate</strong> when obligations are real. Not intentions. Not narratives. Observable behavior captured across live financial obligations.
                     </p>
                 </motion.div>

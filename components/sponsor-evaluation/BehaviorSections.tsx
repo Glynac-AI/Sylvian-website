@@ -5,8 +5,9 @@ export default function BehaviorSections() {
     return (
         <>
             {/* Section 01: Payment Behavior */}
-            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
+                <div className="max-w-7xl mx-auto px-6 py-24">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <div className="flex items-center gap-2 mb-4">
                             <div className="w-8 h-px bg-[#D9B44A]"></div>
@@ -82,6 +83,7 @@ export default function BehaviorSections() {
                             </svg>
                         </div>
                     </div>
+                    </div>
                 </div>
             </section>
 
@@ -155,8 +157,9 @@ export default function BehaviorSections() {
             </section>
 
             {/* Section 03: Forecast Accuracy */}
-            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
+                <div className="max-w-7xl mx-auto px-6 py-24">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <div className="flex items-center gap-2 mb-4">
                             <div className="w-8 h-px bg-[#D9B44A]"></div>
@@ -206,6 +209,7 @@ export default function BehaviorSections() {
                                 <text x="450" y="93" fontFamily="Roboto Mono" fontSize="10" fill="#B91C1C" textAnchor="middle">-12% VAR</text>
                             </svg>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -274,8 +278,9 @@ export default function BehaviorSections() {
             </section>
 
             {/* Section 05: Consistency Over Time */}
-            <section className="bg-white max-w-7xl mx-auto px-6 py-24 border-b border-[#E5E7EB]">
-                <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <section className="bg-white border-b border-[#E5E7EB]">
+                <div className="max-w-7xl mx-auto px-6 py-24">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
                     <div className="lg:col-span-5">
                         <div className="flex items-center gap-2 mb-4">
                             <div className="w-8 h-px bg-[#D9B44A]"></div>
@@ -339,6 +344,7 @@ export default function BehaviorSections() {
                                 "Isolated issue in Deal C, quickly resolved. No systemic pattern detected."
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </section>
