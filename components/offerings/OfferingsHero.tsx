@@ -1,14 +1,13 @@
 import Reveal from '@/components/layout/Reveal'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function OfferingsHero() {
     return (
-        <section className="relative flex min-h-screen flex-col items-center justify-center bg-slate-50 px-6 py-24">
-            <div className="mx-auto max-w-[1280px] text-center">
+        <section className="relative flex min-h-screen flex-col items-center justify-center">
+            <div className="section-inner text-center">
                 <Reveal>
-                    <h1 className="mb-6 text-5xl font-bold text-slate-900 lg:text-7xl">
-                        Offerings
-                    </h1>
-                    <p className="mx-auto max-w-2xl text-xl text-slate-600 lg:text-2xl">
+                    <SectionHeading line1="Offerings" line2="Overview" align="center" size="xl" className="mb-6" as="h1" />
+                    <p className="mx-auto max-w-2xl text-base text-slate-600 md:text-lg subtext">
                         One Framework. Three Access Paths.
                     </p>
                 </Reveal>

@@ -1,9 +1,10 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
 
 export default function ComplianceControls() {
     return (
-        <section className="bg-slate-50 px-6 py-24">
-            <div className="mx-auto max-w-[1280px]">
+        <section>
+            <div className="section-inner">
                 <div className="grid gap-8 lg:grid-cols-3">
                     {[
                         {
@@ -32,19 +33,11 @@ export default function ComplianceControls() {
                                 'Discretionary rule changes',
                                 'Undocumented amendments',
                             ],
-                        },
                     ].map((card, i) => (
                         <Reveal key={card.title} delay={i * 100}>
                             <div className="h-full rounded-2xl border border-slate-200 bg-white p-8">
                                 <h3 className="mb-6 text-xl font-bold text-slate-900">{card.title}</h3>
-                                <ul className="space-y-3 text-slate-600">
-                                    {card.items.map((item) => (
-                                        <li key={item} className="flex gap-3">
-                                            <span className="text-blue-600">•</span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <ArrowList items={card.items} className="text-slate-600" />
                             </div>
                         </Reveal>
                     ))}

@@ -1,11 +1,12 @@
 import Reveal from '@/components/layout/Reveal'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function DSTMyths() {
     return (
-        <section className="bg-slate-50 px-6 py-24">
-            <div className="mx-auto max-w-[1280px]">
+        <section>
+            <div className="section-inner">
                 <Reveal>
-                    <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">Common Misconceptions</h2>
+                    <SectionHeading line1="Common" line2="Misconceptions" align="center" size="lg" className="mb-12" />
                 </Reveal>
                 <div className="grid gap-6 lg:grid-cols-3">
                     {[

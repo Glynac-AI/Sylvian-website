@@ -1,60 +1,64 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import Checklist from '@/components/ui/Checklist'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function SuitabilitySection() {
     return (
-        <section className="bg-white px-6 py-24">
-            <div className="mx-auto max-w-[1280px]">
+        <section>
+            <div className="section-inner">
                 <Reveal>
-                    <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">
-                        Suitability Summary
-                    </h2>
+                    <SectionHeading line1="Suitability" line2="Summary" align="center" size="lg" className="mb-12" />
                 </Reveal>
                 <div className="grid gap-8 lg:grid-cols-2">
                     {/* Appropriate */}
                     <Reveal delay={100}>
                         <div className="h-full rounded-2xl border border-blue-200 bg-blue-50/50 p-8 shadow-sm">
-                            <h3 className="mb-6 text-xl font-bold text-blue-900">Appropriate For Investors Who:</h3>
-                            <ul className="space-y-4 text-slate-700">
-                                {[
+                            <SectionHeading
+                                line1="Appropriate For"
+                                line2="Investors Who"
+                                size="md"
+                                className="mb-6"
+                                as="h3"
+                            />
+                            <Checklist
+                                items={[
                                     'Seek private income exposure',
                                     'Can commit capital for the full duration',
-                                    'Value governance and predictability'
-                                ].map((item) => (
-                                    <li key={item} className="flex gap-3">
-                                        <span className="font-bold text-blue-600">✓</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
+                                    'Value governance and predictability',
+                                ]}
+                            />
                         </div>
                     </Reveal>
 
                     {/* Not Appropriate */}
                     <Reveal delay={200}>
                         <div className="h-full rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                            <h3 className="mb-6 text-xl font-bold text-slate-700">Not Appropriate For Investors Who:</h3>
-                            <ul className="space-y-4 text-slate-600">
-                                {[
+                            <SectionHeading
+                                line1="Not Appropriate For"
+                                line2="Investors Who"
+                                size="md"
+                                className="mb-6"
+                                as="h3"
+                            />
+                            <ArrowList
+                                items={[
                                     'Require liquidity',
                                     'Seek development or value-add risk',
-                                    'Expect return targeting or smoothing'
-                                ].map((item) => (
-                                    <li key={item} className="flex gap-3">
-                                        <span className="font-bold text-slate-400">✗</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
+                                    'Expect return targeting or smoothing',
+                                ]}
+                                className="text-slate-600"
+                            />
                         </div>
                     </Reveal>
                 </div>
                 
                 <Reveal delay={300}>
                     <div className="mt-12 text-center">
-                        <p className="text-xl font-medium text-slate-900">
+                        <p className="text-lg font-medium text-slate-900 subtext">
                             Sylvan is not designed to be exciting.
                         </p>
-                        <p className="mt-2 text-lg text-slate-600">
+                        <p className="mt-2 text-base text-slate-600 subtext">
                             It is designed to be reliable in how it behaves.
                         </p>
                     </div>

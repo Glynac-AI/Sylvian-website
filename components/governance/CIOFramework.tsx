@@ -1,13 +1,13 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function CIOFramework() {
     return (
-        <section className="bg-white px-6 py-24">
-            <div className="mx-auto max-w-[1280px]">
+        <section>
+            <div className="section-inner">
                 <Reveal>
-                    <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">
-                        CIO Governance Framework
-                    </h2>
+                    <SectionHeading line1="CIO Governance" line2="Framework" align="center" size="lg" className="mb-12" />
                 </Reveal>
                 <div className="grid gap-8 lg:grid-cols-2">
                     <Reveal delay={100}>
@@ -15,22 +15,18 @@ export default function CIOFramework() {
                             <div className="mb-4 text-sm font-bold uppercase tracking-wider text-blue-600">
                                 Firm Level
                             </div>
-                            <h3 className="mb-6 text-2xl font-bold text-blue-900">One-Time Structure Approval</h3>
-                            <ul className="space-y-3 text-slate-700">
-                                {[
+                            <SectionHeading line1="One-Time" line2="Structure Approval" size="md" className="mb-6" as="h3" />
+                            <ArrowList
+                                items={[
                                     'Capital position within the stack',
                                     'Maximum leverage limits',
                                     'Cash-flow priority and reserve rules',
                                     'Enforcement and amendment restrictions',
                                     'Reporting standards',
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-3">
-                                        <span className="font-bold text-blue-600">•</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <p className="mt-6 text-sm italic text-blue-800">
+                                ]}
+                                className="text-slate-700"
+                            />
+                            <p className="mt-6 text-sm italic text-blue-800 subtext">
                                 Once approved, this structure cannot be modified at the issuance level.
                             </p>
                         </div>
@@ -41,22 +37,18 @@ export default function CIOFramework() {
                             <div className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-500">
                                 Asset Level
                             </div>
-                            <h3 className="mb-6 text-2xl font-bold text-slate-900">Per-Issuance Review</h3>
-                            <ul className="space-y-3 text-slate-700">
-                                {[
+                            <SectionHeading line1="Per-Issuance" line2="Review" size="md" className="mb-6" as="h3" />
+                            <ArrowList
+                                items={[
                                     'Property type and geography',
                                     'Rent history and lease rollover profile',
                                     'Loan-to-value and coverage metrics',
                                     'Reserve levels',
                                     'Duration and exit assumptions',
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-3">
-                                        <span className="font-bold text-slate-400">•</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <p className="mt-6 text-sm italic text-slate-500">
+                                ]}
+                                className="text-slate-700"
+                            />
+                            <p className="mt-6 text-sm italic text-slate-500 subtext">
                                 Issuances cannot alter leverage limits or payment priority.
                             </p>
                         </div>

@@ -1,14 +1,13 @@
 import Reveal from '@/components/layout/Reveal'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function WaterfallRecap() {
     return (
-        <section className="bg-slate-50 px-6 py-24">
-            <div className="mx-auto max-w-[1280px]">
+        <section>
+            <div className="section-inner">
                 <Reveal>
                     <div className="rounded-2xl border border-slate-200 bg-white p-10">
-                        <h2 className="mb-6 text-2xl font-bold text-slate-900">
-                            Cash-Flow Waterfall (Recap)
-                        </h2>
+                        <SectionHeading line1="Cash-Flow Waterfall" line2="Recap" size="md" className="mb-6" />
                         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
                             <div>
                                 <p className="mb-4 text-slate-600">

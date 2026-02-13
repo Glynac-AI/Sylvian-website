@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
 
 @keyframes gradient {
   0%, 100% { background-position: 0% 50%; }
@@ -8,4 +13,34 @@
 
 .animate-gradient {
   animation: gradient 3s ease infinite;
+}
+
+main > section {
+  background-color: #F5F5F3 !important;
+  padding: 3.5rem 1.5rem;
+}
+
+main > section:nth-of-type(even) {
+  background-color: #FFFFFF !important;
+}
+
+@media (min-width: 768px) {
+  main > section {
+    padding: 5rem 1.5rem;
+  }
+}
+
+main p {
+  line-height: 1.5;
+}
+
+.section-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+  width: 100%;
+}
+
+.subtext {
+  line-height: 1.5;
 }

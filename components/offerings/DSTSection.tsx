@@ -1,15 +1,17 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function DSTSection() {
     return (
-        <section id="dst-access" className="bg-slate-50 px-6 py-24 lg:py-32 scroll-mt-20">
-            <div className="mx-auto max-w-[1280px]">
+        <section id="dst-access" className="scroll-mt-20">
+            <div className="section-inner">
                 {/* Section Header */}
                 <Reveal>
-                    <div className="mb-12 border-l-4 border-blue-600 pl-6">
-                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-blue-600">Sample C</div>
-                        <h2 className="text-4xl font-bold text-slate-900">DST Access</h2>
-                        <p className="mt-2 text-xl text-slate-600">
+                    <div className="mb-12 border-l-4 border-[#C6A64A] pl-6">
+                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-[#C6A64A]">Sample C</div>
+                        <SectionHeading line1="DST" line2="Access" size="lg" className="mb-2" />
+                        <p className="text-base text-slate-600 md:text-lg subtext">
                             Same structure. Different wrapper. 1031-compatible.
                         </p>
                     </div>
@@ -138,20 +140,14 @@ export default function DSTSection() {
                     <Reveal delay={350}>
                         <div className="h-full rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
                             <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-slate-400">6) Governance Notes</h3>
-                            <ul className="space-y-3 text-sm text-slate-700">
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>DST is a legal wrapper only; structure unchanged.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>All material events are predefined and documented.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>DST participation does not introduce liquidity.</span>
-                                </li>
-                            </ul>
+                            <ArrowList
+                                items={[
+                                    'DST is a legal wrapper only; structure unchanged.',
+                                    'All material events are predefined and documented.',
+                                    'DST participation does not introduce liquidity.',
+                                ]}
+                                className="text-sm text-slate-700"
+                            />
                              <div className="mt-6 rounded border border-slate-100 bg-slate-50 p-4 text-xs text-slate-500 italic">
                                 Sylvan does not provide tax advice. DST suitability depends on the investor&apos;s advisors.
                             </div>

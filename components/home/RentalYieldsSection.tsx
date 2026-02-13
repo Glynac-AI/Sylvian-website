@@ -26,14 +26,15 @@ export default function RentalYieldsSection() {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-medium">
-                            Access established rental yields without ownership risk
+                        <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-serif font-normal">
+                            <span className="block">Access established rental yields</span>
+                            <span className="block italic text-[#8C9196]">without ownership risk</span>
                         </h2>
                         <div className="space-y-4 leading-relaxed">
-                            <p className="text-[#095520]/75 font-light">
+                            <p className="text-[#095520]/75 font-light subtext">
                                 RIAs can bypass the volatility of developer equity by participating in standardized debt issuance on existing properties. You are buying into proven rental yields rather than betting on the operational success of a developer.
                             </p>
-                            <p className="text-[#095520]/60 font-light">
+                            <p className="text-[#095520]/60 font-light subtext">
                                 You get direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
                             </p>
                         </div>

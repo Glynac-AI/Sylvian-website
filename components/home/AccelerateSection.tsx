@@ -64,13 +64,14 @@ export default function AccelerateSection() {
                         style={{ y: contentY }}
                     >
                         <motion.h2
-                            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-[1.1] tracking-[-0.02em] text-[#095520]"
+                            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-normal leading-[1.1] tracking-[-0.02em] text-[#095520]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            Accelerate capital deployment with a standardized framework
+                            <span className="block">Accelerate capital deployment</span>
+                            <span className="block italic text-[#8C9196]">with a standardized framework</span>
                         </motion.h2>
 
                         <motion.div
@@ -80,10 +81,10 @@ export default function AccelerateSection() {
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true, margin: "-100px" }}
                         >
-                            <p className="text-[#095520]/75">
+                            <p className="text-[#095520]/75 subtext">
                                 RIAs face long approval cycles for unfamiliar investment products. Sylvan structures every investment around existing income-producing real estate held in ring-fenced SPVs with predefined assets and cash flows.
                             </p>
-                            <p className="text-[#095520]/60">
+                            <p className="text-[#095520]/60 subtext">
                                 Approve our framework once, then deploy capital into multiple assets without analyzing a new structure every time.
                             </p>
                         </motion.div>

@@ -1,12 +1,18 @@
-import React from 'react';
-import Reveal from '@/components/layout/Reveal';
+import React from 'react'
+import Reveal from '@/components/layout/Reveal'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function DirectComparisonSection() {
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section>
+      <div className="section-inner">
         <Reveal>
-          <h2 className="text-3xl font-bold text-slate-900 mb-12">Comparison: Sylvan vs. Direct Property Ownership</h2>
+          <SectionHeading
+            line1="Comparison"
+            line2="Sylvan vs. Direct Property Ownership"
+            size="lg"
+            className="mb-12"
+          />
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="grid grid-cols-3 bg-slate-100 p-6 border-b border-slate-200 font-semibold text-slate-900">
               <div>Feature</div>
@@ -29,5 +35,5 @@ export default function DirectComparisonSection() {
         </Reveal>
       </div>
     </section>
-  );
+  )
 }

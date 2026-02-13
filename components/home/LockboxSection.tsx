@@ -56,14 +56,15 @@ export default function LockboxSection() {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-medium">
-                            Lockbox protected cash flows by design
+                        <h2 className="text-3xl md:text-4xl text-[#095520] leading-tight font-serif font-normal">
+                            <span className="block">Lockbox protected cash flows</span>
+                            <span className="block italic text-[#8C9196]">by design</span>
                         </h2>
                         <div className="space-y-4 leading-relaxed">
-                            <p className="text-[#095520]/75 font-light">
+                            <p className="text-[#095520]/75 font-light subtext">
                                 With Sylvan, RIAs do not face uncertainty around cash flow control and capital priority. We enforce a prioritized distribution waterfall where rental income flows to the bank and Sylvan investors before the developer can access a single dollar.
                             </p>
-                            <p className="text-[#095520]/60 font-light">
+                            <p className="text-[#095520]/60 font-light subtext">
                                 You gain the peace of mind that comes from a rigorous legal structure designed specifically to mitigate risk and prioritize the safety of your principal.
                             </p>
                         </div>

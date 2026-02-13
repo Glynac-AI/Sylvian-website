@@ -12,7 +12,9 @@ export default function Navigation() {
 
     const navLinks = [
         { label: 'Why Sylvan', href: '/' },
+        { label: 'Methodology', href: '/methodology' },
         { label: 'Strategy', href: '/how-it-works' },
+        { label: 'Investors', href: '/investors' },
         { label: 'Resources', href: '/library' },
         { label: 'Contact Us', href: '/faq' }
     ]

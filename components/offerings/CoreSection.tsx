@@ -1,15 +1,18 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import BannerQuote from '@/components/ui/BannerQuote'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function CoreSection() {
     return (
-        <section id="core-income" className="bg-slate-50 px-6 py-12 pb-24 lg:pb-32 scroll-mt-20">
-            <div className="mx-auto max-w-[1280px]">
+        <section id="core-income" className="scroll-mt-20">
+            <div className="section-inner">
                 {/* Section Header */}
                 <Reveal>
-                    <div className="mb-12 border-l-4 border-blue-600 pl-6">
-                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-blue-600">Sample A</div>
-                        <h2 className="text-4xl font-bold text-slate-900">Core Income</h2>
-                        <p className="mt-2 text-xl text-slate-600">
+                    <div className="mb-12 border-l-4 border-[#C6A64A] pl-6">
+                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-[#C6A64A]">Sample A</div>
+                        <SectionHeading line1="Core" line2="Income" size="lg" className="mb-2" />
+                        <p className="text-base text-slate-600 md:text-lg subtext">
                             Prioritizes current cash flow. Income reflects actual rent collected.
                         </p>
                     </div>
@@ -146,22 +149,18 @@ export default function CoreSection() {
                     <Reveal delay={350}>
                         <div className="h-full rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
                             <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-slate-400">6) Duration & Governance</h3>
-                            <ul className="space-y-3 text-sm text-slate-700">
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>Exit via asset sale or refinance under predefined terms.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>Exit timing may be extended to preserve income.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                                    <span>Structure approved once; leverage and priority fixed.</span>
-                                </li>
-                            </ul>
-                            <div className="mt-6 rounded border border-slate-100 bg-slate-50 p-4 text-xs text-slate-500 italic">
-                                &quot;If this offering required special rules, it would not qualify for Sylvan.&quot;
+                            <ArrowList
+                                items={[
+                                    'Exit via asset sale or refinance under predefined terms.',
+                                    'Exit timing may be extended to preserve income.',
+                                    'Structure approved once; leverage and priority fixed.',
+                                ]}
+                                className="text-sm text-slate-700"
+                            />
+                            <div className="mt-6">
+                                <BannerQuote backgroundClassName="bg-slate-50" className="text-xs">
+                                    If this offering required special rules, it would not qualify for Sylvan.
+                                </BannerQuote>
                             </div>
                         </div>
                     </Reveal>

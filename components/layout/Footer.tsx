@@ -8,7 +8,6 @@ import Image from 'next/image'
 export default function Footer() {
     return (
         <footer className="bg-[#E8EAE6] py-16 px-6 border-t border-gray-200 relative overflow-hidden">
-
             {/* Subtle Tree Background - Right Side */}
             <div className="absolute right-0 bottom-0 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] pointer-events-none">
                 <Image
@@ -23,16 +22,11 @@ export default function Footer() {
             <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#095520]/[0.015] rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
-
+                <div className="grid md:grid-cols-5 gap-12 mb-12">
                     {/* Brand Column */}
-                    <div className="md:col-span-2">
+                    <div className="md:col-span-2 space-y-4">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
-                            <img
-                                src="/logo.png"
-                                alt="Sylvan Logo"
-                                className="h-10 w-10"
-                            />
+                            <img src="/logo.png" alt="Sylvan Logo" className="h-10 w-10" />
                             <div className="text-2xl tracking-[0.3em] uppercase font-serif text-[#013220] select-none">
                                 S Y L V A N
                             </div>
@@ -73,6 +67,32 @@ export default function Footer() {
                                 </svg>
                             </motion.a>
                         </div>
+                    </div>
+
+                    {/* Platform */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4 tracking-wide text-[#013220]">Platform</h3>
+                        <ul className="space-y-3">
+                            {[
+                                { label: 'Methodology', href: '/methodology' },
+                                { label: 'Investors', href: '/investors' },
+                            ].map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-[#013220]/60 hover:text-[#013220] transition-colors duration-300 font-light inline-block"
+                                    >
+                                        <motion.span
+                                            whileHover={{ x: 4 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="inline-block"
+                                        >
+                                            {link.label}
+                                        </motion.span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Quick Links */}
@@ -130,7 +150,6 @@ export default function Footer() {
                             ))}
                         </ul>
                     </div>
-
                 </div>
 
                 {/* Bottom Bar */}

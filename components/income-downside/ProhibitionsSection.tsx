@@ -1,25 +1,25 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function ProhibitionsSection() {
     return (
-        <section className="bg-slate-900 px-6 py-24 text-white">
-            <div className="mx-auto max-w-[1280px] text-center">
+        <section>
+            <div className="section-inner text-center">
                 <Reveal>
-                    <h2 className="mb-12 text-3xl font-bold">What Never Happens</h2>
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {[
-                            'Leverage increases to support income',
-                            'Mezzanine debt added',
-                            'Assets swapped post-closing',
-                            'Rules rewritten midstream',
-                        ].map((item) => (
-                            <div key={item} className="rounded-xl border border-white/10 bg-white/5 p-6">
-                                <div className="mb-4 text-2xl">✗</div>
-                                <div className="font-medium text-white/80">{item}</div>
-                            </div>
-                        ))}
+                    <SectionHeading line1="What Never" line2="Happens" align="center" size="lg" className="mb-12" />
+                    <div className="max-w-2xl mx-auto text-left">
+                        <ArrowList
+                            items={[
+                                'Leverage increases to support income',
+                                'Mezzanine debt added',
+                                'Assets swapped post-closing',
+                                'Rules rewritten midstream',
+                            ]}
+                            className="text-slate-700"
+                        />
                     </div>
-                    <p className="mt-12 text-white/60">
+                    <p className="mt-12 text-slate-600 subtext">
                         Sylvan does not eliminate risk. It eliminates surprise.
                     </p>
                 </Reveal>

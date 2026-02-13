@@ -1,14 +1,13 @@
 import Reveal from '@/components/layout/Reveal'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function FAQHero() {
     return (
-        <section className="relative flex min-h-screen flex-col items-center justify-center bg-slate-50 px-6 py-24">
-            <div className="mx-auto max-w-[1280px] text-center">
+        <section className="relative flex min-h-screen flex-col items-center justify-center">
+            <div className="section-inner text-center">
                 <Reveal>
-                    <h1 className="mb-6 text-4xl font-bold text-slate-900 lg:text-6xl">
-                        FAQ
-                    </h1>
-                    <p className="mx-auto max-w-2xl text-xl text-slate-600">
+                    <SectionHeading line1="FAQ" line2="Overview" align="center" size="xl" className="mb-6" as="h1" />
+                    <p className="mx-auto max-w-2xl text-base text-slate-600 md:text-lg subtext">
                         Clear Answers to the Questions Advisors and CIOs Actually Ask.
                     </p>
                 </Reveal>

@@ -1,35 +1,36 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function LifecycleSection() {
     return (
-        <section className="bg-white px-6 py-24">
-            <div className="mx-auto max-w-[1280px] space-y-16">
+        <section>
+            <div className="section-inner space-y-16">
                 
                 {/* What Changes vs Not */}
                 <Reveal>
                     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-                        <h2 className="mb-8 text-center text-2xl font-bold text-slate-900">
-                            What Never Changes vs. What Can Change
-                        </h2>
+                        <SectionHeading line1="What Never Changes" line2="vs. What Can Change" align="center" size="md" className="mb-8" />
                         <div className="grid gap-8 lg:grid-cols-2">
                             <div className="bg-white p-6 rounded-xl border border-slate-200">
                                 <h3 className="mb-4 text-lg font-bold text-blue-800">Never Changes</h3>
-                                <ul className="space-y-2 text-slate-700">
-                                    <li>• Legal structure</li>
-                                    <li>• Capital priority</li>
-                                    <li>• Leverage limits</li>
-                                    <li>• Cash-flow and reserve rules</li>
-                                    <li>• Governance and reporting standards</li>
-                                </ul>
+                                <ArrowList
+                                    items={[
+                                        'Legal structure',
+                                        'Capital priority',
+                                        'Leverage limits',
+                                        'Cash-flow and reserve rules',
+                                        'Governance and reporting standards',
+                                    ]}
+                                    className="text-slate-700"
+                                />
                             </div>
                             <div className="bg-white p-6 rounded-xl border border-slate-200">
                                 <h3 className="mb-4 text-lg font-bold text-slate-800">Can Change</h3>
-                                <ul className="space-y-2 text-slate-700">
-                                    <li>• Occupancy</li>
-                                    <li>• Tenant performance</li>
-                                    <li>• Operating expenses</li>
-                                    <li>• Resulting distributions</li>
-                                </ul>
+                                <ArrowList
+                                    items={['Occupancy', 'Tenant performance', 'Operating expenses', 'Resulting distributions']}
+                                    className="text-slate-700"
+                                />
                             </div>
                         </div>
                     </div>
@@ -38,7 +39,7 @@ export default function LifecycleSection() {
                 {/* Lifecycle Overview */}
                 <Reveal delay={200}>
                     <div className="text-center">
-                        <h2 className="mb-6 text-2xl font-bold text-slate-900">Lifecycle Overview</h2>
+                        <SectionHeading line1="Lifecycle" line2="Overview" align="center" size="md" className="mb-6" />
                         <div className="inline-flex flex-wrap justify-center gap-4 text-lg font-medium text-slate-700">
                             <span>Approve structure</span>
                             <span className="text-blue-400">→</span>
@@ -50,7 +51,7 @@ export default function LifecycleSection() {
                             <span className="text-blue-400">→</span>
                             <span>Exit</span>
                         </div>
-                        <p className="mt-6 text-slate-600">
+                        <p className="mt-6 text-slate-600 subtext">
                             This lifecycle repeats over time without re-approving the framework.
                         </p>
                     </div>

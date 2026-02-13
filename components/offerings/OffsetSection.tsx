@@ -1,15 +1,17 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
+import SectionHeading from '@/components/ui/SectionHeading'
 
 export default function OffsetSection() {
     return (
-        <section id="offset-income" className="bg-white px-6 py-24 lg:py-32 border-t border-slate-100 scroll-mt-20">
-            <div className="mx-auto max-w-[1280px]">
+        <section id="offset-income" className="scroll-mt-20">
+            <div className="section-inner">
                 {/* Section Header */}
                 <Reveal>
-                    <div className="mb-12 border-l-4 border-slate-400 pl-6">
-                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-slate-500">Sample B</div>
-                        <h2 className="text-4xl font-bold text-slate-900">Offset Income</h2>
-                        <p className="mt-2 text-xl text-slate-600">
+                    <div className="mb-12 border-l-4 border-[#C6A64A] pl-6">
+                        <div className="mb-2 text-sm font-bold uppercase tracking-wider text-[#C6A64A]">Sample B</div>
+                        <SectionHeading line1="Offset" line2="Income" size="lg" className="mb-2" />
+                        <p className="text-base text-slate-600 md:text-lg subtext">
                             Lower current cash, higher depreciation timing relative to cash.
                         </p>
                     </div>
@@ -138,20 +140,14 @@ export default function OffsetSection() {
                     <Reveal delay={350}>
                         <div className="h-full rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
                             <h3 className="mb-6 text-lg font-bold uppercase tracking-wide text-slate-500">6) Duration & Governance</h3>
-                             <ul className="space-y-3 text-sm text-slate-700">
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400" />
-                                    <span>Identical structure and governance to all Sylvan offerings.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400" />
-                                    <span>Material events are predefined, logged, and escalated.</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400" />
-                                    <span>Exit via asset sale or refinance under predefined terms.</span>
-                                </li>
-                            </ul>
+                             <ArrowList
+                                items={[
+                                    'Identical structure and governance to all Sylvan offerings.',
+                                    'Material events are predefined, logged, and escalated.',
+                                    'Exit via asset sale or refinance under predefined terms.',
+                                ]}
+                                className="text-sm text-slate-700"
+                            />
                         </div>
                     </Reveal>
                 </div>

@@ -1,9 +1,10 @@
 import Reveal from '@/components/layout/Reveal'
+import ArrowList from '@/components/ui/ArrowList'
 
 export default function LibraryGrid() {
     return (
-        <section className="bg-white px-6 py-24">
-            <div className="mx-auto max-w-[1280px] grid gap-8 lg:grid-cols-2">
+        <section>
+            <div className="section-inner grid gap-8 lg:grid-cols-2">
                 {[
                     {
                         category: 'Structural References',
@@ -45,14 +46,7 @@ export default function LibraryGrid() {
                     <Reveal key={section.category} delay={i * 100}>
                         <div className="rounded-2xl border border-slate-200 p-8">
                             <h3 className="mb-6 text-xl font-bold text-slate-900">{section.category}</h3>
-                            <ul className="space-y-3 text-slate-600">
-                                {section.items.map((item) => (
-                                    <li key={item} className="flex gap-3">
-                                        <span className="text-blue-600">•</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
+                            <ArrowList items={section.items} className="text-slate-600" />
                         </div>
                     </Reveal>
                 ))}
