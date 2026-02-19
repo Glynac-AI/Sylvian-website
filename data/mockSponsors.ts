@@ -7,6 +7,28 @@ export interface PaymentEvent {
     amount?: string
 }
 
+export interface LiquidityEvent {
+    date: string
+    event: string
+    amount: string
+    speedDays: number
+}
+
+export interface ForecastRevisionEvent {
+    date: string
+    rationale: string
+    noiImpact: string | null
+    irrImpactBps: number
+    analystNote: string
+}
+
+export interface SystemicMetric {
+    label: string
+    fillPct: number
+    color: 'red' | 'orange' | 'green'
+    statusLabel: string
+}
+
 export interface SponsorOperatingRecord {
     paymentBehavior: {
         onTimeRate: number
@@ -14,6 +36,8 @@ export interface SponsorOperatingRecord {
         latePayments: number
         sponsorInjections: number
         last12Months: PaymentEvent[]
+        liquidityEvents: LiquidityEvent[]
+        avgResponseDays: number
     }
     reserveDiscipline: {
         currentAdequacy: number
@@ -22,22 +46,27 @@ export interface SponsorOperatingRecord {
         managementStyle: 'PROACTIVE' | 'REACTIVE'
         injectionsLTM: number
         bufferAmount: string
+        historicalAdequacy: number[]
     }
     forecastAccuracy: {
         averageVariance: number
         varianceTrend: 'improving' | 'stable' | 'declining'
         reforecastFrequency: string
         lastVariance: number
+        revisionEvents: ForecastRevisionEvent[]
+        volatilityIndex: number
+        dataConfidence: 'High' | 'Medium' | 'Low'
+        volatilityTrend: { label: string; value: number }[]
     }
     disclosureBehavior: {
-        averageDisclosureTime: string
+        avgDays: number
+        worstInstanceDays: number
+        worstInstanceQuarter: string
+        quarterlyTrend: { label: string; days: number }[]
         transparencyRating: 'TOP TIER' | 'STRONG' | 'ADEQUATE'
         issueCount: number
-        exampleEvent?: {
-            issue: string
-            disclosureTime: string
-            resolution: string
-        }
+        proactiveCount: number
+        totalEvents: number
     }
     consistencyOverTime: {
         activeDealCount: number
@@ -47,6 +76,11 @@ export interface SponsorOperatingRecord {
             dealName: string
             status: 'OK' | 'LATE' | 'ISSUE' | 'INJECTION'
         }[]
+    }
+    systemicRecurrence: {
+        riskDetected: boolean
+        analystNote: string
+        metrics: SystemicMetric[]
     }
 }
 
@@ -122,17 +156,23 @@ export const mockSponsors: Sponsor[] = [
                 last12Months: [
                     { month: 'JAN', status: 'on-time' },
                     { month: 'FEB', status: 'on-time' },
-                    { month: 'MAR', status: 'injection', amount: '$125k' },
+                    { month: 'MAR', status: 'on-time' },
                     { month: 'APR', status: 'on-time' },
-                    { month: 'MAY', status: 'late', daysLate: 2 },
+                    { month: 'MAY', status: 'on-time' },
                     { month: 'JUN', status: 'on-time' },
                     { month: 'JUL', status: 'on-time' },
                     { month: 'AUG', status: 'on-time' },
-                    { month: 'SEP', status: 'on-time' },
+                    { month: 'SEP', status: 'injection', amount: '$125k' },
                     { month: 'OCT', status: 'on-time' },
-                    { month: 'NOV', status: 'on-time' },
+                    { month: 'NOV', status: 'injection', amount: '$51k' },
                     { month: 'DEC', status: 'on-time' }
-                ]
+                ],
+                liquidityEvents: [
+                    { date: 'Aug 14', event: 'Debt Shortfall', amount: '$45,000', speedDays: 2 },
+                    { date: 'Feb 01', event: 'Reserve Dip', amount: '$12,500', speedDays: 1 },
+                    { date: 'Nov 10', event: 'Constr. Overrun', amount: '$115,000', speedDays: 5 },
+                ],
+                avgResponseDays: 1.8
             },
             reserveDiscipline: {
                 currentAdequacy: 108,
@@ -140,23 +180,44 @@ export const mockSponsors: Sponsor[] = [
                 actualReserves: '$3.0M',
                 managementStyle: 'PROACTIVE',
                 injectionsLTM: 0,
-                bufferAmount: '+$200k'
+                bufferAmount: '+$200k',
+                historicalAdequacy: [108, 110, 107, 109, 106, 113, 111, 108, 111, 114, 115, 113]
             },
             forecastAccuracy: {
                 averageVariance: -4.2,
                 varianceTrend: 'stable',
                 reforecastFrequency: 'Quarterly with immediate adjustments when needed',
-                lastVariance: -3.8
+                lastVariance: -3.8,
+                revisionEvents: [
+                    { date: 'Aug 10, 2025', rationale: 'Global Model Update', noiImpact: '-5.2%', irrImpactBps: -150, analystNote: 'Insurance premiums +40%' },
+                    { date: 'Feb 15, 2025', rationale: 'Project Helix Re-Budget', noiImpact: null, irrImpactBps: -25, analystNote: 'Added $500k contingency' },
+                ],
+                volatilityIndex: 3.2,
+                dataConfidence: 'High',
+                volatilityTrend: [
+                    { label: 'Q1 24', value: 1.1 },
+                    { label: 'Q2 24', value: -1.0 },
+                    { label: 'Q3 24', value: 2.1 },
+                    { label: 'Q4 24', value: 0.5 },
+                    { label: 'Q1 25', value: -1.8 },
+                    { label: 'Q2 25', value: 0.2 },
+                ]
             },
             disclosureBehavior: {
-                averageDisclosureTime: '< 12 hours',
+                avgDays: 1.4,
+                worstInstanceDays: 35,
+                worstInstanceQuarter: 'Q3 2024',
+                quarterlyTrend: [
+                    { label: 'Q1 24', days: 1.2 },
+                    { label: 'Q2 24', days: 1.5 },
+                    { label: 'Q3 24', days: 35 },
+                    { label: 'Q4 24', days: 1.3 },
+                    { label: 'Q1 25', days: 1.6 },
+                ],
                 transparencyRating: 'TOP TIER',
                 issueCount: 3,
-                exampleEvent: {
-                    issue: 'HVAC system failure at Phoenix property requiring $85k emergency capex',
-                    disclosureTime: '4 hours',
-                    resolution: 'Full resolution plan provided within 18 hours. Repairs completed on schedule.'
-                }
+                proactiveCount: 11,
+                totalEvents: 12,
             },
             consistencyOverTime: {
                 activeDealCount: 8,
@@ -171,6 +232,15 @@ export const mockSponsors: Sponsor[] = [
                     { dealName: 'DEAL F', status: 'OK' },
                     { dealName: 'DEAL G', status: 'INJECTION' },
                     { dealName: 'DEAL H', status: 'OK' }
+                ]
+            },
+            systemicRecurrence: {
+                riskDetected: true,
+                analystNote: 'Reporting delays are systemic (affecting 5/5 assets). Budget issues are localized to Metro Lofts & West End.',
+                metrics: [
+                    { label: 'Reporting Timeliness', fillPct: 40, color: 'red', statusLabel: 'Critical' },
+                    { label: 'Budget Adherence', fillPct: 60, color: 'orange', statusLabel: 'Watchlist' },
+                    { label: 'Payment Reliability', fillPct: 100, color: 'green', statusLabel: 'Healthy' },
                 ]
             }
         },

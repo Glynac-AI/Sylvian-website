@@ -5,7 +5,7 @@ import { use } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SponsorHero from '@/components/sponsors/SponsorHero'
-import SponsorOperatingRecord from '@/components/sponsors/SponsorOperatingRecord'
+import SponsorDetailsTab from '@/components/sponsors/SponsorDetailsTab'
 import SponsorOverview from '@/components/sponsors/SponsorOverview'
 import SponsorPortfolio from '@/components/sponsors/SponsorPortfolio'
 import SponsorCTA from '@/components/sponsors/SponsorCTA'
@@ -32,7 +32,7 @@ export default function SponsorProfilePage({ params }: { params: Promise<{ id: s
         <main className="min-h-screen bg-white">
             <SponsorHero sponsor={sponsor} />
             <SponsorOverview sponsor={sponsor} />
-            <SponsorOperatingRecord operatingRecord={sponsor.operatingRecord} />
+            <SponsorDetailsTab operatingRecord={sponsor.operatingRecord} />
             <SponsorPortfolio portfolioIds={sponsor.activePortfolios} sponsorName={sponsor.name} />
             <SponsorCTA sponsorName={sponsor.name} portfolioIds={sponsor.activePortfolios} />
         </main>
