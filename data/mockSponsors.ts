@@ -67,6 +67,7 @@ export interface SponsorOperatingRecord {
         issueCount: number
         proactiveCount: number
         totalEvents: number
+        exampleEvent?: { issue: string; resolution: string }
     }
     consistencyOverTime: {
         activeDealCount: number
