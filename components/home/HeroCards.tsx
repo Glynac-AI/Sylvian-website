@@ -231,7 +231,7 @@ export default function HeroCards() {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % cards.length)
-        }, 2800)
+        }, 3000)
         return () => clearInterval(interval)
     }, [])
 
