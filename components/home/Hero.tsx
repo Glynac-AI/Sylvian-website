@@ -3,12 +3,13 @@
 
 import { motion } from 'framer-motion'
 import RequestAccessButton from '@/components/RequestAccessButton'
+import HeroCards from '@/components/home/HeroCards'
 
 export default function Hero() {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-24 min-h-[650px] grid lg:grid-cols-3 gap-16 items-center border-b border-[#E5E7EB] overflow-hidden">
+        <section className="max-w-7xl mx-auto px-6 py-24 min-h-[650px] grid lg:grid-cols-2 gap-8 items-center border-b border-[#E5E7EB] overflow-visible">
             <motion.div
-                className="lg:col-span-2"
+                className="lg:col-span-1"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -35,82 +36,12 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-                className="lg:col-span-1"
+                className="lg:col-span-1 flex justify-center"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             >
-                <div className="bg-white p-2 rounded shadow-[0_20px_40px_-4px_rgba(10,63,40,0.1)] border border-[#E5E7EB]">
-                    <div className="bg-gray-50 border-b border-[#E5E7EB] p-3 flex justify-between items-center rounded-t-sm">
-                        <div>
-                            <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                                Record ID: SV-8821
-                            </div>
-                            <div className="text-sm font-bold text-[#0A3F28] font-serif">
-                                Sponsor Operating Record
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                            <span className="text-[9px] font-mono font-bold text-gray-600">LIVE FEED</span>
-                        </div>
-                    </div>
-                    <div className="p-5 space-y-4">
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-xs font-bold text-[#111827]">Cash Flow Stress Test</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: DSCR-STRESS-01
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-xs font-mono font-bold text-[#111827]">PASS (1.45x)</div>
-                                <div className="text-[10px] text-green-600 font-bold uppercase tracking-wide">
-                                    ● Verified
-                                </div>
-                            </div>
-                        </div>
-                        <div className="h-px bg-gray-100 w-full"></div>
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-xs font-bold text-[#111827]">Reserve Maintenance</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: RES-FUND-04
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-xs font-mono font-bold text-[#111827]">102% Funded</div>
-                                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wide">
-                                    Target: 100%
-                                </div>
-                            </div>
-                        </div>
-                        <div className="h-px bg-gray-100 w-full"></div>
-                        <div className="flex items-center justify-between group">
-                            <div className="flex items-center gap-4">
-                                <div className="w-1 h-8 bg-[#E5E7EB] group-hover:bg-[#0A3F28] transition-colors"></div>
-                                <div>
-                                    <div className="text-xs font-bold text-[#111827]">Disclosure Latency</div>
-                                    <div className="text-[10px] text-gray-400 font-mono uppercase">
-                                        METRIC: COMMS-LAT-09
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-xs font-mono font-bold text-[#111827]">&lt; 24 Hours</div>
-                                <div className="text-[10px] text-[#D9B44A] font-bold uppercase tracking-wide">
-                                    Top Tier
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeroCards />
             </motion.div>
         </section>
     )
