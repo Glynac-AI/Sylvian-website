@@ -29,7 +29,7 @@ type Position = 'center' | 'left' | 'right'
 
 const variants: Variants = {
     center: {
-        scale: 1,
+        scale: 1.12,
         x: 0,
         rotateY: 0,
         opacity: 1,
