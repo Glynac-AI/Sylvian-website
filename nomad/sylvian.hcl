@@ -14,7 +14,7 @@ job "Sylvian-Web-App" {
 
     network {
       port "http" {
-        static       = 3000
+        static       = 3001
         to           = 3000
         host_network = "private"
       }
@@ -35,7 +35,7 @@ job "Sylvian-Web-App" {
 
     constraint {
       attribute = "${attr.unique.hostname}"
-      value     = "Worker-01"
+      value     = "Worker-08"
     }
 
     task "sylvian-web" {
