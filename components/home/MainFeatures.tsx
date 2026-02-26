@@ -7,13 +7,11 @@ import { useRef } from 'react'
 import { useInView } from 'framer-motion'
 
 export default function MainFeatures() {
-    // Refs for each section
     const sec1Ref = useRef(null)
     const sec2Ref = useRef(null)
     const sec3Ref = useRef(null)
     const sec4Ref = useRef(null)
 
-    // InView hooks
     const sec1InView = useInView(sec1Ref, { once: true, margin: "-100px" })
     const sec2InView = useInView(sec2Ref, { once: true, margin: "-100px" })
     const sec3InView = useInView(sec3Ref, { once: true, margin: "-100px" })
@@ -41,10 +39,11 @@ export default function MainFeatures() {
 
                         <div className="space-y-4 max-w-md">
                             <p className="text-gray-600 text-base leading-normal">
-                                You see five dimensions of sponsor behavior tracked across every obligation: how reliably they pay and from what source, how they manage capital and reserves under pressure, how accurate their forecasts are against actual performance, how quickly they disclose problems, and whether these patterns hold consistent across multiple deals.
+                                You see how a sponsor actually operates across every deal they bring to Sylvan. Whether they pay reliably and from what source. Whether they maintain required reserves or run lean and hope nothing goes wrong. Whether their original forecasts hold up against real performance. How fast they tell you when something changes. And whether any of these patterns repeat  across multiple projects.
                             </p>
-                            <p className="text-gray-600 text-sm font-medium leading-normal">
-                                Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture that references and pitch decks cannot provide.
+                            {/* Updated to text-base to match the top paragraph perfectly */}
+                            <p className="text-gray-600 text-base leading-normal">
+                                Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture.
                             </p>
                         </div>
                     </motion.div>
@@ -105,10 +104,10 @@ export default function MainFeatures() {
 
                         <div className="space-y-4 max-w-md">
                             <p className="text-gray-600 text-base leading-normal">
-                                Rental income never touches the developer's accounts. Tenants pay directly into a third-party bank-controlled lockbox that functions like an independent escrow.
+                                Rental income never touches the developer's accounts. Tenants pay directly into a lockbox that operates independently of the sponsor entirely.
                             </p>
                             <p className="text-gray-600 text-base leading-normal">
-                                The bank releases funds in strict order enforced by contract. Direct operational expenses are funded first, then Sylvan investors receive their distributions. The developer can only access net profits after your payments are complete.
+                                Funds are released in a strict contractual order that cannot be changed. Sylvan investors are paid first, and only the remaining cash goes to the sponsor.
                             </p>
                         </div>
                     </motion.div>
@@ -135,10 +134,11 @@ export default function MainFeatures() {
 
                         <div className="space-y-4 max-w-md">
                             <p className="text-gray-600 text-base leading-normal">
-                                Every offering on Sylvan uses identical SPV structures, covenant frameworks, reserve requirements, and reporting templates. Sponsors cannot customize formats or negotiate exceptions. When comparing sponsors, each is evaluated against the same obligations, measurements, and standards.
+                                Every offering on Sylvan operates under uniform covenant framework, reserve requirements, and reporting templates. Sponsors cannot negotiate exceptions or customize how they report.
                             </p>
-                            <p className="text-gray-600 text-sm font-medium leading-normal">
-                                This level of structural standardization enables sponsor behavior to be compared consistently across different operators and asset types.
+                            {/* Updated to text-base to match the top paragraph perfectly */}
+                            <p className="text-gray-600 text-base leading-normal">
+                                When you compare two sponsors on Sylvan, you are comparing them against identical obligations and identical measurements.
                             </p>
                         </div>
                     </motion.div>

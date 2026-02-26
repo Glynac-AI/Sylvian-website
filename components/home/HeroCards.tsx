@@ -1,3 +1,4 @@
+// components/home/HeroCards.tsx
 'use client'
 
 import { motion, type Variants } from 'framer-motion'
@@ -29,7 +30,7 @@ type Position = 'center' | 'left' | 'right'
 
 const variants: Variants = {
     center: {
-        scale: 1.12,
+        scale: 1.1, // Slightly reduced from 1.12
         x: 0,
         rotateY: 0,
         opacity: 1,
@@ -38,7 +39,7 @@ const variants: Variants = {
     },
     left: {
         scale: 0.85,
-        x: -210,
+        x: -150, // Reduced from -210 to pull cards closer
         rotateY: 20,
         opacity: 0.55,
         filter: 'blur(1.5px)',
@@ -46,7 +47,7 @@ const variants: Variants = {
     },
     right: {
         scale: 0.85,
-        x: 210,
+        x: 150, // Reduced from 210 to pull cards closer
         rotateY: -20,
         opacity: 0.55,
         filter: 'blur(1.5px)',
@@ -66,28 +67,28 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
     return (
         <div
             style={{
-                width: 300,
-                minHeight: 370,
+                width: 250, // Reduced from 300
+                minHeight: 320, // Reduced from 370
                 borderRadius: 16,
                 border: '1px solid #EEEFF2',
-                padding: 18,
+                padding: 16, // Reduced from 18
                 background: '#F4F6F5',
-                gap: 14,
+                gap: 12,
                 flexShrink: 0,
             }}
             className="flex flex-col"
         >
             {/* Header row */}
             <div className="flex items-start justify-between" style={{ gap: 2 }}>
-                <div style={{ width: 220, gap: 3 }} className="flex flex-col">
+                <div style={{ width: 180, gap: 3 }} className="flex flex-col">
                     <span
-                        className="text-[12px] leading-none"
+                        className="text-[11px] leading-none"
                         style={{ color: '#6B7280', fontWeight: 400 }}
                     >
                         Operating Signals
                     </span>
                     <span
-                        className="text-[16px] font-semibold leading-tight"
+                        className="text-[14px] font-semibold leading-tight"
                         style={{ color: '#1A3C28' }}
                     >
                         {company}
@@ -141,7 +142,7 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
             <div
                 style={{
                     width: '100%',
-                    height: 150,
+                    height: 120, // Reduced from 150
                     overflow: 'hidden',
                     borderRadius: 10,
                     flexShrink: 0,
@@ -150,8 +151,8 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
                 <Image
                     src={image}
                     alt={company}
-                    width={280}
-                    height={150}
+                    width={250}
+                    height={120}
                     className="w-full h-full object-cover"
                     style={{ borderRadius: 8 }}
                 />
@@ -161,7 +162,7 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
             <div className="flex flex-col" style={{ gap: 2, flex: 1 }}>
                 <span
                     style={{
-                        fontSize: 13,
+                        fontSize: 12, // Reduced from 13
                         color: '#6B7280',
                         fontWeight: 400,
                         lineHeight: 1.3,
@@ -171,7 +172,7 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
                 </span>
                 <span
                     style={{
-                        fontSize: 20,
+                        fontSize: 18, // Reduced from 20
                         fontWeight: 700,
                         color: '#1A3C28',
                         lineHeight: 1.2,
@@ -185,11 +186,11 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
             <div
                 style={{
                     width: '100%',
-                    height: 38,
+                    height: 32, // Reduced from 38
                     borderRadius: 20,
                     border: '0.25px solid #88A78B',
-                    paddingTop: 10,
-                    paddingBottom: 10,
+                    paddingTop: 8,
+                    paddingBottom: 8,
                     paddingLeft: 20,
                     paddingRight: 20,
                     background: '#E4EDE4',
@@ -212,7 +213,7 @@ function Card({ company, metric, value, image }: (typeof cards)[0]) {
                 </svg>
                 <span
                     style={{
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: 600,
                         color: '#1A3C28',
                         letterSpacing: '0.01em',
@@ -239,8 +240,9 @@ export default function HeroCards() {
         <div
             style={{
                 position: 'relative',
-                width: 700,
-                height: 420,
+                width: '100%',
+                maxWidth: 550, // Reduced from strict 700px
+                height: 360, // Reduced from 420px
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

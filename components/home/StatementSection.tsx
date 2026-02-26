@@ -29,7 +29,7 @@ export default function StatementSection() {
                     {/* Compact Subtext */}
                     <div className="grid md:grid-cols-2 gap-8 text-left text-gray-600 text-base leading-normal max-w-3xl mx-auto">
                         <p>
-                            You see how sponsors manage cash flow stress, maintain reserves, disclose problems, and forecast performance, not through sponsor-controlled reporting, but through uniform contractual requirements enforced by Sylvan.
+                            You see how sponsors manage cash flow stress, maintain cash reserves, and disclose problems not through what they choose to share, but through uniform contractual requirements.
                         </p>
                         <p>
                             Sponsor evaluation no longer depends on what a sponsor chooses to show. It depends on contractual obligations where non-compliance has immediate, enforceable consequences.
