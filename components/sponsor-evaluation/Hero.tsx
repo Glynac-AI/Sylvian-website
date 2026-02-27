@@ -28,7 +28,7 @@ export default function Hero() {
                         <span className="italic text-gray-300">made visible.</span>
                     </h1>
                     <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
-                        Sylvan shows how real estate sponsors actually operate when obligations are real. Not intentions. Not narratives. Observable behavior captured across live financial obligations.
+                        Sylvan shows you how real estate sponsors operate in both stable conditions and periods of stress.
                     </p>
                 </motion.div>
             </div>

@@ -25,16 +25,13 @@ export default function Hero() {
                     </span>
                     <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-8">
                         Evidence comes from <br />
-                        <span className="italic text-gray-300">obligation, not interpretation.</span>
+                        <span className="italic text-gray-300">obligation, not self-reporting.</span>
                     </h1>
-                    {/* Updated text to use the quote content and style (serif italic) */}
                     <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
-                        Evidence is produced by placing sponsors under standardized contractual obligations and recording what happens when those obligations bind.
+                        Evidence is produced by enforcing standardized reporting obligations, independent of what sponsors choose to communicate.
                     </p>
                 </motion.div>
             </div>
-
-            {/* Quote section removed */}
         </section>
     )
 }

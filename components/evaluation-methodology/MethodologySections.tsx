@@ -34,10 +34,13 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Framework</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Standardized Structures</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Every obligation follows the same framework</h3>
+                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Every obligation follows the same framework.</h3>
 
+                            <p className="text-[#4B5563] mb-4 leading-relaxed">
+                                All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions.
+                            </p>
                             <p className="text-[#4B5563] mb-6 leading-relaxed">
-                                All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions. This ensures behavior is observed under the same rules across sponsors and assets.
+                                This ensures behavior is observed under the same rules across sponsors and assets.
                             </p>
 
                             <div className="flex flex-col">
@@ -197,7 +200,7 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Transparency is not optional</h3>
+                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Reporting is not optional.</h3>
                             <p className="text-[#4B5563] mb-8 leading-relaxed">
                                 Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
                             </p>
@@ -222,25 +225,13 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Observation</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Platform-Tracked Events</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Behavior is captured as it happens</h3>
-                            <p className="text-[#4B5563] mb-8 leading-relaxed">
-                                Sylvan records and timestamps payment events, reserve compliance, and disclosure timing. Evidence is captured consistently, not summarized after the fact.
+                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Behavior is captured as it happens.</h3>
+                            <p className="text-[#4B5563] mb-4 leading-relaxed">
+                                Sylvan records and timestamps every payment event, reserve balance, disclosure, and draw request as it occurs. Nothing is reconstructed after the fact or summarized by the sponsor.
                             </p>
-
-                            <ul className="space-y-4">
-                                <li className="flex gap-3 items-start">
-                                    <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Payment events and delinquencies</span>
-                                </li>
-                                <li className="flex gap-3 items-start">
-                                    <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Source of payments (Cash vs Capital)</span>
-                                </li>
-                                <li className="flex gap-3 items-start">
-                                    <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Reporting revisions and restatements</span>
-                                </li>
-                            </ul>
+                            <p className="text-[#4B5563] mb-8 leading-relaxed">
+                                The record exists independently of what the sponsor chooses to communicate.
+                            </p>
                         </motion.div>
 
                         <motion.div 
@@ -354,15 +345,17 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">04. Accountability</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are maintained over time</h3>
+                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Non-compliance is logged, reviewed, and acted on.</h3>
+                            <p className="text-[#4B5563] mb-4 leading-relaxed">
+                                When a sponsor misses a reporting deadline, breaches a covenant, or discloses a problem late, that event is logged, flagged, and reviewed by Sylvan's governance committee.
+                            </p>
                             <p className="text-[#4B5563] mb-6 leading-relaxed">
-                                Reporting failures are treated first as platform compliance matters. Persistent or material non-compliance escalates under the governing documents.
+                                Sponsors who demonstrate a pattern of opacity or underperformance lose access to capital on the platform.
                             </p>
                             
-                            {/* UPDATED QUOTE STYLE */}
                             <div className="p-6 border-l-2 border-[#D9B44A] bg-white">
                                 <p className="text-sm font-serif italic text-[#111827]">
-                                    "The integrity and consistency of sponsor operating evidence take precedence over platform volume."
+                                    "The integrity of sponsor operating records takes precedence over platform volume."
                                 </p>
                             </div>
                         </motion.div>
@@ -381,12 +374,15 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Auditability and Record Integrity</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is durable and reviewable</h3>
-                            <p className="text-[#4B5563] mb-8 leading-relaxed">
+                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Evidence is timestamped and reviewable.</h3>
+                            <p className="text-[#4B5563] mb-4 leading-relaxed">
                                 Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.
                             </p>
+                            <p className="text-[#4B5563] mb-8 leading-relaxed">
+                                The record cannot be edited retroactively by the sponsor. What happened is what the record shows.
+                            </p>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                Sponsor operating records are suitable for fiduciary documentation.
+                                SPONSOR OPERATING RECORDS ARE BUILT TO WITHSTAND SCRUTINY.
                             </p>
                         </motion.div>
 
