@@ -38,20 +38,20 @@ export default function BehaviorSections() {
                             </div>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Payment Behavior</h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sylvan shows whether payments are made on time, consistently, and from what source.
+                            You see whether scheduled payments are made on time, with each payment logged by due and receipt date. Sylvan shows: 
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    On-time and late payment history
+                                    On-time and late payment history across every obligation 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Payment patterns across multiple obligations
+                                    Whether the asset itself is generating enough to cover payments 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Whether payments are funded by asset cash flow or sponsor capital
+                                    How often and how much the sponsor has stepped in to fill gaps 
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
@@ -172,24 +172,24 @@ export default function BehaviorSections() {
                             </div>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Capital and Reserve Discipline</h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sylvan shows how sponsors manage required reserves and liquidity under real constraints.
+                                You see whether obligations are met from asset cash flow or sponsor capital, with each payment tracked by source, timing, and amount. Sylvan shows: 
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Reserve balances versus required thresholds
+                                    Whether reserve balances meet required thresholds each month 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Frequency and size of sponsor capital injections
+                                    How quickly a sponsor replenishes reserves when they fall short 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Patterns of proactive buffer management versus reactive support
+                                    How often the sponsor has had to inject capital to keep a deal current 
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-gray-200 pt-4">
-                                This reveals whether a sponsor plans for volatility or runs assets lean until intervention is required.
+                                A SPONSOR WHO PLANS FOR PROBLEMS IN ADVANCE IS A DIFFERENT OPERATOR THAN ONE WHO REACTS TO THEM.
                             </p>
                         </motion.div>
                     </div>
@@ -212,24 +212,24 @@ export default function BehaviorSections() {
                             </div>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Forecast Accuracy</h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sylvan shows how closely projected performance matches actual results, and how sponsors respond when it does not.
+                                You see how projections compare to actual results, with forecasts shown against performance and variance clearly measured. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Forecast versus actual performance trends
+                                    How actual performance tracks against the original underwriting baseline 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Magnitude and frequency of variances
+                                    The size and frequency of variances from the locked plan 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Reforecast behavior when conditions change
+                                    How often a sponsor has revised their forecast rather than addressed the gap 
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                This distinguishes disciplined operators from sponsors who maintain optimistic projections too long.
+                                SPONSORS CANNOT REWRITE WHAT THEY PROMISED AT CLOSING. 
                             </p>
                         </motion.div>
 
@@ -313,26 +313,25 @@ export default function BehaviorSections() {
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Transparency</span>
                             </div>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Disclosure Behavior</h2>
-                            <h3 className="text-lg italic font-serif text-gray-500 mb-6">How problems are communicated</h3>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sylvan shows how sponsors disclose issues when they occur, not after the fact.
+                                You see how quickly and transparently issues are disclosed, with timing and revisions tracked. Sylvan shows: 
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Time from issue occurrence to disclosure
+                                    How many days passed between an issue occurring and the sponsor disclosing it 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Disclosure completeness and follow-up
+                                    Whether the sponsor self-reported or Sylvan identified it independently 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Frequency of revisions and restatements
+                                    The proportion of issues the sponsor proactively disclosed versus concealed 
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-gray-200 pt-4">
-                                Timely disclosure is often a stronger signal than performance itself.
+                                TIMELY DISCLOSURE IS OFTEN A STRONGER SIGNAL THAN PERFORMANCE ITSELF. 
                             </p>
                         </motion.div>
                     </div>
@@ -355,24 +354,24 @@ export default function BehaviorSections() {
                             </div>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Consistency Over Time</h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Sylvan aggregates behavior across all obligations to show whether operating patterns hold.
+                                You see whether behavior remains consistent across assets and market cycles, revealing execution patterns over time. Sylvan shows: 
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Stability or volatility in behavior across deals
+                                    Whether the same issues appear across multiple deals or stay isolated to one 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Improvement or deterioration over time
+                                    Whether performance is improving, deteriorating, or holding steady over time 
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Whether issues are isolated or systemic
+                                    How predictable or volatile a sponsor's behavior is across reporting periods 
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                This turns isolated experiences into an operating history.
+                                EVERY DEAL ADDS TO AN OPERATING HISTORY THAT REVEALS PATTERNS. 
                             </p>
                         </motion.div>
 
