@@ -64,14 +64,21 @@ export default function Section2() {
         <Reveal>
           <div className="rounded-2xl border border-slate-200 p-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">
-              Lifecycle Overview
+              Sponsor Behavior Evidence
             </h2>
 
-            <p className="text-slate-700 max-w-3xl">
-              In practice, firms follow a simple lifecycle: approve structure, review
-              issuance, allocate, monitor, and exit. This lifecycle repeats over time
-              without re-approving the framework.
+            <p className="text-slate-700 mb-6 max-w-4xl">
+              Sylvan gives you what sponsor diligence has always lacked: observable, repeatable behavioral evidence.
             </p>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              <p className="text-slate-700 leading-relaxed">
+                Sponsor evaluation no longer depends on what a sponsor chooses to show. You can assess decisions through a fixed structure and consistent operating rules applied across offerings.
+              </p>
+              <p className="text-slate-700 leading-relaxed">
+                You see how sponsors manage cash flow stress, reserves, and reporting under pressure, with behavior disclosed through the same governance and documentation standards each time.
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
