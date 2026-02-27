@@ -10,6 +10,18 @@ const nextConfig: NextConfig = {
                 port: '',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: '*.amazonaws.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'st0r4ge.glynac.ai',
+                port: '9000',
+                pathname: '/**',
+            },
         ],
     },
 }

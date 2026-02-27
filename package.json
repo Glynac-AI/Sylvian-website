@@ -12,6 +12,7 @@
     "@payloadcms/db-postgres": "^3.77.0",
     "@payloadcms/next": "^3.77.0",
     "@payloadcms/richtext-lexical": "^3.77.0",
+    "@payloadcms/storage-s3": "^3.77.0",
     "framer-motion": "^12.26.1",
     "next": "15.4.11",
     "payload": "^3.77.0",
