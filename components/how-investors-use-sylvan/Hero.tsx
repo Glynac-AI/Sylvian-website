@@ -30,7 +30,7 @@ export default function Hero() {
                     </h1>
                     {/* Applied 'font-serif italic' and 'max-w-2xl' to match Methodology page style */}
                     <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
-                        Sylvan provides institutional investors with verified sponsor operating records so allocation decisions can be made on evidence, not pitch decks.
+                        Sylvan gives you a verified operating record on every sponsor so your allocation decisions are based on what sponsors actually do, not what they say they will do.
                     </p>
                 </motion.div>
             </div>

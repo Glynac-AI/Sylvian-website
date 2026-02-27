@@ -35,29 +35,29 @@ export default function UseCaseSections() {
                             </h2>
 
                             <p className="text-gray-600 text-base mb-6 leading-normal">
-                                When evaluating a new or expanding sponsor, investors use Sylvan to review the sponsor's operating record across prior obligations.
+                                Before you commit capital to a sponsor, you can review their operating record across every obligation they have fulfilled on the platform.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You see:</p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    How reliably the sponsor meets payments, and from what source
+                                    How reliably the sponsor meets payments, and whether those payments come from asset cash flow or their own capital
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    How reserves and liquidity are managed under pressure
+                                    Whether they maintain required reserves or deplete them under pressure
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    How forecasts compare to actual performance
+                                    How closely their original projections match what actually happened
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    How quickly and transparently issues are disclosed
+                                    How quickly they disclose problems when they arise
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                This evidence informs whether a sponsor demonstrates the operational discipline required for long-term capital, before that capital is ever deployed.
+                                THESE TELLS YOU HOW A SPONSOR OPERATES BEFORE YOUR CAPITAL IS AT RISK.
                             </p>
                         </motion.div>
 
@@ -209,26 +209,26 @@ export default function UseCaseSections() {
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Historical performance tables
+                                    Performance records measured against the original underwriting
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Deal-level behavior context
+                                    Deal-level behavior tracked across payments, reserves, and disclosures
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Disclosure and monitoring timelines
+                                    Timestamped event logs that show exactly when things happened and when they were reported
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-gray-200 pt-4">
-                                These artifacts plug directly into IC materials and diligence files, allowing committees to evaluate sponsor risk using standardized, comparable evidence rather than subjective assessments.
+                                EVERY RECORD IS BUILT FROM CONTRACTUALLY REQUIRED DATA, NOT SPONSOR-PRODUCED MATERIALS.
                             </p>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Section 03: Monitor Your Portfolio in Real-Time (White) */}
+            {/* Section 03: Monitor Your Portfolio (White) */}
             <section ref={sec3Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -239,33 +239,33 @@ export default function UseCaseSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
-                                Monitor Your Portfolio in Real-Time
+                                Monitor Your Portfolio
                             </h2>
 
                             <p className="text-gray-600 text-base mb-6 leading-normal">
-                                Sylvan is also used after initial allocations to support ongoing sponsor oversight.
+                                After you invest, Sylvan continues capturing sponsor behavior every reporting period. You do not need to wait for something to go wrong to know a sponsor's performance is shifting.
                             </p>
-                            <p className="text-gray-600 text-sm mb-4 font-medium">You rely on Sylvan data to:</p>
+                            <p className="text-gray-600 text-sm mb-4 font-medium">You use Sylvan to:</p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Monitor execution and reporting discipline
+                                    Track whether execution and reporting discipline are holding across periods
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Identify early warning signals before capital impairment
+                                    Identify early warning signals before they become material problems
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Support watchlist and escalation decisions
+                                    Support watchlist and escalation decisions with documented evidence
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Conduct annual sponsor reviews and re-underwriting
+                                    Conduct periodic sponsor reviews with a complete behavioral record already assembled
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                Because all behavior is captured consistently and timestamped, changes in sponsor performance are visible early, not discovered retroactively.
+                                BECAUSE BEHAVIOR IS CAPTURED CONSISTENTLY EVERY MONTH, CHANGES IN SPONSOR PERFORMANCE ARE VISIBLE EARLY.
                             </p>
                         </motion.div>
 
@@ -321,7 +321,7 @@ export default function UseCaseSections() {
                 </div>
             </section>
 
-            {/* Section 04: Automate Your Fiduciary Oversight (Gray) */}
+            {/* Section 04: Support Your Fiduciary Obligations (Gray) */}
             <section ref={sec4Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -394,25 +394,25 @@ export default function UseCaseSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
-                                Automate Your Fiduciary Oversight
+                                Support Your Fiduciary Obligations
                             </h2>
                             
                             <p className="text-gray-600 text-base mb-6 leading-normal">
-                                Sylvan produces durable, auditable records suitable for fiduciary documentation.
+                                Sylvan produces timestamped, auditable records of sponsor performance that exist independently of what sponsors choose to communicate. These records are available for fiduciary documentation and investment committee review.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You use Sylvan to demonstrate:</p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Documented sponsor monitoring
+                                    Documented sponsor monitoring across every active obligation
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Consistent oversight standards across sponsors
+                                    Consistent oversight standards applied uniformly across all sponsors
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Clear audit trails of disclosures and performance events
+                                    Clear audit trails of disclosures, payment events, and performance variances
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
