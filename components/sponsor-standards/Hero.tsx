@@ -26,29 +26,13 @@ export default function Hero() {
                         Sponsor Standards
                     </span>
                     <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-8">
-                        Institutional readiness <br />
-                        <span className="italic text-gray-300">is required.</span>
+                        Institutional standards, <br />
+                        <span className="italic text-gray-300">applied at scale</span>
                     </h1>
                     <p className="text-lg text-gray-300 font-serif italic leading-relaxed max-w-2xl border-l border-[#D9B44A] pl-6">
                         Sylvan is designed to produce institution-grade sponsor operating records. Participation is limited to sponsors that meet clear admission standards and commit to ongoing transparency.
                     </p>
                 </motion.div>
-            </div>
-
-            {/* Quote — bottom right */}
-            <div className="hidden lg:block absolute bottom-28 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 z-10">
-                <div className="flex justify-end">
-                    <motion.div
-                        className="max-w-sm"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-                    >
-                        <p className="text-[15px] text-gray-300 font-serif italic leading-relaxed">
-                            &ldquo;These standards exist to protect the integrity of the evidence and the comparability of sponsor behavior across the platform.&rdquo;
-                        </p>
-                    </motion.div>
-                </div>
             </div>
         </section>
     )
