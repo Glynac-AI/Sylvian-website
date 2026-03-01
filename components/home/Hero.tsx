@@ -8,14 +8,14 @@ import HeroCards from '@/components/home/HeroCards'
 export default function Hero() {
     return (
         <section className="max-w-7xl mx-auto px-6 py-24 min-h-[650px] flex flex-col lg:flex-row gap-12 lg:gap-8 items-center border-b border-[#E5E7EB] overflow-visible">
-            
+
             <motion.div
                 className="flex-1 w-full"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-                <h1 className="text-4xl lg:text-4xl xl:text-5xl font-serif text-[#111827] leading-[1.1] mb-8 pr-4">
+                <h1 className="text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] font-serif text-[#111827] leading-[1.1] mb-8 lg:pr-4">
                     <span className="block font-normal">Know your real estate sponsors</span>
                     <span className="block italic text-[#0A3F28]">before you invest.</span>
                 </h1>
@@ -42,7 +42,7 @@ export default function Hero() {
             >
                 <HeroCards />
             </motion.div>
-            
+
         </section>
     )
 }

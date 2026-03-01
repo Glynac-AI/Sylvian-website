@@ -1,4 +1,3 @@
-// components/sponsor-standards/StandardsSections.tsx
 'use client'
 
 import { motion } from 'framer-motion'
@@ -22,7 +21,7 @@ export default function StandardsSections() {
             <section ref={sec1Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-2 gap-24 items-center">
-                        <motion.div 
+                        <motion.div
                             className="order-2 lg:order-1"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec1InView ? { opacity: 1, x: 0 } : {}}
@@ -62,7 +61,7 @@ export default function StandardsSections() {
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="order-1 lg:order-2 flex justify-center"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec1InView ? { opacity: 1, x: 0 } : {}}
@@ -127,7 +126,7 @@ export default function StandardsSections() {
             <section ref={sec2Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-2 gap-24 items-center">
-                        <motion.div 
+                        <motion.div
                             className="flex justify-center"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec2InView ? { opacity: 1, x: 0 } : {}}
@@ -163,7 +162,7 @@ export default function StandardsSections() {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -206,16 +205,15 @@ export default function StandardsSections() {
             <section ref={sec3Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-2 gap-24 items-center">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Enforcement</span>
                             <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
                             <p className="text-[#4B5563] mb-6 leading-relaxed">
-                                Reporting or disclosure failures are treated first as platform compliance matters, with defined resolution periods. Persistent or material non-compliance can result in:
+                                Standards are enforced to preserve the integrity of sponsor operating records. Reporting or disclosure failures are treated first as platform compliance matters, with defined resolution periods. Persistent or material non-compliance can result in:
                             </p>
                             <ul className="space-y-3 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
@@ -236,7 +234,7 @@ export default function StandardsSections() {
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="flex justify-center"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec3InView ? { opacity: 1, x: 0 } : {}}

@@ -24,7 +24,7 @@ export default function UseCaseSections() {
             <section ref={sec1Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec1InView ? { opacity: 1, x: 0 } : {}}
@@ -61,7 +61,7 @@ export default function UseCaseSections() {
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec1InView ? { opacity: 1, x: 0 } : {}}
@@ -124,7 +124,7 @@ export default function UseCaseSections() {
             <section ref={sec2Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7 order-2 lg:order-1"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec2InView ? { opacity: 1, x: 0 } : {}}
@@ -188,7 +188,7 @@ export default function UseCaseSections() {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5 order-1 lg:order-2"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec2InView ? { opacity: 1, x: 0 } : {}}
@@ -197,7 +197,7 @@ export default function UseCaseSections() {
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Standardize Your Investment Review
                             </h2>
-                            
+
                             <p className="text-gray-600 text-base mb-6 leading-normal">
                                 Sylvan produces investment-committee-ready materials suitable for fiduciary documentation.
                             </p>
@@ -232,7 +232,7 @@ export default function UseCaseSections() {
             <section ref={sec3Ref} className="w-full border-b border-[#E5E7EB] overflow-hidden bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec3InView ? { opacity: 1, x: 0 } : {}}
@@ -269,7 +269,7 @@ export default function UseCaseSections() {
                             </p>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec3InView ? { opacity: 1, x: 0 } : {}}
@@ -325,7 +325,7 @@ export default function UseCaseSections() {
             <section ref={sec4Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid lg:grid-cols-12 gap-16 items-center">
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-7 order-2 lg:order-1"
                             initial={{ opacity: 0, x: -50 }}
                             animate={sec4InView ? { opacity: 1, x: 0 } : {}}
@@ -358,7 +358,7 @@ export default function UseCaseSections() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <span className="text-sm font-bold text-[#111827] block">Consistent oversight standards across sponsors</span>
+                                            <span className="text-sm font-bold text-[#111827] block">Consistent oversight standards applied uniformly across all sponsors</span>
                                         </div>
                                     </div>
 
@@ -369,7 +369,7 @@ export default function UseCaseSections() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <span className="text-sm font-bold text-[#111827] block">Clear audit trails of disclosures and performance events</span>
+                                            <span className="text-sm font-bold text-[#111827] block">Clear audit trails of disclosures, payment events, and performance variances</span>
                                         </div>
                                     </div>
 
@@ -387,7 +387,7 @@ export default function UseCaseSections() {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="lg:col-span-5 order-1 lg:order-2"
                             initial={{ opacity: 0, x: 50 }}
                             animate={sec4InView ? { opacity: 1, x: 0 } : {}}
@@ -396,7 +396,7 @@ export default function UseCaseSections() {
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Support Your Fiduciary Obligations
                             </h2>
-                            
+
                             <p className="text-gray-600 text-base mb-6 leading-normal">
                                 Sylvan produces timestamped, auditable records of sponsor performance that exist independently of what sponsors choose to communicate. These records are available for fiduciary documentation and investment committee review.
                             </p>

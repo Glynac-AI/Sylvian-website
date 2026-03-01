@@ -12,7 +12,7 @@ export default function WhatSylvanTracks() {
     return (
         <section ref={ref} className="bg-[#0A3F28] py-32 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-                <motion.div 
+                <motion.div
                     className="text-center mb-20 max-w-2xl mx-auto"
                     initial={{ opacity: 0, x: -50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -21,7 +21,7 @@ export default function WhatSylvanTracks() {
                     <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em] mb-4 block">
                         Observable Signals
                     </span>
-                    
+
                     <h2 className="text-3xl lg:text-4xl font-serif mb-6 leading-tight">
                         Sylvan's Measurement System
                     </h2>
@@ -33,7 +33,7 @@ export default function WhatSylvanTracks() {
 
                 <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {/* Payment Reliability */}
-                    <motion.div 
+                    <motion.div
                         className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -50,12 +50,12 @@ export default function WhatSylvanTracks() {
                             Payment Reliability
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            Whether scheduled payments are made on time, with each payment logged by due and receipt date.
+                            Whether scheduled payments are made on time, with each payment logged by due and receipt date
                         </p>
                     </motion.div>
 
                     {/* Capital Discipline */}
-                    <motion.div 
+                    <motion.div
                         className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -76,7 +76,7 @@ export default function WhatSylvanTracks() {
                     </motion.div>
 
                     {/* Forecast Accuracy */}
-                    <motion.div 
+                    <motion.div
                         className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -84,8 +84,8 @@ export default function WhatSylvanTracks() {
                     >
                         <div className="h-24 mb-6 border-b border-[#0A3F28] flex items-center justify-center relative">
                             <svg width="100%" height="40" fill="none">
-                                <path d="M0,20 Q25,10 50,20 T100,20" stroke="#6B7280" strokeDasharray="2,2" strokeWidth="1"/>
-                                <path d="M0,20 Q25,12 50,20 T100,20" stroke="#D9B44A" strokeWidth="1.5"/>
+                                <path d="M0,20 Q25,10 50,20 T100,20" stroke="#6B7280" strokeDasharray="2,2" strokeWidth="1" />
+                                <path d="M0,20 Q25,12 50,20 T100,20" stroke="#D9B44A" strokeWidth="1.5" />
                             </svg>
                         </div>
                         <h3 className="text-[#D9B44A] font-bold text-xs uppercase tracking-widest mb-3">
@@ -97,7 +97,7 @@ export default function WhatSylvanTracks() {
                     </motion.div>
 
                     {/* Disclosure Patterns */}
-                    <motion.div 
+                    <motion.div
                         className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -124,7 +124,7 @@ export default function WhatSylvanTracks() {
                     </motion.div>
 
                     {/* Consistency Over Time */}
-                    <motion.div 
+                    <motion.div
                         className="bg-[#072D1C] p-6 rounded border border-[#0A3F28] hover:border-[#D9B44A] transition group"
                         initial={{ opacity: 0, x: 50 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}

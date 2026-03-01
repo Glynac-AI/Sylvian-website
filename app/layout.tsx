@@ -30,6 +30,7 @@ const robotoMono = Roboto_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: 'Sylvan - Standardized Real Estate Sponsor Diligence',
   description: 'Sylvan provides standardized sponsor operating records through enforced contractual obligations and mandatory disclosures. Evaluate how sponsors behave under financial pressure before you commit capital.',
   icons: {
@@ -60,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${robotoMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfairDisplay.variable} ${inter.variable} ${robotoMono.variable}`}>
       <body className="font-sans antialiased flex min-h-screen flex-col bg-[#F9FAFB] text-[#111827]">
         <Navigation />
         <main className="flex-1 flex flex-col pt-16 md:pt-18">{children}</main>

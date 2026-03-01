@@ -19,7 +19,7 @@ export default function StatementSection() {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                     <div className="w-12 h-1 bg-[#0A3F28] mx-auto mb-10"></div>
-                    
+
                     {/* Two-liner Roman/Italic Heading */}
                     <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-[#111827] mb-10">
                         <span className="block font-normal">Sylvan gives you what sponsor diligence has always lacked:</span>
@@ -29,10 +29,10 @@ export default function StatementSection() {
                     {/* Compact Subtext */}
                     <div className="grid md:grid-cols-2 gap-8 text-left text-gray-600 text-base leading-normal max-w-3xl mx-auto">
                         <p>
-                            You see how sponsors manage cash flow stress, maintain cash reserves, and disclose problems not through what they choose to share, but through uniform contractual requirements.
+                            Sponsor evaluation no longer depends on what a sponsor chooses to show. It depends on contractual obligations where non-compliance has immediate, enforceable consequences.
                         </p>
                         <p>
-                            Sponsor evaluation no longer depends on what a sponsor chooses to show. It depends on contractual obligations where non-compliance has immediate, enforceable consequences.
+                            You see how sponsors manage cash flow stress, maintain cash reserves, and disclose problems not through what they choose to share, but through uniform contractual requirements.
                         </p>
                     </div>
                 </motion.div>
