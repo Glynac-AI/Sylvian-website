@@ -29,12 +29,12 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Admission</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Published Admission Criteria</h2>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Published Admission Criteria</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Sponsors are evaluated for participation based on minimum requirements, including:
                             </p>
 
-                            <ul className="space-y-3 mb-6">
+                            <ul className="space-y-4 mb-8">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
                                     <span className="text-sm text-gray-700">Demonstrated operating history in relevant asset types</span>
@@ -57,7 +57,7 @@ export default function StandardsSections() {
                                 </li>
                             </ul>
 
-                            <p className="text-[#4B5563] mt-6 leading-relaxed">
+                            <p className="text-base text-gray-600 mt-6 leading-relaxed">
                                 Admission reflects readiness to operate at an institutional standard, not marketing strength or deal volume.
                             </p>
                         </motion.div>
@@ -169,12 +169,12 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Participation</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements</h2>
+                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Sponsors are required to maintain:
                             </p>
-                            <ul className="space-y-3 mb-8 text-sm text-gray-700">
+                            <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
                                     Timely and complete reporting submitted on fixed schedules
@@ -212,12 +212,12 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Enforcement</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
+                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Reporting or disclosure failures are treated first as platform compliance matters, with defined resolution periods. Persistent or material non-compliance can result in:
                             </p>
-                            <ul className="space-y-3 mb-8 text-sm text-gray-700">
+                            <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
                                     Heightened monitoring status

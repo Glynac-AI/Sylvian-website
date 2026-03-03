@@ -64,7 +64,7 @@ export default function ForCCOsPage() {
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
                                 Ring-Fenced SPVs
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
                                     Each investment sits in its own standalone legal entity, completely separate from the developer's other operations and liabilities.
                                 </p>
@@ -167,7 +167,7 @@ export default function ForCCOsPage() {
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
                                 Standardization by Product Category
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
                                     Sylvan enforces standardized legal, structural, and reporting frameworks within each product category, with no sponsor-specific exceptions. Each transaction of the same product type follows identical documentation, controls, and disclosure requirements.
                                 </p>
@@ -200,7 +200,7 @@ export default function ForCCOsPage() {
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
                                 Your Position is Structurally Protected
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
                                     The developer's equity sits below you in the capital structure. This means their capital acts as a protective cushion for your investment.
                                 </p>

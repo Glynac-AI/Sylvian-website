@@ -36,9 +36,9 @@ export default function BehaviorSections() {
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Reliability</span>
                             </div>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Payment Behavior</h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                            You see whether scheduled payments are made on time, with each payment logged by due and receipt date. Sylvan shows: 
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Payment Behavior</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                                You see whether scheduled payments are made on time, with each payment logged by due and receipt date. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
@@ -170,9 +170,9 @@ export default function BehaviorSections() {
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Discipline</span>
                             </div>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Capital and Reserve Discipline</h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                You see whether obligations are met from asset cash flow or sponsor capital, with each payment tracked by source, timing, and amount. Sylvan shows: 
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Capital and Reserve Discipline</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                                You see whether obligations are met from asset cash flow or sponsor capital, with each payment tracked by source, timing, and amount. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
@@ -210,8 +210,8 @@ export default function BehaviorSections() {
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Accuracy</span>
                             </div>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Forecast Accuracy</h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Forecast Accuracy</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 You see how projections compare to actual results, with forecasts shown against performance and variance clearly measured. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
@@ -312,9 +312,9 @@ export default function BehaviorSections() {
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">04. Transparency</span>
                             </div>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Disclosure Behavior</h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                You see how quickly and transparently issues are disclosed, with timing and revisions tracked. Sylvan shows: 
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Disclosure Behavior</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                                You see how quickly and transparently issues are disclosed, with timing and revisions tracked. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
@@ -352,9 +352,9 @@ export default function BehaviorSections() {
                                 <div className="w-8 h-px bg-[#D9B44A]"></div>
                                 <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">05. History</span>
                             </div>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Consistency Over Time</h2>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                You see whether behavior remains consistent across assets and market cycles, revealing execution patterns over time. Sylvan shows: 
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Consistency Over Time</h2>
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                                You see whether behavior remains consistent across assets and market cycles, revealing execution patterns over time. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">

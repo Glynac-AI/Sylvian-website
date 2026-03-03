@@ -34,7 +34,7 @@ export default function UseCaseSections() {
                                 Verify Before You Commit
                             </h2>
 
-                            <p className="text-gray-600 text-base mb-6 leading-normal">
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Before you commit capital to a sponsor, you can review their operating record across every obligation they have fulfilled on the platform.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You see:</p>
@@ -198,7 +198,7 @@ export default function UseCaseSections() {
                                 Standardize Your Investment Review
                             </h2>
                             
-                            <p className="text-gray-600 text-base mb-6 leading-normal">
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Sylvan produces investment-committee-ready materials suitable for fiduciary documentation.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You use:</p>
@@ -242,7 +242,7 @@ export default function UseCaseSections() {
                                 Monitor Your Portfolio
                             </h2>
 
-                            <p className="text-gray-600 text-base mb-6 leading-normal">
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 After you invest, Sylvan continues capturing sponsor behavior every reporting period. You do not need to wait for something to go wrong to know a sponsor's performance is shifting.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You use Sylvan to:</p>
@@ -397,7 +397,7 @@ export default function UseCaseSections() {
                                 Support Your Fiduciary Obligations
                             </h2>
                             
-                            <p className="text-gray-600 text-base mb-6 leading-normal">
+                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
                                 Sylvan produces timestamped, auditable records of sponsor performance that exist independently of what sponsors choose to communicate. These records are available for fiduciary documentation and investment committee review.
                             </p>
                             <p className="text-gray-600 text-sm mb-4 font-medium">You use Sylvan to demonstrate:</p>
