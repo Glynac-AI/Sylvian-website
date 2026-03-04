@@ -66,10 +66,10 @@ export default function ForCCOsPage() {
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Each investment sits in its own standalone legal entity, completely separate from the developer's other operations and liabilities.
+                                    Each investment sits in its own standalone legal entity, completely separate from the sponsor's other operations and liabilities.
                                 </p>
                                 <p>
-                                    If the developer faces litigation, creditor claims, or bankruptcy, those issues remain outside the SPV. The assets you invested in stay protected and isolated.
+                                    If the developer faces litigation, insolvency, or creditor claims elsewhere in their business, those issues cannot reach the asset you invested in.
                                 </p>
                             </div>
                         </motion.div>
@@ -169,7 +169,7 @@ export default function ForCCOsPage() {
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Sylvan enforces standardized legal, structural, and reporting frameworks within each product category, with no sponsor-specific exceptions. Each transaction of the same product type follows identical documentation, controls, and disclosure requirements.
+                                    Sylvan enforces standardized legal, structural, and reporting frameworks within each product category. Sponsors cannot negotiate exceptions or request carve-outs.
                                 </p>
                                 <p>
                                     This product-level standardization reduces interpretation risk, supports consistent oversight, and ensures sponsor records are defensible, auditable, and comparable within defined governance boundaries.
@@ -202,10 +202,10 @@ export default function ForCCOsPage() {
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    The developer's equity sits below you in the capital structure. This means their capital acts as a protective cushion for your investment.
+                                    As a debt investor on Sylvan, your investment sits above the sponsor's equity in the capital structure. Their capital absorbs losses before yours is affected. This means their capital acts as a protective cushion for your investment.
                                 </p>
                                 <p>
-                                    If portfolio performance declines, the developer's equity absorbs the impact. Your principal remains protected unless their entire position is exhausted first.
+                                    If portfolio performance declines, the sponsor's equity absorbs the impact. Your principal remains protected unless their entire position is exhausted first.
                                 </p>
                             </div>
                         </motion.div>
