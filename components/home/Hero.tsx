@@ -7,7 +7,7 @@ import HeroCards from '@/components/home/HeroCards'
 
 export default function Hero() {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-24 min-h-[650px] flex flex-col lg:flex-row gap-12 lg:gap-8 items-center border-b border-[#E5E7EB] overflow-visible">
+        <section className="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12 lg:gap-8 items-center border-b border-[#E5E7EB] overflow-visible">
             
             <motion.div
                 className="flex-1 w-full"
@@ -21,10 +21,10 @@ export default function Hero() {
                 </h1>
 
                 <div className="space-y-4 mb-10 max-w-lg xl:max-w-xl">
-                    <p className="text-base text-gray-600 leading-normal">
+                    <p className="text-base text-gray-800 leading-normal">
                         Sylvan gives you a standardized operating record on every sponsor, built from contractual obligations and mandatory disclosures.
                     </p>
-                    <p className="text-base text-gray-600 leading-normal">
+                    <p className="text-base text-gray-800 leading-normal">
                         You see how sponsors actually behave under financial pressure before you commit a single dollar.
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-                className="w-full lg:w-[450px] xl:w-[500px] shrink-0 flex justify-center lg:justify-end"
+                className="w-full lg:w-[450px] xl:w-[500px] shrink-0 flex justify-center"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}

@@ -64,15 +64,15 @@ export default function SponsorCard({ sponsor, index }: SponsorCardProps) {
                             <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-3">Operating Record</h4>
                             <div className="space-y-2.5">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-600">Payment Rate</span>
+                                    <span className="text-xs text-gray-800">Payment Rate</span>
                                     <span className="text-xs font-bold text-[#0A3F28]">{sponsor.operatingRecord.paymentBehavior.onTimeRate}%</span>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-600">Reserve Adequacy</span>
+                                    <span className="text-xs text-gray-800">Reserve Adequacy</span>
                                     <span className="text-xs font-bold text-[#0A3F28]">{sponsor.operatingRecord.reserveDiscipline.currentAdequacy}%</span>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-xs text-gray-600">Disclosure</span>
+                                    <span className="text-xs text-gray-800">Disclosure</span>
                                     <span className="text-xs font-bold text-[#0A3F28]">{sponsor.operatingRecord.disclosureBehavior.transparencyRating}</span>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ export default function SponsorCard({ sponsor, index }: SponsorCardProps) {
 
                     {/* Footer */}
                     <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-gray-800">
                             {sponsor.activePortfolios.length} Active {sponsor.activePortfolios.length === 1 ? 'Offering' : 'Offerings'}
                         </span>
                         <div className="flex items-center gap-2 text-[#0A3F28] font-semibold text-sm group-hover:gap-3 transition-all">

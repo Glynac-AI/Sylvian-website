@@ -9,7 +9,7 @@ interface Portfolio {
     id: number
     title: string
     strategy: string
-    noteType: 'Senior Secured' | 'Bridge & Refinance' | 'Completion'
+    noteType: 'Stabilized' | 'Semi-Stabilized' | 'Construction'
     image: string
     targetYield: string
     investmentTerm: string
@@ -41,9 +41,9 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
             case 'Closing Soon':
                 return 'bg-amber-100 text-amber-800 border-amber-200'
             case 'Closed':
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
             default:
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
         }
     }
 
@@ -67,7 +67,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                             />
                             {/* Note Type Badge on Image for List View */}
                             <div className="absolute top-3 left-3 flex gap-2">
-                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520]">
+                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-white border border-[#095520]">
                                     {portfolio.noteType}
                                 </span>
                             </div>
@@ -140,7 +140,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                 </div>
 
                                 {/* CTA Button */}
-                                <button className="ml-auto py-2.5 px-6 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-wider hover:shadow-xl transition-all duration-300 flex items-center gap-2 flex-shrink-0">
+                                <button className="ml-auto py-2.5 px-6 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:shadow-xl transition-all duration-300 flex items-center gap-2 flex-shrink-0">
                                     View Details
                                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -173,7 +173,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                         />
                         {/* Note Type Badge overlaid on image */}
                         <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-sm">
+                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520] text-white border border-[#095520] shadow-sm">
                                 {portfolio.noteType}
                             </span>
                         </div>
@@ -239,7 +239,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                                         </div>
                                     ) : (
                                         <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
-                                            <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className="w-4 h-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
@@ -251,7 +251,7 @@ export default function PortfolioCard({ portfolio, index, viewMode = 'grid' }: P
                         </div>
 
                         {/* CTA Button - Cleaner */}
-                        <button className="w-full py-2.5 px-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-wider hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <button className="w-full py-2.5 px-4 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-wider hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
                             View Details
                             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

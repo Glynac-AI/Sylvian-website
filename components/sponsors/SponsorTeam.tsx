@@ -19,7 +19,7 @@ export default function SponsorTeam({ team }: SponsorTeamProps) {
                     <h2 className="text-4xl font-serif text-[#111827] mb-4">
                         Experience & Expertise
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-800 max-w-2xl mx-auto">
                         A proven team with deep institutional experience
                     </p>
                 </div>
@@ -50,7 +50,7 @@ export default function SponsorTeam({ team }: SponsorTeamProps) {
                                     <p className="text-sm text-[#D9B44A] font-semibold uppercase tracking-wide mb-2">
                                         {member.role}
                                     </p>
-                                    <p className="text-xs text-gray-600 font-medium mb-3 italic">
+                                    <p className="text-xs text-gray-800 font-medium mb-3 italic">
                                         {member.experience}
                                     </p>
                                     <p className="text-sm text-gray-700 leading-relaxed">

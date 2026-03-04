@@ -28,7 +28,7 @@ export default function PortfolioFilters({
     const [selectedTerm, setSelectedTerm] = useState('All')
 
     const statusOptions = ['All', 'Active', 'Closing Soon', 'Closed']
-    const structureOptions = ['All', 'Senior Secured', 'Bridge & Refinance', 'Completion']
+    const structureOptions = ['All', 'Stabilized', 'Semi-Stabilized', 'Construction']
     const investmentRanges = ['All', '$25k-$50K', '$50K-$100K', '$100K-$250K', '$250K+']
     const termOptions = ['All', '1-3 years', '3-5 years', '5-7 years', '7+ years']
 
@@ -53,7 +53,7 @@ export default function PortfolioFilters({
                                     onClick={() => setSelectedStructure(structure)}
                                     className={`px-4 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                                         selectedStructure === structure
-                                            ? 'bg-[#D9B44A] text-[#0A3F28]'
+                                            ? 'bg-white text-[#0A3F28]'
                                             : 'text-white/70 hover:text-white border border-white/20 hover:border-white/40'
                                     }`}
                                 >
@@ -129,7 +129,7 @@ export default function PortfolioFilters({
                                         setMinInvestment('All')
                                         setSelectedTerm('All')
                                     }}
-                                    className="text-xs text-[#D9B44A] hover:text-[#D9B44A]/80 transition-colors uppercase tracking-wide"
+                                    className="text-xs text-white/70 hover:text-white transition-colors uppercase tracking-wide"
                                 >
                                     Clear
                                 </motion.button>

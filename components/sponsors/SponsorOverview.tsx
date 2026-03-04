@@ -41,12 +41,12 @@ export default function SponsorOverview({ sponsor }: SponsorOverviewProps) {
                             </div>
                             <div className="flex gap-6">
                                 <div className="text-center">
-                                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-1">Active Since</p>
+                                    <p className="text-xs text-gray-800 uppercase tracking-widest mb-1">Active Since</p>
                                     <p className="text-2xl font-bold text-[#0A3F28]">{sponsor.platformAdmissionDate.split(' ')[1]}</p>
                                 </div>
                                 <div className="w-px bg-[#E5E7EB]"></div>
                                 <div className="text-center">
-                                    <p className="text-xs text-gray-600 uppercase tracking-widest mb-1">Compliance</p>
+                                    <p className="text-xs text-gray-800 uppercase tracking-widest mb-1">Compliance</p>
                                     <p className="text-2xl font-bold text-[#0A3F28]">{sponsor.complianceStatus}</p>
                                 </div>
                             </div>

@@ -34,12 +34,12 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Framework</span>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Standardized Structures</h2>
-                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Every obligation follows the same framework.</h3>
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Every obligation follows the same framework.</h3>
 
-                            <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                            <p className="text-base text-gray-800 mb-4 leading-relaxed">
                                 All offerings on Sylvan use identical structural foundations. Sponsors cannot customize structures or negotiate exceptions.
                             </p>
-                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-base text-gray-800 mb-6 leading-relaxed">
                                 This ensures behavior is observed under the same rules across sponsors and assets.
                             </p>
 
@@ -200,8 +200,8 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Requirements</span>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Mandatory Uniform Reporting</h2>
-                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Reporting is not optional.</h3>
-                            <p className="text-base text-gray-600 mb-8 leading-relaxed">
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Reporting is not optional.</h3>
+                            <p className="text-base text-gray-800 mb-8 leading-relaxed">
                                 Sponsors report on fixed schedules using standardized templates required by Sylvan. Custom sponsor formats are not permitted.
                             </p>
                             <div className="p-6 border-l-2 border-[#D9B44A] bg-white">
@@ -225,11 +225,11 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Observation</span>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Platform-Tracked Events</h2>
-                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Behavior is captured as it happens.</h3>
-                            <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Behavior is captured as it happens.</h3>
+                            <p className="text-base text-gray-800 mb-4 leading-relaxed">
                                 Sylvan records and timestamps every payment event, reserve balance, disclosure, and draw request as it occurs. Nothing is reconstructed after the fact or summarized by the sponsor.
                             </p>
-                            <p className="text-base text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-base text-gray-800 mb-8 leading-relaxed">
                                 The record exists independently of what the sponsor chooses to communicate.
                             </p>
                         </motion.div>
@@ -345,11 +345,11 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">04. Accountability</span>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
-                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Non-compliance is logged, reviewed, and acted on.</h3>
-                            <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Non-compliance is logged, reviewed, and acted on.</h3>
+                            <p className="text-base text-gray-800 mb-4 leading-relaxed">
                                 When a sponsor misses a reporting deadline, breaches a covenant, or discloses a problem late, that event is logged, flagged, and reviewed by Sylvan's governance committee.
                             </p>
-                            <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-base text-gray-800 mb-6 leading-relaxed">
                                 Sponsors who demonstrate a pattern of opacity or underperformance lose access to capital on the platform.
                             </p>
                             
@@ -374,11 +374,11 @@ export default function MethodologySections() {
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">05. Integrity</span>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Auditability and Record Integrity</h2>
-                            <h3 className="text-lg text-gray-600 mb-6 font-medium">Evidence is timestamped and reviewable.</h3>
-                            <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Evidence is timestamped and reviewable.</h3>
+                            <p className="text-base text-gray-800 mb-4 leading-relaxed">
                                 Sylvan maintains timestamped event logs, version-controlled reporting history, and preserved disclosure timelines.
                             </p>
-                            <p className="text-base text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-base text-gray-800 mb-8 leading-relaxed">
                                 The record cannot be edited retroactively by the sponsor. What happened is what the record shows.
                             </p>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">

@@ -382,7 +382,7 @@ function OverviewTab({ record }: { record: SponsorOperatingRecord }) {
                         <tbody>
                             {forecastAccuracy.revisionEvents.map((e, i) => (
                                 <tr key={i} className="border-b border-gray-100 last:border-0">
-                                    <td className="px-6 py-4 text-gray-600">{e.date}</td>
+                                    <td className="px-6 py-4 text-gray-800">{e.date}</td>
                                     <td className="px-6 py-4 font-semibold text-gray-800">{e.rationale}</td>
                                     <td className="px-6 py-4 font-semibold text-red-500">
                                         {e.noiImpact ? <>▼ {e.noiImpact}</> : <span className="text-gray-400">--</span>}
@@ -460,7 +460,7 @@ function OverviewTab({ record }: { record: SponsorOperatingRecord }) {
                             {Math.round((disclosureBehavior.proactiveCount / disclosureBehavior.totalEvents) * 100)}%
                         </p>
                         <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mt-2">Self-Reported</p>
-                        <p className="text-sm text-gray-600 mt-2">
+                        <p className="text-sm text-gray-800 mt-2">
                             {disclosureBehavior.proactiveCount} of {disclosureBehavior.totalEvents} Events Proactive
                         </p>
                     </div>

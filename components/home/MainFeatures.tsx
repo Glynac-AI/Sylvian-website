@@ -38,11 +38,11 @@ export default function MainFeatures() {
                         </h2>
 
                         <div className="space-y-4 max-w-md">
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 You see how a sponsor actually operates across every deal they bring to Sylvan. Whether they pay reliably and from what source. Whether they maintain required reserves or run lean and hope nothing goes wrong. Whether their original forecasts hold up against real performance. How fast they tell you when something changes. And whether any of these patterns repeat  across multiple projects.
                             </p>
                             {/* Updated to text-base to match the top paragraph perfectly */}
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 Every metric is timestamped, contractually required, and captured uniformly, giving you the complete operating picture.
                             </p>
                         </div>
@@ -103,10 +103,10 @@ export default function MainFeatures() {
                         </h2>
 
                         <div className="space-y-4 max-w-md">
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 Rental income never touches the developer's accounts. Tenants pay directly into a lockbox that operates independently of the sponsor entirely.
                             </p>
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 Funds are released in a strict contractual order that cannot be changed. Sylvan investors are paid first, and only the remaining cash goes to the sponsor.
                             </p>
                         </div>
@@ -133,11 +133,11 @@ export default function MainFeatures() {
                         </h2>
 
                         <div className="space-y-4 max-w-md">
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 Every offering on Sylvan operates under uniform covenant framework, reserve requirements, and reporting templates. Sponsors cannot negotiate exceptions or customize how they report.
                             </p>
                             {/* Updated to text-base to match the top paragraph perfectly */}
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 When you compare two sponsors on Sylvan, you are comparing them against identical obligations and identical measurements.
                             </p>
                         </div>
@@ -214,10 +214,10 @@ export default function MainFeatures() {
                         </h2>
 
                         <div className="space-y-4 max-w-md">
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 Taking debt positions on existing income producing properties lets you bypass the volatility of developer equity. You are buying into proven rental yields rather than betting on the operational success of a developer.
                             </p>
-                            <p className="text-gray-600 text-base leading-normal">
+                            <p className="text-gray-800 text-base leading-normal">
                                 This gives you direct exposure to the performance of the real estate asset itself with a clear and secure path to returns.
                             </p>
                         </div>

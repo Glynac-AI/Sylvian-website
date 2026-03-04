@@ -34,9 +34,9 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
             case 'Closing Soon':
                 return 'bg-amber-50 text-amber-700 border-amber-200'
             case 'Closed':
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
             default:
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
         }
     }
 

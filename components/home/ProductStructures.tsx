@@ -40,7 +40,7 @@ export default function ProductStructures() {
                         Three Standardized Product Structures
                     </h2>
                     
-                    <p className="text-base text-gray-600 leading-normal max-w-2xl mx-auto">
+                    <p className="text-base text-gray-800 leading-normal max-w-2xl mx-auto">
                         Sylvan offers a fixed set of standardized structured-income products. Each structure serves a distinct purpose while operating under the same contractual, reporting, and disclosure framework.
                     </p>
                 </motion.div>
@@ -61,7 +61,7 @@ export default function ProductStructures() {
                             <div className="bg-white rounded-lg shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] pt-12 pb-8 px-8 text-center h-full border border-gray-100 flex flex-col justify-center">
                                 <h3 className="font-serif text-2xl text-[#013220] mb-6">{product.title}</h3>
                                 <div className="w-full h-px bg-[#013220] mb-6"></div>
-                                <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                                <p className="text-gray-800 text-sm leading-relaxed">{product.description}</p>
                             </div>
                         </motion.div>
                     ))}
