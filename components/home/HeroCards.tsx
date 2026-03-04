@@ -86,7 +86,6 @@ function Card({ tag, status, statusColor, image, targetYield, title, term, minim
                 width: 260,
                 borderRadius: 16,
                 background: '#ffffff',
-                border: '1px solid #E5E7EB',
                 boxShadow: '0 20px 40px -10px rgba(0,0,0,0.15)',
                 flexShrink: 0,
                 overflow: 'hidden',
