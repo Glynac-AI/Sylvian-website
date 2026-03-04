@@ -30,7 +30,7 @@ export default function PropertyFilters({
             onClick={onClick}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 isSelected
-                    ? 'bg-[#095520] text-yellow-400 shadow-md'
+                    ? 'bg-[#095520] text-white shadow-md'
                     : 'bg-white text-[#095520]/70 hover:bg-[#095520]/5 border border-gray-200'
             }`}
         >

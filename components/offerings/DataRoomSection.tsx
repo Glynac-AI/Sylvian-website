@@ -123,14 +123,14 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 onClick={() => handleCategoryClick(docCategory.category)}
                                                 className={`flex-1 text-left px-4 py-3 rounded-l-xl transition-all duration-200 flex items-center justify-between group ${
                                                     selectedCategory === docCategory.category
-                                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
+                                                        ? 'bg-[#095520] text-white shadow-md'
                                                         : 'text-[#095520] hover:bg-[#095520]/5'
                                                 }`}
                                             >
                                                 <span className="text-sm font-medium">{docCategory.category}</span>
                                                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                                                     selectedCategory === docCategory.category
-                                                        ? 'bg-yellow-400/20 text-yellow-400'
+                                                        ? 'bg-white/20 text-white'
                                                         : 'bg-[#095520]/10 text-[#095520] group-hover:bg-[#095520]/20'
                                                 }`}>
                                                     {docCategory.files.length}
@@ -142,7 +142,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                 onClick={() => toggleDropdown(docCategory.category)}
                                                 className={`px-3 rounded-r-xl transition-all duration-200 ${
                                                     selectedCategory === docCategory.category
-                                                        ? 'bg-[#095520] text-yellow-400 shadow-md'
+                                                        ? 'bg-[#095520] text-white shadow-md'
                                                         : 'text-[#095520] hover:bg-[#095520]/5'
                                                 }`}
                                             >
@@ -290,7 +290,7 @@ export default function DataRoomSection({ documents, propertyTitle }: DataRoomSe
                                                         </div>
                                                     </div>
                                                     <div className="shrink-0">
-                                                        <button className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-wider transition-all duration-300 bg-[#095520] text-yellow-400 hover:shadow-lg whitespace-nowrap">
+                                                        <button className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-wider transition-all duration-300 bg-[#095520] text-white hover:shadow-lg whitespace-nowrap">
                                                             View
                                                         </button>
                                                     </div>

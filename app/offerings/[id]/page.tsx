@@ -77,7 +77,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                         <span className={`px-4 py-1.5 text-sm font-semibold rounded-full shadow-md border ${getStatusColor(portfolio.fundingStatus)}`}>
                             {portfolio.fundingStatus}
                         </span>
-                        <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#095520] text-yellow-400 border border-[#095520] shadow-md">
+                        <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-[#095520] text-white border border-[#095520] shadow-md">
                             {portfolio.noteType}
                         </span>
                     </div>
@@ -455,7 +455,7 @@ export default function PortfolioDetailPage({ params }: { params: Promise<{ id: 
                                     </div>
                                 </div>
 
-                                <button className="w-full py-4 px-6 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-widest hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100 mb-4">
+                                <button className="w-full py-4 px-6 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-widest hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:translate-y-0 active:scale-100 mb-4">
                                     Express Interest
                                 </button>
 
