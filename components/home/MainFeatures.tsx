@@ -1,10 +1,12 @@
 // components/home/MainFeatures.tsx
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import SponsorKnowledgeGraph from '@/components/home/SponsorKnowledgeGraph'
+import LockboxVisual from '@/components/home/LockboxVisual'
+import PrismVisual from '@/components/home/PrismVisual'
 
 export default function MainFeatures() {
     const sec1Ref = useRef(null)
@@ -48,21 +50,13 @@ export default function MainFeatures() {
                         </div>
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className="order-1 lg:order-2 flex justify-center"
                         initial={{ opacity: 0, x: 50 }}
                         animate={sec1InView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                     >
-                        <div className="relative w-full max-w-md">
-                            <Image
-                                src="/home/operating-visibility.svg"
-                                alt="Five dimensions of sponsor behavior tracking"
-                                width={500}
-                                height={500}
-                                className="w-full h-auto"
-                            />
-                        </div>
+                        <SponsorKnowledgeGraph />
                     </motion.div>
                 </div>
             </section>
@@ -70,21 +64,13 @@ export default function MainFeatures() {
             {/* Section 02: Lockbox Protected Payment Priority (Gray) */}
             <section ref={sec2Ref} className="w-full bg-[#F9FAFB] border-b border-[#E5E7EB] overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-24 items-center">
-                    <motion.div 
+                    <motion.div
                         className="order-1 flex justify-center"
                         initial={{ opacity: 0, x: -50 }}
                         animate={sec2InView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                     >
-                        <div className="relative w-full max-w-lg">
-                            <Image
-                                src="/home/lockbox.svg"
-                                alt="Lockbox payment priority flow"
-                                width={600}
-                                height={550}
-                                className="w-full h-auto"
-                            />
-                        </div>
+                        <LockboxVisual />
                     </motion.div>
 
                     <motion.div 
@@ -143,21 +129,13 @@ export default function MainFeatures() {
                         </div>
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className="order-1 lg:order-2 flex justify-center"
                         initial={{ opacity: 0, x: 50 }}
                         animate={sec3InView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                     >
-                        <div className="relative w-full max-w-md">
-                            <Image
-                                src="/home/standardized-comparability.svg"
-                                alt="Standardized comparison across sponsors"
-                                width={500}
-                                height={400}
-                                className="w-full h-auto"
-                            />
-                        </div>
+                        <PrismVisual />
                     </motion.div>
                 </div>
             </section>

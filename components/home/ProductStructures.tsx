@@ -14,7 +14,7 @@ const products = [
     {
         number: 2,
         title: 'Semi-Stabilized Asset Notes',
-        description: 'Senior notes on assets in refinance or repositioning phases, offering higher returns in exchange for defined execution and timing risk.'
+        description: 'Notes on assets in refinance or repositioning phases, offering higher returns in exchange for defined execution and timing risk.'
     },
     {
         number: 3,
