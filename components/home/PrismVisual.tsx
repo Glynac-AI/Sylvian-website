@@ -235,10 +235,10 @@ export default function PrismVisual() {
                     ].map(m => (
                         <div
                             key={m.label}
-                            className="absolute w-full h-8 bg-white border border-gray-200 border-l-[3px] border-l-[#0A3F28] shadow-sm rounded flex items-center px-2"
+                            className="absolute w-full h-8 bg-white border border-gray-200 border-l-[3px] border-l-[#D9B44A] shadow-sm rounded flex items-center px-2"
                             style={{ top: `calc(${m.topPct}% - 16px)` }}
                         >
-                            <span className="text-[9px] font-bold uppercase tracking-wider text-[#0A3F28] leading-tight">
+                            <span className="text-[9px] font-bold uppercase tracking-wider text-[#111827] leading-tight">
                                 {m.label}
                             </span>
                         </div>

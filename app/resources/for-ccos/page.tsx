@@ -56,12 +56,11 @@ export default function ForCCOsPage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            {/* Reverted to Default Green (#095520) */}
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                01. Asset Isolation
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Asset Isolation</span>
                             </div>
-                            {/* Reverted to Default Green (#095520) */}
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Ring-Fenced SPVs
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
@@ -161,10 +160,11 @@ export default function ForCCOsPage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                02. Product Standardization
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Product Standardization</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Standardization by Product Category
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
@@ -194,10 +194,11 @@ export default function ForCCOsPage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                03. Capital Protection
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Capital Protection</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Your Position is Structurally Protected
                             </h2>
                             <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
