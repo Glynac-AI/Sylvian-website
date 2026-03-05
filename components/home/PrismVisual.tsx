@@ -42,7 +42,8 @@ export default function PrismVisual() {
     useEffect(() => {
         const canvas = canvasRef.current
         if (!canvas) return
-        const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+        const el = canvas  // stable non-null ref for inner functions
+        const ctx = el.getContext('2d') as CanvasRenderingContext2D
 
         let animId: number
         let cw = 0
@@ -50,23 +51,23 @@ export default function PrismVisual() {
         const pulses: Pulse[] = []
 
         function resize() {
-            const parent = canvas.parentElement
+            const parent = el.parentElement
             if (!parent) return
             const rect = parent.getBoundingClientRect()
             const dpr = window.devicePixelRatio || 1
-            canvas.width = rect.width * dpr
-            canvas.height = rect.height * dpr
+            el.width = rect.width * dpr
+            el.height = rect.height * dpr
             ctx.setTransform(1, 0, 0, 1, 0, 0)
             ctx.scale(dpr, dpr)
-            canvas.style.width = `${rect.width}px`
-            canvas.style.height = `${rect.height}px`
+            el.style.width = `${rect.width}px`
+            el.style.height = `${rect.height}px`
             cw = rect.width
             ch = rect.height
         }
 
         resize()
         const ro = new ResizeObserver(resize)
-        if (canvas.parentElement) ro.observe(canvas.parentElement)
+        if (el.parentElement) ro.observe(el.parentElement)
 
         const interval = setInterval(() => {
             pulses.push({
