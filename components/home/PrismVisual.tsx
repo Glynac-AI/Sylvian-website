@@ -186,14 +186,14 @@ export default function PrismVisual() {
     }, [])
 
     return (
-        <div className="relative w-full bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_-15px_rgba(10,63,40,0.08)] p-8 overflow-hidden">
+        <div className="relative w-full p-8 overflow-hidden">
             {/* Header */}
             <div className="text-center mb-8">
-                <h3 className="text-lg font-medium text-[#0A3F28]">Translating Chaos into Comparability</h3>
+                <h3 className="text-lg font-medium text-[#111827]">Translating Chaos into Comparability</h3>
             </div>
 
             {/* Processing stage */}
-            <div className="relative w-full h-[320px] rounded-2xl bg-white overflow-hidden">
+            <div className="relative w-full h-[320px] rounded-2xl overflow-hidden">
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
 
                 {/* Left — raw documents */}
@@ -248,7 +248,7 @@ export default function PrismVisual() {
 
             {/* Footer */}
             <div className="text-center mt-5">
-                <p className="text-sm text-gray-500 font-medium">
+                <p className="text-xs text-gray-500 font-medium whitespace-nowrap">
                     Make apples-to-apples comparisons instantly without digging through 10s of documents.
                 </p>
             </div>

@@ -43,40 +43,6 @@ export default function MethodologySections() {
                                 This ensures behavior is observed under the same rules across sponsors and assets.
                             </p>
 
-                            <div className="flex flex-col">
-                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Ring-fenced SPVs</span>
-                                </div>
-                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Standard covenant packages</span>
-                                </div>
-                                <div className="py-4 border-b border-[#E5E7EB] flex items-center gap-3">
-                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Uniform reserve requirements</span>
-                                </div>
-                                <div className="py-4 flex items-center gap-3">
-                                    <div className="w-5 h-5 rounded-full bg-[#0A3F28] flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm font-bold text-[#111827] uppercase tracking-wide">Defined payment mechanics</span>
-                                </div>
-                            </div>
                         </motion.div>
 
                         <motion.div 

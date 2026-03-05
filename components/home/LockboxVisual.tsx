@@ -129,7 +129,7 @@ export default function LockboxVisual() {
     }, [recalcLines, spawn])
 
     return (
-        <div className="relative w-full bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_-15px_rgba(10,63,40,0.08)] p-10 overflow-hidden select-none">
+        <div className="relative w-full p-10 overflow-hidden select-none">
 
             {/* ── Node layout — this is the coordinate root for lines & packets ── */}
             <div ref={wrapRef} className="relative flex items-center justify-between gap-6 min-h-80">

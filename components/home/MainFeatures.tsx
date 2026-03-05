@@ -41,7 +41,7 @@ export default function MainFeatures() {
 
                         <div className="space-y-4 max-w-md">
                             <p className="text-gray-800 text-base leading-normal">
-                                You see how a sponsor actually operates across every deal they bring to Sylvan. Whether they pay reliably and from what source. Whether they maintain required reserves or run lean and hope nothing goes wrong. Whether their original forecasts hold up against real performance. How fast they tell you when something changes. And whether any of these patterns repeat  across multiple projects.
+                                You see how a sponsor operates across every Sylvan deal, including payment reliability and sources, reserve discipline, forecast accuracy, speed of disclosure when conditions change, and whether patterns repeat across projects.
                             </p>
                             {/* Updated to text-base to match the top paragraph perfectly */}
                             <p className="text-gray-800 text-base leading-normal">

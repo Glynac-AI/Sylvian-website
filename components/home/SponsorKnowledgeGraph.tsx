@@ -286,7 +286,7 @@ export default function SponsorKnowledgeGraph() {
     }, [])
 
     return (
-        <div className="relative w-full h-[520px] rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-[0_20px_40px_-15px_rgba(10,63,40,0.08)] cursor-crosshair">
+        <div className="relative w-full h-[520px] cursor-crosshair">
             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
         </div>
     )

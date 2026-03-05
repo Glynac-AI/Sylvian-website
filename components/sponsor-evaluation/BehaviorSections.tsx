@@ -38,24 +38,24 @@ export default function BehaviorSections() {
                             </div>
                             <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Payment Behavior</h2>
                             <p className="text-base text-gray-800 mb-6 leading-relaxed">
-                                You see whether scheduled payments are made on time, with each payment logged by due and receipt date. Sylvan shows:
+                                You see whether scheduled payments are made on time, with each payment logged by due date and receipt date. Sylvan shows:
                             </p>
                             <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    On-time and late payment history across every obligation 
+                                    On-time and late payment history across every obligation
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Whether the asset itself is generating enough to cover payments 
+                                    Frequency and duration of late payments
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    How often and how much the sponsor has stepped in to fill gaps 
+                                    Whether payment delays repeat across multiple periods
                                 </li>
                             </ul>
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                Payment reliability is a baseline expectation. Payment source reveals capital strength and operating stress.
+                                Payment reliability is a baseline expectation. Consistent timing reveals discipline and operational stability.
                             </p>
                         </motion.div>
 
