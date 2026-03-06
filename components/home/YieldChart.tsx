@@ -12,10 +12,10 @@ export default function YieldChart() {
     useEffect(() => {
         alive.current = true
 
-        const volatile = volatileRef.current
-        const stable   = stableRef.current
-        const vLabel   = vLabelRef.current
-        const sLabel   = sLabelRef.current
+        const volatile = volatileRef.current!
+        const stable   = stableRef.current!
+        const vLabel   = vLabelRef.current!
+        const sLabel   = sLabelRef.current!
         if (!volatile || !stable || !vLabel || !sLabel) return
 
         // Measure exact path lengths from the DOM — bulletproof, no guessing
