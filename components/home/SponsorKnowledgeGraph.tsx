@@ -112,6 +112,7 @@ export default function SponsorKnowledgeGraph() {
         let animationId: number
         let time = 0
         let introProgress = 0
+        let lastTime: number | null = null
         let canvasWidth = 0
         let canvasHeight = 0
 
@@ -140,7 +141,7 @@ export default function SponsorKnowledgeGraph() {
         if (el.parentElement) resizeObserver.observe(el.parentElement)
 
         const particleInterval = setInterval(() => {
-            if (introProgress < 0.8) return
+            if (introProgress < 0.8 || document.hidden) return
             const edge = edges[Math.floor(Math.random() * edges.length)]
             particles.push({
                 source: edge.source,
@@ -160,11 +161,13 @@ export default function SponsorKnowledgeGraph() {
         el.addEventListener('mousemove', onMouseMove)
         el.addEventListener('mouseleave', onMouseLeave)
 
-        function animate() {
-            time += 16
+        function animate(now: number) {
+            const delta = lastTime === null ? 16 : Math.min(now - lastTime, 100)
+            lastTime = now
+            time += delta
             const centerX = canvasWidth / 2
             const centerY = canvasHeight / 2
-            const scale = Math.min(1.3, canvasWidth / 600)
+            const scale = Math.min(0.85, canvasWidth / 600)
 
             introProgress += (1 - introProgress) * 0.04
             const easedIntro = 1 - Math.pow(1 - introProgress, 3)
@@ -215,7 +218,7 @@ export default function SponsorKnowledgeGraph() {
             // Draw particles
             for (let i = particles.length - 1; i >= 0; i--) {
                 const p = particles[i]
-                p.progress += p.speed
+                p.progress += p.speed * (delta / 16)
                 if (p.progress >= 1) { particles.splice(i, 1); continue }
 
                 const src = nodes.find(n => n.id === p.source)
@@ -274,7 +277,7 @@ export default function SponsorKnowledgeGraph() {
             animationId = requestAnimationFrame(animate)
         }
 
-        animate()
+        animationId = requestAnimationFrame(animate)
 
         return () => {
             cancelAnimationFrame(animationId)
@@ -286,7 +289,7 @@ export default function SponsorKnowledgeGraph() {
     }, [])
 
     return (
-        <div className="relative w-full h-[520px] cursor-crosshair">
+        <div className="relative w-full h-[240px] md:h-[400px] cursor-crosshair">
             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
         </div>
     )

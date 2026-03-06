@@ -71,8 +71,12 @@ export default function LockboxVisual() {
 
     useEffect(() => {
         let raf: number
-        const tick = () => {
-            setPackets(prev => prev.map(p => ({ ...p, progress: p.progress + p.speed })).filter(p => p.progress < 1))
+        let lastTick: number | null = null
+        const tick = (now: number) => {
+            const delta = lastTick === null ? 16 : Math.min(now - lastTick, 100)
+            lastTick = now
+            const step = delta / 16
+            setPackets(prev => prev.map(p => ({ ...p, progress: p.progress + p.speed * step })).filter(p => p.progress < 1))
             raf = requestAnimationFrame(tick)
         }
         raf = requestAnimationFrame(tick)
@@ -91,6 +95,8 @@ export default function LockboxVisual() {
 
         async function loop() {
             while (alive.current) {
+                if (document.hidden) { await sleep(500); continue }
+
                 setPackets([])
                 setActive(false)
 
@@ -129,7 +135,7 @@ export default function LockboxVisual() {
     }, [recalcLines, spawn])
 
     return (
-        <div className="relative w-full p-10 overflow-hidden select-none">
+        <div className="relative w-full p-3 md:p-8 overflow-hidden select-none">
 
             {/* ── Node layout — this is the coordinate root for lines & packets ── */}
             <div ref={wrapRef} className="relative flex items-center justify-between gap-6 min-h-80">

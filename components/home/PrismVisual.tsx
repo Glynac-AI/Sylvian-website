@@ -70,6 +70,7 @@ export default function PrismVisual() {
         if (el.parentElement) ro.observe(el.parentElement)
 
         const interval = setInterval(() => {
+            if (document.hidden) return
             pulses.push({
                 lineIndex: Math.floor(Math.random() * LINES.length),
                 progress: 0,
@@ -77,7 +78,14 @@ export default function PrismVisual() {
             })
         }, 600)
 
-        function draw() {
+        let lastTime: number | null = null
+
+        function draw(now: number) {
+            // Cap delta to 100ms so a tab wake-up doesn't cause a huge jump
+            const delta = lastTime === null ? 16 : Math.min(now - lastTime, 100)
+            lastTime = now
+            const step = delta / 16  // normalise to 60fps
+
             ctx.clearRect(0, 0, cw, ch)
 
             const centerX = cw / 2
@@ -123,7 +131,7 @@ export default function PrismVisual() {
 
             for (let i = pulses.length - 1; i >= 0; i--) {
                 const p = pulses[i]
-                p.progress += p.speed
+                p.progress += p.speed * step
                 if (p.progress >= 1) { pulses.splice(i, 1); continue }
 
                 const line = LINES[p.lineIndex]
@@ -190,7 +198,7 @@ export default function PrismVisual() {
             animId = requestAnimationFrame(draw)
         }
 
-        draw()
+        animId = requestAnimationFrame(draw)
 
         return () => {
             cancelAnimationFrame(animId)
@@ -200,7 +208,7 @@ export default function PrismVisual() {
     }, [])
 
     return (
-        <div className="relative w-full p-8 md:p-12 overflow-hidden">
+        <div className="relative w-full p-3 md:p-8 overflow-hidden">
             {/* Header */}
             <div className="text-center mb-10">
                 <h3 className="text-lg md:text-2xl font-medium text-[#111827]">Translating Chaos into Comparability</h3>
@@ -261,7 +269,7 @@ export default function PrismVisual() {
 
             {/* Footer */}
             <div className="text-center mt-8">
-                <p className="text-[11px] text-gray-500 font-medium whitespace-nowrap">
+                <p className="text-[11px] text-gray-500 font-medium text-center">
                     Make apples-to-apples comparisons instantly without digging through 10s of documents.
                 </p>
             </div>
