@@ -7,14 +7,11 @@ export const Offerings: CollectionConfig = {
         defaultColumns: ['title', 'sponsor', 'noteType', 'fundingStatus', 'targetYield'],
     },
     access: {
-        // Everyone can read offerings (public listing page)
         read: () => true,
-        // Admins can create any; sponsors can create their own
         create: ({ req: { user } }) => {
             if (!user) return false
             return user.role === 'admin' || user.role === 'sponsor'
         },
-        // Admins can update any; sponsors can only update offerings that belong to them
         update: ({ req: { user } }) => {
             if (!user) return false
             if (user.role === 'admin') return true
@@ -25,10 +22,10 @@ export const Offerings: CollectionConfig = {
             }
             return false
         },
-        // Only admins can delete
         delete: ({ req: { user } }) => user?.role === 'admin',
     },
     fields: [
+
         // ── Core ───────────────────────────────────────────────────
         {
             name: 'title',
@@ -43,9 +40,7 @@ export const Offerings: CollectionConfig = {
             hasMany: false,
             admin: {
                 position: 'sidebar',
-                description: 'Which sponsor is offering this.',
             },
-            // Auto-assign sponsor for sponsor-role users
             hooks: {
                 beforeChange: [
                     ({ value, req }) => {
@@ -84,52 +79,16 @@ export const Offerings: CollectionConfig = {
                 position: 'sidebar',
             },
         },
-
-        // ── Financials ─────────────────────────────────────────────
         {
-            name: 'targetYield',
+            name: 'strategy',
             type: 'text',
-            required: true,
             admin: {
-                description: 'e.g. "8.5%"',
-            },
-        },
-        {
-            name: 'investmentTerm',
-            type: 'text',
-            required: true,
-            admin: {
-                description: 'e.g. "24 Months"',
-            },
-        },
-        {
-            name: 'minimumInvestment',
-            type: 'text',
-            required: true,
-            admin: {
-                description: 'e.g. "$50,000"',
-            },
-        },
-        {
-            name: 'totalRaise',
-            type: 'text',
-            required: true,
-            admin: {
-                description: 'e.g. "$12,000,000"',
-            },
-        },
-        {
-            name: 'fundingProgress',
-            type: 'number',
-            required: true,
-            min: 0,
-            max: 100,
-            admin: {
-                description: 'Percentage funded (0–100)',
+                position: 'sidebar',
+                description: 'e.g. "Diversified Growth", "Value-Add", "Income-Focused"',
             },
         },
 
-        // ── Card visuals ───────────────────────────────────────────
+        // ── Hero Image ─────────────────────────────────────────────
         {
             name: 'image',
             type: 'upload',
@@ -137,25 +96,98 @@ export const Offerings: CollectionConfig = {
             required: true,
         },
 
-        // ── Portfolio metrics (shown on card) ──────────────────────
+        // ── Key Financials (card + detail page) ────────────────────
+        {
+            name: 'targetYield',
+            type: 'text',
+            required: true,
+            admin: { description: 'e.g. "7.8%"' },
+        },
+        {
+            name: 'investmentTerm',
+            type: 'text',
+            required: true,
+            admin: { description: 'e.g. "5 years"' },
+        },
+        {
+            name: 'minimumInvestment',
+            type: 'text',
+            required: true,
+            admin: { description: 'e.g. "$50,000"' },
+        },
+        {
+            name: 'totalRaise',
+            type: 'text',
+            required: true,
+            admin: { description: 'e.g. "$18,500,000"' },
+        },
+        {
+            name: 'fundingProgress',
+            type: 'number',
+            required: true,
+            min: 0,
+            max: 100,
+            admin: { description: 'Percentage funded (0–100)' },
+        },
+
+        // ── Overview ───────────────────────────────────────────────
+        {
+            name: 'description',
+            type: 'textarea',
+        },
+        {
+            name: 'highlights',
+            type: 'array',
+            admin: {
+                description: 'Bullet point highlights shown in the overview section.',
+            },
+            fields: [
+                {
+                    name: 'highlight',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Average 94% occupancy rate"' },
+                },
+            ],
+        },
+
+        // ── Portfolio Metrics ──────────────────────────────────────
         {
             name: 'totalProperties',
             type: 'number',
             required: true,
         },
         {
+            name: 'totalValue',
+            type: 'text',
+            admin: { description: 'e.g. "$112,000,000"' },
+        },
+        {
+            name: 'averageOccupancy',
+            type: 'text',
+            admin: { description: 'e.g. "94%"' },
+        },
+        {
+            name: 'totalSquareFeet',
+            type: 'number',
+            admin: { description: 'Total square footage across all properties' },
+        },
+        {
+            name: 'totalUnits',
+            type: 'number',
+            admin: { description: 'Total residential units (0 for commercial-only portfolios)' },
+        },
+        {
             name: 'geographicMarkets',
             type: 'array',
             required: true,
             minRows: 1,
-            admin: {
-                description: 'Markets this offering covers e.g. "Austin, TX"',
-            },
             fields: [
                 {
                     name: 'market',
                     type: 'text',
                     required: true,
+                    admin: { description: 'e.g. "Austin, TX"' },
                 },
             ],
         },
@@ -163,7 +195,7 @@ export const Offerings: CollectionConfig = {
             name: 'propertyAllocation',
             type: 'array',
             admin: {
-                description: 'Property type breakdown shown on the card.',
+                description: 'Property type breakdown.',
             },
             fields: [
                 {
@@ -179,13 +211,274 @@ export const Offerings: CollectionConfig = {
                     min: 0,
                     max: 100,
                 },
+                {
+                    name: 'count',
+                    type: 'number',
+                    admin: { description: 'Number of properties of this type' },
+                },
             ],
         },
 
-        // ── Description ────────────────────────────────────────────
+        // ── Diversification ────────────────────────────────────────
         {
-            name: 'description',
-            type: 'textarea',
+            name: 'diversification',
+            type: 'group',
+            fields: [
+                {
+                    name: 'geographicDiversification',
+                    type: 'text',
+                    admin: { description: 'e.g. "4 markets across 4 states"' },
+                },
+                {
+                    name: 'assetTypeDiversification',
+                    type: 'text',
+                    admin: { description: 'e.g. "Class A Multifamily"' },
+                },
+                {
+                    name: 'tenantDiversification',
+                    type: 'text',
+                    admin: { description: 'e.g. "485+ residential tenants"' },
+                },
+            ],
+        },
+
+        // ── Risk Factors ───────────────────────────────────────────
+        {
+            name: 'riskFactors',
+            type: 'array',
+            admin: {
+                description: 'Risk factors and mitigations shown on the detail page.',
+            },
+            fields: [
+                {
+                    name: 'risk',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Interest Rate Risk"' },
+                },
+                {
+                    name: 'description',
+                    type: 'textarea',
+                    required: true,
+                },
+                {
+                    name: 'mitigation',
+                    type: 'textarea',
+                    required: true,
+                },
+            ],
+        },
+
+        // ── Individual Properties ──────────────────────────────────
+        {
+            name: 'properties',
+            type: 'array',
+            admin: {
+                description: 'Individual properties in this portfolio.',
+            },
+            fields: [
+                {
+                    name: 'name',
+                    type: 'text',
+                    required: true,
+                },
+                {
+                    name: 'location',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Austin, TX"' },
+                },
+                {
+                    name: 'propertyType',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Multifamily"' },
+                },
+                {
+                    name: 'image',
+                    type: 'upload',
+                    relationTo: 'media',
+                },
+                {
+                    name: 'squareFeet',
+                    type: 'number',
+                },
+                {
+                    name: 'occupancyRate',
+                    type: 'text',
+                    admin: { description: 'e.g. "95%"' },
+                },
+                {
+                    name: 'yearBuilt',
+                    type: 'number',
+                },
+                {
+                    name: 'totalUnits',
+                    type: 'number',
+                    admin: { description: 'Leave blank for commercial properties' },
+                },
+                {
+                    name: 'annualRent',
+                    type: 'text',
+                    admin: { description: 'e.g. "$3,240,000"' },
+                },
+                {
+                    name: 'propertyValue',
+                    type: 'text',
+                    admin: { description: 'e.g. "$28,500,000"' },
+                },
+            ],
+        },
+
+        // ── Capital Stack ──────────────────────────────────────────
+        {
+            name: 'capitalStack',
+            type: 'array',
+            admin: {
+                description: 'Capital stack layers shown in the visualization.',
+            },
+            fields: [
+                {
+                    name: 'layer',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Senior Debt"' },
+                },
+                {
+                    name: 'amount',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "$67,200,000"' },
+                },
+                {
+                    name: 'percentage',
+                    type: 'number',
+                    required: true,
+                    min: 0,
+                    max: 100,
+                },
+                {
+                    name: 'yieldRange',
+                    type: 'text',
+                    admin: { description: 'e.g. "5.5% - 6.0%"' },
+                },
+            ],
+        },
+
+        // ── Investment Structure ───────────────────────────────────
+        {
+            name: 'investmentStructure',
+            type: 'group',
+            fields: [
+                {
+                    name: 'structureType',
+                    type: 'text',
+                    admin: { description: 'e.g. "Ring-Fenced SPV Structure with Individual Lockboxes"' },
+                },
+                {
+                    name: 'totalSeniorDebt',
+                    type: 'text',
+                    admin: { description: 'e.g. "$67,200,000"' },
+                },
+                {
+                    name: 'weightedAvgLTV',
+                    type: 'text',
+                    admin: { description: 'e.g. "60%"' },
+                },
+                {
+                    name: 'weightedAvgDSCR',
+                    type: 'text',
+                    admin: { description: 'e.g. "1.48x"' },
+                },
+                {
+                    name: 'totalReserves',
+                    type: 'text',
+                    admin: { description: 'e.g. "$1,850,000"' },
+                },
+            ],
+        },
+
+        // ── Financials ─────────────────────────────────────────────
+        {
+            name: 'financials',
+            type: 'group',
+            fields: [
+                {
+                    name: 'projectedAnnualReturn',
+                    type: 'text',
+                    admin: { description: 'e.g. "7.8% - 8.5%"' },
+                },
+                {
+                    name: 'cashDistributionSchedule',
+                    type: 'text',
+                    admin: { description: 'e.g. "Quarterly"' },
+                },
+                {
+                    name: 'holdPeriod',
+                    type: 'text',
+                    admin: { description: 'e.g. "5 years"' },
+                },
+                {
+                    name: 'exitStrategy',
+                    type: 'text',
+                    admin: { description: 'e.g. "Selective refinance or portfolio sale"' },
+                },
+                {
+                    name: 'totalAnnualRent',
+                    type: 'text',
+                    admin: { description: 'e.g. "$12,245,000"' },
+                },
+            ],
+        },
+
+        // ── Documents (Data Room) ──────────────────────────────────
+        {
+            name: 'documents',
+            type: 'array',
+            admin: {
+                description: 'Document categories shown in the Data Room section.',
+            },
+            fields: [
+                {
+                    name: 'category',
+                    type: 'text',
+                    required: true,
+                    admin: { description: 'e.g. "Offering Documents"' },
+                },
+                {
+                    name: 'files',
+                    type: 'array',
+                    fields: [
+                        {
+                            name: 'name',
+                            type: 'text',
+                            required: true,
+                            admin: { description: 'e.g. "Portfolio Private Placement Memorandum"' },
+                        },
+                        {
+                            name: 'size',
+                            type: 'text',
+                            admin: { description: 'e.g. "4.8 MB"' },
+                        },
+                        {
+                            name: 'uploadDate',
+                            type: 'date',
+                        },
+                        {
+                            name: 'isGated',
+                            type: 'checkbox',
+                            defaultValue: false,
+                            admin: { description: 'If checked, requires login to access.' },
+                        },
+                        {
+                            name: 'file',
+                            type: 'upload',
+                            relationTo: 'media',
+                            admin: { description: 'Upload the actual file (optional — can just list name/size for display).' },
+                        },
+                    ],
+                },
+            ],
         },
     ],
 }
