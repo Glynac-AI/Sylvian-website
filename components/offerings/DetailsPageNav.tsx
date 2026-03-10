@@ -88,7 +88,7 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
                                             onClick={() => scrollToSection(item.id)}
                                             className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 ${
                                                 activeSection === item.id
-                                                    ? 'bg-[#095520] text-yellow-400 shadow-sm'
+                                                    ? 'bg-[#095520] text-white shadow-sm'
                                                     : 'text-[#095520] hover:bg-[#095520]/10'
                                             }`}
                                         >
@@ -99,7 +99,7 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
 
                                 {/* CTA Button */}
                                 <div className="flex-shrink-0">
-                                    <button className="px-4 py-2 bg-[#095520] text-yellow-400 rounded-full text-xs font-semibold uppercase tracking-wider hover:shadow-lg transition-all duration-300 whitespace-nowrap">
+                                    <button className="px-4 py-2 bg-[#095520] text-white rounded-full text-xs font-semibold uppercase tracking-wider hover:shadow-lg transition-all duration-300 whitespace-nowrap">
                                         Express Interest
                                     </button>
                                 </div>
@@ -160,7 +160,7 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
                                         onClick={() => scrollToSection(item.id)}
                                         className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
                                             activeSection === item.id
-                                                ? 'bg-[#095520] text-yellow-400 font-semibold'
+                                                ? 'bg-[#095520] text-white font-semibold'
                                                 : 'text-[#095520] hover:bg-[#095520]/10 font-medium'
                                         }`}
                                     >
@@ -170,7 +170,7 @@ export default function DetailsPageNav({ portfolioTitle }: DetailsPageNavProps) 
                             </nav>
 
                             <div className="mt-6 pt-6 border-t border-gray-200">
-                                <button className="w-full py-3 bg-[#095520] text-yellow-400 rounded-full text-sm font-semibold uppercase tracking-wider hover:shadow-lg transition-all duration-300">
+                                <button className="w-full py-3 bg-[#095520] text-white rounded-full text-sm font-semibold uppercase tracking-wider hover:shadow-lg transition-all duration-300">
                                     Express Interest
                                 </button>
                             </div>

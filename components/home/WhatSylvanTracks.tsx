@@ -22,13 +22,12 @@ export default function WhatSylvanTracks() {
                         Observable Signals
                     </span>
                     
-                    {/* Updated Heading: One line, no italics */}
                     <h2 className="text-3xl lg:text-4xl font-serif mb-6 leading-tight">
-                        What Sylvan Tracks
+                        Sylvan's Measurement System
                     </h2>
 
                     <p className="text-gray-400 text-base leading-normal">
-                        Sylvan measures sponsor behavior through five observable signals captured across every transaction. These signals aggregate into longitudinal sponsor operating records.
+                        Sylvan measures sponsor behavior through five observable signals captured across every deal. These signals aggregate into longitudinal sponsor operating records.
                     </p>
                 </motion.div>
 
@@ -51,7 +50,7 @@ export default function WhatSylvanTracks() {
                             Payment Reliability
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            Whether obligations are met on time and whether payments come from asset cash flow or sponsor capital.
+                            Whether scheduled payments are made on time, with each payment logged by due and receipt date.
                         </p>
                     </motion.div>
 
@@ -72,7 +71,7 @@ export default function WhatSylvanTracks() {
                             Capital Discipline
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            How reserves are managed and how frequently additional capital support is required.
+                            Whether obligations are met from asset cash flow or sponsor capital, with each payment tracked by source, timing, and amount.
                         </p>
                     </motion.div>
 
@@ -93,7 +92,7 @@ export default function WhatSylvanTracks() {
                             Forecast Accuracy
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            How projections compare to actual performance and how sponsors adjust when conditions change.
+                            How projections compare to actual results, with forecasts shown against performance and variance clearly measured.
                         </p>
                     </motion.div>
 
@@ -120,7 +119,7 @@ export default function WhatSylvanTracks() {
                             Disclosure Patterns
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            How quickly issues are disclosed, how transparently they are communicated, and how often prior reports are revised.
+                            How quickly and transparently issues are disclosed, with timing and revisions tracked.
                         </p>
                     </motion.div>
 
@@ -142,7 +141,7 @@ export default function WhatSylvanTracks() {
                             Consistency Over Time
                         </h3>
                         <p className="text-[11px] text-gray-400 leading-relaxed">
-                            Whether behavior is stable across assets and market conditions or varies unpredictably.
+                            Whether behavior remains consistent across assets and market cycles, revealing execution patterns over time.
                         </p>
                     </motion.div>
                 </div>

@@ -166,7 +166,7 @@ export default function DocumentGatingModal({ isOpen, onClose, documentName, onS
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`w-full py-3 px-6 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-wider transition-all duration-300 ${
+                                    className={`w-full py-3 px-6 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-wider transition-all duration-300 ${
                                         isSubmitting
                                             ? 'opacity-70 cursor-not-allowed'
                                             : 'hover:shadow-lg'

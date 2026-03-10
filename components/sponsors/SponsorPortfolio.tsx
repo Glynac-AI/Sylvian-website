@@ -24,7 +24,7 @@ export default function SponsorPortfolio({ portfolioIds, sponsorName }: SponsorP
                     <h2 className="text-4xl font-serif text-[#111827] mb-4">
                         Current Offerings
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-800 max-w-2xl mx-auto">
                         Explore available investment opportunities from {sponsorName}
                     </p>
                 </div>
@@ -52,7 +52,7 @@ export default function SponsorPortfolio({ portfolioIds, sponsorName }: SponsorP
                                             <span className={`px-3 py-1 text-xs font-semibold rounded-full shadow-sm ${
                                                 portfolio.fundingStatus === 'Active' ? 'bg-white text-[#095520] border border-white' :
                                                 portfolio.fundingStatus === 'Closing Soon' ? 'bg-amber-100 text-amber-800 border border-amber-200' :
-                                                'bg-gray-100 text-gray-600 border border-gray-300'
+                                                'bg-gray-100 text-gray-800 border border-gray-300'
                                             }`}>
                                                 {portfolio.fundingStatus}
                                             </span>
@@ -70,17 +70,17 @@ export default function SponsorPortfolio({ portfolioIds, sponsorName }: SponsorP
 
                                         <div className="grid grid-cols-2 gap-4 mb-4 pb-4 border-b border-[#E5E7EB]">
                                             <div>
-                                                <p className="text-xs text-gray-600 mb-1">Target Yield</p>
+                                                <p className="text-xs text-gray-800 mb-1">Target Yield</p>
                                                 <p className="text-lg font-bold text-[#0A3F28]">{portfolio.targetYield}</p>
                                             </div>
                                             <div>
-                                                <p className="text-xs text-gray-600 mb-1">Investment Term</p>
+                                                <p className="text-xs text-gray-800 mb-1">Investment Term</p>
                                                 <p className="text-lg font-bold text-[#111827]">{portfolio.investmentTerm}</p>
                                             </div>
                                         </div>
 
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-gray-600">Min. Investment</span>
+                                            <span className="text-gray-800">Min. Investment</span>
                                             <span className="font-semibold text-[#111827]">{portfolio.minimumInvestment}</span>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@ export default function SponsorPortfolio({ portfolioIds, sponsorName }: SponsorP
 
                 {portfolios.length === 0 && (
                     <div className="text-center py-12">
-                        <p className="text-gray-600">No active offerings at this time.</p>
+                        <p className="text-gray-800">No active offerings at this time.</p>
                     </div>
                 )}
             </div>

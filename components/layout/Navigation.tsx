@@ -159,11 +159,11 @@ export default function Navigation() {
                     <div className="hidden lg:flex items-center gap-4">
                         <Link
                             href="/offerings"
-                            className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200"
+                            className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-white transition-colors duration-200"
                         >
                             Offerings
                         </Link>
-                        <RequestAccessButton className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer">
+                        <RequestAccessButton className="border border-[#013220] px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-transparent text-[#013220] hover:bg-[#095520] hover:border-[#095520] hover:text-white transition-colors duration-200 cursor-pointer">
                             Request Access
                         </RequestAccessButton>
                     </div>
@@ -267,12 +267,12 @@ export default function Navigation() {
                                 <Link
                                     href="/offerings"
                                     onClick={() => setMobileOpen(false)}
-                                    className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-[#facc15] transition-colors duration-200 block w-full"
+                                    className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-white transition-colors duration-200 block w-full"
                                 >
                                     Offerings
                                 </Link>
                                 <div onClick={() => setMobileOpen(false)}>
-                                    <RequestAccessButton className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-[#facc15] transition-colors duration-200 cursor-pointer w-full">
+                                    <RequestAccessButton className="text-center border border-[#013220] px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide text-[#013220] hover:bg-[#095520] hover:text-white transition-colors duration-200 cursor-pointer w-full">
                                         Request Access
                                     </RequestAccessButton>
                                 </div>

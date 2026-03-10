@@ -56,18 +56,19 @@ export default function ForCIOsPage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                01. Cash Flow Structure
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Cash Flow Structure</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Contractual Cash Flow Across the Asset Lifecycle
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Sylvan structures senior debt investments across stabilized, semi-stabilized, and construction assets, with payment obligations governed by contractual priority. Depending on the asset stage, debt service is supported by existing rental income, funded interest reserves, or sponsor capital support.
+                                    Sylvan structures debt investments across stabilized, semi-stabilized, and construction assets, with payment obligations governed by contractual priority. Depending on the asset stage, debt service is supported by existing rental income, funded interest reserves, or sponsor capital support.
                                 </p>
                                 <p>
-                                    Your returns are driven by enforceable payment structures and controlled cash flow, not by assumptions about development success or exit timing.
+                                    Your returns are driven by enforced payment structures and controlled cash flow, not by the success of a development or the timing of an exit.
                                 </p>
                             </div>
                         </motion.div>
@@ -154,15 +155,16 @@ export default function ForCIOsPage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                02. Standardization
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Standardization</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Product-Level Standardization
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Sylvan operates a small number of defined product types, each aligned to a specific stage of the real estate lifecycle. Within each product type, structures, covenants, reserve requirements, and reporting formats are fixed and non-negotiable.
+                                    Sylvan operates a small, fixed set of product types, each aligned to a specific stage of the real estate lifecycle. Within each product type, the entity structure, covenant package, reserve requirements, and reporting format are fixed. Sponsors cannot negotiate exceptions or customize terms.
                                 </p>
                                 <p>
                                     This allows you to meaningfully compare sponsor performance within the same risk and duration profile, ensuring differences in outcomes reflect execution rather than structural variation.
@@ -187,18 +189,19 @@ export default function ForCIOsPage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                03. Capital Protection
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Capital Protection</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Senior Debt Position with Equity Protection
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Your investment is structured as debt with priority over the developer's equity. This means you have a senior claim on all cash flows generated by the portfolio.
+                                    Your investment is structured as debt with priority over the developer's equity. The developer cannot access any returns until your debt service obligations are met in full.
                                 </p>
                                 <p>
-                                    The developer's equity sits below your position, creating a structural cushion that protects your capital. This subordination gives you enhanced security and priority access to the asset's income stream.
+                                    You are not relying on the developer to prioritize your payment. The structure does it for you.
                                 </p>
                             </div>
                         </motion.div>

@@ -34,9 +34,9 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
             case 'Closing Soon':
                 return 'bg-amber-50 text-amber-700 border-amber-200'
             case 'Closed':
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
             default:
-                return 'bg-gray-100 text-gray-600 border-gray-300'
+                return 'bg-gray-100 text-gray-800 border-gray-300'
         }
     }
 
@@ -62,7 +62,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
                             </span>
                         </div>
                         <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520]/90 text-yellow-400 backdrop-blur-sm">
+                            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-[#095520]/90 text-white backdrop-blur-sm">
                                 {property.propertyType}
                             </span>
                         </div>
@@ -123,7 +123,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
                         )}
 
                         {/* CTA Button */}
-                        <button className="w-full py-3 px-4 bg-[#095520] text-yellow-400 rounded-full font-semibold text-sm uppercase tracking-widest hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]">
+                        <button className="w-full py-3 px-4 bg-[#095520] text-white rounded-full font-semibold text-sm uppercase tracking-widest hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]">
                             View Details
                             <svg className="inline-block w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

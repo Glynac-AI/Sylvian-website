@@ -56,20 +56,19 @@ export default function ForCCOsPage() {
                             animate={section1InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            {/* Reverted to Default Green (#095520) */}
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                01. Asset Isolation
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">01. Asset Isolation</span>
                             </div>
-                            {/* Reverted to Default Green (#095520) */}
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Ring-Fenced SPVs
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Each investment sits in its own standalone legal entity, completely separate from the developer's other operations and liabilities.
+                                    Each investment sits in its own standalone legal entity, completely separate from the sponsor's other operations and liabilities.
                                 </p>
                                 <p>
-                                    If the developer faces litigation, creditor claims, or bankruptcy, those issues remain outside the SPV. The assets you invested in stay protected and isolated.
+                                    If the developer faces litigation, insolvency, or creditor claims elsewhere in their business, those issues cannot reach the asset you invested in.
                                 </p>
                             </div>
                         </motion.div>
@@ -161,15 +160,16 @@ export default function ForCCOsPage() {
                             animate={section2InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                02. Product Standardization
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">02. Product Standardization</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Standardization by Product Category
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    Sylvan enforces standardized legal, structural, and reporting frameworks within each product category, with no sponsor-specific exceptions. Each transaction of the same product type follows identical documentation, controls, and disclosure requirements.
+                                    Sylvan enforces standardized legal, structural, and reporting frameworks within each product category. Sponsors cannot negotiate exceptions or request carve-outs.
                                 </p>
                                 <p>
                                     This product-level standardization reduces interpretation risk, supports consistent oversight, and ensures sponsor records are defensible, auditable, and comparable within defined governance boundaries.
@@ -194,18 +194,19 @@ export default function ForCCOsPage() {
                             animate={section3InView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         >
-                            <div className="text-[#095520]/80 font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">
-                                03. Capital Protection
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-px bg-[#D9B44A]"></div>
+                                <span className="text-[#D9B44A] font-bold text-[10px] uppercase tracking-[0.15em]">03. Capital Protection</span>
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-serif text-[#095520] mb-6 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6 leading-tight">
                                 Your Position is Structurally Protected
                             </h2>
-                            <div className="space-y-4 text-base text-gray-600 leading-normal max-w-xl">
+                            <div className="space-y-4 text-base text-gray-600 leading-relaxed max-w-xl">
                                 <p>
-                                    The developer's equity sits below you in the capital structure. This means their capital acts as a protective cushion for your investment.
+                                    As a debt investor on Sylvan, your investment sits above the sponsor's equity in the capital structure. Their capital absorbs losses before yours is affected. This means their capital acts as a protective cushion for your investment.
                                 </p>
                                 <p>
-                                    If portfolio performance declines, the developer's equity absorbs the impact. Your principal remains protected unless their entire position is exhausted first.
+                                    If portfolio performance declines, the sponsor's equity absorbs the impact. Your principal remains protected unless their entire position is exhausted first.
                                 </p>
                             </div>
                         </motion.div>

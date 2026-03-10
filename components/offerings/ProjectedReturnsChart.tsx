@@ -121,12 +121,12 @@ export default function ProjectedReturnsChart({
                                                 className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#095520] text-white px-4 py-3 rounded-lg shadow-xl whitespace-nowrap z-10"
                                             >
                                                 <div className="text-center">
-                                                    <p className="text-xs text-yellow-400 font-medium mb-1">Year {data.year}</p>
+                                                    <p className="text-xs text-white font-medium mb-1">Year {data.year}</p>
                                                     <p className="text-base font-bold mb-1">{formatCurrency(data.investmentValue)}</p>
                                                     <p className="text-xs opacity-90">
                                                         +{formatCurrency(data.totalReturns)} returns
                                                     </p>
-                                                    <p className="text-xs text-yellow-400 mt-1">
+                                                    <p className="text-xs text-white mt-1">
                                                         {data.cumulativeReturn}% cumulative
                                                     </p>
                                                 </div>

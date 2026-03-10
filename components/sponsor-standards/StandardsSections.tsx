@@ -29,12 +29,12 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">01. Admission</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Published Admission Criteria</h2>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Published Admission Criteria</h2>
+                            <p className="text-base text-gray-800 mb-6 leading-relaxed">
                                 Sponsors are evaluated for participation based on minimum requirements, including:
                             </p>
 
-                            <ul className="space-y-3 mb-6">
+                            <ul className="space-y-4 mb-8">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
                                     <span className="text-sm text-gray-700">Demonstrated operating history in relevant asset types</span>
@@ -45,20 +45,20 @@ export default function StandardsSections() {
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm text-gray-700">Sufficient liquidity and balance-sheet capacity</span>
+                                    <span className="text-sm text-gray-700">Sufficient liquidity and balance-sheet capacity to support their obligations</span>
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm text-gray-700">Ability to operate within standardized SPV, covenant, and reserve frameworks</span>
+                                    <span className="text-sm text-gray-700">Ability to operate within standardized entity structures, covenants, and reserve requirements</span>
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    <span className="text-sm text-gray-700">Commitment to mandatory, uniform reporting and disclosure requirements</span>
+                                    <span className="text-sm text-gray-700">Commitment to mandatory, standardized reporting and disclosure on Sylvan&apos;s schedule</span>
                                 </li>
                             </ul>
 
-                            <p className="text-[#4B5563] mt-6 leading-relaxed">
-                                Admission reflects readiness to operate under institutional discipline, not marketing strength or deal volume.
+                            <p className="text-base text-gray-800 mt-6 leading-relaxed">
+                                Admission reflects readiness to operate at an institutional standard, not marketing strength or deal volume.
                             </p>
                         </motion.div>
 
@@ -142,17 +142,17 @@ export default function StandardsSections() {
                                 <div className="space-y-4">
                                     <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
                                         <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Reporting</span>
-                                        <p className="text-sm text-[#4B5563]">Timely and complete reporting on fixed schedules</p>
+                                        <p className="text-sm text-[#4B5563]">Timely and complete reporting submitted on fixed schedules</p>
                                     </div>
 
                                     <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
                                         <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Disclosure</span>
-                                        <p className="text-sm text-[#4B5563]">Accurate disclosure of payment sources and liquidity support</p>
+                                        <p className="text-sm text-[#4B5563]">Accurate disclosure of payment sources and any liquidity support provided to a deal</p>
                                     </div>
 
                                     <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
                                         <span className="text-xs font-bold text-[#0A3F28] uppercase tracking-widest block mb-1">Compliance</span>
-                                        <p className="text-sm text-[#4B5563]">Compliance with covenant and reserve requirements</p>
+                                        <p className="text-sm text-[#4B5563]">Compliance with all covenant and reserve requirements at all times</p>
                                     </div>
 
                                     <div className="p-4 bg-[#F9FAFB] border-l-4 border-[#0A3F28]">
@@ -169,23 +169,23 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">02. Participation</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
-                                Sponsors are expected to maintain:
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Ongoing Participation Requirements</h2>
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Participation on Sylvan is continuous, not one-time.</h3>
+                            <p className="text-base text-gray-800 mb-6 leading-relaxed">
+                                Sponsors are required to maintain:
                             </p>
-                            <ul className="space-y-3 mb-8 text-sm text-gray-700">
+                            <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Timely and complete reporting on fixed schedules
+                                    Timely and complete reporting submitted on fixed schedules
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Accurate disclosure of payment sources and liquidity support
+                                    Accurate disclosure of payment sources and any liquidity support provided to a deal
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
-                                    Compliance with covenant and reserve requirements
+                                    Compliance with all covenant and reserve requirements at all times
                                 </li>
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
@@ -194,7 +194,7 @@ export default function StandardsSections() {
                             </ul>
                             <div className="p-6 border-l-2 border-[#D9B44A] bg-white">
                                 <p className="text-sm font-serif italic text-[#111827]">
-                                    "Operating behavior is observed and recorded across every obligation."
+                                    &quot;Operating behavior is observed and recorded across every obligation.&quot;
                                 </p>
                             </div>
                         </motion.div>
@@ -212,12 +212,12 @@ export default function StandardsSections() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             <span className="text-[#0A3F28] font-bold text-[10px] uppercase tracking-[0.1em] mb-4 block">03. Enforcement</span>
-                            <h2 className="text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
-                            <h3 className="text-lg text-[#4B5563] mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
-                            <p className="text-[#4B5563] mb-6 leading-relaxed">
+                            <h2 className="text-3xl lg:text-4xl font-serif text-[#111827] mb-6">Enforcement and Accountability</h2>
+                            <h3 className="text-lg text-gray-800 mb-6 font-medium">Standards are enforced to preserve the integrity of sponsor operating records.</h3>
+                            <p className="text-base text-gray-800 mb-6 leading-relaxed">
                                 Reporting or disclosure failures are treated first as platform compliance matters, with defined resolution periods. Persistent or material non-compliance can result in:
                             </p>
-                            <ul className="space-y-3 mb-8 text-sm text-gray-700">
+                            <ul className="space-y-4 mb-8 text-sm text-gray-700">
                                 <li className="flex gap-3 items-start">
                                     <span className="text-[#0A3F28] font-bold">↳</span>
                                     Heightened monitoring status
@@ -231,9 +231,8 @@ export default function StandardsSections() {
                                     Suspension or removal from the platform
                                 </li>
                             </ul>
-                            {/* UPDATED STYLE: Matched to "Verify Before You Commit" footer style */}
                             <p className="text-xs font-bold text-[#0A3F28] uppercase tracking-wide border-t border-[#E5E7EB] pt-4">
-                                These outcomes are governance actions, not judgments.
+                                THESE ACTIONS ARE BASED ON DOCUMENTED COMPLIANCE PERFORMANCE, NOT DISCRETION
                             </p>
                         </motion.div>
 
