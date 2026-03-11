@@ -10,7 +10,7 @@ env:
   PRODUCT_VERSION: "latest"
   VERSION: "1.2.0"
   ENVIRONMENT: "s9p"
-  DOCKER_IMAGE: image-reg.ops.glynac.ai/glynac-fe/sylvian-web
+  DOCKER_IMAGE: image-reg.ops.glynac.ai/glynac-fe/sylvian-web-dev
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
       - name: Generate IMAGE_TAG
         id: export_tag
         run: |
-          IMAGE_TAG="dev-${ENVIRONMENT}-v${VERSION}-${GITHUB_SHA}"
+          IMAGE_TAG="${ENVIRONMENT}-v${VERSION}-${GITHUB_SHA}"
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_OUTPUT
 
