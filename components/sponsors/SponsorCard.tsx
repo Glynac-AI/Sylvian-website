@@ -3,10 +3,23 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Sponsor } from '@/data/mockSponsors'
-
 interface SponsorCardProps {
-    sponsor: Sponsor
+    sponsor: {
+        id: string | number
+        name: string
+        tagline: string
+        totalAUM: string
+        historicalIRR: string
+        propertiesManaged: number
+        yearsInBusiness: number
+        admissionStatus: string
+        activePortfolios: number[]
+        operatingRecord: {
+            paymentBehavior: { onTimeRate: number }
+            reserveDiscipline: { currentAdequacy: number }
+            disclosureBehavior: { transparencyRating: string }
+        }
+    }
     index: number
 }
 

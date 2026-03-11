@@ -2,10 +2,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Sponsor } from '@/data/mockSponsors'
-
 interface SponsorOverviewProps {
-    sponsor: Sponsor
+    sponsor: {
+        admissionStatus: string
+        platformAdmissionDate: string
+        complianceStatus: string
+    }
 }
 
 export default function SponsorOverview({ sponsor }: SponsorOverviewProps) {

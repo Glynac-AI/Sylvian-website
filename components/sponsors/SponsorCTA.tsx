@@ -6,10 +6,10 @@ import Link from 'next/link'
 
 interface SponsorCTAProps {
     sponsorName: string
-    portfolioIds: number[]
+    offeringCount: number
 }
 
-export default function SponsorCTA({ sponsorName, portfolioIds }: SponsorCTAProps) {
+export default function SponsorCTA({ sponsorName, offeringCount }: SponsorCTAProps) {
     return (
         <section className="bg-[#013220] py-20 text-white text-center border-t border-[#095520]">
             <div className="max-w-4xl mx-auto px-6">
@@ -24,7 +24,7 @@ export default function SponsorCTA({ sponsorName, portfolioIds }: SponsorCTAProp
                         Explore Investment Opportunities
                     </h2>
                     <p className="text-xl text-gray-300 font-serif italic mb-12">
-                        {sponsorName} has {portfolioIds.length} active {portfolioIds.length === 1 ? 'offering' : 'offerings'} available
+                        {sponsorName} has {offeringCount} active {offeringCount === 1 ? 'offering' : 'offerings'} available
                     </p>
 
                     <div className="inline-block border border-white/20 p-8 rounded-sm bg-white/5 backdrop-blur-sm mb-12 max-w-2xl">

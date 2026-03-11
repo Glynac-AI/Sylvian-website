@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
                 port: '9000',
                 pathname: '/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'st0r4ge.glynac.ai',
+                port: '9000',
+                pathname: '/**',
+            },
         ],
     },
 }

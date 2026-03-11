@@ -79,15 +79,6 @@ export const Offerings: CollectionConfig = {
                 position: 'sidebar',
             },
         },
-        {
-            name: 'strategy',
-            type: 'text',
-            admin: {
-                position: 'sidebar',
-                description: 'e.g. "Diversified Growth", "Value-Add", "Income-Focused"',
-            },
-        },
-
         // ── Hero Image ─────────────────────────────────────────────
         {
             name: 'image',
@@ -356,6 +347,11 @@ export const Offerings: CollectionConfig = {
                     required: true,
                     min: 0,
                     max: 100,
+                },
+                {
+                    name: 'description',
+                    type: 'text',
+                    admin: { description: 'e.g. "First in line for repayment • Lowest risk"' },
                 },
                 {
                     name: 'yieldRange',

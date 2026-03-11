@@ -7,6 +7,7 @@ interface CapitalStackLayer {
     layer: string
     amount: string
     percentage: number
+    description?: string
     yieldRange?: string
 }
 
@@ -50,12 +51,9 @@ export default function CapitalStackVisualization({ capitalStack }: CapitalStack
                                 <div className="flex-1 border-l-2 border-gray-200 pl-6">
                                     {/* UPDATED: Layer Name to text-lg */}
                                     <h3 className="text-lg font-semibold text-black mb-1">{layer.layer}</h3>
-                                    <p className="text-sm text-[#095520]/70">
-                                        {layer.layer === 'Senior Debt' && 'First in line for repayment • Lowest risk'}
-                                        {layer.layer === 'Junior Debt' && 'Subordinate to senior debt • Moderate risk'}
-                                        {layer.layer === 'Preferred Equity' && 'Priority over common equity • Preferred returns'}
-                                        {layer.layer === 'Common Equity' && 'Sponsor position • Absorbs first losses'}
-                                    </p>
+                                    {layer.description && (
+                                        <p className="text-sm text-[#095520]/70">{layer.description}</p>
+                                    )}
                                 </div>
                             </div>
                             <div className="flex-shrink-0 text-right ml-4">
