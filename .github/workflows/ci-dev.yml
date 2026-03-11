@@ -83,7 +83,7 @@ jobs:
           NOMAD_ADDR: ${{ vars.NOMAD_ADDR }}
           NOMAD_TOKEN: ${{ secrets.NOMAD_TOKEN }}
         run: |
-          nomad job run nomad/sylvian.hcl
+          nomad job run nomad/sylvian-dev.hcl
 
   notify:
     runs-on: ubuntu-latest
