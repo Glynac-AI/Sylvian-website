@@ -1,4 +1,6 @@
 // app/sponsors/page.tsx
+export const dynamic = 'force-dynamic'
+
 import { getSponsors } from '@/lib/payload'
 import SponsorsClient from './SponsorsClient'
 

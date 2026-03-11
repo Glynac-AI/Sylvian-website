@@ -19,15 +19,21 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Placeholder env vars so next build doesn't fail on missing config
-# Real values are injected at runtime via Vault + Nomad
-ENV DATABASE_URL=placeholder
-ENV PAYLOAD_SECRET=placeholder
-ENV S3_BUCKET=placeholder
-ENV S3_REGION=us-east-1
-ENV S3_ACCESS_KEY_ID=placeholder
-ENV S3_SECRET_ACCESS_KEY=placeholder
-ENV S3_ENDPOINT=placeholder
+ARG DATABASE_URL
+ARG PAYLOAD_SECRET
+ARG S3_BUCKET
+ARG S3_REGION
+ARG S3_ACCESS_KEY_ID
+ARG S3_SECRET_ACCESS_KEY
+ARG S3_ENDPOINT
+
+ENV DATABASE_URL=$DATABASE_URL
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
+ENV S3_BUCKET=$S3_BUCKET
+ENV S3_REGION=$S3_REGION
+ENV S3_ACCESS_KEY_ID=$S3_ACCESS_KEY_ID
+ENV S3_SECRET_ACCESS_KEY=$S3_SECRET_ACCESS_KEY
+ENV S3_ENDPOINT=$S3_ENDPOINT
 
 # Build the application
 RUN npm run build
