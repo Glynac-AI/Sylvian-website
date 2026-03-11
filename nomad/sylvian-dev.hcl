@@ -16,7 +16,7 @@ job "Sylvian-Web-App_Dev" {
       port "http" {
         static       = 3002
         to           = 3000
-        host_network = "private"
+        host_network = "public"
       }
     }
 
