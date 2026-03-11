@@ -3,6 +3,7 @@
 
 import Hero from '@/components/home/Hero'
 import AccelerateSection from '@/components/home/AccelerateSection'
+import MeasurementSystemSection from '@/components/home/MeasurementSystemSection'
 import LockboxSection from '@/components/home/LockboxSection'
 import RentalYieldsSection from '@/components/home/RentalYieldsSection'
 
@@ -11,6 +12,7 @@ export default function HomePage() {
     <>
       <Hero />
       <AccelerateSection />
+      <MeasurementSystemSection />
       <LockboxSection />
       <RentalYieldsSection />
     </>
